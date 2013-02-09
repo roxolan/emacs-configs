@@ -11,7 +11,7 @@
 ;; auto complete config
 
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-20130117.1954")
-(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20130122.1551")
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-20130209.651")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130122.1551/dict")
 (ac-config-default)
@@ -61,9 +61,8 @@
 
 ;; glsl
 
-(add-to-list 'load-path "~/.emacs.d/elpa/glsl-mode-20121024.808")
+(add-to-list 'load-path "~/.emacs.d/glsl-mode")
 (require 'glsl-mode)
-(require 'glsl-mode-autoloads)
 
 (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
