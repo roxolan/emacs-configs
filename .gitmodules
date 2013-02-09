@@ -1,0 +1,3 @@
+[submodule "glsl-mode"]
+	path = glsl-mode
+	url = https://github.com/jimhourihan/glsl-mode
