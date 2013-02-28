@@ -77,10 +77,9 @@
 
 (add-to-list 'load-path "~/.emacs.d/elpa/gh-20121231.208")
 (add-to-list 'load-path "~/.emacs.d/elpa/pcache-20120408.1206")
-(add-to-list 'load-path "~/.emacs.d/elpa/gist-20121231.212")
 (add-to-list 'load-path "~/.emacs.d/elpa/logito-20120225.2155")
+(add-to-list 'load-path "~/.emacs.d/gist")
 (require 'gist)
-(require 'gist-autoloads)
 
 ;; yasnippet
 
