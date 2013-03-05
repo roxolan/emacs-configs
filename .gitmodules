@@ -4,3 +4,6 @@
 [submodule "gist"]
 	path = gist
 	url = https://github.com/defunkt/gist.el
+[submodule "haskell-mode"]
+	path = haskell-mode
+	url = https://github.com/haskell/haskell-mode.git

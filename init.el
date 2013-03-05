@@ -90,6 +90,14 @@
 (yas--initialize)
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-20130112.1823/snippets")
 
+;; haskell mode
+
+(add-to-list 'load-path "~/.emacs.d/haskell-mode")
+(require 'haskell-mode)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+
 ;; platform depended
 
 (require 'init-platform-dependent)
