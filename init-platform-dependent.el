@@ -16,4 +16,7 @@
 		 )))
 )
 
+(setq battery-mode-line-format " %p%%")
+(display-battery-mode)
+
 (provide 'init-platform-dependent)
