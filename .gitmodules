@@ -1,6 +1,0 @@
-[submodule "glsl-mode"]
-	path = glsl-mode
-	url = https://github.com/jimhourihan/glsl-mode
-[submodule "gist"]
-	path = gist
-	url = https://github.com/defunkt/gist.el
