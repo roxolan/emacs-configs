@@ -16,9 +16,6 @@
 (setq display-time-day-and-date t)
 (display-time)
 
-(setq battery-mode-line-format " %p%%")
-(display-battery-mode)
-
 (setq make-pointer-invisible nil)
 
 (setq isearch-allow-scroll t)
