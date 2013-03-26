@@ -20,6 +20,8 @@
 
 (setq isearch-allow-scroll t)
 
+(setq make-backup-files nil)
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
