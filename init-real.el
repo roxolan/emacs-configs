@@ -29,6 +29,8 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+(setq mouse-autoselect-window t)
+
 ;; auto complete config
 
 ;; (defun auto-complete-get-path (pkg-list)
