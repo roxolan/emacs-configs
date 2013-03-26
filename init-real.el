@@ -22,6 +22,10 @@
 
 (setq make-backup-files nil)
 
+(add-hook 'dired-mode-hook 'auto-revert-mode)
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-interval 1)
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
