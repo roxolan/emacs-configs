@@ -31,6 +31,8 @@
 
 (setq mouse-autoselect-window t)
 
+(setq-default major-mode 'text-mode)
+
 ;; auto complete config
 
 ;; (defun auto-complete-get-path (pkg-list)
