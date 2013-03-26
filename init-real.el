@@ -33,6 +33,8 @@
 
 (setq-default major-mode 'text-mode)
 
+(column-number-mode)
+
 ;; auto complete config
 
 ;; (defun auto-complete-get-path (pkg-list)
