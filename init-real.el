@@ -63,9 +63,17 @@
   (setq ac-sources (append '(ac-source-clang) ac-sources)))
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
+(add-hook 'c-mode-common-hook 'ac-flyspell-workaround)
 
 (global-auto-complete-mode t)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+
+;; flymake c++ clang
+
+(require 'flymake)
+(require 'flymake-clang-c++)
+
+(add-hook 'c-mode-common-hook 'flymake-clang-c++-load)
 
 ;; gdb
 
