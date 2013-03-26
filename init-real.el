@@ -131,6 +131,7 @@
 
 ;; popup kill ring
 
+(require 'popup-kill-ring)
 (global-set-key (kbd "C-x p") 'popup-kill-ring)
 (global-set-key (kbd "C-ч з") 'popup-kill-ring)
 
