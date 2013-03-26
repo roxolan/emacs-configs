@@ -22,7 +22,8 @@
 
 (setq make-backup-files nil)
 
-(add-hook 'dired-mode-hook 'auto-revert-mode)
+(defun auto-revert-mode-enabler () (auto-revert-mode 1))
+(add-hook 'dired-mode-hook 'auto-revert-mode-enabler)
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-interval 1)
 
@@ -33,7 +34,9 @@
 
 (setq-default major-mode 'text-mode)
 
-(column-number-mode)
+(column-number-mode 1)
+
+(electric-indent-mode 1)
 
 ;; auto complete config
 
