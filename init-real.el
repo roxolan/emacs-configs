@@ -20,6 +20,24 @@
 
 (setq isearch-allow-scroll t)
 
+(setq make-backup-files nil)
+
+(defun auto-revert-mode-enabler () (auto-revert-mode 1))
+(add-hook 'dired-mode-hook 'auto-revert-mode-enabler)
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-interval 1)
+
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(setq mouse-autoselect-window t)
+
+(setq-default major-mode 'text-mode)
+
+(column-number-mode 1)
+
+(electric-indent-mode 1)
+
 ;; auto complete config
 
 ;; (defun auto-complete-get-path (pkg-list)
@@ -45,9 +63,17 @@
   (setq ac-sources (append '(ac-source-clang) ac-sources)))
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
+(add-hook 'c-mode-common-hook 'ac-flyspell-workaround)
 
 (global-auto-complete-mode t)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+
+;; flymake c++ clang
+
+(require 'flymake)
+(require 'flymake-clang-c++)
+
+(add-hook 'c-mode-common-hook 'flymake-clang-c++-load)
 
 ;; gdb
 
@@ -120,6 +146,7 @@
 
 ;; popup kill ring
 
+(require 'popup-kill-ring)
 (global-set-key (kbd "C-x p") 'popup-kill-ring)
 (global-set-key (kbd "C-ч з") 'popup-kill-ring)
 
