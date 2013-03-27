@@ -41,6 +41,8 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
+(global-ede-mode t)
+
 ;; auto complete
 
 (require 'auto-complete-config)
