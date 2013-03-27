@@ -38,7 +38,8 @@
 
 (electric-indent-mode 1)
 
-(setq initial-buffer-choice t)
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
 
 ;; auto complete config
 
