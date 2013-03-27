@@ -38,6 +38,8 @@
 
 (electric-indent-mode 1)
 
+(setq initial-buffer-choice t)
+
 ;; auto complete config
 
 ;; (defun auto-complete-get-path (pkg-list)
