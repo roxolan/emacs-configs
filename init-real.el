@@ -43,6 +43,9 @@
 
 (global-ede-mode t)
 
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 2) ((control) . nil)))
+(setq mouse-wheel-progressive-speed nil)
+
 ;; auto complete
 
 (require 'auto-complete-config)
