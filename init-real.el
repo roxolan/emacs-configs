@@ -38,35 +38,33 @@
 
 (electric-indent-mode 1)
 
-;; auto complete config
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
 
-;; (defun auto-complete-get-path (pkg-list)
-;;   (if (eq pkg-list nil)
-;; 	  "not found"
-;; 	  (if (eq (caar pkg-list) 'auto-complete)
-;; 		  (cdar pkg-list)
-;; 		  (auto-complete-get-path (cdr pkg-list))
-;; 	  )
-;;   )
-;; )
+(global-ede-mode t)
+
+;; auto complete
 
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130122.1551/dict")
-(ac-config-default)
-
-;; auto complete clang config
 
 (require 'auto-complete-clang)
+(setq ac-auto-start 1)
 (setq ac-quick-help-delay 0.5)
 (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (defun cc-mode-clang-hook ()
-  (setq ac-sources (append '(ac-source-clang) ac-sources)))
+  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
 (add-hook 'c-mode-common-hook 'ac-flyspell-workaround)
 
 (global-auto-complete-mode t)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(define-key ac-mode-map  [(control tab)] 'auto-complete)
+
+(add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+(add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+(add-hook 'css-mode-hook 'ac-css-mode-setup)
+(add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
 ;; flymake c++ clang
 
