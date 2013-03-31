@@ -151,6 +151,11 @@
 (require 'autopair)
 (autopair-global-mode 1)
 
+;; highlight parenthesis
+
+(require 'highlight-parentheses)
+(add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1)))
+
 ;; google translate
 
 (require 'google-translate)
