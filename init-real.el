@@ -136,6 +136,11 @@
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
 
+;; highlight line
+
+(require 'highline)
+(global-highline-mode 1)
+
 ;; google translate
 
 (require 'google-translate)
