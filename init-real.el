@@ -120,10 +120,7 @@
 ;; yasnippet
 
 (require 'yasnippet)
-(require 'yasnippet-autoloads)
-
-(yas--initialize)
-(yas/load-directory "~/.emacs.d/elpa/yasnippet-20130218.2229/snippets/")
+(yas-global-mode 1)
 
 ;; haskell mode
 
