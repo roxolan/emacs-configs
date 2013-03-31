@@ -141,6 +141,11 @@
 (require 'highline)
 (global-highline-mode 1)
 
+;; move text
+
+(require 'move-text)
+(move-text-default-bindings)
+
 ;; google translate
 
 (require 'google-translate)
