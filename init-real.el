@@ -131,6 +131,11 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
+;; smooth scroll
+
+(require 'smooth-scroll)
+(smooth-scroll-mode t)
+
 ;; google translate
 
 (require 'google-translate)
