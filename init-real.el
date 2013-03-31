@@ -146,6 +146,11 @@
 (require 'move-text)
 (move-text-default-bindings)
 
+;; auto pair
+
+(require 'autopair)
+(autopair-global-mode 1)
+
 ;; google translate
 
 (require 'google-translate)
