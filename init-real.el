@@ -147,7 +147,7 @@
 
 ;; smooth mouse scroll
 
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 
