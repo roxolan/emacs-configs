@@ -163,6 +163,12 @@
 
 (setq isearch-allow-scroll t)
 
+(require 'nurumacs)
+
+(add-hook 'prog-mode-hook (lambda () (setq-local nurumacs-map t)))
+(setq-default nurumacs-vspeeds '(800 400 100 10))
+(setq-default nurumacs-map-delay 1)
+
 ;; highlight line
 
 (require 'highline)
