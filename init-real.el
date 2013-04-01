@@ -1,7 +1,6 @@
 ;; customizations
 
-(setq tab-width 4)
-(setq default-tab-width 4)
+(setq-default tab-width 4)
 
 (setq mark-ring-max 4)
 (setq global-mark-ring-max 8)
@@ -71,6 +70,12 @@
 (add-hook 'css-mode-hook 'ac-css-mode-setup)
 (add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
+;; diff highlighting
+
+(require 'diff-hl)
+
+(global-diff-hl-mode 1)
+
 ;; flymake c++ clang
 
 (require 'flymake)
@@ -115,15 +120,48 @@
 ;; yasnippet
 
 (require 'yasnippet)
-(require 'yasnippet-autoloads)
-
-(yas--initialize)
-(yas/load-directory "~/.emacs.d/elpa/yasnippet-20130218.2229/snippets/")
+(yas-global-mode 1)
 
 ;; haskell mode
 
 (require 'haskell-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+
+;; smooth scroll
+
+(require 'smooth-scroll)
+(smooth-scroll-mode t)
+
+;; highlight line
+
+(require 'highline)
+(global-highline-mode 1)
+
+;; move text
+
+(require 'move-text)
+(move-text-default-bindings)
+
+;; auto pair
+
+(require 'autopair)
+(autopair-global-mode 1)
+
+;; highlight parenthesis
+
+(require 'highlight-parentheses)
+(add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1)))
+
+;; google translate
+
+(require 'google-translate)
+(setq google-translate-default-source-language "en")
+(setq google-translate-default-target-language "ru")
+(global-set-key (kbd "C-x C-g") 'google-translate-at-point)
+(global-set-key (kbd "C-ч C-п") 'google-translate-at-point)
+(global-set-key (kbd "C-x g") 'google-translate-query-translate)
+(global-set-key (kbd "C-ч п") 'google-translate-query-translate)
 
 ;; ru keys
 
@@ -146,6 +184,9 @@
 (global-set-key (kbd "C-л") 'kill-line)
 (global-set-key (kbd "C-ы") 'isearch-forward)
 (global-set-key (kbd "C-п") 'keyboard-quit)
+(global-set-key (kbd "C-ч щ") 'other-window)
+(global-set-key (kbd "C-ч л") 'kill-buffer)
+(global-set-key (kbd "M-ч") 'execute-extended-command)
 
 ;; popup kill ring
 
