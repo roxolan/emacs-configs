@@ -64,6 +64,11 @@
 
 (setq make-pointer-invisible nil)
 
+;; xml
+
+(require 'nxml-mode)
+(setq-default nxml-child-indent 4)
+
 ;; auto complete
 
 (require 'auto-complete-config)
