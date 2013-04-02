@@ -1,51 +1,68 @@
 ;; customizations
 
+;; indentation
+
 (setq-default tab-width 4)
+
+(electric-indent-mode 1)
+
+;; mark ring tweaks
 
 (setq mark-ring-max 4)
 (setq global-mark-ring-max 8)
 (setq set-mark-command-repeat-pop t)
 
+;; save bookmarks on emacs exit
+
 (setq bookmark-save-flag 1)
 
-(setq scroll-preserve-screen-position t)
+;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; mode line tweaks
 
 (setq display-time-day-and-date t)
 (display-time)
 
-(setq make-pointer-invisible nil)
+(column-number-mode 1)
 
-(setq isearch-allow-scroll t)
+;; turn off backup files
 
 (setq make-backup-files nil)
+
+;; auto reverting dired buffer
 
 (defun auto-revert-mode-enabler () (auto-revert-mode 1))
 (add-hook 'dired-mode-hook 'auto-revert-mode-enabler)
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-interval 1)
 
+;; enable upcase and downcase region commands
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; focus follows mouse
+
 (setq mouse-autoselect-window t)
+
+;; deafult mode for text editing
 
 (setq-default major-mode 'text-mode)
 
-(column-number-mode 1)
-
-(electric-indent-mode 1)
+;; turn off sctartup screen
 
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
-(global-ede-mode t)
-
-(setq mouse-wheel-scroll-amount '(5 ((shift) . 5) ((control) . nil)))
-(setq mouse-wheel-progressive-speed nil)
+;; disable defining variables in files
 
 (setq enable-local-variables nil)
+
+;; miscaleous tweeks
+
+(setq make-pointer-invisible nil)
 
 ;; auto complete
 
@@ -128,10 +145,29 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
-;; smooth scroll
+;; smooth mouse scroll
 
-(require 'smooth-scroll)
-(smooth-scroll-mode t)
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
+
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+
+(setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
+
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+(setq scroll-conservatively 10000)
+
+(setq auto-window-vscroll nil)
+
+(setq scroll-preserve-screen-position t)
+
+(setq isearch-allow-scroll t)
+
+(require 'nurumacs)
+
+(add-hook 'prog-mode-hook (lambda () (setq-local nurumacs-map t)))
+(setq-default nurumacs-vspeeds '(800 400 100 10))
+(setq-default nurumacs-map-delay 1)
 
 ;; highlight line
 
