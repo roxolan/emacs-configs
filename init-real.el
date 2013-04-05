@@ -223,6 +223,7 @@
 (global-set-key (kbd "C-ч щ") 'other-window)
 (global-set-key (kbd "C-ч л") 'kill-buffer)
 (global-set-key (kbd "M-ч") 'execute-extended-command)
+(global-set-key (kbd "C-и") 'backward-char)
 
 ;; popup kill ring
 
@@ -239,3 +240,7 @@
 
 (require 'init-platform-dependent)
 (init-platform-dependent-start)
+
+;; start emacs server
+
+(server-start)
