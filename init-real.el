@@ -178,6 +178,7 @@
 ;; line numbers
 
 (add-hook 'prog-mode-hook (lambda () (linum-mode 1)))
+(setq linum-format "%3d| ")
 
 ;; todo, fixme highlighting
 
