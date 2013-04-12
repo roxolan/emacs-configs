@@ -1,3 +1,7 @@
+;; theme
+
+(load-theme 'sea-before-storm t nil)
+
 ;; customizations
 
 ;; indentation
@@ -160,24 +164,25 @@
 
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
-(setq scroll-conservatively 10000)
-
 (setq auto-window-vscroll nil)
 
 (setq scroll-preserve-screen-position t)
 
 (setq isearch-allow-scroll t)
 
-(require 'nurumacs)
-
-(add-hook 'prog-mode-hook (lambda () (setq-local nurumacs-map t)))
-(setq-default nurumacs-vspeeds '(800 400 100 10))
-(setq-default nurumacs-map-delay 1)
-
 ;; highlight line
 
-(require 'highline)
-(global-highline-mode 1)
+(require 'hl-line+)
+(global-hl-line-mode 1)
+
+;; line numbers
+
+(add-hook 'prog-mode-hook (lambda () (linum-mode 1)))
+
+;; todo, fixme highlighting
+
+(require 'fic-mode)
+(add-hook 'prog-mode-hook 'turn-on-fic-mode)
 
 ;; move text
 
@@ -204,6 +209,12 @@
 (global-set-key (kbd "C-x g") 'google-translate-query-translate)
 (global-set-key (kbd "C-ч п") 'google-translate-query-translate)
 
+;; mail
+
+(setq user-full-name "edward e. knyshov")
+(setq user-mail-address "edvorg@gmail.com")
+(setq mail-from-style 'angles)
+
 ;; ru keys
 
 (global-set-key (kbd "C-ч C-а") 'find-file)
@@ -229,6 +240,7 @@
 (global-set-key (kbd "C-ч л") 'kill-buffer)
 (global-set-key (kbd "M-ч") 'execute-extended-command)
 (global-set-key (kbd "C-и") 'backward-char)
+(global-set-key (kbd "C-а") 'forward-char)
 
 ;; popup kill ring
 
@@ -236,10 +248,10 @@
 (global-set-key (kbd "C-x p") 'popup-kill-ring)
 (global-set-key (kbd "C-ч з") 'popup-kill-ring)
 
-;; find-file-in-project
+;; jumping to lines
 
-(global-set-key (kbd "C-x f") 'find-file-in-project)
-(global-set-key (kbd "C-ч а") 'find-file-in-project)
+(global-set-key (kbd "C-x C-l") 'goto-line)
+(global-set-key (kbd "C-ч C-д") 'goto-line)
 
 ;; platform depended
 
