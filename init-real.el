@@ -121,6 +121,10 @@
 (require 'flymake)
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
+(global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+(global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+
+(require 'flymake-cursor)
 
 ;; flymake lua
 
