@@ -4,6 +4,10 @@
 
 ;; customizations
 
+;; toolbar
+
+(tool-bar-mode -1)
+
 ;; indentation
 
 (setq-default tab-width 4)
