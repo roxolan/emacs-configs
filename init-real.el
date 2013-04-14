@@ -120,9 +120,7 @@
 
 (require 'flymake)
 
-;; flymake c++
-
-(add-hook 'c++-mode-hook (lambda () (flymake-mode 1)))
+(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; flymake lua
 
