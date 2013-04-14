@@ -193,6 +193,8 @@
 
 (require 'move-text)
 (move-text-default-bindings)
+(global-set-key (kbd "M-n") 'move-text-down)
+(global-set-key (kbd "M-p") 'move-text-up)
 
 ;; auto pair
 
