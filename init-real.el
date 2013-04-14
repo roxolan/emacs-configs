@@ -137,6 +137,12 @@
 
 (add-hook 'lua-mode-hook 'flymake-lua-load)
 
+;; flymake shell
+
+(require 'flymake-shell)
+
+(add-hook 'sh-set-shell-hook 'flymake-shell-load)
+
 ;; glsl
 
 (require 'glsl-mode)
