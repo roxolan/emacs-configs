@@ -220,6 +220,15 @@
 (setq user-mail-address "edvorg@gmail.com")
 (setq mail-from-style 'angles)
 
+;; hardcore mode
+
+(define-key key-translation-map [?\C-h] [?\C-?])
+(global-set-key (kbd "<f1>") 'help-command)
+(global-set-key (kbd "M-h") 'backward-kill-word)
+(global-unset-key (kbd "M-DEL"))
+(require 'hardcore-mode)
+(global-hardcore-mode)
+
 ;; ru keys
 
 (global-set-key (kbd "C-ч C-а") 'find-file)
