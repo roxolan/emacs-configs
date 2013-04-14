@@ -77,6 +77,11 @@
 (require 'nxml-mode)
 (setq-default nxml-child-indent 4)
 
+;; auto byte compile elisp on save
+
+(require 'auto-async-byte-compile)
+(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+
 ;; auto complete
 
 (require 'auto-complete-config)
