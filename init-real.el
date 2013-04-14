@@ -106,13 +106,6 @@
 
 (global-diff-hl-mode 1)
 
-;; flymake c++ clang
-
-(require 'flymake)
-(require 'flymake-clang-c++)
-
-(add-hook 'c-mode-common-hook 'flymake-clang-c++-load)
-
 ;; gdb
 
 (setq gdb-many-windows t)
@@ -123,10 +116,17 @@
 (require 'lua-mode)
 (require 'lua-mode-autoloads)
 
+;; flymake
+
+(require 'flymake)
+
+;; flymake c++
+
+(add-hook 'c++-mode-hook (lambda () (flymake-mode 1)))
+
 ;; flymake lua
 
 (require 'flymake-lua)
-(require 'flymake-lua-autoloads)
 
 (add-hook 'lua-mode-hook 'flymake-lua-load)
 
