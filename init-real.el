@@ -143,6 +143,12 @@
 
 (add-hook 'sh-set-shell-hook 'flymake-shell-load)
 
+;; flymake haskell
+
+(require 'flymake-haskell-multi)
+
+(add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
+
 ;; glsl
 
 (require 'glsl-mode)
