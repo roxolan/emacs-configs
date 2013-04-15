@@ -4,6 +4,7 @@
 
 ;; packages paths
 
+(require 'package)
 (defun package-update-load-path ()
   "Update the load path for newly installed packages"
   (interactive)
