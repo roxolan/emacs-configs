@@ -11,6 +11,7 @@
 ;; indentation
 
 (setq-default tab-width 4)
+(setq-default indent-tabs-mode t)
 
 (electric-indent-mode 1)
 
@@ -22,11 +23,13 @@
 
 ;; save bookmarks on emacs exit
 
+(require 'bookmark)
 (setq bookmark-save-flag 1)
 
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook (lambda () (tabify (point-min) (point-max))))
 
 ;; mode line tweaks
 
@@ -98,7 +101,7 @@
 (add-hook 'c-mode-common-hook 'ac-flyspell-workaround)
 
 (global-auto-complete-mode t)
-(define-key ac-mode-map  [(control tab)] 'auto-complete)
+(define-key ac-mode-map [(control tab)] 'auto-complete)
 
 (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
 (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
@@ -158,7 +161,7 @@
 (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
 
 (setq glsl-other-file-alist
-      '(("\\.fs$" (".vs"))
+	  '(("\\.fs$" (".vs"))
 	("\\.vs$" (".fs")))
 )
 
@@ -241,6 +244,11 @@
 (setq user-mail-address "edvorg@gmail.com")
 (setq mail-from-style 'angles)
 
+;; calendar tweeks
+
+(require 'calfw)
+(require 'calfw-gcal)
+
 ;; hardcore mode
 
 (define-key key-translation-map [?\C-h] [?\C-?])
@@ -276,6 +284,15 @@
 (global-set-key (kbd "M-ч") 'execute-extended-command)
 (global-set-key (kbd "C-и") 'backward-char)
 (global-set-key (kbd "C-а") 'forward-char)
+(global-set-key (kbd "C-ч 1") 'delete-other-windows)
+(global-set-key (kbd "C-ч 2") 'split-window-below)
+(global-set-key (kbd "C-ч 3") 'split-window-right)
+(global-set-key (kbd "M-ц") 'kill-ring-save)
+(global-set-key (kbd "C-о") 'newline-and-indent)
+(global-set-key (kbd "C-ь") 'autopair-newline)
+(global-set-key (kbd "M-р") 'backward-kill-word)
+(global-set-key (kbd "C-р") 'autopair-backspace)
+(global-set-key (kbd "C-ч р") 'mark-whole-buffer)
 
 ;; popup kill ring
 
