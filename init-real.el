@@ -4,6 +4,10 @@
 
 ;; customizations
 
+;; toolbar
+
+(tool-bar-mode -1)
+
 ;; indentation
 
 (setq-default tab-width 4)
@@ -73,6 +77,11 @@
 (require 'nxml-mode)
 (setq-default nxml-child-indent 4)
 
+;; auto byte compile elisp on save
+
+(require 'auto-async-byte-compile)
+(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+
 ;; auto complete
 
 (require 'auto-complete-config)
@@ -102,13 +111,6 @@
 
 (global-diff-hl-mode 1)
 
-;; flymake c++ clang
-
-(require 'flymake)
-(require 'flymake-clang-c++)
-
-(add-hook 'c-mode-common-hook 'flymake-clang-c++-load)
-
 ;; gdb
 
 (setq gdb-many-windows t)
@@ -119,12 +121,33 @@
 (require 'lua-mode)
 (require 'lua-mode-autoloads)
 
+;; flymake
+
+(require 'flymake)
+
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+(global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+(global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+
+(require 'flymake-cursor)
+
 ;; flymake lua
 
 (require 'flymake-lua)
-(require 'flymake-lua-autoloads)
 
 (add-hook 'lua-mode-hook 'flymake-lua-load)
+
+;; flymake shell
+
+(require 'flymake-shell)
+
+(add-hook 'sh-set-shell-hook 'flymake-shell-load)
+
+;; flymake haskell
+
+(require 'flymake-haskell-multi)
+
+(add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
 
 ;; glsl
 
@@ -189,6 +212,8 @@
 
 (require 'move-text)
 (move-text-default-bindings)
+(global-set-key (kbd "M-n") 'move-text-down)
+(global-set-key (kbd "M-p") 'move-text-up)
 
 ;; auto pair
 
@@ -215,6 +240,15 @@
 (setq user-full-name "edward e. knyshov")
 (setq user-mail-address "edvorg@gmail.com")
 (setq mail-from-style 'angles)
+
+;; hardcore mode
+
+(define-key key-translation-map [?\C-h] [?\C-?])
+(global-set-key (kbd "<f1>") 'help-command)
+(global-set-key (kbd "M-h") 'backward-kill-word)
+(global-unset-key (kbd "M-DEL"))
+(require 'hardcore-mode)
+(global-hardcore-mode)
 
 ;; ru keys
 
