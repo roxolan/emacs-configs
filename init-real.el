@@ -6,6 +6,7 @@
 
 ;; toolbar
 
+(require 'tool-bar)
 (tool-bar-mode -1)
 
 ;; indentation
