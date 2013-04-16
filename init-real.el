@@ -241,6 +241,12 @@
 (global-set-key (kbd "M-n") 'move-text-down)
 (global-set-key (kbd "M-p") 'move-text-up)
 
+;; duplicate thing
+
+(require 'duplicate-thing)
+(global-set-key (kbd "M-c") 'duplicate-thing)
+(global-set-key (kbd "M-с") 'duplicate-thing)
+
 ;; auto pair
 
 (require 'autopair)
