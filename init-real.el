@@ -1,3 +1,8 @@
+;; save installed packages on exit
+
+(require 'save-packages)
+(add-hook 'kill-emacs-hook 'save-packages)
+
 ;; theme
 
 (load-theme 'sea-before-storm t nil)
