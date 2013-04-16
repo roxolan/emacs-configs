@@ -3,6 +3,13 @@
 (require 'save-packages)
 (add-hook 'kill-emacs-hook 'save-packages)
 
+;; command frequency stats
+
+(require 'command-frequency)
+(command-frequency-table-load)
+(command-frequency-mode 1)
+(command-frequency-autosave-mode 1)
+
 ;; theme
 
 (load-theme 'sea-before-storm t nil)
@@ -50,6 +57,7 @@
 
 ;; auto reverting dired buffer
 
+(require 'autorevert)
 (defun auto-revert-mode-enabler () (auto-revert-mode 1))
 (add-hook 'dired-mode-hook 'auto-revert-mode-enabler)
 (setq global-auto-revert-non-file-buffers t)
@@ -122,6 +130,7 @@
 
 ;; gdb
 
+(require 'gdb-mi)
 (setq gdb-many-windows t)
 (setq gdb-show-main t)
 
@@ -209,6 +218,7 @@
 
 ;; line numbers
 
+(require 'linum)
 (add-hook 'prog-mode-hook (lambda () (linum-mode 1)))
 (setq linum-format "%3d|")
 
