@@ -39,6 +39,13 @@
 (require 'bookmark)
 (setq bookmark-save-flag 1)
 
+;; single dired
+
+(require 'dired)
+(require 'dired-single)
+(define-key dired-mode-map (kbd "f") 'dired-single-buffer)
+(define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))
+
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
