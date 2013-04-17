@@ -21,6 +21,11 @@
 (require 'tool-bar)
 (tool-bar-mode -1)
 
+;; scroll bar
+
+(require 'scroll-bar)
+(scroll-bar-mode -1)
+
 ;; indentation
 
 (setq-default tab-width 4)
