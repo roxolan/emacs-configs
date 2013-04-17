@@ -39,6 +39,13 @@
 (require 'bookmark)
 (setq bookmark-save-flag 1)
 
+;; single dired
+
+(require 'dired)
+(require 'dired-single)
+(define-key dired-mode-map (kbd "f") 'dired-single-buffer)
+(define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))
+
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -233,6 +240,12 @@
 (move-text-default-bindings)
 (global-set-key (kbd "M-n") 'move-text-down)
 (global-set-key (kbd "M-p") 'move-text-up)
+
+;; duplicate thing
+
+(require 'duplicate-thing)
+(global-set-key (kbd "M-c") 'duplicate-thing)
+(global-set-key (kbd "M-с") 'duplicate-thing)
 
 ;; auto pair
 
