@@ -341,7 +341,10 @@
 
 ;; platform depended
 
-(require 'init-platform-dependent)
+(cond ((eq system-type 'darwin) (require 'init-platform-dependent-darwin))
+	  ((eq system-type 'windows-nt) (require 'init-platform-dependent-windows-nt))
+	  ((eq system-type 'gnu/linux) (require 'init-platform-dependent-gnu-linux)))
+
 (init-platform-dependent-start)
 
 ;; start emacs server
