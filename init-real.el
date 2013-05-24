@@ -278,12 +278,13 @@
 
 ;; hardcore mode
 
-(define-key key-translation-map [?\C-h] [?\C-?])
-(global-set-key (kbd "<f1>") 'help-command)
-(global-set-key (kbd "M-h") 'backward-kill-word)
-(global-unset-key (kbd "M-DEL"))
+
+(setq too-hardcore-backspace t)
+(setq too-hardcore-return t)
 (require 'hardcore-mode)
 (global-hardcore-mode)
+(global-set-key (kbd "C-;") (global-key-binding (kbd "<DEL>")))
+(global-set-key (kbd "M-;") (global-key-binding (kbd "M-<DEL>")))
 
 ;; ru keys
 
