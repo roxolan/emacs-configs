@@ -3,13 +3,6 @@
 (require 'save-packages)
 (add-hook 'kill-emacs-hook 'save-packages)
 
-;; command frequency stats
-
-(require 'command-frequency)
-(command-frequency-table-load)
-(command-frequency-mode 1)
-(command-frequency-autosave-mode 1)
-
 ;; theme
 
 (load-theme 'sea-before-storm t nil)
