@@ -127,12 +127,6 @@
 (add-hook 'css-mode-hook 'ac-css-mode-setup)
 (add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
-;; diff highlighting
-
-(require 'diff-hl)
-
-(global-diff-hl-mode 1)
-
 ;; gdb
 
 (require 'gdb-mi)
@@ -185,10 +179,6 @@
 	("\\.vs$" (".fs")))
 )
 
-;; gist integration
-
-(require 'gist)
-
 ;; yasnippet
 
 (require 'yasnippet)
@@ -215,11 +205,6 @@
 (setq scroll-preserve-screen-position t)
 
 (setq isearch-allow-scroll t)
-
-;; highlight line
-
-(require 'hl-line+)
-(global-hl-line-mode 1)
 
 ;; line numbers
 
@@ -271,13 +256,7 @@
 (setq user-mail-address "edvorg@gmail.com")
 (setq mail-from-style 'angles)
 
-;; calendar tweeks
-
-(require 'calfw)
-(require 'calfw-gcal)
-
 ;; hardcore mode
-
 
 (setq too-hardcore-backspace t)
 (setq too-hardcore-return t)
