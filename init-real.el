@@ -36,8 +36,9 @@
 ;; single dired
 
 (require 'dired)
-(autoload 'dired-single-buffer "dired-single")
+(require 'dired-single-autoloads)
 (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
+(define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
 (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))
 
 ;; delete trailing whitespaces before saving some buffer
