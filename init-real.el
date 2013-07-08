@@ -256,15 +256,6 @@
 (setq user-mail-address "edvorg@gmail.com")
 (setq mail-from-style 'angles)
 
-;; hardcore mode
-
-(setq too-hardcore-backspace t)
-(setq too-hardcore-return t)
-(require 'hardcore-mode)
-(global-hardcore-mode)
-(global-set-key (kbd "C-;") (global-key-binding (kbd "<DEL>")))
-(global-set-key (kbd "M-;") (global-key-binding (kbd "M-<DEL>")))
-
 ;; ru keys
 
 (global-set-key (kbd "C-ч C-а") 'find-file)
