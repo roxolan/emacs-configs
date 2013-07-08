@@ -220,17 +220,6 @@
 (require 'highlight-parentheses-autoloads)
 (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1)))
 
-;; google translate
-
-(autoload 'google-translate-at-point "google-translate")
-(autoload 'google-translate-query-translate "google-translate")
-(setq google-translate-default-source-language "en")
-(setq google-translate-default-target-language "ru")
-(global-set-key (kbd "C-x C-g") 'google-translate-at-point)
-(global-set-key (kbd "C-ч C-п") 'google-translate-at-point)
-(global-set-key (kbd "C-x g") 'google-translate-query-translate)
-(global-set-key (kbd "C-ч п") 'google-translate-query-translate)
-
 ;; ru keys
 
 (global-set-key (kbd "C-ч C-а") 'find-file)
