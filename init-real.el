@@ -1,6 +1,6 @@
 ;; save installed packages on exit
 
-(require 'save-packages)
+(require 'save-packages-autoloads)
 (add-hook 'kill-emacs-hook 'save-packages)
 
 ;; theme
@@ -11,19 +11,16 @@
 
 ;; toolbar
 
-(require 'tool-bar)
 (tool-bar-mode -1)
 
 ;; scroll bar
 
-(require 'scroll-bar)
 (scroll-bar-mode -1)
 
 ;; indentation
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode t)
-
 (electric-indent-mode 1)
 
 ;; mark ring tweaks
@@ -34,25 +31,21 @@
 
 ;; save bookmarks on emacs exit
 
-(require 'bookmark)
 (setq bookmark-save-flag 1)
 
 ;; single dired
 
 (require 'dired)
-(require 'dired-single)
+(autoload 'dired-single-buffer "dired-single")
 (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
 (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))
 
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook (lambda () (tabify (point-min) (point-max))))
+(add-hook 'before-save-hook (lambda () (untabify (point-min) (point-max))))
 
 ;; mode line tweaks
-
-(setq display-time-day-and-date t)
-(display-time)
 
 (column-number-mode 1)
 
@@ -62,7 +55,6 @@
 
 ;; auto reverting dired buffer
 
-(require 'autorevert)
 (defun auto-revert-mode-enabler () (auto-revert-mode 1))
 (add-hook 'dired-mode-hook 'auto-revert-mode-enabler)
 (setq global-auto-revert-non-file-buffers t)
@@ -96,12 +88,11 @@
 
 ;; xml
 
-(require 'nxml-mode)
 (setq-default nxml-child-indent 4)
 
 ;; auto byte compile elisp on save
 
-(require 'auto-async-byte-compile)
+(autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
 ;; auto complete
@@ -129,93 +120,82 @@
 
 ;; gdb
 
-(require 'gdb-mi)
 (setq gdb-many-windows t)
 (setq gdb-show-main t)
 
 ;; lua mode
 
-(require 'lua-mode)
 (require 'lua-mode-autoloads)
 
 ;; flymake
 
-(require 'flymake)
-
+(autoload 'flymake-find-file-hook "flymake")
+(autoload 'flymake-goto-prev-error "flymake")
+(autoload 'flymake-goto-next-error "flymake")
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
 (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
 
-(require 'flymake-cursor)
+(require 'flymake-cursor-autoloads)
 
 ;; flymake lua
 
-(require 'flymake-lua)
-
+(require 'flymake-lua-autoloads)
 (add-hook 'lua-mode-hook 'flymake-lua-load)
 
 ;; flymake shell
 
-(require 'flymake-shell)
-
+(require 'flymake-shell-autoloads)
 (add-hook 'sh-set-shell-hook 'flymake-shell-load)
 
 ;; flymake haskell
 
-(require 'flymake-haskell-multi)
-
+(require 'flymake-haskell-multi-autoloads)
 (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
 
 ;; glsl
 
-(require 'glsl-mode)
-
+(autoload 'glsl-mode "glsl-mode")
 (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
-
 (setq glsl-other-file-alist
-	  '(("\\.fs$" (".vs"))
-	("\\.vs$" (".fs")))
+      '(("\\.fs$" (".vs"))
+    ("\\.vs$" (".fs")))
 )
 
 ;; yasnippet
 
-(require 'yasnippet)
+(require 'yasnippet-autoloads)
 (yas-global-mode 1)
 
 ;; haskell mode
 
-(require 'haskell-mode)
+(require 'haskell-mode-autoloads)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
 ;; smooth mouse scroll
 
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
-
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-
 (setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
-
 (setq scroll-step 1) ;; keyboard scroll one line at a time
-
 (setq auto-window-vscroll nil)
-
 (setq scroll-preserve-screen-position t)
-
 (setq isearch-allow-scroll t)
 
 ;; line numbers
 
-(require 'linum)
+(autoload 'linum-mode "linum")
 (add-hook 'prog-mode-hook (lambda () (linum-mode 1)))
 (setq linum-format "%3d|")
 
 ;; todo, fixme highlighting
 
-(require 'fic-mode)
-(add-hook 'prog-mode-hook 'turn-on-fic-mode)
+(require 'fic-mode-autoloads)
+(defun fic-mode-turn-on () (fic-mode 1))
+(add-hook 'prog-mode-hook 'fic-mode-turn-on)
 
 ;; move text
 
@@ -226,35 +206,30 @@
 
 ;; duplicate thing
 
-(require 'duplicate-thing)
+(require 'duplicate-thing-autoloads)
 (global-set-key (kbd "M-c") 'duplicate-thing)
 (global-set-key (kbd "M-с") 'duplicate-thing)
 
 ;; auto pair
 
-(require 'autopair)
+(require 'autopair-autoloads)
 (autopair-global-mode 1)
 
 ;; highlight parenthesis
 
-(require 'highlight-parentheses)
+(require 'highlight-parentheses-autoloads)
 (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1)))
 
 ;; google translate
 
-(require 'google-translate)
+(autoload 'google-translate-at-point "google-translate")
+(autoload 'google-translate-query-translate "google-translate")
 (setq google-translate-default-source-language "en")
 (setq google-translate-default-target-language "ru")
 (global-set-key (kbd "C-x C-g") 'google-translate-at-point)
 (global-set-key (kbd "C-ч C-п") 'google-translate-at-point)
 (global-set-key (kbd "C-x g") 'google-translate-query-translate)
 (global-set-key (kbd "C-ч п") 'google-translate-query-translate)
-
-;; mail
-
-(setq user-full-name "edward e. knyshov")
-(setq user-mail-address "edvorg@gmail.com")
-(setq mail-from-style 'angles)
 
 ;; ru keys
 
@@ -294,7 +269,7 @@
 
 ;; popup kill ring
 
-(require 'popup-kill-ring)
+(autoload 'popup-kill-ring "popup-kill-ring")
 (global-set-key (kbd "C-x p") 'popup-kill-ring)
 (global-set-key (kbd "C-ч з") 'popup-kill-ring)
 
@@ -306,8 +281,8 @@
 ;; platform depended
 
 (cond ((eq system-type 'darwin) (require 'init-platform-dependent-darwin))
-	  ((eq system-type 'windows-nt) (require 'init-platform-dependent-windows-nt))
-	  ((eq system-type 'gnu/linux) (require 'init-platform-dependent-gnu-linux)))
+      ((eq system-type 'windows-nt) (require 'init-platform-dependent-windows-nt))
+      ((eq system-type 'gnu/linux) (require 'init-platform-dependent-gnu-linux)))
 
 (init-platform-dependent-start)
 
