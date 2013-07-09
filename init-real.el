@@ -56,8 +56,7 @@
 
 ;; auto reverting dired buffer
 
-(defun auto-revert-mode-enabler () (auto-revert-mode 1))
-(add-hook 'dired-mode-hook 'auto-revert-mode-enabler)
+(add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-interval 1)
 
@@ -168,7 +167,7 @@
 ;; yasnippet
 
 (require 'yasnippet-autoloads)
-(yas-global-mode 1)
+(add-hook 'prog-mode-hook (lambda () (yas-minor-mode 1)))
 
 ;; haskell mode
 
@@ -195,13 +194,11 @@
 ;; todo, fixme highlighting
 
 (require 'fic-mode-autoloads)
-(defun fic-mode-turn-on () (fic-mode 1))
-(add-hook 'prog-mode-hook 'fic-mode-turn-on)
+(add-hook 'prog-mode-hook (lambda () (fic-mode 1)))
 
 ;; move text
 
-(require 'move-text)
-(move-text-default-bindings)
+(require 'move-text-autoloads)
 (global-set-key (kbd "M-n") 'move-text-down)
 (global-set-key (kbd "M-p") 'move-text-up)
 
@@ -214,7 +211,7 @@
 ;; auto pair
 
 (require 'autopair-autoloads)
-(autopair-global-mode 1)
+(add-hook 'prog-mode-hook (lambda () (autopair-mode 1)))
 
 ;; highlight parenthesis
 
