@@ -126,6 +126,7 @@
 ;; lua mode
 
 (require 'lua-mode-autoloads)
+(setq lua-indent-level 4)
 
 ;; flymake
 
