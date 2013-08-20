@@ -45,7 +45,7 @@
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook (lambda () (untabify (point-min) (point-max))))
+(add-hook 'before-save-hook (lambda () (tabify (point-min) (point-max))))
 
 ;; mode line tweaks
 
@@ -162,8 +162,8 @@
 (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
 (setq glsl-other-file-alist
-      '(("\\.fs$" (".vs"))
-    ("\\.vs$" (".fs")))
+	  '(("\\.fs$" (".vs"))
+		("\\.vs$" (".fs")))
 )
 
 ;; yasnippet
@@ -270,8 +270,8 @@
 ;; platform depended
 
 (cond ((eq system-type 'darwin) (require 'init-platform-dependent-darwin))
-      ((eq system-type 'windows-nt) (require 'init-platform-dependent-windows-nt))
-      ((eq system-type 'gnu/linux) (require 'init-platform-dependent-gnu-linux)))
+	  ((eq system-type 'windows-nt) (require 'init-platform-dependent-windows-nt))
+	  ((eq system-type 'gnu/linux) (require 'init-platform-dependent-gnu-linux)))
 
 (init-platform-dependent-start)
 
