@@ -15,6 +15,7 @@
 
 ;; scroll bar
 
+(require 'scroll-bar)
 (scroll-bar-mode -1)
 
 ;; indentation
