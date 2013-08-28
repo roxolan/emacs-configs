@@ -129,6 +129,11 @@
 (require 'lua-mode-autoloads)
 (setq lua-indent-level 4)
 
+;; js2 mode
+
+(require 'js2-mode-autoloads)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 ;; flymake
 
 (autoload 'flymake-find-file-hook "flymake")
