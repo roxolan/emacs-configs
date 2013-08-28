@@ -9,6 +9,8 @@
 
 ;; customizations
 
+(menu-bar-mode -1)
+
 ;; toolbar
 
 (tool-bar-mode -1)
