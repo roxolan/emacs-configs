@@ -63,6 +63,10 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-interval 1)
 
+;; auto reverting log files
+
+(add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
+
 ;; enable upcase and downcase region commands
 
 (put 'upcase-region 'disabled nil)
