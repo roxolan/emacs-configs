@@ -5,7 +5,8 @@
 
 ;; theme
 
-(load-theme 'sea-before-storm t nil)
+(if (display-graphic-p)
+	(load-theme 'tango-dark t nil))
 
 ;; customizations
 
