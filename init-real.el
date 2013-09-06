@@ -202,7 +202,7 @@
 
 (autoload 'linum-mode "linum")
 (add-hook 'prog-mode-hook (lambda () (linum-mode 1)))
-(setq linum-format "%3d|")
+(setq linum-format "%4d|")
 
 ;; todo, fixme highlighting
 
