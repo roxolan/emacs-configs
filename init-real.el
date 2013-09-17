@@ -108,18 +108,20 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130122.1551/dict")
 
-(require 'auto-complete-clang)
+(require 'auto-complete-clang-async)
 (setq ac-auto-start 1)
 (setq ac-quick-help-delay 0.5)
 (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (defun cc-mode-clang-hook ()
-  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+  (setq ac-sources '(ac-source-clang-async))
+  (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
+  (ac-clang-launch-completion-process)
+)
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
-(add-hook 'c-mode-common-hook 'ac-flyspell-workaround)
+(add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
 (global-auto-complete-mode t)
-(define-key ac-mode-map [(control tab)] 'auto-complete)
 
 (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
 (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
