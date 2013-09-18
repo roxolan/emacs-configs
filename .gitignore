@@ -5,3 +5,5 @@ bookmarks
 elpa
 var
 url
+clang-complete
+eshell
