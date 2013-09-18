@@ -116,6 +116,8 @@
   (setq ac-sources '(ac-source-clang-async))
   (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
   (ac-clang-launch-completion-process)
+  (setq ac-clang-cflags (split-string (shell-command-to-string "make -s print-cflags")))
+  (ac-clang-update-cmdlineargs)
 )
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
