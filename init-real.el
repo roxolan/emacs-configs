@@ -116,7 +116,10 @@
 (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (defun cc-mode-clang-hook ()
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources))
-  (setq ac-clang-flags (split-string (shell-command-to-string "make -s print-cflags"))))
+  (setq ac-clang-flags
+		(mapcar (lambda (item) (concat "-I" item))
+				(split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh"))))
+  (setq ac-clang-flags (append ac-clang-flags (split-string (shell-command-to-string "make -s print-cflags")))))
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
 
