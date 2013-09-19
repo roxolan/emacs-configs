@@ -215,6 +215,11 @@
 (global-linum-mode 1)
 (setq linum-format "%4d|")
 
+;; line highlight
+
+(global-hl-line-mode 1)
+(setq hl-line-face 'ediff-odd-diff-A)
+
 ;; todo, fixme highlighting
 
 (require 'fic-mode-autoloads)
