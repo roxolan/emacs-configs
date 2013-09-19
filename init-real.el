@@ -97,6 +97,7 @@
 ;; xml
 
 (setq-default nxml-child-indent 4)
+(require 'auto-complete-nxml)
 
 ;; auto byte compile elisp on save
 
