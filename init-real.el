@@ -133,6 +133,10 @@
 (setq gdb-many-windows t)
 (setq gdb-show-main t)
 
+;; scala mode
+
+(require 'scala-mode2-autoloads)
+
 ;; lua mode
 
 (require 'lua-mode-autoloads)
