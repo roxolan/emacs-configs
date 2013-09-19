@@ -106,22 +106,19 @@
 ;; auto complete
 
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130122.1551/dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
 
-(require 'auto-complete-clang-async)
+;; auto complete clang
+
+(require 'auto-complete-clang)
 (setq ac-auto-start 1)
 (setq ac-quick-help-delay 0.5)
 (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (defun cc-mode-clang-hook ()
-  (setq ac-sources '(ac-source-clang-async))
-  (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
-  (ac-clang-launch-completion-process)
-  (setq ac-clang-cflags (split-string (shell-command-to-string "make -s print-cflags")))
-  (ac-clang-update-cmdlineargs)
-)
+  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources))
+  (setq ac-clang-flags (split-string (shell-command-to-string "make -s print-cflags"))))
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
-(add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
 (global-auto-complete-mode t)
 
@@ -129,6 +126,7 @@
 (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
 (add-hook 'css-mode-hook 'ac-css-mode-setup)
 (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
 
 ;; gdb
 
