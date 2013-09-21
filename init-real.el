@@ -314,11 +314,6 @@
 (global-set-key (kbd "C-р") 'autopair-backspace)
 (global-set-key (kbd "C-ч р") 'mark-whole-buffer)
 
-;; jumping to lines
-
-(global-set-key (kbd "C-x C-l") 'goto-line)
-(global-set-key (kbd "C-ч C-д") 'goto-line)
-
 ;; platform depended
 
 (cond ((eq system-type 'darwin) (require 'init-platform-dependent-darwin))
