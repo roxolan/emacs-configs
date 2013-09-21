@@ -111,6 +111,18 @@
 
 ;; auto complete clang
 
+(defun find-makefile-dir (cur)
+  (if (file-exists-p (concat cur "Makefile"))
+	  cur
+	(if (string-equal (expand-file-name cur) "/")
+		nil
+	  (find-makefile-dir (expand-file-name (concat cur "../"))))))
+
+(defun expand-include-flag (a)
+  (if (string-prefix-p "-I" a)
+	  (concat "-I" (expand-file-name (concat (find-makefile-dir "./") (substring a 2))))
+	a))
+
 (require 'auto-complete-clang)
 (setq ac-auto-start 1)
 (setq ac-quick-help-delay 0.5)
@@ -120,7 +132,9 @@
   (setq ac-clang-flags
 		(mapcar (lambda (item) (concat "-I" item))
 				(split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh"))))
-  (setq ac-clang-flags (append ac-clang-flags (split-string (shell-command-to-string "make -s print-cflags")))))
+  (setq ac-clang-flags (append ac-clang-flags
+							   (mapcar 'expand-include-flag
+									   (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags")))))))
 
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
 
