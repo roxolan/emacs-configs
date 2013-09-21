@@ -314,12 +314,6 @@
 (global-set-key (kbd "C-р") 'autopair-backspace)
 (global-set-key (kbd "C-ч р") 'mark-whole-buffer)
 
-;; popup kill ring
-
-(autoload 'popup-kill-ring "popup-kill-ring")
-(global-set-key (kbd "C-x p") 'popup-kill-ring)
-(global-set-key (kbd "C-ч з") 'popup-kill-ring)
-
 ;; jumping to lines
 
 (global-set-key (kbd "C-x C-l") 'goto-line)
