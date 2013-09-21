@@ -73,6 +73,11 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; enable narrowing
+
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+
 ;; focus follows mouse
 
 (setq mouse-autoselect-window t)
