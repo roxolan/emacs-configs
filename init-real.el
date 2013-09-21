@@ -264,6 +264,15 @@
 (require 'highlight-parentheses-autoloads)
 (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1)))
 
+;; shrink/enlarge window
+
+(global-set-key (kbd "s-{") (lambda () (interactive) (shrink-window 10 1)))
+(global-set-key (kbd "s-}") (lambda () (interactive) (enlarge-window 10 1)))
+(global-set-key (kbd "s-?") (lambda () (interactive) (shrink-window 5 nil)))
+(global-set-key (kbd "s-\"") (lambda () (interactive) (enlarge-window 5 nil)))
+(global-set-key (kbd "s-]") (lambda () (interactive) (other-window 1)))
+(global-set-key (kbd "s-[") (lambda () (interactive) (other-window -1)))
+
 ;; ru keys
 
 (global-set-key (kbd "C-ч C-а") 'find-file)
