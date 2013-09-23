@@ -237,6 +237,11 @@
 (global-linum-mode 1)
 (setq linum-format "%4d|")
 
+;; linum highlight
+
+(require 'hlinum)
+(hlinum-activate)
+
 ;; line highlight
 
 (global-hl-line-mode 1)
