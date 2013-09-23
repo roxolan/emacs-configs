@@ -152,7 +152,16 @@
 (add-hook 'auto-complete-mode-hook 'ac-common-setup)
 (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
 
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+;; detect mode for .h file
+
+(autoload 'dummy-h-mode "dummy-h-mode" "Dummy H mode" t)
+(add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
+(add-hook 'dummy-h-mode-hook
+		  (lambda ()
+			(setq dummy-h-mode-default-major-mode 'c++-mode)))
+(add-hook 'dummy-h-mode-hook
+		  (lambda ()
+			(setq dummy-h-mode-search-limit 60000)))
 
 ;; gdb
 
@@ -207,8 +216,7 @@
 (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
 (setq glsl-other-file-alist
 	  '(("\\.fs$" (".vs"))
-		("\\.vs$" (".fs")))
-)
+		("\\.vs$" (".fs"))))
 
 ;; yasnippet
 
