@@ -324,6 +324,11 @@
 (global-set-key (kbd "C-р") 'autopair-backspace)
 (global-set-key (kbd "C-ч р") 'mark-whole-buffer)
 
+;; init.d
+
+(require 'load-dir)
+(load-dir-one "~/.emacs.d/init.d")
+
 ;; platform depended
 
 (cond ((eq system-type 'darwin) (require 'init-platform-dependent-darwin))
