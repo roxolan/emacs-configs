@@ -269,6 +269,11 @@
 (require 'highlight-parentheses-autoloads)
 (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1)))
 
+;; diff highlight
+
+(require 'diff-hl)
+(global-diff-hl-mode 1)
+
 ;; shrink/enlarge window
 
 (global-set-key (kbd "s-{") (lambda () (interactive) (shrink-window 10 1)))
