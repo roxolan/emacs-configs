@@ -5,8 +5,9 @@
 
 ;; theme
 
-(if (display-graphic-p)
-	(load-theme 'tango-dark t nil))
+(let ((colors (display-color-cells)))
+  (cond
+   ((>= colors 255) (load-theme 'tango-dark t nil))))
 
 ;; customizations
 
