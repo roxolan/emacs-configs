@@ -285,6 +285,7 @@
 
 ;; diff highlight
 
+(require 'fringe)
 (require 'diff-hl)
 (global-diff-hl-mode 1)
 
