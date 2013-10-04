@@ -7,7 +7,7 @@
 
 (let ((colors (display-color-cells)))
   (cond
-   ((>= colors 255) (load-theme 'tango-dark t nil))))
+   ((>= colors 255) (load-theme 'ample-zen t nil))))
 
 ;; customizations
 
