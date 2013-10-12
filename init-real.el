@@ -1,13 +1,14 @@
-;; save installed packages on exit
+;; use-package
 
-(require 'save-packages-autoloads)
-(add-hook 'kill-emacs-hook 'save-packages)
+(require 'use-package)
 
 ;; theme
 
-(let ((colors (display-color-cells)))
-  (cond
-   ((>= colors 255) (load-theme 'ample-zen t nil))))
+(use-package custom
+			 :ensure ample-zen-theme
+			 :init (let ((colors (display-color-cells)))
+					 (cond
+					  ((>= colors 255) (load-theme 'ample-zen t nil)))))
 
 ;; customizations
 
