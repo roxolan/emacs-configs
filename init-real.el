@@ -5,23 +5,25 @@
 ;; theme
 
 (use-package custom
-			 :ensure ample-zen-theme
-			 :init (let ((colors (display-color-cells)))
-					 (cond
-					  ((>= colors 255) (load-theme 'ample-zen t nil)))))
+  :ensure ample-zen-theme
+  :init (let ((colors (display-color-cells)))
+		  (cond
+		   ((>= colors 255) (load-theme 'ample-zen t nil)))))
 
 ;; customizations
 
-(menu-bar-mode -1)
+(use-package menu-bar
+  :init (menu-bar-mode -1))
 
 ;; toolbar
 
-(tool-bar-mode -1)
+(use-package tool-bar
+  :init (tool-bar-mode -1))
 
 ;; scroll bar
 
-(require 'scroll-bar)
-(scroll-bar-mode -1)
+(use-package scroll-bar
+  :init (scroll-bar-mode -1))
 
 ;; indentation
 
@@ -42,10 +44,11 @@
 ;; single dired
 
 (require 'dired)
-(require 'dired-single-autoloads)
-(define-key dired-mode-map (kbd "f") 'dired-single-buffer)
-(define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
-(define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))
+(use-package dired-single-autoloads
+  :ensure dired-single
+  :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
+			   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
+			   (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -54,7 +57,8 @@
 
 ;; mode line tweaks
 
-(column-number-mode 1)
+(use-package simple
+  :init (column-number-mode 1))
 
 ;; turn off backup files
 
@@ -103,13 +107,16 @@
 
 ;; xml
 
-(setq-default nxml-child-indent 4)
-(require 'auto-complete-nxml)
+(use-package auto-complete-nxml
+  :ensure auto-complete-nxml
+  :init (progn (setq-default nxml-child-indent 4)
+			   (setq nxml-child-indent 4)))
 
 ;; auto byte compile elisp on save
 
-(autoload 'enable-auto-async-byte-compile-mode "auto-async-byte-compile")
-(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+(use-package auto-async-byte-compile
+  :ensure auto-async-byte-compile
+  :init (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode))
 
 ;; auto complete
 
@@ -130,11 +137,6 @@
 	  (concat "-I" (expand-file-name (concat (find-makefile-dir "./") (substring a 2))))
 	a))
 
-(require 'auto-complete-clang)
-(setq ac-auto-start 1)
-(setq ac-quick-help-delay 0.5)
-(setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
-
 (defun cc-mode-clang-hook ()
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources))
   (setq ac-clang-flags
@@ -145,25 +147,31 @@
 									   (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags"))))))
   (ac-cc-mode-setup))
 
-
 (global-auto-complete-mode t)
 
 (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
 (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
 (add-hook 'css-mode-hook 'ac-css-mode-setup)
 (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-(add-hook 'c-mode-common-hook 'cc-mode-clang-hook)
+
+(use-package auto-complete-clang
+  :ensure auto-complete-clang
+  :init (progn (setq ac-auto-start 1)
+			   (setq ac-quick-help-delay 0.5)
+			   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+			   (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)))
 
 ;; detect mode for .h file
 
-(autoload 'dummy-h-mode "dummy-h-mode" "Dummy H mode" t)
-(add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
-(add-hook 'dummy-h-mode-hook
-		  (lambda ()
-			(setq dummy-h-mode-default-major-mode 'c++-mode)))
-(add-hook 'dummy-h-mode-hook
-		  (lambda ()
-			(setq dummy-h-mode-search-limit 60000)))
+(use-package dummy-h-mode
+  :ensure dummy-h-mode
+  :init (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
+			   (add-hook 'dummy-h-mode-hook
+						 (lambda ()
+						   (setq dummy-h-mode-default-major-mode 'c++-mode)))
+			   (add-hook 'dummy-h-mode-hook
+						 (lambda ()
+						   (setq dummy-h-mode-search-limit 60000)))))
 
 ;; gdb
 
@@ -172,17 +180,20 @@
 
 ;; scala mode
 
-(require 'scala-mode2-autoloads)
+(use-package scala-mode2-autoloads
+  :ensure scala-mode2)
 
 ;; lua mode
 
-(require 'lua-mode-autoloads)
-(setq lua-indent-level 4)
+(use-package lua-mode-autoloads
+  :ensure lua-mode
+  :init (setq lua-indent-level 4))
 
 ;; js2 mode
 
-(require 'js2-mode-autoloads)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(use-package js2-mode-autoloads
+  :ensure js2-mode
+  :init (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
 ;; flymake
 
@@ -193,22 +204,26 @@
 (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
 (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
 
-(require 'flymake-cursor-autoloads)
+(use-package flymake-cursor-autoloads
+  :ensure flymake-cursor)
 
 ;; flymake lua
 
-(require 'flymake-lua-autoloads)
-(add-hook 'lua-mode-hook 'flymake-lua-load)
+(use-package flymake-lua-autoloads
+  :ensure flymake-lua
+  :init (add-hook 'lua-mode-hook 'flymake-lua-load))
 
 ;; flymake shell
 
-(require 'flymake-shell-autoloads)
-(add-hook 'sh-set-shell-hook 'flymake-shell-load)
+(use-package flymake-shell-autoloads
+  :ensure flymake-shell
+  :init (add-hook 'sh-set-shell-hook 'flymake-shell-load))
 
 ;; flymake haskell
 
-(require 'flymake-haskell-multi-autoloads)
-(add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
+(use-package flymake-haskell-multi-autoloads
+  :ensure flymake-haskell-multi
+  :init (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load))
 
 ;; glsl
 
@@ -222,14 +237,16 @@
 
 ;; yasnippet
 
-(require 'yasnippet-autoloads)
-(add-hook 'prog-mode-hook (lambda () (yas-minor-mode 1)))
+(use-package yasnippet-autoloads
+  :ensure yasnippet
+  :init (add-hook 'prog-mode-hook (lambda () (yas-minor-mode 1))))
 
 ;; haskell mode
 
-(require 'haskell-mode-autoloads)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(use-package haskell-mode-autoloads
+  :ensure haskell-mode
+  :init (progn (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+			   (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
 
 ;; smooth mouse scroll
 
@@ -243,52 +260,62 @@
 
 ;; line numbers
 
-(require 'linum)
-(global-linum-mode 1)
-(setq linum-format "%4d|")
+(use-package linum
+  :ensure linum
+  :init (progn (global-linum-mode 1)
+			   (setq linum-format "%4d|")))
 
 ;; linum highlight
 
-(require 'hlinum)
-(hlinum-activate)
+(use-package hlinum
+  :ensure hlinum
+  :init (hlinum-activate))
 
 ;; line highlight
 
-(global-hl-line-mode 1)
-(setq hl-line-face 'ediff-odd-diff-A)
+(use-package hl-line
+  :ensure hl-line
+  :init (progn (global-hl-line-mode 1)
+			   (setq hl-line-face 'ediff-odd-diff-A)))
 
 ;; todo, fixme highlighting
 
-(require 'fic-mode-autoloads)
-(add-hook 'prog-mode-hook (lambda () (fic-mode 1)))
+(use-package fic-mode-autoloads
+  :ensure fic-mode
+  :init (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
 
 ;; move text
 
-(require 'move-text-autoloads)
-(global-set-key (kbd "M-n") 'move-text-down)
-(global-set-key (kbd "M-p") 'move-text-up)
+(use-package move-text-autoloads
+  :ensure move-text
+  :init (progn (global-set-key (kbd "M-n") 'move-text-down)
+			   (global-set-key (kbd "M-p") 'move-text-up)))
 
 ;; duplicate thing
 
-(require 'duplicate-thing-autoloads)
-(global-set-key (kbd "M-c") 'duplicate-thing)
-(global-set-key (kbd "M-с") 'duplicate-thing)
+(use-package duplicate-thing-autoloads
+  :ensure duplicate-thing
+  :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
+			   (global-set-key (kbd "M-с") 'duplicate-thing)))
 
 ;; auto pair
 
-(require 'autopair-autoloads)
-(add-hook 'prog-mode-hook (lambda () (autopair-mode 1)))
+(use-package autopair-autoloads
+  :ensure autopair
+  :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
 
 ;; highlight parenthesis
 
-(require 'highlight-parentheses-autoloads)
-(add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1)))
+(use-package highlight-parentheses-autoloads
+  :ensure highlight-parentheses
+  :init (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
 
 ;; diff highlight
 
 (require 'fringe)
-(require 'diff-hl)
-(global-diff-hl-mode 1)
+(use-package diff-hl
+  :ensure diff-hl
+  :init (global-diff-hl-mode 1))
 
 ;; shrink/enlarge window
 
@@ -337,12 +364,13 @@
 
 ;; init.d
 
-(require 'load-dir)
-(load-dir-one "~/.emacs.d/init.d")
+(use-package load-dir
+  :ensure load-dir
+  :init (load-dir-one "~/.emacs.d/init.d"))
 
 ;; platform depended
 
-(cond ((eq system-type 'darwin) (require 'init-platform-dependent-darwin))
+(cond ((eq system-type 'darwin) (load-file "~/.emacs.d/init-platform-dependent-darwin.el"))
 	  ((eq system-type 'windows-nt) (require 'init-platform-dependent-windows-nt))
 	  ((eq system-type 'gnu/linux) (require 'init-platform-dependent-gnu-linux)))
 
