@@ -43,8 +43,8 @@
 
 ;; single dired
 
-(require 'dired)
 (use-package dired-single-autoloads
+  :requires dired
   :ensure dired-single
   :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
 			   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
@@ -120,8 +120,14 @@
 
 ;; auto complete
 
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
+(use-package auto-complete-config
+  :ensure auto-complete
+  :init (progn (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
+			   (global-auto-complete-mode t)
+			   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+			   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+			   (add-hook 'css-mode-hook 'ac-css-mode-setup)
+			   (add-hook 'auto-complete-mode-hook 'ac-common-setup)))
 
 ;; auto complete clang
 
@@ -146,13 +152,6 @@
 							   (mapcar 'expand-include-flag
 									   (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags"))))))
   (ac-cc-mode-setup))
-
-(global-auto-complete-mode t)
-
-(add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-(add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-(add-hook 'css-mode-hook 'ac-css-mode-setup)
-(add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
 (use-package auto-complete-clang
   :ensure auto-complete-clang
@@ -312,9 +311,9 @@
 
 ;; diff highlight
 
-(require 'fringe)
 (use-package diff-hl
   :ensure diff-hl
+  :requires fringe
   :init (global-diff-hl-mode 1))
 
 ;; shrink/enlarge window
