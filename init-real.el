@@ -43,12 +43,12 @@
 
 ;; single dired
 
-(use-package dired-single-autoloads
-  :requires dired
-  :ensure dired-single
-  :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
-			   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
-			   (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))))
+(use-package dired
+  :init (use-package dired-single
+		  :ensure dired-single
+		  :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
+					   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
+					   (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer "..")))))))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -196,12 +196,11 @@
 
 ;; flymake
 
-(autoload 'flymake-find-file-hook "flymake")
-(autoload 'flymake-goto-prev-error "flymake")
-(autoload 'flymake-goto-next-error "flymake")
-(add-hook 'find-file-hook 'flymake-find-file-hook)
-(global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-(global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+(use-package flymake
+  :ensure flymake
+  :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
+			   (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+			   (global-set-key (kbd "<f3>") 'flymake-goto-next-error)))
 
 (use-package flymake-cursor-autoloads
   :ensure flymake-cursor)
@@ -226,13 +225,14 @@
 
 ;; glsl
 
-(autoload 'glsl-mode "glsl-mode")
-(add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
-(add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
-(add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
-(setq glsl-other-file-alist
-	  '(("\\.fs$" (".vs"))
-		("\\.vs$" (".fs"))))
+(use-package glsl-mode
+  :ensure glsl-mode
+  :init (progn (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
+			 (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
+			 (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
+			 (setq glsl-other-file-alist
+				   '(("\\.fs$" (".vs"))
+					 ("\\.vs$" (".fs"))))))
 
 ;; yasnippet
 
@@ -370,8 +370,8 @@
 ;; platform depended
 
 (cond ((eq system-type 'darwin) (load-file "~/.emacs.d/init-platform-dependent-darwin.el"))
-	  ((eq system-type 'windows-nt) (require 'init-platform-dependent-windows-nt))
-	  ((eq system-type 'gnu/linux) (require 'init-platform-dependent-gnu-linux)))
+	  ((eq system-type 'windows-nt) (load-file "~/.emacs.d/init-platform-dependent-windows-nt.el"))
+	  ((eq system-type 'gnu/linux) (load-file "~/.emacs.d/init-platform-dependent-gnu-linux.el")))
 
 (init-platform-dependent-start)
 
