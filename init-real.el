@@ -8,7 +8,8 @@
   :ensure ample-zen-theme
   :init (let ((colors (display-color-cells)))
 		  (cond
-		   ((>= colors 255) (load-theme 'ample-zen t nil)))))
+		   ((>= colors 255) (progn (load-theme 'ample-zen t nil)
+								   (custom-set-faces '(ac-candidate-face ((t (:inherit popup-face :background "black" :foreground "dim gray"))))))))))
 
 ;; customizations
 
@@ -228,11 +229,10 @@
 (use-package glsl-mode
   :ensure glsl-mode
   :init (progn (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
-			 (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
-			 (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
-			 (setq glsl-other-file-alist
-				   '(("\\.fs$" (".vs"))
-					 ("\\.vs$" (".fs"))))))
+			   (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
+			   (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
+			   (setq glsl-other-file-alist '(("\\.fs$" (".vs"))
+											 ("\\.vs$" (".fs"))))))
 
 ;; yasnippet
 
