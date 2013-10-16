@@ -173,6 +173,15 @@
 						 (lambda ()
 						   (setq dummy-h-mode-search-limit 60000)))))
 
+;; headers completion
+
+(use-package ac-c-headers
+  :ensure ac-c-headers
+  :init (add-hook 'c-mode-common-hook (lambda ()
+										(setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
+										(add-to-list 'ac-sources 'ac-source-c-headers)
+										(add-to-list 'ac-sources 'ac-source-c-header-symbols t))))
+
 ;; gdb
 
 (setq gdb-many-windows t)
