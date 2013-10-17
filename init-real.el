@@ -204,6 +204,12 @@
   :ensure js2-mode
   :init (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
+;; batch mode
+
+(use-package batch-mode
+  :ensure batch-mode
+  :init (add-to-list 'auto-mode-alist '("\\.bat\\'" . batch-mode)))
+
 ;; flymake
 
 (use-package flymake
