@@ -1,5 +1,6 @@
 ;; use-package
 
+(eval-when-compile (package-initialize))
 (require 'use-package)
 
 ;; theme
