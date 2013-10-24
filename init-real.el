@@ -191,7 +191,10 @@
 ;; scala mode
 
 (use-package scala-mode2-autoloads
-  :ensure scala-mode2)
+  :ensure scala-mode2
+  :init (progn (add-to-list 'load-path "~/.emacs.d/ensime/dist/elisp")
+			   (require 'ensime)
+			   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
 
 ;; lua mode
 

@@ -7,3 +7,4 @@ var
 url
 clang-complete
 eshell
+ensime/*
