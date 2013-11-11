@@ -55,7 +55,6 @@
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook (lambda () (tabify (point-min) (point-max))))
 
 ;; mode line tweaks
 
