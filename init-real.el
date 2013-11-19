@@ -200,6 +200,9 @@
   :init (progn (require 'ensime)
 			   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
 
+(use-package sbt-mode-autoloads
+  :ensure sbt-mode)
+
 ;; lua mode
 
 (use-package lua-mode-autoloads
