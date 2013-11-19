@@ -113,6 +113,12 @@
   :init (progn (setq-default nxml-child-indent 4)
 			   (setq nxml-child-indent 4)))
 
+;; bash complete
+
+(use-package bash-completion
+  :ensure bash-completion
+  :init (bash-completion-setup))
+
 ;; auto byte compile elisp on save
 
 (use-package auto-async-byte-compile
