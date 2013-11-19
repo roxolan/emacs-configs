@@ -102,6 +102,12 @@
 
 (setq enable-local-variables nil)
 
+;; emacs code browser
+
+(use-package ecb
+  :ensure ecb
+  :init (setq semantic-load-turn-useful-things-on t))
+
 ;; miscaleous tweeks
 
 (setq make-pointer-invisible nil)
@@ -151,20 +157,19 @@
 	a))
 
 (defun cc-mode-clang-hook ()
-  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources))
+  (setq ac-sources '(ac-source-clang ac-source-yasnippet))
   (setq ac-clang-flags
 		(mapcar (lambda (item) (concat "-I" item))
 				(split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh"))))
   (setq ac-clang-flags (append ac-clang-flags
 							   (mapcar 'expand-include-flag
-									   (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags"))))))
-  (ac-cc-mode-setup))
+									   (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags")))))))
 
 (use-package auto-complete-clang
   :ensure auto-complete-clang
   :init (progn (setq ac-auto-start 1)
 			   (setq ac-quick-help-delay 0.5)
-			   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+			   ;; (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 			   (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)))
 
 ;; detect mode for .h file
