@@ -102,6 +102,10 @@
 
 (setq enable-local-variables nil)
 
+;; show function name
+
+(add-hook 'prog-mode-hook (lambda () (which-func-mode 1)))
+
 ;; emacs code browser
 
 (use-package ecb
