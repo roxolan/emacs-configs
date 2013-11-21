@@ -3,15 +3,6 @@
 (eval-when-compile (package-initialize))
 (require 'use-package)
 
-;; theme
-
-(use-package custom
-  :ensure ample-zen-theme
-  :init (let ((colors (display-color-cells)))
-		  (cond
-		   ((>= colors 255) (progn (load-theme 'ample-zen t nil)
-								   (custom-set-faces '(ac-candidate-face ((t (:inherit popup-face :background "black" :foreground "dim gray"))))))))))
-
 ;; customizations
 
 (use-package menu-bar
