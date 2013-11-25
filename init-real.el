@@ -25,6 +25,11 @@
 (use-package helm-themes
   :ensure helm-themes)
 
+;; helm ls git
+
+(use-package helm-ls-git
+  :ensure helm-ls-git)
+
 ;; smart mode line
 
 (use-package smart-mode-line
