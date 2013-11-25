@@ -8,6 +8,18 @@
 (use-package menu-bar
   :init (menu-bar-mode -1))
 
+;; pretty lambda
+
+(use-package pretty-lambdada
+  :ensure pretty-lambdada
+  :init (pretty-lambda-for-modes))
+
+;; smart mode line
+
+(use-package smart-mode-line
+  :ensure smart-mode-line
+  :init (sml/setup))
+
 ;; toolbar
 
 (use-package tool-bar
