@@ -14,6 +14,12 @@
   :ensure pretty-lambdada
   :init (pretty-lambda-for-modes))
 
+;; helm ac
+
+(use-package ac-helm
+  :ensure ac-helm
+  :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
+
 ;; smart mode line
 
 (use-package smart-mode-line
