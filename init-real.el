@@ -20,6 +20,11 @@
   :ensure ac-helm
   :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
 
+;; helm themes
+
+(use-package helm-themes
+  :ensure helm-themes)
+
 ;; smart mode line
 
 (use-package smart-mode-line
