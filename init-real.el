@@ -224,9 +224,7 @@
 ;; scala mode
 
 (use-package scala-mode2-autoloads
-  :ensure scala-mode2
-  :init (progn (require 'ensime)
-			   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
+  :ensure scala-mode2)
 
 (use-package sbt-mode-autoloads
   :ensure sbt-mode)
