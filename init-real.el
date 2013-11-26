@@ -30,11 +30,11 @@
 (use-package helm-ls-git
   :ensure helm-ls-git)
 
-;; smart mode line
+;; main line
 
-(use-package smart-mode-line
-  :ensure smart-mode-line
-  :init (sml/setup))
+(use-package main-line
+  :ensure main-line
+  :init (progn (setq main-line-separator-style 'arrow)))
 
 ;; toolbar
 
