@@ -30,6 +30,11 @@
 (use-package helm-ls-git
   :ensure helm-ls-git)
 
+;; helm helm commands
+
+(use-package helm-helm-commands
+  :ensure helm-helm-commands)
+
 ;; main line
 
 (use-package main-line
