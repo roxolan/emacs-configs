@@ -153,12 +153,6 @@
   :ensure bash-completion
   :init (bash-completion-setup))
 
-;; auto byte compile elisp on save
-
-(use-package auto-async-byte-compile
-  :ensure auto-async-byte-compile
-  :init (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode))
-
 ;; auto complete
 
 (use-package auto-complete-config
