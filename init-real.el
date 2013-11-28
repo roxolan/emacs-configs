@@ -37,9 +37,10 @@
 
 ;; main line
 
-(use-package main-line
-  :ensure main-line
-  :init (progn (setq main-line-separator-style 'arrow)))
+(use-package smart-mode-line
+  :ensure smart-mode-line
+  :init (progn (setq sml/theme 'dark)
+			   (sml/setup)))
 
 ;; toolbar
 
