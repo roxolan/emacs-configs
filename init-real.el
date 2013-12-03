@@ -141,6 +141,12 @@
 
 (setq make-pointer-invisible nil)
 
+;; ace jump mode
+
+(use-package ace-jump-mode
+  :ensure ace-jump-mode
+  :init (define-key global-map (kbd "M-/") 'ace-jump-mode))
+
 ;; xml
 
 (use-package auto-complete-nxml
