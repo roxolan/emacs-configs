@@ -332,18 +332,11 @@
   :init (progn (global-linum-mode 1)
 			   (setq linum-format "%4d|")))
 
-;; linum highlight
-
-(use-package hlinum
-  :ensure hlinum
-  :init (hlinum-activate))
-
 ;; line highlight
 
 (use-package hl-line
   :ensure hl-line
-  :init (progn (global-hl-line-mode 1)
-			   (setq hl-line-face 'ediff-odd-diff-A)))
+  :init (progn (global-hl-line-mode 1)))
 
 ;; todo, fixme highlighting
 
