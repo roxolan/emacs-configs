@@ -153,7 +153,8 @@
 
 (use-package ace-jump-buffer
   :ensure ace-jump-buffer
-  :init (define-key global-map (kbd "M-?") 'ace-jump-buffer))
+  :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
+			   (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
 
 ;; xml
 
