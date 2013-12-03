@@ -147,6 +147,12 @@
   :ensure ace-jump-mode
   :init (define-key global-map (kbd "M-/") 'ace-jump-mode))
 
+;; ace jump buffer
+
+(use-package ace-jump-buffer
+  :ensure ace-jump-buffer
+  :init (define-key global-map (kbd "M-?") 'ace-jump-buffer))
+
 ;; xml
 
 (use-package auto-complete-nxml
