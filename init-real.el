@@ -30,6 +30,11 @@
 (use-package helm-ls-git
   :ensure helm-ls-git)
 
+;; magit
+
+(use-package magit
+  :ensure magit)
+
 ;; helm helm commands
 
 (use-package helm-helm-commands
