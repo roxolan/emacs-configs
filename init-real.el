@@ -374,7 +374,8 @@
 (use-package diff-hl
   :ensure diff-hl
   :requires fringe
-  :init (global-diff-hl-mode 1))
+  :init (progn (global-diff-hl-mode 1)
+			   (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
 
 ;; shrink/enlarge window
 
