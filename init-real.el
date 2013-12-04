@@ -136,12 +136,6 @@
 
 (add-hook 'prog-mode-hook (lambda () (which-func-mode 1)))
 
-;; emacs code browser
-
-(use-package ecb
-  :ensure ecb
-  :init (setq semantic-load-turn-useful-things-on t))
-
 ;; miscaleous tweeks
 
 (setq make-pointer-invisible nil)
