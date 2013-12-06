@@ -321,7 +321,19 @@
 
 (use-package yasnippet-autoloads
   :ensure yasnippet
-  :init (yas-global-mode 1))
+  :init (add-hook 'prog-mode-hook '(lambda () (yas-minor-mode 1))))
+
+;; yas jit
+
+(use-package yas-jit
+  :ensure yas-jit
+  :init (yas/jit-load))
+
+;; helm yasnippet
+
+(use-package helm-c-yasnippet
+  :ensure helm-c-yasnippet
+  :init (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
 
 ;; haskell mode
 
