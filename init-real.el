@@ -387,6 +387,9 @@
 
 ;; diff highlight
 
+(use-package smartrep
+  :ensure smartrep)
+
 (use-package diff-hl
   :ensure diff-hl
   :requires fringe
