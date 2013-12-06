@@ -20,6 +20,11 @@
   :ensure helm
   :init (define-key global-map (kbd "C-x b") 'helm-buffers-list))
 
+;; use helm helm commands
+
+(use-package helm-helm-commands
+  :ensure helm-helm-commands)
+
 ;; helm ac
 
 (use-package ac-helm
