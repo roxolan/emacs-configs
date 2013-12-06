@@ -321,7 +321,7 @@
 
 (use-package yasnippet-autoloads
   :ensure yasnippet
-  :init (add-hook 'prog-mode-hook (lambda () (yas-minor-mode 1))))
+  :init (yas-global-mode 1))
 
 ;; haskell mode
 
