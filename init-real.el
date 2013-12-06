@@ -41,6 +41,11 @@
 (use-package helm-ls-git
   :ensure helm-ls-git)
 
+;; use helm open github
+
+(use-package helm-open-github
+  :ensure helm-open-github)
+
 ;; magit
 
 (use-package magit
