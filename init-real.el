@@ -410,6 +410,12 @@
   :ensure highlight-parentheses
   :init (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
 
+;; hl sexps
+
+(use-package hl-sexp
+  :ensure hl-sexp
+  :init (add-hook 'emacs-lisp-mode-hook (lambda () (hl-sexp-mode 1))))
+
 ;; diff highlight
 
 (use-package smartrep
