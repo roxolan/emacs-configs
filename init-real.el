@@ -150,7 +150,7 @@
 
 ;; show function name
 
-(add-hook 'prog-mode-hook (lambda () (which-func-mode 1)))
+(add-hook 'prog-mode-hook (lambda () (which-function-mode 1)))
 
 ;; miscaleous tweeks
 
