@@ -3,6 +3,11 @@
 (eval-when-compile (package-initialize))
 (require 'use-package)
 
+;; save history
+
+(use-package savehist
+  :init (savehist-mode 1)
+
 ;; customizations
 
 (use-package menu-bar
