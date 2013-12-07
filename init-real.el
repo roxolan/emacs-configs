@@ -365,13 +365,6 @@
 (setq scroll-preserve-screen-position t)
 (setq isearch-allow-scroll t)
 
-;; line numbers
-
-(use-package linum
-  :ensure linum
-  :init (progn (global-linum-mode 1)
-			   (setq linum-format "%4d|")))
-
 ;; line highlight
 
 (use-package hl-line
