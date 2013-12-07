@@ -1,6 +1,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                           ("marmalade" . "http://marmalade-repo.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")))
+						 ("marmalade" . "http://marmalade-repo.org/packages/")
+						 ("elpa" . "http://tromey.com/elpa/")
+						 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; packages paths
 
@@ -14,13 +15,13 @@
 				  (mapc (lambda (num)
 						  (if first
 							  (setq first nil)
-							  (setq version (format "%s." version)))
+							(setq version (format "%s." version)))
 						  (setq version (format "%s%s" version num)))
 						(aref (cdr pkg) 0))
 				  (setq path (format "%s/%s-%s" package-dir stem version))
 				  (add-to-list 'load-path path)))
 			package-alist)))
-)
+  )
 
 (add-to-list 'load-path "~/.emacs.d/")
 
