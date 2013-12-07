@@ -14,6 +14,11 @@
   :ensure pretty-lambdada
   :init (pretty-lambda-for-modes))
 
+;; xt mosue
+
+(use-package xt-mouse
+  :init (xterm-mouse-mode 1))
+
 ;; helm
 
 (use-package helm
