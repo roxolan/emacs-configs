@@ -6,7 +6,7 @@
 ;; save history
 
 (use-package savehist
-  :init (savehist-mode 1)
+  :init (savehist-mode 1))
 
 ;; customizations
 
@@ -123,9 +123,10 @@
 
 ;; auto reverting dired buffer
 
-(add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
-(setq global-auto-revert-non-file-buffers t)
-(setq auto-revert-interval 1)
+(use-package autorevert
+  :init (progn (add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
+			   (setq global-auto-revert-non-file-buffers t)
+			   (setq auto-revert-interval 1)))
 
 ;; auto reverting log files
 
