@@ -319,15 +319,9 @@
 
 ;; yasnippet
 
-(use-package yasnippet-autoloads
+(use-package yasnippet
   :ensure yasnippet
-  :init (add-hook 'prog-mode-hook '(lambda () (yas-minor-mode 1))))
-
-;; yas jit
-
-(use-package yas-jit
-  :ensure yas-jit
-  :init (yas/jit-load))
+  :init (yas-global-mode 1))
 
 ;; helm yasnippet
 
