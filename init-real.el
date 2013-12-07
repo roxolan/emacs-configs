@@ -83,6 +83,14 @@
 (use-package scroll-bar
   :init (scroll-bar-mode -1))
 
+;; twitter
+
+(use-package twittering-mode
+  :ensure twittering-mode
+  :init (progn (setq twittering-use-master-password t)
+			   (setq twittering-icon-mode t)
+			   (setq twittering-use-icon-storage t)))
+
 ;; indentation
 
 (setq-default tab-width 4)
