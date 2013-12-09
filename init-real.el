@@ -78,6 +78,11 @@
 (use-package remember-theme
   :ensure remember-theme)
 
+;; theme park mode
+
+(use-package theme-park-mode
+  :ensure theme-park-mode)
+
 ;; toolbar
 
 (use-package tool-bar
