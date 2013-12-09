@@ -73,6 +73,11 @@
   :init (progn (setq sml/theme 'dark)
 			   (sml/setup)))
 
+;; remember theme
+
+(use-package remember-theme
+  :ensure remember-theme)
+
 ;; toolbar
 
 (use-package tool-bar
