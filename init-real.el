@@ -286,6 +286,11 @@
 (use-package scala-mode2-autoloads
   :ensure scala-mode2)
 
+;; ensime
+
+(use-package ensime
+  :ensure ensime)
+
 (use-package sbt-mode-autoloads
   :ensure sbt-mode)
 
