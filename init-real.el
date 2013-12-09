@@ -289,7 +289,8 @@
 ;; ensime
 
 (use-package ensime
-  :ensure ensime)
+  :ensure ensime
+  :init (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
 (use-package sbt-mode-autoloads
   :ensure sbt-mode)
