@@ -61,6 +61,15 @@
 (use-package magit
   :ensure magit)
 
+;; vc svn
+
+(use-package vc-svn)
+
+;; dsvn
+
+(use-package dsvn
+  :ensure dsvn)
+
 ;; helm helm commands
 
 (use-package helm-helm-commands
