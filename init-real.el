@@ -35,7 +35,8 @@
 
 (use-package helm-swoop
   :ensure helm-swoop
-  :init (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
+  :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+			   (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
 
 ;; use helm helm commands
 
