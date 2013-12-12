@@ -31,13 +31,6 @@
   :init (progn (require 'helm-config)
 			   (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
 
-;; helm swoop
-
-(use-package helm-swoop
-  :ensure helm-swoop
-  :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-			   (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
-
 ;; use helm helm commands
 
 (use-package helm-helm-commands
@@ -142,6 +135,13 @@
 		  :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
 					   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
 					   (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer "..")))))))
+
+;; helm swoop
+
+(use-package helm-swoop
+  :ensure helm-swoop
+  :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+			   (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
 
 ;; delete trailing whitespaces before saving some buffer
 
