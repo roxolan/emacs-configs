@@ -284,7 +284,8 @@
 ;; scala mode
 
 (use-package scala-mode2-autoloads
-  :ensure scala-mode2)
+  :ensure scala-mode2
+  :init (setq scala-indent:align-parameters t))
 
 ;; ensime
 
