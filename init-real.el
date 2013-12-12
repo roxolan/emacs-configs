@@ -28,7 +28,14 @@
 
 (use-package helm
   :ensure helm
-  :init (define-key global-map (kbd "C-x b") 'helm-buffers-list))
+  :init (progn (require 'helm-config)
+			   (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
+
+;; helm swoop
+
+(use-package helm-swoop
+  :ensure helm-swoop
+  :init (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
 
 ;; use helm helm commands
 
