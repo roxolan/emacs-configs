@@ -28,7 +28,8 @@
 
 (use-package helm
   :ensure helm
-  :init (define-key global-map (kbd "C-x b") 'helm-buffers-list))
+  :init (progn (require 'helm-config)
+			   (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
 
 ;; use helm helm commands
 
@@ -60,6 +61,15 @@
 
 (use-package magit
   :ensure magit)
+
+;; vc svn
+
+(use-package vc-svn)
+
+;; dsvn
+
+(use-package dsvn
+  :ensure dsvn)
 
 ;; helm helm commands
 
@@ -125,6 +135,13 @@
 		  :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
 					   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
 					   (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer "..")))))))
+
+;; helm swoop
+
+(use-package helm-swoop
+  :ensure helm-swoop
+  :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+			   (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -273,8 +290,7 @@
   :ensure ac-c-headers
   :init (add-hook 'c-mode-common-hook (lambda ()
 										(setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
-										(add-to-list 'ac-sources 'ac-source-c-headers)
-										(add-to-list 'ac-sources 'ac-source-c-header-symbols t))))
+										(add-to-list 'ac-sources 'ac-source-c-headers))))
 
 ;; gdb
 
