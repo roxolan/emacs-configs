@@ -11,3 +11,4 @@ ensime/*
 theme
 history
 .DS_Store
+server/server
