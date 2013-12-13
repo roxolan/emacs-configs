@@ -114,8 +114,6 @@
 
 ;; mark ring tweaks
 
-(setq mark-ring-max 4)
-(setq global-mark-ring-max 8)
 (setq set-mark-command-repeat-pop t)
 
 ;; save bookmarks on emacs exit
