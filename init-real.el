@@ -29,7 +29,7 @@
 (use-package helm
   :ensure helm
   :init (progn (require 'helm-config)
-			   (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
+               (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
 
 ;; use helm helm commands
 
@@ -76,7 +76,7 @@
 (use-package smart-mode-line
   :ensure smart-mode-line
   :init (progn (setq sml/theme 'dark)
-			   (sml/setup)))
+               (sml/setup)))
 
 ;; remember theme
 
@@ -103,8 +103,8 @@
 (use-package twittering-mode
   :ensure twittering-mode
   :init (progn (setq twittering-use-master-password t)
-			   (setq twittering-icon-mode t)
-			   (setq twittering-use-icon-storage t)))
+               (setq twittering-icon-mode t)
+               (setq twittering-use-icon-storage t)))
 
 ;; indentation
 
@@ -124,10 +124,10 @@
 
 (use-package dired
   :init (use-package dired-single
-		  :ensure dired-single
-		  :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
-					   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
-					   (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer "..")))))))
+          :ensure dired-single
+          :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
+                       (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
+                       (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer "..")))))))
 
 ;; sunrise commander
 
@@ -139,7 +139,7 @@
 (use-package helm-swoop
   :ensure helm-swoop
   :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-			   (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
+               (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -158,8 +158,8 @@
 
 (use-package autorevert
   :init (progn (add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
-			   (setq global-auto-revert-non-file-buffers t)
-			   (setq auto-revert-interval 1)))
+               (setq global-auto-revert-non-file-buffers t)
+               (setq auto-revert-interval 1)))
 
 ;; auto reverting log files
 
@@ -205,22 +205,22 @@
 (use-package ace-jump-mode
   :ensure ace-jump-mode
   :init (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
-			   (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
-			   (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
+               (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
+               (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
 
 ;; ace jump buffer
 
 (use-package ace-jump-buffer
   :ensure ace-jump-buffer
   :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
-			   (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
+               (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
 
 ;; xml
 
 (use-package auto-complete-nxml
   :ensure auto-complete-nxml
   :init (progn (setq-default nxml-child-indent 4)
-			   (setq nxml-child-indent 4)))
+               (setq nxml-child-indent 4)))
 
 ;; bash complete
 
@@ -233,61 +233,61 @@
 (use-package auto-complete-config
   :ensure auto-complete
   :init (progn (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
-			   (global-auto-complete-mode t)
-			   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-			   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-			   (add-hook 'css-mode-hook 'ac-css-mode-setup)
-			   (add-hook 'auto-complete-mode-hook 'ac-common-setup)))
+               (global-auto-complete-mode t)
+               (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+               (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+               (add-hook 'css-mode-hook 'ac-css-mode-setup)
+               (add-hook 'auto-complete-mode-hook 'ac-common-setup)))
 
 ;; auto complete clang
 
 (defun find-makefile-dir (cur)
   (if (file-exists-p (concat cur "Makefile"))
-	  cur
-	(if (string-equal (expand-file-name cur) "/")
-		nil
-	  (find-makefile-dir (expand-file-name (concat cur "../"))))))
+      cur
+    (if (string-equal (expand-file-name cur) "/")
+        nil
+      (find-makefile-dir (expand-file-name (concat cur "../"))))))
 
 (defun expand-include-flag (a)
   (if (string-prefix-p "-I" a)
-	  (concat "-I" (expand-file-name (concat (find-makefile-dir "./") (substring a 2))))
-	a))
+      (concat "-I" (expand-file-name (concat (find-makefile-dir "./") (substring a 2))))
+    a))
 
 (defun cc-mode-clang-hook ()
   (setq ac-sources '(ac-source-clang ac-source-yasnippet))
   (setq ac-clang-flags
-		(mapcar (lambda (item) (concat "-I" item))
-				(split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh"))))
+        (mapcar (lambda (item) (concat "-I" item))
+                (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh"))))
   (setq ac-clang-flags (append ac-clang-flags
-							   (mapcar 'expand-include-flag
-									   (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags")))))))
+                               (mapcar 'expand-include-flag
+                                       (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags")))))))
 
 (use-package auto-complete-clang
   :ensure auto-complete-clang
   :init (progn (setq ac-auto-start 1)
-			   (setq ac-quick-help-delay 0.5)
-			   ;; (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
-			   (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)))
+               (setq ac-quick-help-delay 0.5)
+               ;; (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+               (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)))
 
 ;; detect mode for .h file
 
 (use-package dummy-h-mode
   :ensure dummy-h-mode
   :init (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
-			   (add-hook 'dummy-h-mode-hook
-						 (lambda ()
-						   (setq dummy-h-mode-default-major-mode 'c++-mode)))
-			   (add-hook 'dummy-h-mode-hook
-						 (lambda ()
-						   (setq dummy-h-mode-search-limit 60000)))))
+               (add-hook 'dummy-h-mode-hook
+                         (lambda ()
+                           (setq dummy-h-mode-default-major-mode 'c++-mode)))
+               (add-hook 'dummy-h-mode-hook
+                         (lambda ()
+                           (setq dummy-h-mode-search-limit 60000)))))
 
 ;; headers completion
 
 (use-package ac-c-headers
   :ensure ac-c-headers
   :init (add-hook 'c-mode-common-hook (lambda ()
-										(setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
-										(add-to-list 'ac-sources 'ac-source-c-headers))))
+                                        (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
+                                        (add-to-list 'ac-sources 'ac-source-c-headers))))
 
 ;; gdb
 
@@ -332,8 +332,8 @@
 (use-package flymake
   :ensure flymake
   :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
-			   (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-			   (global-set-key (kbd "<f3>") 'flymake-goto-next-error)))
+               (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+               (global-set-key (kbd "<f3>") 'flymake-goto-next-error)))
 
 (use-package flymake-cursor-autoloads
   :ensure flymake-cursor)
@@ -361,10 +361,10 @@
 (use-package glsl-mode
   :ensure glsl-mode
   :init (progn (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
-			   (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
-			   (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
-			   (setq glsl-other-file-alist '(("\\.fs$" (".vs"))
-											 ("\\.vs$" (".fs"))))))
+               (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
+               (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
+               (setq glsl-other-file-alist '(("\\.fs$" (".vs"))
+                                             ("\\.vs$" (".fs"))))))
 
 ;; yasnippet
 
@@ -383,7 +383,7 @@
 (use-package haskell-mode-autoloads
   :ensure haskell-mode
   :init (progn (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-			   (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
+               (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
 
 ;; smooth mouse scroll
 
@@ -412,14 +412,14 @@
 (use-package move-text-autoloads
   :ensure move-text
   :init (progn (global-set-key (kbd "M-n") 'move-text-down)
-			   (global-set-key (kbd "M-p") 'move-text-up)))
+               (global-set-key (kbd "M-p") 'move-text-up)))
 
 ;; duplicate thing
 
 (use-package duplicate-thing-autoloads
   :ensure duplicate-thing
   :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
-			   (global-set-key (kbd "M-с") 'duplicate-thing)))
+               (global-set-key (kbd "M-с") 'duplicate-thing)))
 
 ;; auto pair
 
@@ -448,7 +448,7 @@
   :ensure diff-hl
   :requires fringe
   :init (progn (global-diff-hl-mode 1)
-			   (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
+               (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
 
 ;; shrink/enlarge window
 
@@ -504,8 +504,8 @@
 ;; platform depended
 
 (cond ((eq system-type 'darwin) (load-file "~/.emacs.d/init-platform-dependent-darwin.el"))
-	  ((eq system-type 'windows-nt) (load-file "~/.emacs.d/init-platform-dependent-windows-nt.el"))
-	  ((eq system-type 'gnu/linux) (load-file "~/.emacs.d/init-platform-dependent-gnu-linux.el")))
+      ((eq system-type 'windows-nt) (load-file "~/.emacs.d/init-platform-dependent-windows-nt.el"))
+      ((eq system-type 'gnu/linux) (load-file "~/.emacs.d/init-platform-dependent-gnu-linux.el")))
 
 (init-platform-dependent-start)
 
