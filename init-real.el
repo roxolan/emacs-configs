@@ -129,6 +129,11 @@
 					   (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
 					   (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer "..")))))))
 
+;; sunrise commander
+
+(use-package sunrise-commander
+  :ensure sunrise-commander)
+
 ;; helm swoop
 
 (use-package helm-swoop
