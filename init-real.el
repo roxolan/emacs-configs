@@ -453,7 +453,7 @@
 ;; god mode
 
 (defun my-update-cursor ()
-  (setq cursor-type (if (or god-local-mode buffer-read-only) 'box 'bar)))
+  (setq cursor-type (if (or god-local-mode buffer-read-only) 'hollow 'box)))
 
 (use-package god-mode
   :ensure god-mode
