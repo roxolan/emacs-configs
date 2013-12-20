@@ -519,14 +519,6 @@
   :ensure load-dir
   :init (load-dir-one "~/.emacs.d/init.d"))
 
-;; platform depended
-
-(cond ((eq system-type 'darwin) (load-file "~/.emacs.d/init-platform-dependent-darwin.el"))
-      ((eq system-type 'windows-nt) (load-file "~/.emacs.d/init-platform-dependent-windows-nt.el"))
-      ((eq system-type 'gnu/linux) (load-file "~/.emacs.d/init-platform-dependent-gnu-linux.el")))
-
-(init-platform-dependent-start)
-
 ;; start emacs server
 
 (server-start)
