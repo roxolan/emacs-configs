@@ -109,7 +109,7 @@
 ;; indentation
 
 (setq-default tab-width 4)
-(setq-default indent-tabs-mode t)
+(add-hook 'find-file-hook (lambda () (setq indent-tabs-mode nil)))
 (electric-indent-mode 1)
 
 ;; mark ring tweaks
