@@ -247,69 +247,12 @@
 
 ;; auto complete
 
-(req-package auto-complete-config
+(req-package auto-complete
              :ensure auto-complete
-             :init (progn (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
-                          (global-auto-complete-mode t)
-                          (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-                          (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-                          (add-hook 'css-mode-hook 'ac-css-mode-setup)
-                          (add-hook 'auto-complete-mode-hook 'ac-common-setup)))
-
-;; auto complete clang
-
-(defun find-makefile-dir (cur)
-  (if (file-exists-p (concat cur "Makefile"))
-      cur
-    (if (string-equal (expand-file-name cur) "/")
-        nil
-      (find-makefile-dir (expand-file-name (concat cur "../"))))))
-
-(defun expand-include-flag (a)
-  (if (string-prefix-p "-I" a)
-      (concat "-I" (expand-file-name (concat (find-makefile-dir "./") (substring a 2))))
-    a))
-
-(defun cc-mode-clang-hook ()
-  (setq ac-sources '(ac-source-clang ac-source-yasnippet))
-  (setq ac-clang-flags
-        (mapcar (lambda (item) (concat "-I" item))
-                (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh"))))
-  (setq ac-clang-flags (append ac-clang-flags
-                               (mapcar 'expand-include-flag
-                                       (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags")))))))
-
-(req-package auto-complete-clang
-             :ensure auto-complete-clang
-             :init (progn (setq ac-auto-start 1)
-                          (setq ac-quick-help-delay 0.5)
-                          ;; (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
-                          (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)))
-
-;; detect mode for .h file
-
-(req-package dummy-h-mode
-             :ensure dummy-h-mode
-             :init (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
-                          (add-hook 'dummy-h-mode-hook
-                                    (lambda ()
-                                      (setq dummy-h-mode-default-major-mode 'c++-mode)))
-                          (add-hook 'dummy-h-mode-hook
-                                    (lambda ()
-                                      (setq dummy-h-mode-search-limit 60000)))))
-
-;; headers completion
-
-(req-package ac-c-headers
-             :ensure ac-c-headers
-             :init (add-hook 'c-mode-common-hook (lambda ()
-                                                   (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
-                                                   (add-to-list 'ac-sources 'ac-source-c-headers))))
-
-;; gdb
-
-(setq gdb-many-windows t)
-(setq gdb-show-main t)
+             :init (progn (global-auto-complete-mode t)
+                          (setq ac-auto-start 1)
+                          (setq ac-quick-help-delay 0.1)
+                          (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
 
 ;; lua mode
 
@@ -377,17 +320,6 @@
 (req-package yasnippet
              :ensure yasnippet
              :init (yas-global-mode 1))
-
-;; cc-mode
-
-(req-package cc-mode)
-
-;; helm yasnippet
-
-(req-package helm-c-yasnippet
-             :require (helm yasnippet cc-mode)
-             :ensure helm-c-yasnippet
-             :init (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
 
 ;; haskell mode
 
