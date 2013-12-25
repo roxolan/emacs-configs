@@ -311,23 +311,6 @@
 (setq gdb-many-windows t)
 (setq gdb-show-main t)
 
-;; scala mode
-
-(req-package scala-mode2
-             :ensure scala-mode2
-             :init (setq scala-indent:align-parameters t))
-
-;; ensime
-
-(req-package ensime
-             :require scala-mode2
-             :ensure ensime
-             :init (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
-
-(req-package sbt-mode
-             :require scala-mode2
-             :ensure sbt-mode)
-
 ;; lua mode
 
 (req-package lua-mode
