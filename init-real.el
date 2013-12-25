@@ -34,22 +34,26 @@
 ;; use helm helm commands
 
 (req-package helm-helm-commands
+             :require helm
              :ensure helm-helm-commands)
 
 ;; helm ac
 
 (req-package ac-helm
+             :require helm
              :ensure ac-helm
              :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
 
 ;; helm themes
 
 (req-package helm-themes
+             :require helm
              :ensure helm-themes)
 
 ;; helm ls git
 
 (req-package helm-ls-git
+             :require helm
              :ensure helm-ls-git)
 
 ;; magit
@@ -64,11 +68,13 @@
 ;; dsvn
 
 (req-package dsvn
+             :require vc-svn
              :ensure dsvn)
 
 ;; helm helm commands
 
 (req-package helm-helm-commands
+             :require helm
              :ensure helm-helm-commands)
 
 ;; main line
@@ -141,7 +147,7 @@
 ;; helm swoop
 
 (req-package helm-swoop
-             :require dired
+             :require (dired helm)
              :ensure helm-swoop
              :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
                           (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
@@ -162,6 +168,7 @@
 ;; auto reverting dired buffer
 
 (req-package autorevert
+             :require dired
              :init (progn (add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
                           (setq global-auto-revert-non-file-buffers t)
                           (setq auto-revert-interval 1)))
@@ -220,7 +227,7 @@
 ;; ace jump buffer
 
 (req-package ace-jump-buffer
-             :require shell
+             :require (shell ace-jump-mode)
              :ensure ace-jump-buffer
              :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
                           (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
@@ -306,28 +313,30 @@
 
 ;; scala mode
 
-(req-package scala-mode2-autoloads
+(req-package scala-mode2
              :ensure scala-mode2
              :init (setq scala-indent:align-parameters t))
 
 ;; ensime
 
 (req-package ensime
+             :require scala-mode2
              :ensure ensime
              :init (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
-(req-package sbt-mode-autoloads
+(req-package sbt-mode
+             :require scala-mode2
              :ensure sbt-mode)
 
 ;; lua mode
 
-(req-package lua-mode-autoloads
+(req-package lua-mode
              :ensure lua-mode
              :init (setq lua-indent-level 4))
 
 ;; js2 mode
 
-(req-package js2-mode-autoloads
+(req-package js2-mode
              :ensure js2-mode
              :init (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
@@ -345,24 +354,28 @@
                           (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
                           (global-set-key (kbd "<f3>") 'flymake-goto-next-error)))
 
-(req-package flymake-cursor-autoloads
+(req-package flymake-cursor
+             :require flymake
              :ensure flymake-cursor)
 
 ;; flymake lua
 
-(req-package flymake-lua-autoloads
+(req-package flymake-lua
+             :require (flymake lua-mode)
              :ensure flymake-lua
              :init (add-hook 'lua-mode-hook 'flymake-lua-load))
 
 ;; flymake shell
 
-(req-package flymake-shell-autoloads
+(req-package flymake-shell
+             :require (flymake shell)
              :ensure flymake-shell
              :init (add-hook 'sh-set-shell-hook 'flymake-shell-load))
 
 ;; flymake haskell
 
-(req-package flymake-haskell-multi-autoloads
+(req-package flymake-haskell-multi
+             :require (flymake haskell-mode)
              :ensure flymake-haskell-multi
              :init (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load))
 
@@ -382,15 +395,20 @@
              :ensure yasnippet
              :init (yas-global-mode 1))
 
+;; cc-mode
+
+(req-package cc-mode)
+
 ;; helm yasnippet
 
 (req-package helm-c-yasnippet
+             :require (helm yasnippet cc-mode)
              :ensure helm-c-yasnippet
              :init (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
 
 ;; haskell mode
 
-(req-package haskell-mode-autoloads
+(req-package haskell-mode
              :ensure haskell-mode
              :init (progn (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
                           (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
@@ -413,33 +431,33 @@
 
 ;; todo, fixme highlighting
 
-(req-package fic-mode-autoloads
+(req-package fic-mode
              :ensure fic-mode
              :init (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
 
 ;; move text
 
-(req-package move-text-autoloads
+(req-package move-text
              :ensure move-text
              :init (progn (global-set-key (kbd "M-n") 'move-text-down)
                           (global-set-key (kbd "M-p") 'move-text-up)))
 
 ;; duplicate thing
 
-(req-package duplicate-thing-autoloads
+(req-package duplicate-thing
              :ensure duplicate-thing
              :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
                           (global-set-key (kbd "M-с") 'duplicate-thing)))
 
 ;; auto pair
 
-(req-package autopair-autoloads
+(req-package autopair
              :ensure autopair
              :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
 
 ;; highlight parenthesis
 
-(req-package highlight-parentheses-autoloads
+(req-package highlight-parentheses
              :ensure highlight-parentheses
              :init (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
 
@@ -454,9 +472,11 @@
 (req-package smartrep
              :ensure smartrep)
 
+(req-package fringe)
+
 (req-package diff-hl
+             :require (smartrep fringe dired)
              :ensure diff-hl
-             :requires fringe
              :init (progn (global-diff-hl-mode 1)
                           (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
 
