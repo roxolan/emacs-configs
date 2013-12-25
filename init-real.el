@@ -545,7 +545,7 @@
 
 ;; init.d
 
-(req-package load-dir
+(use-package load-dir
              :ensure load-dir
              :init (load-dir-one "~/.emacs.d/init.d"))
 
