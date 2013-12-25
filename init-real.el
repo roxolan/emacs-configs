@@ -6,56 +6,56 @@
 ;; save history
 
 (req-package savehist
-  :init (savehist-mode 1))
+             :init (savehist-mode 1))
 
 ;; customizations
 
 (req-package menu-bar
-  :init (menu-bar-mode -1))
+             :init (menu-bar-mode -1))
 
 ;; pretty lambda
 
 (req-package pretty-lambdada
-  :ensure pretty-lambdada
-  :init (pretty-lambda-for-modes))
+             :ensure pretty-lambdada
+             :init (pretty-lambda-for-modes))
 
 ;; xt mosue
 
 (req-package xt-mouse
-  :init (xterm-mouse-mode 1))
+             :init (xterm-mouse-mode 1))
 
 ;; helm
 
 (req-package helm
-  :ensure helm
-  :init (progn (require 'helm-config)
-               (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
+             :ensure helm
+             :init (progn (require 'helm-config)
+                          (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
 
 ;; use helm helm commands
 
 (req-package helm-helm-commands
-  :ensure helm-helm-commands)
+             :ensure helm-helm-commands)
 
 ;; helm ac
 
 (req-package ac-helm
-  :ensure ac-helm
-  :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
+             :ensure ac-helm
+             :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
 
 ;; helm themes
 
 (req-package helm-themes
-  :ensure helm-themes)
+             :ensure helm-themes)
 
 ;; helm ls git
 
 (req-package helm-ls-git
-  :ensure helm-ls-git)
+             :ensure helm-ls-git)
 
 ;; magit
 
 (req-package magit
-  :ensure magit)
+             :ensure magit)
 
 ;; vc svn
 
@@ -64,47 +64,47 @@
 ;; dsvn
 
 (req-package dsvn
-  :ensure dsvn)
+             :ensure dsvn)
 
 ;; helm helm commands
 
 (req-package helm-helm-commands
-  :ensure helm-helm-commands)
+             :ensure helm-helm-commands)
 
 ;; main line
 
 (req-package smart-mode-line
-  :ensure smart-mode-line
-  :init (progn (setq sml/theme 'dark)
-               (sml/setup)))
+             :ensure smart-mode-line
+             :init (progn (setq sml/theme 'dark)
+                          (sml/setup)))
 
 ;; remember theme
 
 (req-package remember-theme
-  :ensure remember-theme)
+             :ensure remember-theme)
 
 ;; theme park mode
 
 (req-package theme-park-mode
-  :ensure theme-park-mode)
+             :ensure theme-park-mode)
 
 ;; toolbar
 
 (req-package tool-bar
-  :init (tool-bar-mode -1))
+             :init (tool-bar-mode -1))
 
 ;; scroll bar
 
 (req-package scroll-bar
-  :init (scroll-bar-mode -1))
+             :init (scroll-bar-mode -1))
 
 ;; twitter
 
 (req-package twittering-mode
-  :ensure twittering-mode
-  :init (progn (setq twittering-use-master-password t)
-               (setq twittering-icon-mode t)
-               (setq twittering-use-icon-storage t)))
+             :ensure twittering-mode
+             :init (progn (setq twittering-use-master-password t)
+                          (setq twittering-icon-mode t)
+                          (setq twittering-use-icon-storage t)))
 
 ;; indentation
 
@@ -136,15 +136,15 @@
 ;; sunrise commander
 
 (req-package sunrise-commander
-  :ensure sunrise-commander)
+             :ensure sunrise-commander)
 
 ;; helm swoop
 
 (req-package helm-swoop
-  :require dired
-  :ensure helm-swoop
-  :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-               (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
+             :require dired
+             :ensure helm-swoop
+             :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+                          (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -153,7 +153,7 @@
 ;; mode line tweaks
 
 (req-package simple
-  :init (column-number-mode 1))
+             :init (column-number-mode 1))
 
 ;; turn off backup files
 
@@ -162,9 +162,9 @@
 ;; auto reverting dired buffer
 
 (req-package autorevert
-  :init (progn (add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
-               (setq global-auto-revert-non-file-buffers t)
-               (setq auto-revert-interval 1)))
+             :init (progn (add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
+                          (setq global-auto-revert-non-file-buffers t)
+                          (setq auto-revert-interval 1)))
 
 ;; auto reverting log files
 
@@ -208,10 +208,10 @@
 ;; ace jump mode
 
 (req-package ace-jump-mode
-  :ensure ace-jump-mode
-  :init (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
-               (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
-               (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
+             :ensure ace-jump-mode
+             :init (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
+                          (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
+                          (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
 
 ;; shell mode
 
@@ -220,34 +220,34 @@
 ;; ace jump buffer
 
 (req-package ace-jump-buffer
-  :require shell
-  :ensure ace-jump-buffer
-  :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
-               (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
+             :require shell
+             :ensure ace-jump-buffer
+             :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
+                          (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
 
 ;; xml
 
 (req-package auto-complete-nxml
-  :ensure auto-complete-nxml
-  :init (progn (setq-default nxml-child-indent 4)
-               (setq nxml-child-indent 4)))
+             :ensure auto-complete-nxml
+             :init (progn (setq-default nxml-child-indent 4)
+                          (setq nxml-child-indent 4)))
 
 ;; bash complete
 
 (req-package bash-completion
-  :ensure bash-completion
-  :init (bash-completion-setup))
+             :ensure bash-completion
+             :init (bash-completion-setup))
 
 ;; auto complete
 
 (req-package auto-complete-config
-  :ensure auto-complete
-  :init (progn (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
-               (global-auto-complete-mode t)
-               (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-               (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-               (add-hook 'css-mode-hook 'ac-css-mode-setup)
-               (add-hook 'auto-complete-mode-hook 'ac-common-setup)))
+             :ensure auto-complete
+             :init (progn (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
+                          (global-auto-complete-mode t)
+                          (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+                          (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+                          (add-hook 'css-mode-hook 'ac-css-mode-setup)
+                          (add-hook 'auto-complete-mode-hook 'ac-common-setup)))
 
 ;; auto complete clang
 
@@ -273,31 +273,31 @@
                                        (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags")))))))
 
 (req-package auto-complete-clang
-  :ensure auto-complete-clang
-  :init (progn (setq ac-auto-start 1)
-               (setq ac-quick-help-delay 0.5)
-               ;; (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
-               (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)))
+             :ensure auto-complete-clang
+             :init (progn (setq ac-auto-start 1)
+                          (setq ac-quick-help-delay 0.5)
+                          ;; (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+                          (add-hook 'c-mode-common-hook 'cc-mode-clang-hook)))
 
 ;; detect mode for .h file
 
 (req-package dummy-h-mode
-  :ensure dummy-h-mode
-  :init (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
-               (add-hook 'dummy-h-mode-hook
-                         (lambda ()
-                           (setq dummy-h-mode-default-major-mode 'c++-mode)))
-               (add-hook 'dummy-h-mode-hook
-                         (lambda ()
-                           (setq dummy-h-mode-search-limit 60000)))))
+             :ensure dummy-h-mode
+             :init (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
+                          (add-hook 'dummy-h-mode-hook
+                                    (lambda ()
+                                      (setq dummy-h-mode-default-major-mode 'c++-mode)))
+                          (add-hook 'dummy-h-mode-hook
+                                    (lambda ()
+                                      (setq dummy-h-mode-search-limit 60000)))))
 
 ;; headers completion
 
 (req-package ac-c-headers
-  :ensure ac-c-headers
-  :init (add-hook 'c-mode-common-hook (lambda ()
-                                        (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
-                                        (add-to-list 'ac-sources 'ac-source-c-headers))))
+             :ensure ac-c-headers
+             :init (add-hook 'c-mode-common-hook (lambda ()
+                                                   (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
+                                                   (add-to-list 'ac-sources 'ac-source-c-headers))))
 
 ;; gdb
 
@@ -307,93 +307,93 @@
 ;; scala mode
 
 (req-package scala-mode2-autoloads
-  :ensure scala-mode2
-  :init (setq scala-indent:align-parameters t))
+             :ensure scala-mode2
+             :init (setq scala-indent:align-parameters t))
 
 ;; ensime
 
 (req-package ensime
-  :ensure ensime
-  :init (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+             :ensure ensime
+             :init (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
 (req-package sbt-mode-autoloads
-  :ensure sbt-mode)
+             :ensure sbt-mode)
 
 ;; lua mode
 
 (req-package lua-mode-autoloads
-  :ensure lua-mode
-  :init (setq lua-indent-level 4))
+             :ensure lua-mode
+             :init (setq lua-indent-level 4))
 
 ;; js2 mode
 
 (req-package js2-mode-autoloads
-  :ensure js2-mode
-  :init (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
+             :ensure js2-mode
+             :init (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
 ;; batch mode
 
 (req-package batch-mode
-  :ensure batch-mode
-  :init (add-to-list 'auto-mode-alist '("\\.bat\\'" . batch-mode)))
+             :ensure batch-mode
+             :init (add-to-list 'auto-mode-alist '("\\.bat\\'" . batch-mode)))
 
 ;; flymake
 
 (req-package flymake
-  :ensure flymake
-  :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
-               (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-               (global-set-key (kbd "<f3>") 'flymake-goto-next-error)))
+             :ensure flymake
+             :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
+                          (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+                          (global-set-key (kbd "<f3>") 'flymake-goto-next-error)))
 
 (req-package flymake-cursor-autoloads
-  :ensure flymake-cursor)
+             :ensure flymake-cursor)
 
 ;; flymake lua
 
 (req-package flymake-lua-autoloads
-  :ensure flymake-lua
-  :init (add-hook 'lua-mode-hook 'flymake-lua-load))
+             :ensure flymake-lua
+             :init (add-hook 'lua-mode-hook 'flymake-lua-load))
 
 ;; flymake shell
 
 (req-package flymake-shell-autoloads
-  :ensure flymake-shell
-  :init (add-hook 'sh-set-shell-hook 'flymake-shell-load))
+             :ensure flymake-shell
+             :init (add-hook 'sh-set-shell-hook 'flymake-shell-load))
 
 ;; flymake haskell
 
 (req-package flymake-haskell-multi-autoloads
-  :ensure flymake-haskell-multi
-  :init (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load))
+             :ensure flymake-haskell-multi
+             :init (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load))
 
 ;; glsl
 
 (req-package glsl-mode
-  :ensure glsl-mode
-  :init (progn (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
-               (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
-               (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
-               (setq glsl-other-file-alist '(("\\.fs$" (".vs"))
-                                             ("\\.vs$" (".fs"))))))
+             :ensure glsl-mode
+             :init (progn (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
+                          (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
+                          (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
+                          (setq glsl-other-file-alist '(("\\.fs$" (".vs"))
+                                                        ("\\.vs$" (".fs"))))))
 
 ;; yasnippet
 
 (req-package yasnippet
-  :ensure yasnippet
-  :init (yas-global-mode 1))
+             :ensure yasnippet
+             :init (yas-global-mode 1))
 
 ;; helm yasnippet
 
 (req-package helm-c-yasnippet
-  :ensure helm-c-yasnippet
-  :init (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
+             :ensure helm-c-yasnippet
+             :init (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
 
 ;; haskell mode
 
 (req-package haskell-mode-autoloads
-  :ensure haskell-mode
-  :init (progn (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-               (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
+             :ensure haskell-mode
+             :init (progn (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+                          (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
 
 ;; smooth mouse scroll
 
@@ -408,57 +408,57 @@
 ;; line highlight
 
 (req-package hl-line
-  :ensure hl-line
-  :init (progn (global-hl-line-mode 1)))
+             :ensure hl-line
+             :init (progn (global-hl-line-mode 1)))
 
 ;; todo, fixme highlighting
 
 (req-package fic-mode-autoloads
-  :ensure fic-mode
-  :init (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
+             :ensure fic-mode
+             :init (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
 
 ;; move text
 
 (req-package move-text-autoloads
-  :ensure move-text
-  :init (progn (global-set-key (kbd "M-n") 'move-text-down)
-               (global-set-key (kbd "M-p") 'move-text-up)))
+             :ensure move-text
+             :init (progn (global-set-key (kbd "M-n") 'move-text-down)
+                          (global-set-key (kbd "M-p") 'move-text-up)))
 
 ;; duplicate thing
 
 (req-package duplicate-thing-autoloads
-  :ensure duplicate-thing
-  :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
-               (global-set-key (kbd "M-с") 'duplicate-thing)))
+             :ensure duplicate-thing
+             :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
+                          (global-set-key (kbd "M-с") 'duplicate-thing)))
 
 ;; auto pair
 
 (req-package autopair-autoloads
-  :ensure autopair
-  :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
+             :ensure autopair
+             :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
 
 ;; highlight parenthesis
 
 (req-package highlight-parentheses-autoloads
-  :ensure highlight-parentheses
-  :init (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
+             :ensure highlight-parentheses
+             :init (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
 
 ;; hl sexps
 
 (req-package hl-sexp
-  :ensure hl-sexp
-  :init (add-hook 'emacs-lisp-mode-hook (lambda () (hl-sexp-mode 1))))
+             :ensure hl-sexp
+             :init (add-hook 'emacs-lisp-mode-hook (lambda () (hl-sexp-mode 1))))
 
 ;; diff highlight
 
 (req-package smartrep
-  :ensure smartrep)
+             :ensure smartrep)
 
 (req-package diff-hl
-  :ensure diff-hl
-  :requires fringe
-  :init (progn (global-diff-hl-mode 1)
-               (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
+             :ensure diff-hl
+             :requires fringe
+             :init (progn (global-diff-hl-mode 1)
+                          (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
 
 ;; god mode
 
@@ -466,17 +466,17 @@
   (setq cursor-type (if (or god-local-mode buffer-read-only) 'hollow 'box)))
 
 (req-package god-mode
-  :ensure god-mode
-  :init (progn (global-set-key (kbd "<escape>") 'god-mode)
-			   (global-set-key (kbd "C-x C-1") 'delete-other-windows)
-			   (global-set-key (kbd "C-x C-2") 'split-window-below)
-			   (global-set-key (kbd "C-x C-3") 'split-window-right)
-			   (global-set-key (kbd "C-x C-0") 'delete-window)
-			   (define-key god-local-mode-map (kbd ".") 'repeat)
-			   (define-key god-local-mode-map (kbd "z") 'repeat)
-			   (define-key god-local-mode-map (kbd "i") 'god-mode)
-			   (add-hook 'god-mode-enabled-hook 'my-update-cursor)
-			   (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
+             :ensure god-mode
+             :init (progn (global-set-key (kbd "<escape>") 'god-mode)
+                          (global-set-key (kbd "C-x C-1") 'delete-other-windows)
+                          (global-set-key (kbd "C-x C-2") 'split-window-below)
+                          (global-set-key (kbd "C-x C-3") 'split-window-right)
+                          (global-set-key (kbd "C-x C-0") 'delete-window)
+                          (define-key god-local-mode-map (kbd ".") 'repeat)
+                          (define-key god-local-mode-map (kbd "z") 'repeat)
+                          (define-key god-local-mode-map (kbd "i") 'god-mode)
+                          (add-hook 'god-mode-enabled-hook 'my-update-cursor)
+                          (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
 
 ;; shrink/enlarge window
 
@@ -526,8 +526,8 @@
 ;; init.d
 
 (req-package load-dir
-  :ensure load-dir
-  :init (load-dir-one "~/.emacs.d/init.d"))
+             :ensure load-dir
+             :init (load-dir-one "~/.emacs.d/init.d"))
 
 ;; finish loading packages
 
