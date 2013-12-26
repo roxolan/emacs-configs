@@ -114,4 +114,24 @@
              :init
              (global-diff-hl-mode 1))
 
+;; remember theme
+
+(req-package remember-theme
+             :ensure
+             remember-theme)
+
+;; theme park mode
+
+(req-package theme-park-mode
+             :ensure
+             theme-park-mode)
+
+;; helm themes
+
+(req-package helm-themes
+             :require
+             helm
+             :ensure
+             helm-themes)
+
 (provide 'init-look-and-feel)

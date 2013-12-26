@@ -33,27 +33,11 @@
              :ensure ac-helm
              :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
 
-;; helm themes
-
-(req-package helm-themes
-             :require helm
-             :ensure helm-themes)
-
 ;; helm helm commands
 
 (req-package helm-helm-commands
              :require helm
              :ensure helm-helm-commands)
-
-;; remember theme
-
-(req-package remember-theme
-             :ensure remember-theme)
-
-;; theme park mode
-
-(req-package theme-park-mode
-             :ensure theme-park-mode)
 
 ;; twitter
 
@@ -82,8 +66,7 @@
 (req-package helm-swoop
              :require helm
              :ensure helm-swoop
-             :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-                          ))
+             :init (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
 
 ;; delete trailing whitespaces before saving some buffer
 
