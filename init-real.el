@@ -43,6 +43,10 @@
 
 (setq make-backup-files nil)
 
+;; do not use dialog boxes
+
+(setq use-dialog-box nil)
+
 ;; auto reverting
 
 (req-package autorevert
@@ -139,7 +143,9 @@
              :ensure flymake
              :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
                           (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-                          (global-set-key (kbd "<f3>") 'flymake-goto-next-error)))
+                          (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+                          (setq flymake-gui-warnings-enabled nil)
+                          (setq flymake-log-level 0)))
 
 (req-package flymake-cursor
              :require flymake
