@@ -13,32 +13,6 @@
 (req-package xt-mouse
              :init (xterm-mouse-mode 1))
 
-;; helm
-
-(req-package helm
-             :ensure helm
-             :init (progn (require 'helm-config)
-                          (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
-
-;; use helm helm commands
-
-(req-package helm-helm-commands
-             :require helm
-             :ensure helm-helm-commands)
-
-;; helm ac
-
-(req-package ac-helm
-             :require (helm auto-complete)
-             :ensure ac-helm
-             :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
-
-;; helm helm commands
-
-(req-package helm-helm-commands
-             :require helm
-             :ensure helm-helm-commands)
-
 ;; twitter
 
 (req-package twittering-mode
@@ -60,13 +34,6 @@
 ;; save bookmarks on emacs exit
 
 (setq bookmark-save-flag 1)
-
-;; helm swoop
-
-(req-package helm-swoop
-             :require helm
-             :ensure helm-swoop
-             :init (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
 
 ;; delete trailing whitespaces before saving some buffer
 
