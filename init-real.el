@@ -8,17 +8,6 @@
 (req-package savehist
              :init (savehist-mode 1))
 
-;; customizations
-
-(req-package menu-bar
-             :init (menu-bar-mode -1))
-
-;; pretty lambda
-
-(req-package pretty-lambdada
-             :ensure pretty-lambdada
-             :init (pretty-lambda-for-modes))
-
 ;; xt mosue
 
 (req-package xt-mouse
@@ -40,7 +29,7 @@
 ;; helm ac
 
 (req-package ac-helm
-             :require helm
+             :require (helm auto-complete)
              :ensure ac-helm
              :init (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
 
@@ -56,13 +45,6 @@
              :require helm
              :ensure helm-helm-commands)
 
-;; main line
-
-(req-package smart-mode-line
-             :ensure smart-mode-line
-             :init (progn (setq sml/theme 'dark)
-                          (sml/setup)))
-
 ;; remember theme
 
 (req-package remember-theme
@@ -72,16 +54,6 @@
 
 (req-package theme-park-mode
              :ensure theme-park-mode)
-
-;; toolbar
-
-(req-package tool-bar
-             :init (tool-bar-mode -1))
-
-;; scroll bar
-
-(req-package scroll-bar
-             :init (scroll-bar-mode -1))
 
 ;; twitter
 
@@ -117,11 +89,6 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; mode line tweaks
-
-(req-package simple
-             :init (column-number-mode 1))
-
 ;; turn off backup files
 
 (setq make-backup-files nil)
@@ -148,26 +115,13 @@
 
 (setq mouse-autoselect-window t)
 
-;; deafult mode for text editing
+;; default mode for text editing
 
 (setq-default major-mode 'text-mode)
-
-;; turn off sctartup screen
-
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-message t)
 
 ;; disable defining variables in files
 
 (setq enable-local-variables nil)
-
-;; show function name
-
-(add-hook 'prog-mode-hook (lambda () (which-function-mode 1)))
-
-;; miscaleous tweeks
-
-(setq make-pointer-invisible nil)
 
 ;; ace jump mode
 
@@ -285,28 +239,6 @@
              :init (progn (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
                           (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
 
-;; smooth mouse scroll
-
-(setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
-(setq auto-window-vscroll nil)
-(setq scroll-preserve-screen-position t)
-(setq isearch-allow-scroll t)
-
-;; line highlight
-
-(req-package hl-line
-             :ensure hl-line
-             :init (progn (global-hl-line-mode 1)))
-
-;; todo, fixme highlighting
-
-(req-package fic-mode
-             :ensure fic-mode
-             :init (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
-
 ;; move text
 
 (req-package move-text
@@ -326,30 +258,6 @@
 (req-package autopair
              :ensure autopair
              :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
-
-;; highlight parenthesis
-
-(req-package highlight-parentheses
-             :ensure highlight-parentheses
-             :init (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
-
-;; hl sexps
-
-(req-package hl-sexp
-             :ensure hl-sexp
-             :init (add-hook 'emacs-lisp-mode-hook (lambda () (hl-sexp-mode 1))))
-
-;; diff highlight
-
-(req-package smartrep
-             :ensure smartrep)
-
-(req-package fringe)
-
-(req-package diff-hl
-             :require (smartrep fringe)
-             :ensure diff-hl
-             :init (global-diff-hl-mode 1))
 
 ;; god mode
 
