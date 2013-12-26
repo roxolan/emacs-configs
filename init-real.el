@@ -50,27 +50,6 @@
              :require helm
              :ensure helm-themes)
 
-;; helm ls git
-
-(req-package helm-ls-git
-             :require helm
-             :ensure helm-ls-git)
-
-;; magit
-
-(req-package magit
-             :ensure magit)
-
-;; vc svn
-
-(req-package vc-svn)
-
-;; dsvn
-
-(req-package dsvn
-             :require vc-svn
-             :ensure dsvn)
-
 ;; helm helm commands
 
 (req-package helm-helm-commands
