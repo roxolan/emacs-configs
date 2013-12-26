@@ -105,31 +105,13 @@
 
 (setq bookmark-save-flag 1)
 
-;; dired
-
-(req-package dired)
-
-;; single dired
-
-(req-package dired-single
-             :require dired
-             :ensure dired-single
-             :init (progn (define-key dired-mode-map (kbd "f") 'dired-single-buffer)
-                          (define-key dired-mode-map (kbd "<RET>") 'dired-single-buffer)
-                          (define-key dired-mode-map (kbd "^") (function (lambda () (interactive) (dired-single-buffer ".."))))))
-
-;; sunrise commander
-
-(req-package sunrise-commander
-             :ensure sunrise-commander)
-
 ;; helm swoop
 
 (req-package helm-swoop
-             :require (dired helm)
+             :require helm
              :ensure helm-swoop
              :init (progn (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-                          (define-key dired-mode-map (kbd "M-i") 'helm-swoop)))
+                          ))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -144,17 +126,13 @@
 
 (setq make-backup-files nil)
 
-;; auto reverting dired buffer
+;; auto reverting
 
 (req-package autorevert
-             :require dired
-             :init (progn (add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
-                          (setq global-auto-revert-non-file-buffers t)
-                          (setq auto-revert-interval 1)))
-
-;; auto reverting log files
-
-(add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
+             :init (progn (setq global-auto-revert-non-file-buffers t)
+                          (setq auto-revert-interval 0.5)
+                          (add-to-list 'auto-mode-alist
+                                       '("\\.log\\'" . auto-revert-tail-mode))))
 
 ;; enable upcase and downcase region commands
 
@@ -369,10 +347,9 @@
 (req-package fringe)
 
 (req-package diff-hl
-             :require (smartrep fringe dired)
+             :require (smartrep fringe)
              :ensure diff-hl
-             :init (progn (global-diff-hl-mode 1)
-                          (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
+             :init (global-diff-hl-mode 1))
 
 ;; god mode
 
