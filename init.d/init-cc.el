@@ -1,5 +1,3 @@
-(req-package cc-mode)
-
 ;; completion with clang
 
 (req-package auto-complete-clang

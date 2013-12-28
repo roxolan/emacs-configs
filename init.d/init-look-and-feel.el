@@ -104,8 +104,6 @@
              :ensure
              smartrep)
 
-(req-package fringe)
-
 (req-package diff-hl
              :require
              (smartrep fringe)

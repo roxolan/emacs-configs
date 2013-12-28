@@ -85,10 +85,6 @@
                           (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
                           (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
 
-;; shell mode
-
-(req-package shell)
-
 ;; ace jump buffer
 
 (req-package ace-jump-buffer

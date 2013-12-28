@@ -1,7 +1,3 @@
-;; dired
-
-(req-package dired)
-
 ;; single dired
 
 (req-package dired-single

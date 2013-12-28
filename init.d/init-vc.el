@@ -13,10 +13,6 @@
              helm-ls-git
              :init (global-set-key (kbd "M-+") 'helm-ls-git-ls))
 
-;; vc svn
-
-(req-package vc-svn)
-
 ;; dsvn
 
 (req-package dsvn
