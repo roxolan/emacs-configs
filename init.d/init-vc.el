@@ -1,8 +1,12 @@
-;; magit, helm ls git
+;; magit
+
+(req-package magit)
+
+;; helm ls git
 
 (req-package helm-ls-git
              :require
-             (helm magit)
+             helm
              :init (global-set-key (kbd "M-+") 'helm-ls-git-ls))
 
 ;; dsvn

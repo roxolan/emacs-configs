@@ -26,6 +26,8 @@
 
 ;; sunrise commander
 
-(req-package sunrise-commander)
+(req-package sunrise-commander
+             :require
+             (dired dired-single))
 
 (provide 'init-dired)

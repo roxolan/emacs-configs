@@ -93,12 +93,14 @@
 ;; xml
 
 (req-package auto-complete-nxml
+             :require auto-complete
              :init (progn (setq-default nxml-child-indent 4)
                           (setq nxml-child-indent 4)))
 
 ;; bash complete
 
 (req-package bash-completion
+             :require auto-complete
              :init (bash-completion-setup))
 
 ;; auto complete
