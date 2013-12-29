@@ -3,8 +3,6 @@
 (req-package auto-complete-clang
              :require
              (auto-complete cc-mode ac-c-headers)
-             :ensure
-             auto-complete-clang
              :init
              (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
                     (add-hook 'c-mode-hook 'cc-mode-clang-hook)))
@@ -14,8 +12,6 @@
 (req-package dummy-h-mode
              :require
              cc-mode
-             :ensure
-             dummy-h-mode
              :init
              (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
                     (add-hook 'dummy-h-mode-hook
@@ -39,8 +35,6 @@
 (req-package helm-c-yasnippet
              :require
              (helm yasnippet cc-mode auto-complete auto-complete-clang)
-             :ensure
-             helm-c-yasnippet
              :init
              (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
 

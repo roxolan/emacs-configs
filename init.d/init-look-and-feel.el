@@ -1,8 +1,6 @@
 ;; pretty lambda
 
 (req-package pretty-lambdada
-             :ensure
-             pretty-lambdada
              :init
              (pretty-lambda-for-modes))
 
@@ -15,8 +13,6 @@
 ;; main line
 
 (req-package smart-mode-line
-             :ensure
-             smart-mode-line
              :init
              (progn (setq sml/theme 'dark)
                     (sml/setup)))
@@ -67,24 +63,18 @@
 ;; line highlight
 
 (req-package hl-line
-             :ensure
-             hl-line
              :init
              (progn (global-hl-line-mode 1)))
 
 ;; todo, fixme highlighting
 
 (req-package fic-mode
-             :ensure
-             fic-mode
              :init
              (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
 
 ;; highlight parenthesis
 
 (req-package highlight-parentheses
-             :ensure
-             highlight-parentheses
              :init
              (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
 
@@ -93,8 +83,6 @@
 (req-package hl-sexp
              :require
              hl-line
-             :ensure
-             hl-sexp
              :init
              (add-hook 'emacs-lisp-mode-hook (lambda () (hl-sexp-mode 1))))
 
@@ -103,8 +91,6 @@
 (req-package diff-hl
              :require
              (smartrep fringe)
-             :ensure
-             diff-hl
              :init
              (global-diff-hl-mode 1))
 
@@ -116,22 +102,16 @@
 
 ;; remember theme
 
-(req-package remember-theme
-             :ensure
-             remember-theme)
+(req-package remember-theme)
 
 ;; theme park mode
 
-(req-package theme-park-mode
-             :ensure
-             theme-park-mode)
+(req-package theme-park-mode)
 
 ;; helm themes
 
 (req-package helm-themes
              :require
-             helm
-             :ensure
-             helm-themes)
+             helm)
 
 (provide 'init-look-and-feel)

@@ -16,7 +16,6 @@
 ;; twitter
 
 (req-package twittering-mode
-             :ensure twittering-mode
              :init (progn (setq twittering-use-master-password t)
                           (setq twittering-icon-mode t)
                           (setq twittering-use-icon-storage t)))
@@ -80,7 +79,6 @@
 ;; ace jump mode
 
 (req-package ace-jump-mode
-             :ensure ace-jump-mode
              :init (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
                           (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
                           (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
@@ -89,27 +87,24 @@
 
 (req-package ace-jump-buffer
              :require (shell ace-jump-mode)
-             :ensure ace-jump-buffer
              :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
                           (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
 
 ;; xml
 
 (req-package auto-complete-nxml
-             :ensure auto-complete-nxml
              :init (progn (setq-default nxml-child-indent 4)
                           (setq nxml-child-indent 4)))
 
 ;; bash complete
 
 (req-package bash-completion
-             :ensure bash-completion
              :init (bash-completion-setup))
 
 ;; auto complete
 
 (req-package auto-complete
-             :ensure auto-complete
+             :require auto-complete-config
              :init (progn (global-auto-complete-mode t)
                           (setq ac-auto-start 1)
                           (setq ac-quick-help-delay 0.1)
@@ -118,25 +113,21 @@
 ;; lua mode
 
 (req-package lua-mode
-             :ensure lua-mode
              :init (setq lua-indent-level 4))
 
 ;; js2 mode
 
 (req-package js2-mode
-             :ensure js2-mode
              :init (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
 ;; batch mode
 
 (req-package batch-mode
-             :ensure batch-mode
              :init (add-to-list 'auto-mode-alist '("\\.bat\\'" . batch-mode)))
 
 ;; flymake
 
 (req-package flymake
-             :ensure flymake
              :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
                           (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
                           (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
@@ -144,34 +135,29 @@
                           (setq flymake-log-level 0)))
 
 (req-package flymake-cursor
-             :require flymake
-             :ensure flymake-cursor)
+             :require flymake)
 
 ;; flymake lua
 
 (req-package flymake-lua
              :require (flymake lua-mode)
-             :ensure flymake-lua
              :init (add-hook 'lua-mode-hook 'flymake-lua-load))
 
 ;; flymake shell
 
 (req-package flymake-shell
              :require (flymake shell)
-             :ensure flymake-shell
              :init (add-hook 'sh-set-shell-hook 'flymake-shell-load))
 
 ;; flymake haskell
 
 (req-package flymake-haskell-multi
              :require (flymake haskell-mode)
-             :ensure flymake-haskell-multi
              :init (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load))
 
 ;; glsl
 
 (req-package glsl-mode
-             :ensure glsl-mode
              :init (progn (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
                           (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
                           (add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
@@ -181,34 +167,29 @@
 ;; yasnippet
 
 (req-package yasnippet
-             :ensure yasnippet
              :init (yas-global-mode 1))
 
 ;; haskell mode
 
 (req-package haskell-mode
-             :ensure haskell-mode
              :init (progn (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
                           (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)))
 
 ;; move text
 
 (req-package move-text
-             :ensure move-text
              :init (progn (global-set-key (kbd "M-n") 'move-text-down)
                           (global-set-key (kbd "M-p") 'move-text-up)))
 
 ;; duplicate thing
 
 (req-package duplicate-thing
-             :ensure duplicate-thing
              :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
                           (global-set-key (kbd "M-с") 'duplicate-thing)))
 
 ;; auto pair
 
 (req-package autopair
-             :ensure autopair
              :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
 
 ;; god mode
@@ -217,7 +198,6 @@
   (setq cursor-type (if (or god-local-mode buffer-read-only) 'hollow 'box)))
 
 (req-package god-mode
-             :ensure god-mode
              :init (progn (global-set-key (kbd "<escape>") 'god-mode)
                           (global-set-key (kbd "C-x C-1") 'delete-other-windows)
                           (global-set-key (kbd "C-x C-2") 'split-window-below)
