@@ -6,16 +6,10 @@
 
 (req-package ensime
              :require
-             scala-mode2
+             (scala-mode2 sbt-mode)
              :ensure
              ensime
              :init
              (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
-
-(req-package sbt-mode
-             :require
-             scala-mode2
-             :ensure
-             sbt-mode)
 
 (provide 'init-scala)

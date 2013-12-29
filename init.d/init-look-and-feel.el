@@ -100,10 +100,6 @@
 
 ;; diff highlight
 
-(req-package smartrep
-             :ensure
-             smartrep)
-
 (req-package diff-hl
              :require
              (smartrep fringe)
@@ -111,6 +107,12 @@
              diff-hl
              :init
              (global-diff-hl-mode 1))
+
+;; highlight defined symbols
+
+(req-package hl-defined
+             :init
+             (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode))
 
 ;; remember theme
 

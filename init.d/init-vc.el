@@ -1,10 +1,4 @@
-;; magit
-
-(req-package magit
-             :ensure
-             magit)
-
-;; helm ls git
+;; magit, helm ls git
 
 (req-package helm-ls-git
              :require

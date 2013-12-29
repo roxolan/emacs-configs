@@ -25,12 +25,6 @@
                               (lambda ()
                                 (setq dummy-h-mode-search-limit 60000)))))
 
-;; headers completion
-
-(req-package ac-c-headers
-             :ensure
-             ac-c-headers)
-
 ;; gdb
 
 (req-package gdb-mi
