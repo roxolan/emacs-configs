@@ -7,6 +7,7 @@
 ;; packages paths
 
 (require 'package)
+
 (defun package-update-load-path ()
   "Update the load path for newly installed packages"
   (interactive)
@@ -21,8 +22,7 @@
 						(aref (cdr pkg) 0))
 				  (setq path (format "%s/%s-%s" package-dir stem version))
 				  (add-to-list 'load-path path)))
-			package-alist)))
-  )
+			package-alist))))
 
 (add-to-list 'load-path "~/.emacs.d/")
 
