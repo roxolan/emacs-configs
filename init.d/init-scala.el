@@ -2,6 +2,10 @@
              :init
              (setq scala-indent:align-parameters t))
 
+(req-package sbt-mode
+             :require
+             scala-mode2)
+
 (req-package ensime
              :require
              (scala-mode2 sbt-mode)
