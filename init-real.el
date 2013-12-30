@@ -123,8 +123,8 @@
 ;; auto complete
 
 (req-package auto-complete
-             :require auto-complete-config
-             :init (progn (global-auto-complete-mode t)
+             :init (progn (require 'auto-complete-config)
+                          (global-auto-complete-mode t)
                           (setq ac-auto-start 1)
                           (setq ac-quick-help-delay 0.1)
                           (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
