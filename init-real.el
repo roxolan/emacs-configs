@@ -25,6 +25,15 @@
 (req-package savehist
              :init (savehist-mode 1))
 
+;; auto async byte compile
+
+(req-package auto-async-byte-compile
+             :init
+             (progn (add-hook 'emacs-lisp-mode-hook
+                              'enable-auto-async-byte-compile-mode)
+                    (setq auto-async-byte-compile-display-function
+                          (lambda (buffer) (print "compiled")))))
+
 ;; xt mosue
 
 (req-package xt-mouse
