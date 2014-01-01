@@ -68,6 +68,12 @@
                     (setq scroll-preserve-screen-position t)
                     (setq isearch-allow-scroll t)))
 
+;; highlight text beyond 80 column
+
+(req-package column-enforce-mode
+             :init
+             (add-hook 'prog-mode-hook (lambda () (column-enforce-mode))))
+
 ;; line highlight
 
 (req-package hl-line
