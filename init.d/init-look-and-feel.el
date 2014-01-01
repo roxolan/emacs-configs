@@ -17,6 +17,14 @@
              (progn (setq sml/theme 'dark)
                     (sml/setup)))
 
+;; anzu
+
+(req-package anzu
+             :require
+             smart-mode-line
+             :init
+             (global-anzu-mode 1))
+
 ;; mode line tweaks
 
 (req-package simple
