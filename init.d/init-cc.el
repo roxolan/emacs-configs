@@ -2,10 +2,16 @@
 
 (req-package auto-complete-clang
              :require
-             (auto-complete cc-mode ac-c-headers)
+             (auto-complete cc-mode)
              :init
              (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
                     (add-hook 'c-mode-hook 'cc-mode-clang-hook)))
+
+;; headers completion
+
+(req-package auto-complete-c-headers
+             :require
+             auto-complete-clang)
 
 ;; detect mode for .h file
 
@@ -53,10 +59,9 @@
     a))
 
 (defun cc-mode-clang-hook ()
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-header-symbols)
   (add-to-list 'ac-sources 'ac-source-yasnippet)
   (add-to-list 'ac-sources 'ac-source-clang)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
 
   (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
 
