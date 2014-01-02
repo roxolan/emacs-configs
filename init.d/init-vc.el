@@ -13,4 +13,12 @@
 
 (req-package dsvn)
 
+;; git config mode
+
+(req-package gitconfig-mode)
+
+;; git ignore mode
+
+(req-package gitignore-mode)
+
 (provide 'init-vc)
