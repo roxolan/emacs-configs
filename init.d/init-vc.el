@@ -2,6 +2,10 @@
 
 (req-package magit)
 
+;; magit svn
+
+(req-package magit-svn)
+
 ;; helm ls git
 
 (req-package helm-ls-git
