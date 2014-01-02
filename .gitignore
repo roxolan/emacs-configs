@@ -12,3 +12,4 @@ theme
 history
 .DS_Store
 server/server
+scratch.el
