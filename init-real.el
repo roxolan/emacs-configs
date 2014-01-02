@@ -46,6 +46,12 @@
                           (setq twittering-icon-mode t)
                           (setq twittering-use-icon-storage t)))
 
+;; pkgbuild mode
+
+(req-package pkgbuild-mode
+             :mode
+             "\\PKGBUILD\\'")
+
 ;; indentation
 
 (setq-default tab-width 4)
