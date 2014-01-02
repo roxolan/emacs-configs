@@ -34,6 +34,10 @@
                     (setq auto-async-byte-compile-display-function
                           (lambda (buffer) (print "compiled")))))
 
+;; scratch persist
+
+(req-package scratch-persist)
+
 ;; insert shebang
 
 (req-package insert-shebang
