@@ -25,6 +25,12 @@
 (req-package savehist
              :init (savehist-mode 1))
 
+;; hide/show comments
+
+(req-package hide-comnt
+             :init
+             (global-set-key (kbd "C-c h") 'hide/show-comments-toggle))
+
 ;; use emr
 
 (req-package emr
