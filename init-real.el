@@ -25,6 +25,15 @@
 (req-package savehist
              :init (savehist-mode 1))
 
+;; use emr
+
+(req-package emr
+             :init
+             (progn (emr-initialize)
+                    (define-key emacs-lisp-mode-map
+                      (kbd "M-RET")
+                      'emr-show-refactor-menu)))
+
 ;; auto async byte compile
 
 (req-package auto-async-byte-compile
