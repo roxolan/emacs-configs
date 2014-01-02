@@ -120,6 +120,10 @@
              :init
              (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode))
 
+;; desc unbound keys
+
+(req-package unbound)
+
 ;; remember theme
 
 (req-package remember-theme)
