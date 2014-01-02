@@ -34,6 +34,12 @@
                     (setq auto-async-byte-compile-display-function
                           (lambda (buffer) (print "compiled")))))
 
+;; insert shebang
+
+(req-package insert-shebang
+             :init
+             (add-hook 'find-file-hook 'insert-shebang))
+
 ;; xt mosue
 
 (req-package xt-mouse
