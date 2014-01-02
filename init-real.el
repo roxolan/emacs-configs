@@ -49,13 +49,6 @@
 (req-package xt-mouse
              :init (xterm-mouse-mode 1))
 
-;; twitter
-
-(req-package twittering-mode
-             :init (progn (setq twittering-use-master-password t)
-                          (setq twittering-icon-mode t)
-                          (setq twittering-use-icon-storage t)))
-
 ;; pkgbuild mode
 
 (req-package pkgbuild-mode
