@@ -25,6 +25,10 @@
 (req-package savehist
              :init (savehist-mode 1))
 
+;; sudo support
+
+(req-package sudo-ext)
+
 ;; hide/show comments
 
 (req-package hide-comnt
