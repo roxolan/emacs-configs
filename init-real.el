@@ -51,6 +51,8 @@
 ;; auto async byte compile
 
 (req-package auto-async-byte-compile
+             :disabled
+             t
              :init
              (progn (add-hook 'emacs-lisp-mode-hook
                               'enable-auto-async-byte-compile-mode)
