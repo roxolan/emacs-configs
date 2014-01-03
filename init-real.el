@@ -29,6 +29,10 @@
 
 (req-package sudo-ext)
 
+;; shell command
+
+(req-package shell-command)
+
 ;; hide/show comments
 
 (req-package hide-comnt
