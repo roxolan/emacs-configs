@@ -26,6 +26,12 @@
              :init
              (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
 
+;; helm desc binds
+
+(req-package helm-descbinds
+             :require
+             helm)
+
 ;; helm flymake
 
 (req-package helm-flymake
