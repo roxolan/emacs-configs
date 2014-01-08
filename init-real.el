@@ -37,6 +37,12 @@
 (req-package savehist
              :init (savehist-mode 1))
 
+;; go to last change
+
+(req-package goto-last-change
+             :init
+             (global-set-key (kbd "C-x C-\\") 'goto-last-change))
+
 ;; sudo support
 
 (req-package sudo-ext)
