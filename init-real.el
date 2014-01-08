@@ -63,6 +63,10 @@
 
 (req-package scratch-persist)
 
+;; scratch ext
+
+(req-package scratch-ext)
+
 ;; insert shebang
 
 (req-package insert-shebang
