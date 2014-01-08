@@ -29,6 +29,8 @@
 
 (req-package git-messenger
              :require
-             magit)
+             magit
+             :init
+             (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
 
 (provide 'init-vc)
