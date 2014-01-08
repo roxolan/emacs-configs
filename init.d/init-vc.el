@@ -25,4 +25,10 @@
 
 (req-package gitignore-mode)
 
+;; git message
+
+(req-package git-messenger
+             :require
+             magit)
+
 (provide 'init-vc)
