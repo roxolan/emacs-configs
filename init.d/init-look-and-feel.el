@@ -13,8 +13,20 @@
 ;; main line
 
 (req-package smart-mode-line
+             :require
+             remember-theme
              :init
-             (progn (setq sml/theme 'dark)
+             (progn (setq sml/theme 'respectfull)
+                    (setq sml/shorten-modes t)
+                    (setq sml/shorten-directory t)
+                    (setq sml/name-width 20)
+                    (setq sml/mode-width 'full)
+                    (add-to-list 'sml/hidden-modes " Anzu")
+                    (add-to-list 'sml/hidden-modes " AC")
+                    (add-to-list 'sml/hidden-modes " yas")
+                    (add-to-list 'sml/hidden-modes " pair")
+                    (add-to-list 'sml/hidden-modes " 80col")
+                    (add-to-list 'sml/hidden-modes " FIC")
                     (sml/setup)))
 
 ;; anzu
