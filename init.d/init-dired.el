@@ -30,4 +30,8 @@
              :require
              (dired dired-single))
 
+;; lusty
+
+(req-package lusty-explorer)
+
 (provide 'init-dired)
