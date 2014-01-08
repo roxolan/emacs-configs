@@ -27,6 +27,8 @@
                     (add-to-list 'sml/hidden-modes " pair")
                     (add-to-list 'sml/hidden-modes " 80col")
                     (add-to-list 'sml/hidden-modes " FIC")
+                    (add-to-list 'sml/hidden-modes " Abbrev")
+                    (add-to-list 'sml/hidden-modes " ARev")
                     (sml/setup)))
 
 ;; anzu
