@@ -7,9 +7,10 @@ var
 url
 clang-complete
 eshell
-ensime/*
+ensime/
 theme
 history
 .DS_Store
-server/server
+server/
 scratch.el
+jabber-avatar-cache/
