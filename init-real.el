@@ -32,6 +32,10 @@
                                     nil
                                     (secrets-get-secret "login" "google"))))
 
+;; howdoi
+
+(req-package howdoi)
+
 ;; save history
 
 (req-package savehist
