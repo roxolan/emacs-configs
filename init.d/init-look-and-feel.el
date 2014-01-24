@@ -10,6 +10,12 @@
              :init
              (menu-bar-mode -1))
 
+;; rotate
+
+(req-package rotate
+             :init
+             (global-set-key (kbd "s-P") 'rotate-layout))
+
 ;; main line
 
 (req-package smart-mode-line
