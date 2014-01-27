@@ -20,18 +20,6 @@
     (progn (package-try-install 'req-package)
            (require 'req-package)))
 
-;; jabber
-
-(req-package jabber
-             :require
-             secrets
-             :init
-             (progn (jabber-connect "edvorg"
-                                    "gmail.com"
-                                    nil
-                                    nil
-                                    (secrets-get-secret "login" "google"))))
-
 ;; howdoi
 
 (req-package howdoi)
