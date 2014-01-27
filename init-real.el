@@ -58,17 +58,6 @@
                       (kbd "M-RET")
                       'emr-show-refactor-menu)))
 
-;; auto async byte compile
-
-(req-package auto-async-byte-compile
-             :disabled
-             t
-             :init
-             (progn (add-hook 'emacs-lisp-mode-hook
-                              'enable-auto-async-byte-compile-mode)
-                    (setq auto-async-byte-compile-display-function
-                          (lambda (buffer) (print "compiled")))))
-
 ;; scratch persist
 
 (req-package scratch-persist)
