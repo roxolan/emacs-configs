@@ -160,4 +160,9 @@
              :require
              helm)
 
+;; xt mosue
+
+(req-package xt-mouse
+             :init (xterm-mouse-mode 1))
+
 (provide 'init-look-and-feel)
