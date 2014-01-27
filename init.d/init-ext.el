@@ -145,6 +145,32 @@
                           (add-hook 'god-mode-enabled-hook 'my-update-cursor)
                           (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
 
+;; auto complete
+
+(req-package auto-complete
+             :init (progn (require 'auto-complete-config)
+                          (global-auto-complete-mode t)
+                          (setq ac-auto-start 1)
+                          (setq ac-quick-help-delay 0.1)
+                          (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
+
+;; flymake
+
+(req-package flymake
+             :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
+                          (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+                          (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+                          (setq flymake-gui-warnings-enabled nil)
+                          (setq flymake-log-level 0)))
+
+(req-package flymake-cursor
+             :require flymake)
+
+;; yasnippet
+
+(req-package yasnippet
+             :init (yas-global-mode 1))
+
 ;; shrink/enlarge window
 
 (global-set-key (kbd "s-{") (lambda () (interactive) (shrink-window 10 1)))
