@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo 0 > tmp.txt
 echo "" | clang++ -v -E -x c++ - 1>>tmp.txt 2>>tmp.txt
 
