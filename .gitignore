@@ -14,3 +14,4 @@ history
 server/
 scratch.el
 jabber-avatar-cache/
+tramp
