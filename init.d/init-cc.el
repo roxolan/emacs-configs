@@ -5,7 +5,9 @@
              (auto-complete cc-mode)
              :init
              (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
-                    (add-hook 'c-mode-hook 'cc-mode-clang-hook)))
+                    (add-hook 'c-mode-hook 'cc-mode-clang-hook)
+                    (setq-default c-basic-offset 4)
+                    (setq-default c-default-style "bsd")))
 
 ;; headers completion
 
