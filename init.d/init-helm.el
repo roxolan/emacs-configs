@@ -44,4 +44,10 @@
              :require
              (helm flymake))
 
+;; helm make
+
+(req-package helm-make
+             :require
+             helm)
+
 (provide 'init-helm)
