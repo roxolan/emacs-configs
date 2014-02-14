@@ -1,8 +1,11 @@
 (if (eq system-type 'gnu/linux)
 
-	(req-package battery
-                 :init
-                 (progn (setq battery-mode-line-format " %p%%")
-                        (display-battery-mode))))
+	(progn (req-package battery
+                        :init
+                        (progn (setq battery-mode-line-format " %p%%")
+                               (display-battery-mode)))
+
+           ;; aur interface
+           (req-package aurel)))
 
 (provide 'init-linux)
