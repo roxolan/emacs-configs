@@ -46,6 +46,10 @@
              :init
              (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
 
+;; rtags
+
+(req-package rtags)
+
 ;; some utils
 
 (defun find-makefile-dir (cur)
