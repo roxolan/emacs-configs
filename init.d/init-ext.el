@@ -2,6 +2,10 @@
 
 (req-package howdoi)
 
+;; swoop
+
+(req-package swoop)
+
 ;; save history
 
 (req-package savehist
