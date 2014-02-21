@@ -30,6 +30,18 @@
              :require
              (dired dired-single))
 
+;; dired rainbow
+
+(req-package dired-rainbow
+             :require
+             dired)
+
+;; dired open
+
+(req-package dired-open
+             :require
+             dired)
+
 ;; lusty
 
 (req-package lusty-explorer
