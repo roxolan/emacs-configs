@@ -52,4 +52,10 @@
              :init
              (global-set-key (kbd "s-B") 'helm-make))
 
+;; helm wgrep
+
+(req-package wgrep-helm
+             :require
+             (helm wgrep grep))
+
 (provide 'init-helm)
