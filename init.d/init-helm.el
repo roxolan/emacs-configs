@@ -49,6 +49,7 @@
 (req-package helm-make
              :require
              helm
+             :init
              (global-set-key (kbd "s-B") 'helm-make))
 
 (provide 'init-helm)
