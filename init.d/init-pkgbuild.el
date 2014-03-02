@@ -1,7 +1,7 @@
 ;; pkgbuild mode
 
 (req-package pkgbuild-mode
-             :mode
-             "\\PKGBUILD\\'")
+  :mode
+  "\\PKGBUILD\\'")
 
 (provide 'init-pkgbuild)

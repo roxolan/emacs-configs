@@ -9,9 +9,9 @@
 ;; helm ls git
 
 (req-package helm-ls-git
-             :require
-             helm
-             :init (global-set-key (kbd "M-+") 'helm-ls-git-ls))
+  :require
+  helm
+  :init (global-set-key (kbd "M-+") 'helm-ls-git-ls))
 
 ;; dsvn
 
@@ -28,9 +28,9 @@
 ;; git message
 
 (req-package git-messenger
-             :require
-             magit
-             :init
-             (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
+  :require
+  magit
+  :init
+  (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
 
 (provide 'init-vc)

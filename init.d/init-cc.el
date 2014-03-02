@@ -1,50 +1,50 @@
 ;; completion with clang
 
 (req-package auto-complete-clang
-             :require
-             (auto-complete cc-mode)
-             :init
-             (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
-                    (add-hook 'c-mode-hook 'cc-mode-clang-hook)
-                    (setq-default c-basic-offset 4)
-                    (setq-default c-default-style "bsd")))
+  :require
+  (auto-complete cc-mode)
+  :init
+  (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
+         (add-hook 'c-mode-hook 'cc-mode-clang-hook)
+         (setq-default c-basic-offset 4)
+         (setq-default c-default-style "bsd")))
 
 ;; headers completion
 
 (req-package auto-complete-c-headers
-             :require
-             auto-complete-clang)
+  :require
+  auto-complete-clang)
 
 ;; detect mode for .h file
 
 (req-package dummy-h-mode
-             :require
-             cc-mode
-             :init
-             (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
-                    (add-hook 'dummy-h-mode-hook
-                              (lambda ()
-                                (setq dummy-h-mode-default-major-mode 'c++-mode)))
-                    (add-hook 'dummy-h-mode-hook
-                              (lambda ()
-                                (setq dummy-h-mode-search-limit 60000)))))
+  :require
+  cc-mode
+  :init
+  (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
+         (add-hook 'dummy-h-mode-hook
+                   (lambda ()
+                     (setq dummy-h-mode-default-major-mode 'c++-mode)))
+         (add-hook 'dummy-h-mode-hook
+                   (lambda ()
+                     (setq dummy-h-mode-search-limit 60000)))))
 
 ;; gdb
 
 (req-package gdb-mi
-             :require
-             cc-mode
-             :init
-             (progn (setq gdb-many-windows t)
-                    (setq gdb-show-main t)))
+  :require
+  cc-mode
+  :init
+  (progn (setq gdb-many-windows t)
+         (setq gdb-show-main t)))
 
 ;; snippets using helm
 
 (req-package helm-c-yasnippet
-             :require
-             (helm yasnippet cc-mode auto-complete auto-complete-clang)
-             :init
-             (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
+  :require
+  (helm yasnippet cc-mode auto-complete auto-complete-clang)
+  :init
+  (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
 
 ;; rtags
 

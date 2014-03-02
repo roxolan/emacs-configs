@@ -5,7 +5,7 @@
 ;; use wgrep
 
 (req-package wgrep
-             :require
-             grep)
+  :require
+  grep)
 
 (provide 'init-search)

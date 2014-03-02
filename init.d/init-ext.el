@@ -9,13 +9,13 @@
 ;; save history
 
 (req-package savehist
-             :init (savehist-mode 1))
+  :init (savehist-mode 1))
 
 ;; go to last change
 
 (req-package goto-last-change
-             :init
-             (global-set-key (kbd "C-x C-\\") 'goto-last-change))
+  :init
+  (global-set-key (kbd "C-x C-\\") 'goto-last-change))
 
 ;; sudo support
 
@@ -28,8 +28,8 @@
 ;; hide/show comments
 
 (req-package hide-comnt
-             :init
-             (global-set-key (kbd "C-c h") 'hide/show-comments-toggle))
+  :init
+  (global-set-key (kbd "C-c h") 'hide/show-comments-toggle))
 
 ;; scratch persist
 
@@ -42,8 +42,8 @@
 ;; insert shebang
 
 (req-package insert-shebang
-             :init
-             (add-hook 'find-file-hook 'insert-shebang))
+  :init
+  (add-hook 'find-file-hook 'insert-shebang))
 
 ;; indentation
 
@@ -96,41 +96,41 @@
 ;; ace jump mode
 
 (req-package ace-jump-mode
-             :init (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
-                          (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
-                          (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
+  :init (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
+               (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
+               (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
 
 ;; ace jump buffer
 
 (req-package ace-jump-buffer
-             :require (shell ace-jump-mode)
-             :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
-                          (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
+  :require (shell ace-jump-mode)
+  :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
+               (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
 
 ;; move text
 
 (req-package move-text
-             :init (progn (global-set-key (kbd "M-n") 'move-text-down)
-                          (global-set-key (kbd "M-p") 'move-text-up)))
+  :init (progn (global-set-key (kbd "M-n") 'move-text-down)
+               (global-set-key (kbd "M-p") 'move-text-up)))
 
 ;; duplicate thing
 
 (req-package duplicate-thing
-             :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
-                          (global-set-key (kbd "M-с") 'duplicate-thing)))
+  :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
+               (global-set-key (kbd "M-с") 'duplicate-thing)))
 
 ;; auto pair
 
 (req-package autopair
-             :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
+  :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
 
 ;; auto reverting
 
 (req-package autorevert
-             :init (progn (setq global-auto-revert-non-file-buffers t)
-                          (setq auto-revert-interval 0.5)
-                          (add-to-list 'auto-mode-alist
-                                       '("\\.log\\'" . auto-revert-tail-mode))))
+  :init (progn (setq global-auto-revert-non-file-buffers t)
+               (setq auto-revert-interval 0.5)
+               (add-to-list 'auto-mode-alist
+                            '("\\.log\\'" . auto-revert-tail-mode))))
 
 ;; god mode
 
@@ -138,42 +138,42 @@
   (setq cursor-type (if (or god-local-mode buffer-read-only) 'hollow 'box)))
 
 (req-package god-mode
-             :init (progn (global-set-key (kbd "<escape>") 'god-mode)
-                          (global-set-key (kbd "C-x C-1") 'delete-other-windows)
-                          (global-set-key (kbd "C-x C-2") 'split-window-below)
-                          (global-set-key (kbd "C-x C-3") 'split-window-right)
-                          (global-set-key (kbd "C-x C-0") 'delete-window)
-                          (define-key god-local-mode-map (kbd ".") 'repeat)
-                          (define-key god-local-mode-map (kbd "z") 'repeat)
-                          (define-key god-local-mode-map (kbd "i") 'god-mode)
-                          (add-hook 'god-mode-enabled-hook 'my-update-cursor)
-                          (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
+  :init (progn (global-set-key (kbd "<escape>") 'god-mode)
+               (global-set-key (kbd "C-x C-1") 'delete-other-windows)
+               (global-set-key (kbd "C-x C-2") 'split-window-below)
+               (global-set-key (kbd "C-x C-3") 'split-window-right)
+               (global-set-key (kbd "C-x C-0") 'delete-window)
+               (define-key god-local-mode-map (kbd ".") 'repeat)
+               (define-key god-local-mode-map (kbd "z") 'repeat)
+               (define-key god-local-mode-map (kbd "i") 'god-mode)
+               (add-hook 'god-mode-enabled-hook 'my-update-cursor)
+               (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
 
 ;; auto complete
 
 (req-package auto-complete
-             :init (progn (require 'auto-complete-config)
-                          (global-auto-complete-mode t)
-                          (setq ac-auto-start 1)
-                          (setq ac-quick-help-delay 0.1)
-                          (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
+  :init (progn (require 'auto-complete-config)
+               (global-auto-complete-mode t)
+               (setq ac-auto-start 1)
+               (setq ac-quick-help-delay 0.1)
+               (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
 
 ;; flymake
 
 (req-package flymake
-             :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
-                          (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-                          (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
-                          (setq flymake-gui-warnings-enabled nil)
-                          (setq flymake-log-level 0)))
+  :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
+               (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+               (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+               (setq flymake-gui-warnings-enabled nil)
+               (setq flymake-log-level 0)))
 
 (req-package flymake-cursor
-             :require flymake)
+  :require flymake)
 
 ;; yasnippet
 
 (req-package yasnippet
-             :init (yas-global-mode 1))
+  :init (yas-global-mode 1))
 
 ;; shrink/enlarge window
 
