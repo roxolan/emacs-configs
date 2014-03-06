@@ -1,3 +1,10 @@
+;; save packages
+
+(req-package save-packages
+  :init
+  (progn (setq save-packages-file "~/.emacs.d/saved-packages")
+         (add-hook 'kill-emacs-hook 'save-packages)))
+
 ;; howdoi
 
 (req-package howdoi)
