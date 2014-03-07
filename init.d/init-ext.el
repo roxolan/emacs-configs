@@ -5,6 +5,10 @@
   (progn (setq save-packages-file "~/.emacs.d/saved-packages")
          (add-hook 'kill-emacs-hook 'save-packages)))
 
+;; sos
+
+(req-package sos)
+
 ;; howdoi
 
 (req-package howdoi)
