@@ -74,10 +74,6 @@
 
 (setq bookmark-save-flag 1)
 
-;; delete trailing whitespaces before saving some buffer
-
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 ;; turn off backup files
 
 (setq make-backup-files nil)
