@@ -1,3 +1,7 @@
+;; ant
+
+(req-package ant)
+
 ;; save packages
 
 (req-package save-packages
