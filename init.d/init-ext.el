@@ -107,9 +107,10 @@
 ;; ace jump mode
 
 (req-package ace-jump-mode
-  :init (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
-               (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
-               (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
+  :init
+  (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
+         (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
+         (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
 
 ;; ace jump buffer
 
