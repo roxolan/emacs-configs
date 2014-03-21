@@ -104,6 +104,11 @@
 
 (setq enable-local-variables nil)
 
+;; switch window
+
+(req-package switch-window
+  :init (global-set-key (kbd "C-x o") 'switch-window))
+
 ;; ace jump mode
 
 (req-package ace-jump-mode
