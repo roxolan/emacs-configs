@@ -16,3 +16,4 @@ scratch.el
 jabber-avatar-cache/
 tramp
 saved-packages
+/session.*
