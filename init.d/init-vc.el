@@ -15,7 +15,8 @@
 
 ;; dsvn
 
-(req-package fsvn)
+(req-package fsvn
+  :require dired)
 
 ;; git config mode
 
