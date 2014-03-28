@@ -15,7 +15,7 @@
 
 ;; dsvn
 
-(req-package dsvn)
+(req-package fsvn)
 
 ;; git config mode
 
