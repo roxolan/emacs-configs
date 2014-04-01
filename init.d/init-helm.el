@@ -5,6 +5,11 @@
   (progn (require 'helm-config)
          (define-key global-map (kbd "C-x b") 'helm-buffers-list)))
 
+;; helm google
+
+(req-package helm-google
+  :require helm)
+
 ;; helm proc
 
 (req-package helm-proc
