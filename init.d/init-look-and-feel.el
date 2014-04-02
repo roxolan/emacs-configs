@@ -163,6 +163,8 @@
 ;; xt mosue
 
 (req-package xt-mouse
-  :init (xterm-mouse-mode 1))
+  :require mouse
+  :init (progn (xterm-mouse-mode 1)
+               (defun track-mouse (e))))
 
 (provide 'init-look-and-feel)
