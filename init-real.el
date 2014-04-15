@@ -4,6 +4,17 @@
 
 (require 'cl)
 
+;; bootstrap
+;;   this code block is just a bootstrapping helper
+;; for clean emacs installation with copy of this configs repo.
+;;   i noticed, that clean emacs installation has empty
+;; package-archive-contents variable.
+;;   it happening because you have not any packages descriptions into
+;; ~/.emacs.d/elpa/archives directory. so there is no information
+;; about req-package at first emacs launch.
+;;   that's why i check package-archive-contents and fetch descriptions 
+;; in case this variable is empty and then i'm tring to install it
+;; using package-install function.
 (defun package-try-install (package)
   "installs package if not installed"
   (let* ((ARCHIVES (if (null package-archive-contents)
@@ -17,8 +28,12 @@
         (package-install package))))
 
 (if (null (require 'req-package "req-package" t))
-    (progn (package-try-install 'req-package)
+    ;; requre failed, it might be first start.
+    ;; try to fetch archives and install req-package.
+    ;; then require again.
+    (progn (package-try-install 'req-package)           
            (require 'req-package)))
+;; bootstrap -^
 
 ;; init.d
 
