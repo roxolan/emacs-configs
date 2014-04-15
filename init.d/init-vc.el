@@ -13,11 +13,6 @@
   helm
   :init (global-set-key (kbd "M-+") 'helm-ls-git-ls))
 
-;; dsvn
-
-(req-package fsvn
-  :require dired)
-
 ;; git config mode
 
 (req-package gitconfig-mode)
