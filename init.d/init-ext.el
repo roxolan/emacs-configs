@@ -1,3 +1,7 @@
+;; paradox
+
+(req-package paradox)
+
 ;; multiple cursors
 
 (req-package multiple-cursors
