@@ -1,3 +1,7 @@
+;; clang format
+
+(req-package clang-format)
+
 ;; completion with clang
 
 (req-package auto-complete-clang
