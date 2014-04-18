@@ -4,14 +4,19 @@
 
 ;; completion with clang
 
+(defconst cc-style
+  '("bsd"
+    (c-offsets-alist . ((innamespace . [0])))))
+
 (req-package auto-complete-clang
   :require
   (auto-complete cc-mode)
   :init
   (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
          (add-hook 'c-mode-hook 'cc-mode-clang-hook)
+         (c-add-style "cc-style" cc-style)
          (setq-default c-basic-offset 4)
-         (setq-default c-default-style "bsd")))
+         (setq-default c-default-style "cc-style")))
 
 ;; headers completion
 
