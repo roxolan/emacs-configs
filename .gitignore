@@ -18,3 +18,4 @@ tramp
 saved-packages
 /session.*
 /.mc-lists.el
+/.cask/
