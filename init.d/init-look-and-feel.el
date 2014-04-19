@@ -1,3 +1,8 @@
+;; fonts
+
+(set-default-font "SourceCodePro-9")
+(set-fontset-font "fontset-default" 'cyrillic-iso8859-5 '("Liberation Mono" . "iso10646-1"))
+
 ;; pretty lambda
 
 (req-package pretty-lambdada
