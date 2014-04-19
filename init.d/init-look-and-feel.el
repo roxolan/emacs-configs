@@ -1,6 +1,6 @@
 ;; fonts
 
-(set-default-font "SourceCodePro-9")
+(set-default-font "SourceCodePro-9" t)
 (set-fontset-font "fontset-default" 'cyrillic-iso8859-5 '("Liberation Mono" . "iso10646-1"))
 
 ;; pretty lambda
