@@ -153,7 +153,9 @@
 ;; smart parenthesis
 
 (req-package smartparens-config
-  :require smartparens)
+  :require smartparens
+  :init (progn (smartparens-global-mode t)
+               (show-smartparens-global-mode t)))
 
 ;; auto reverting
 
