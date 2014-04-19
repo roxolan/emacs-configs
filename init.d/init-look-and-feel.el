@@ -1,3 +1,12 @@
+;; some very useful extension
+
+(req-package nyan-mode
+  :init (progn (setq nyan-animation-frame-interval 0.1)
+               (setq nyan-bar-length 8)
+               (setq nyan-animate-nyancat t)
+               (setq nyan-wavy-trail t)
+               (nyan-mode)))
+
 ;; fonts
 
 (set-default-font "SourceCodePro-9" t)
