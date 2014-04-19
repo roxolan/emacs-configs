@@ -45,6 +45,11 @@
 
 (req-package-finish)
 
+;; maximize frame
+
+(req-package maxframe
+  :init (maximize-frame))
+
 ;; start emacs server
 
 (server-start)
