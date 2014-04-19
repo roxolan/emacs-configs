@@ -44,8 +44,6 @@
 
 ;; lusty
 
-(req-package lusty-explorer
-  :init
-  (global-set-key (kbd "C-x f") 'lusty-file-explorer))
+(req-package lusty-explorer)
 
 (provide 'init-dired)
