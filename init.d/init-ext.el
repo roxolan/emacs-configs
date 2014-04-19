@@ -150,10 +150,10 @@
   :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
                (global-set-key (kbd "M-с") 'duplicate-thing)))
 
-;; auto pair
+;; smart parenthesis
 
-(req-package autopair
-  :init (add-hook 'prog-mode-hook (lambda () (autopair-mode 1))))
+(req-package smartparens-config
+  :require smartparens)
 
 ;; auto reverting
 
