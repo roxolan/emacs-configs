@@ -33,4 +33,8 @@
 
 (req-package git-blame)
 
+;; git attributes editing
+
+(req-package gitattributes-mode)
+
 (provide 'init-vc)
