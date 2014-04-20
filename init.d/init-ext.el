@@ -1,3 +1,7 @@
+;; googling
+
+(req-package google-this)
+
 ;; shell pop up
 
 (req-package shell-pop
