@@ -20,3 +20,4 @@ saved-packages
 /.mc-lists.el
 /.cask/
 /custom.el
+/.litable-lists.el

@@ -7,4 +7,9 @@
            (kbd "M-RET")
            'emr-show-refactor-menu)))
 
+;; use litable
+
+(req-package litable
+  :init (add-hook 'emacs-lisp-mode-hook (lambda () (litable-mode 1))))
+
 (provide 'init-elisp)
