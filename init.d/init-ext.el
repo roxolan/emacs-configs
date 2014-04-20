@@ -1,3 +1,8 @@
+;; shell pop up
+
+(req-package shell-pop
+  :init (global-set-key (kbd "C-`") 'shell-pop))
+
 ;; string edit
 
 (req-package string-edit
