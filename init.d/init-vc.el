@@ -29,4 +29,8 @@
   :init
   (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
 
+;; git blame
+
+(req-package git-blame)
+
 (provide 'init-vc)
