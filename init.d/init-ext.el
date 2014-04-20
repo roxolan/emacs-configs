@@ -1,3 +1,8 @@
+;; string edit
+
+(req-package string-edit
+  :init (global-set-key (kbd "C-c e") 'string-edit-at-point))
+
 ;; paradox
 
 (req-package paradox)
