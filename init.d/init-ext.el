@@ -1,3 +1,8 @@
+;; smart wthitespace cleanup
+
+(req-package whitespace-cleanup-mode
+  :init (global-whitespace-cleanup-mode 1))
+
 ;; googling
 
 (req-package google-this)
