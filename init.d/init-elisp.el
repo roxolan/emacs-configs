@@ -10,6 +10,6 @@
 ;; use litable
 
 (req-package litable
-  :init (add-hook 'emacs-lisp-mode-hook (lambda () (litable-mode 1))))
+  :init (add-hook 'lisp-interaction-mode-hook (lambda () (litable-mode 1))))
 
 (provide 'init-elisp)
