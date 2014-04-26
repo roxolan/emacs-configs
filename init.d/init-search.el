@@ -13,7 +13,7 @@
 (req-package fiplr
   :init (progn (setq fiplr-ignored-globs
                      (let* ((GLOBS fiplr-ignored-globs)
-                            (ADDITIONAL-DIRS '(".zbuild"))
+                            (ADDITIONAL-DIRS '(".zbuild" ".cask"))
                             (ADDITIONAL-FILES '("*.d" "*.elc" "*.dat" "*.raw" "*.wav"))
                             (CURRENT-DIRS (if GLOBS (cadar GLOBS) nil))
                             (CURRENT-FILES (if GLOBS (cadadr GLOBS) nil))
