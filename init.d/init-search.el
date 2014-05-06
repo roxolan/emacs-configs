@@ -24,4 +24,11 @@
                (global-set-key (kbd "C-x f") 'fiplr-find-file)
                (global-set-key (kbd "C-x d") 'fiplr-find-directory)))
 
+;; visual regexp
+
+(req-package visual-regexp
+  :init (progn (define-key global-map (kbd "C-c r") 'vr/replace)
+               (define-key global-map (kbd "C-c q") 'vr/query-replace)
+               (define-key global-map (kbd "C-c m") 'vr/mc-mark)))
+
 (provide 'init-search)
