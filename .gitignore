@@ -21,3 +21,4 @@ saved-packages
 /.cask/
 /custom.el
 /.litable-lists.el
+/elnode/
