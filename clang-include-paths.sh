@@ -1,13 +1,15 @@
-#!/usr/bin/env bash
+#! /bin/bash
+exec scala -savecompiled -feature "$0" "$@"
+!#
 
-echo 0 > tmp.txt
-echo "" | clang++ -v -E -x c++ - 1>>tmp.txt 2>>tmp.txt
+import scala.sys.process._
+import scala.collection.mutable.ArrayBuffer
 
-OUTPUT_SIZE=`cat tmp.txt | wc -l`
-UPPER_PATTERN='#include <...> search starts here:'
-BOTTOM_PATTERN='End of search list'
+val lines = ArrayBuffer[String]()
 
-cat tmp.txt | grep -A $OUTPUT_SIZE "$UPPER_PATTERN" | grep -B $OUTPUT_SIZE "$BOTTOM_PATTERN" | grep -v "$UPPER_PATTERN" | grep -v "$BOTTOM_PATTERN" | grep -vi "(framework directory)"
-cat tmp.txt | grep -A $OUTPUT_SIZE "$UPPER_PATTERN" | grep -B $OUTPUT_SIZE "$BOTTOM_PATTERN" | grep -v "$UPPER_PATTERN" | grep -v "$BOTTOM_PATTERN" | grep -i "(framework directory)" | while read line ; do echo ${line:0:${#line}-22} ; done
+"echo \"\"" #| "clang++ -v -E -x c++ -" ! ProcessLogger(_ => Unit, lines += _)
 
-rm tmp.txt
+val filtered = lines.takeWhile(!_.contains("End of search list")).reverse
+  .takeWhile(!_.contains("#include <...> search starts here:"))
+
+for (line <- filtered) println("\\(framework directory\\)".r.replaceAllIn(line, ""))
