@@ -107,7 +107,7 @@
 
 (req-package mwheel
   :init
-  (progn (setq mouse-wheel-scroll-amount '(2 ((shift) . 2)))
+  (progn ;; (setq mouse-wheel-scroll-amount '(2 ((shift) . 2)))
          (setq mouse-wheel-progressive-speed nil)
          (setq mouse-wheel-follow-mouse t)
          (global-set-key (kbd "<mouse-6>") (lambda () (interactive) nil))
@@ -120,6 +120,14 @@
          (setq auto-window-vscroll nil)
          (setq scroll-preserve-screen-position t)
          (setq isearch-allow-scroll t)))
+
+(req-package smooth-scroll
+  :require mwheel
+  :init (progn (smooth-scroll-mode)
+               (setq smooth-scroll/vscroll-step-size 6)))
+
+(req-package smooth-scrolling
+  :require smooth-scroll)
 
 ;; highlight text beyond 80 column
 
