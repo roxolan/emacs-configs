@@ -1,3 +1,8 @@
+;; swith off some warnings
+
+(req-package warnings
+  :init (add-to-list 'warning-suppress-types '(undo discard-info)))
+
 ;; smart wthitespace cleanup
 
 (req-package whitespace-cleanup-mode
