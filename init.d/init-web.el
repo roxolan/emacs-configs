@@ -17,4 +17,8 @@
   :require elnode
   :init (elnode-start 'peek-mode-dispatcher-handler :port 8008 :host "localhost"))
 
+;; xml generation dsl
+
+(req-package xmlgen)
+
 (provide 'init-web)
