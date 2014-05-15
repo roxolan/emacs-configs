@@ -23,3 +23,4 @@ saved-packages
 /.litable-lists.el
 /elnode/
 /clang-include-paths.sh.jar
+/hgs-cache
