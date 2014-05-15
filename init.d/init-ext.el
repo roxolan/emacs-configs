@@ -1,3 +1,9 @@
+;; google tanslate
+
+(req-package google-translate
+  :require google-translate-smooth-ui
+  :init (global-set-key (kbd "C-c t") 'google-translate-smooth-translate))
+
 ;; swith off some warnings
 
 (req-package warnings
