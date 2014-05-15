@@ -21,4 +21,8 @@
 
 (req-package xmlgen)
 
+;; html templates editing
+
+(req-package web-mode)
+
 (provide 'init-web)
