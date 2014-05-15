@@ -1,13 +1,12 @@
-.emacs.d
-=============
+* .emacs.d
 
 init.el and other stuff for my emacs environment.
 
 it's self bootstrapping.
 
-```bash
+#+BEGIN_SRC shell
 git clone http://github.com/edvorg/emacs-configs ~/.emacs.d
 emacs
-```
+#+END_SRC
 
 all required packages will be installed and configured automatically.
