@@ -4,6 +4,7 @@
   :init
   (progn (require 'helm-config)
          (define-key global-map (kbd "C-x b") 'helm-buffers-list)
+         (global-set-key (kbd "C-c y") 'helm-show-kill-ring)
          (global-set-key (kbd "C-x r l") 'helm-bookmarks)))
 
 ;; helm google
