@@ -3,6 +3,11 @@
 (req-package whitespace-cleanup-mode
   :init (global-whitespace-cleanup-mode 1))
 
+;; use fuzzy for M-x
+
+(req-package smex
+  :init (progn (smex-initialize)
+               (global-set-key (kbd "M-x") 'smex)))
 ;; googling
 
 (req-package google-this)
