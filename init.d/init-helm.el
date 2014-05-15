@@ -69,4 +69,10 @@
   :require
   (helm wgrep grep))
 
+;; helm github stars
+
+(req-package helm-github-stars
+  :require helm
+  :init (setq helm-github-stars-username (getenv "USER")))
+
 (provide 'init-helm)
