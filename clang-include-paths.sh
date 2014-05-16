@@ -7,7 +7,7 @@ import scala.collection.mutable.ArrayBuffer
 
 val lines = ArrayBuffer[String]()
 
-"echo \"\"" #| "clang++ -v -E -x c++ -" ! ProcessLogger(_ => Unit, lines += _)
+"echo" #| "clang++ -v -E -x c++ -" ! ProcessLogger(_ => Unit, lines += _)
 
 val filtered = lines.takeWhile(!_.contains("End of search list")).reverse
   .takeWhile(!_.contains("#include <...> search starts here:"))
