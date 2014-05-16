@@ -22,6 +22,6 @@ saved-packages
 /custom.el
 /.litable-lists.el
 /elnode/
-/clang-include-paths.sh.jar
+/clang-include-paths.jar
 /hgs-cache
 /emacs-theme

@@ -78,11 +78,11 @@
   (add-to-list 'ac-sources 'ac-source-clang)
   (add-to-list 'ac-sources 'ac-source-c-headers)
 
-  (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh")))
+  (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.scala")))
 
   (setq ac-clang-flags
         (mapcar (lambda (item) (concat "-I" item))
-                (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.sh"))))
+                (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.scala"))))
 
   (setq ac-clang-flags (append ac-clang-flags
                                (mapcar 'expand-include-flag
