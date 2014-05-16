@@ -133,7 +133,8 @@
 
 (req-package column-enforce-mode
   :init
-  (add-hook 'prog-mode-hook (lambda () (column-enforce-mode))))
+  (progn (add-hook 'prog-mode-hook (lambda () (column-enforce-mode)))
+         (setq column-enforce-column 90)))
 
 ;; line highlight
 
