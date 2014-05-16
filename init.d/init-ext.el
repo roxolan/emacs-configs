@@ -1,3 +1,7 @@
+(req-package browse-url
+  :init (setq browse-url-browser-function
+              (lambda (url &rest args) (call-process-shell-command "xdg-open" nil 0 nil url))))
+
 ;; google tanslate
 
 (req-package google-translate
