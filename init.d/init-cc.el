@@ -10,7 +10,7 @@
 
 (req-package auto-complete-clang
   :require
-  (auto-complete cc-mode)
+  (auto-complete cc-mode async)
   :init
   (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
          (add-hook 'c-mode-hook 'cc-mode-clang-hook)
@@ -78,14 +78,23 @@
   (add-to-list 'ac-sources 'ac-source-clang)
   (add-to-list 'ac-sources 'ac-source-c-headers)
 
-  (setq cc-search-directories (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.scala")))
+  (setq ac-clang-flags nil)
+  
+  (async-start
+   (lambda () (split-string (shell-command-to-string
+                        "bash ~/.emacs.d/clang-include-paths.scala")))  
+   (lambda (result)
+     (setq ac-clang-flags
+           (append ac-clang-flags
+                   (mapcar (lambda (item) (concat "-I" item)) result)))
+     (setq cc-search-directories result)))
 
   (setq ac-clang-flags
-        (mapcar (lambda (item) (concat "-I" item))
-                (split-string (shell-command-to-string "bash ~/.emacs.d/clang-include-paths.scala"))))
-
-  (setq ac-clang-flags (append ac-clang-flags
-                               (mapcar 'expand-include-flag
-                                       (split-string (shell-command-to-string (concat (concat "make -C " (find-makefile-dir "./")) " -s print-cflags")))))))
+        (append ac-clang-flags
+                (mapcar 'expand-include-flag
+                        (split-string
+                         (shell-command-to-string
+                          (concat (concat "make -C " (find-makefile-dir "./"))
+                                  " -s print-cflags")))))))
 
 (provide 'init-cc)
