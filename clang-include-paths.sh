@@ -12,4 +12,4 @@ val lines = ArrayBuffer[String]()
 val filtered = lines.takeWhile(!_.contains("End of search list")).reverse
   .takeWhile(!_.contains("#include <...> search starts here:"))
 
-for (line <- filtered) println("\\(framework directory\\)".r.replaceAllIn(line, ""))
+filtered.map(x => println("\\(framework directory\\)".r.replaceAllIn(x, "")))
