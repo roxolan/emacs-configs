@@ -6,6 +6,12 @@
 
 (req-package magit-svn)
 
+;; magit github integration
+
+(req-package magithub
+  :require magit
+  :disabled t)
+
 ;; helm ls git
 
 (req-package helm-ls-git
