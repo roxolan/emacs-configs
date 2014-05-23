@@ -50,7 +50,7 @@
          (add-to-list 'sml/hidden-modes " AC")
          (add-to-list 'sml/hidden-modes " yas")
          (add-to-list 'sml/hidden-modes " pair")
-         (add-to-list 'sml/hidden-modes " 80col")
+         (add-to-list 'sml/hidden-modes " 90col")
          (add-to-list 'sml/hidden-modes " FIC")
          (add-to-list 'sml/hidden-modes " Abbrev")
          (add-to-list 'sml/hidden-modes " ARev")
