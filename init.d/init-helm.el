@@ -23,7 +23,7 @@
   :require
   (helm auto-complete)
   :init
-  (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm))
+  (global-set-key (kbd "C-:") 'ac-complete-with-helm))
 
 ;; helm helm commands
 
