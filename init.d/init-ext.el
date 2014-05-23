@@ -253,7 +253,7 @@
 
 ;; ru keys
 
-(set-input-method 'russian-computer)
-(set-input-method nil)
+(add-hook 'find-file-hook
+          (lambda () (setq default-input-method 'russian-computer))
 
 (provide 'init-ext)
