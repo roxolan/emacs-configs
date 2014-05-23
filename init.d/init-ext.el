@@ -182,8 +182,7 @@
 ;; duplicate thing
 
 (req-package duplicate-thing
-  :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)
-               (global-set-key (kbd "M-с") 'duplicate-thing)))
+  :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)))
 
 ;; smart parenthesis
 
