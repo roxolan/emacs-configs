@@ -39,7 +39,7 @@
 
 (req-package smart-mode-line
   :require
-  remember-theme
+  (remember-theme column-enforce-mode)
   :init
   (progn (setq sml/theme 'respectfull)
          (setq sml/shorten-modes t)
@@ -50,7 +50,8 @@
          (add-to-list 'sml/hidden-modes " AC")
          (add-to-list 'sml/hidden-modes " yas")
          (add-to-list 'sml/hidden-modes " pair")
-         (add-to-list 'sml/hidden-modes " 90col")
+         (add-to-list 'sml/hidden-modes
+                      (concat " " (concat (int-to-string column-width) "col")))
          (add-to-list 'sml/hidden-modes " FIC")
          (add-to-list 'sml/hidden-modes " Abbrev")
          (add-to-list 'sml/hidden-modes " ARev")
@@ -131,10 +132,12 @@
 
 ;; highlight text beyond 80 column
 
+(defconst column-width 90)
+
 (req-package column-enforce-mode
   :init
   (progn (add-hook 'prog-mode-hook (lambda () (column-enforce-mode)))
-         (setq column-enforce-column 90)))
+         (setq column-enforce-column column-width)))
 
 ;; line highlight
 
