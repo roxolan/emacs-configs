@@ -45,6 +45,10 @@
 ;; lusty
 
 (req-package lusty-explorer
-  :init (global-set-key (kbd "C-x C-f") 'lusty-file-explorer))
+  :init (progn (global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
+               (define-key lusty-mode-map (kbd "C-p") 'lusty-highlight-previous-column)
+               (define-key lusty-mode-map (kbd "C-n") 'lusty-highlight-next-column)
+               (define-key lusty-mode-map (kbd "C-b") 'lusty-highlight-previous)
+               (define-key lusty-mode-map (kbd "C-f") 'lusty-highlight-next)))
 
 (provide 'init-dired)
