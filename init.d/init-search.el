@@ -14,7 +14,7 @@
   :init (progn (setq fiplr-ignored-globs
                      (let* ((GLOBS fiplr-ignored-globs)
                             (ADDITIONAL-DIRS '(".zbuild" ".cask"))
-                            (ADDITIONAL-FILES '("*.d" "*.elc" "*.dat" "*.raw" "*.wav"))
+                            (ADDITIONAL-FILES '("*.d" "*.elc" "*.dat" "*.raw" "*.wav" "*.class" "*.cache"))
                             (CURRENT-DIRS (if GLOBS (cadar GLOBS) nil))
                             (CURRENT-FILES (if GLOBS (cadadr GLOBS) nil))
                             (NEW-DIRS (append CURRENT-DIRS ADDITIONAL-DIRS))
