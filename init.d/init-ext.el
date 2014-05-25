@@ -254,6 +254,6 @@
 ;; ru keys
 
 (add-hook 'find-file-hook
-          (lambda () (setq default-input-method 'russian-computer))
+          (lambda () (setq default-input-method 'russian-computer)))
 
 (provide 'init-ext)
