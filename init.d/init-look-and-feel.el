@@ -205,4 +205,7 @@
   :init (progn (xterm-mouse-mode 1)
                (defun track-mouse (e))))
 
+(req-package mouse
+  :init (global-set-key (kbd "<C-down-mouse-1>") nil))
+
 (provide 'init-look-and-feel)
