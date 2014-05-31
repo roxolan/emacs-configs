@@ -97,7 +97,8 @@
 
 ;; scratch persist
 
-(req-package scratch-persist)
+(req-package scratch-persist
+  :require (litable eldoc))
 
 ;; scratch ext
 
