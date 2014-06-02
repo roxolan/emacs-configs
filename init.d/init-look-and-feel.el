@@ -206,6 +206,8 @@
                (defun track-mouse (e))))
 
 (req-package mouse
-  :init (global-set-key (kbd "<C-down-mouse-1>") nil))
+  :init (progn (global-set-key (kbd "<C-down-mouse-1>") nil)
+               (global-set-key (kbd "<C-down-mouse-2>") nil)
+               (global-set-key (kbd "<C-down-mouse-3>") nil)))
 
 (provide 'init-look-and-feel)
