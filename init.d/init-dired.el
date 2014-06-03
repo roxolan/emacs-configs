@@ -30,6 +30,8 @@
   :require
   (dired dired-single))
 
+(req-package sunrise-x-loop)
+
 ;; dired rainbow
 
 (req-package dired-rainbow
