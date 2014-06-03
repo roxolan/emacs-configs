@@ -1,3 +1,9 @@
+;; save kill ring to disk
+
+(req-package savekill
+  :init (progn (setq savekill-max-saved-items nil)
+               (load save-kill-file-name t)))
+
 ;; google tanslate
 
 (req-package google-translate
