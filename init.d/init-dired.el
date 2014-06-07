@@ -11,8 +11,7 @@
 ;; sunrise commander
 
 (req-package sunrise-commander
-  :require
-  (dired dired-single))
+  :require dired)
 
 (req-package sunrise-x-loop)
 
