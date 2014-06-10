@@ -1,3 +1,9 @@
+;; narrow region to other window
+
+(req-package narrow-indirect)
+
+;; shit text left/right
+
 (req-package smart-shift
   :init (progn (global-set-key (kbd "C-{") 'smart-shift-left)
                (global-set-key (kbd "C-}") 'smart-shift-right)))
