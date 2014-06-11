@@ -122,14 +122,6 @@
          (setq scroll-preserve-screen-position t)
          (setq isearch-allow-scroll t)))
 
-(req-package smooth-scroll
-  :require mwheel
-  :init (progn (smooth-scroll-mode)
-               (setq smooth-scroll/vscroll-step-size 6)))
-
-(req-package smooth-scrolling
-  :require smooth-scroll)
-
 ;; highlight text beyond 80 column
 
 (defconst column-width 90)
