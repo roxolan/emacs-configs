@@ -23,6 +23,7 @@
 			   (key-chord-define-global ";1" 'delete-other-windows)
 			   (key-chord-define-global ";2" 'split-window-below)
 			   (key-chord-define-global ";3" 'split-window-right)
+			   (key-chord-define-global ";4" 'kill-buffer-and-window)
 
 			   (key-chord-define-global "1e" "\C-a\t")
 			   (key-chord-define-global "2e" "\C-a")
