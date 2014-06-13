@@ -9,6 +9,11 @@
 
 (add-to-list 'load-path "~/.emacs.d/")
 
-(setq custom-file "~/.emacs.d/custom.el")
+(defconst my-custom-file "~/.emacs.d/custom.el")
+(defconst my-preload-file "~/.emacs.d/init-preload.el")
+
+(setq custom-file my-custom-file)
+(load my-custom-file t)
+(load my-preload-file t)
 
 (add-hook 'after-init-hook #'(lambda () (load "~/.emacs.d/init-real.el")))

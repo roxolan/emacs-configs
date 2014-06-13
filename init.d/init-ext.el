@@ -140,10 +140,6 @@
 
 (setq bookmark-save-flag 1)
 
-;; turn off backup files
-
-(setq make-backup-files nil)
-
 ;; do not use dialog boxes
 
 (setq use-dialog-box nil)

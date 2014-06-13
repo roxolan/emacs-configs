@@ -1,5 +1,3 @@
-(load "~/.emacs.d/custom.el" t)
-
 ;; req-package
 
 (eval-when-compile (package-initialize))

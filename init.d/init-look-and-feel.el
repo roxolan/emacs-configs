@@ -177,8 +177,7 @@
 
 ;; remember theme
 
-(req-package remember-theme
-  :init (setq remember-theme-file "~/.emacs.d/emacs-theme"))
+(req-package remember-theme)
 
 ;; theme park mode
 
