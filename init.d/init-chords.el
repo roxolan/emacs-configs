@@ -1,10 +1,24 @@
 ;; key chord mode
 
 (req-package key-chord
-  :require dired
-  :init (progn (key-chord-mode 1)
-			   (key-chord-define-global "qq" 'kill-this-buffer)
+  :require (dired cc-mode)
+  :init (progn (key-chord-define-global "qq" 'kill-this-buffer)
 			   (key-chord-define-global "qw" 'kill-this-buffer)
-			   (key-chord-define dired-mode-map "qq" 'dired-up-directory)))
+			   (key-chord-define-global "[]" "[]\C-b")
+			   (key-chord-define-global "''" "''\C-b")
+			   (key-chord-define-global "\"\"" "\"\"\C-b")
+
+			   (key-chord-define emacs-lisp-mode-map "()" "()\C-b")
+
+			   (key-chord-define dired-mode-map "qq" 'dired-up-directory)
+
+			   (key-chord-define scala-mode-map "//"  "\C-e //")
+			   (key-chord-define scala-mode-map "{}"  "{\n\n}\C-p\t")
+
+			   (key-chord-define c++-mode-map ";;"  "\C-e;")
+			   (key-chord-define c++-mode-map "//"  "\C-e //")
+			   (key-chord-define c++-mode-map "{}"  "{\n\n}\C-p\t")
+
+			   (key-chord-mode 1)))
 
 (provide 'init-chords)
