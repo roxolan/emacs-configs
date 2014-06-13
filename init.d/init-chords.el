@@ -10,6 +10,8 @@
 			   (key-chord-define-global "xb" 'helm-buffers-list)
 			   (key-chord-define-global "xs" 'save-buffer)
 			   (key-chord-define-global "xc" 'save-buffers-kill-emacs)
+			   (key-chord-define-global "xf" 'fiplr-find-file)
+			   (key-chord-define-global "xd" 'fiplr-find-directory)
 
 			   (key-chord-define-global ";m" 'magit-status)
 			   (key-chord-define-global ";l" 'helm-bookmarks)
@@ -19,6 +21,7 @@
 			   (key-chord-define-global ";s" 'isearch-forward)
 			   (key-chord-define-global ";r" 'isearch-forward-regexp)
 			   (key-chord-define-global ";y" 'yank)
+			   (key-chord-define-global ";f" 'lusty-file-explorer)
 
 			   (key-chord-define-global ";o" 'switch-window)
 			   (key-chord-define-global ";1" 'delete-other-windows)
