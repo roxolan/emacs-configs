@@ -7,6 +7,7 @@
 			   (key-chord-define-global "xm" 'smex)
 			   (key-chord-define-global "gg" 'keyboard-quit)
 			   (key-chord-define-global "gm" 'god-mode)
+			   (key-chord-define-global "3e" "\C-e")
 			   (key-chord-define-global "[]" "[]\C-b")
 			   (key-chord-define-global "<>" "<>\C-b")
 			   (key-chord-define-global "''" "''\C-b")
