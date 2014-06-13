@@ -11,6 +11,7 @@
                (add-to-list 'elfeed-feeds "http://alenacpp.blogspot.com/atom.xml")
                (add-to-list 'elfeed-feeds "http://igromania.ru/rss/rss_all.xml")
                (add-to-list 'elfeed-feeds "http://www.habrahabr.ru/rss/main/")
-               (add-to-list 'elfeed-feeds "http://typesafe.com/blog/rss.xml")))
+               (add-to-list 'elfeed-feeds "http://typesafe.com/blog/rss.xml")
+               (add-to-list 'elfeed-feeds "http://whattheemacsd.com/atom.xml")))
 
 (provide 'init-feeds)
