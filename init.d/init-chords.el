@@ -1,11 +1,12 @@
 ;; key chord mode
 
 (req-package key-chord
-  :require (dired cc-mode)
+  :require (dired cc-mode god-mode)
   :init (progn (key-chord-define-global "qq" 'kill-this-buffer)
 			   (key-chord-define-global "qw" 'kill-this-buffer)
 			   (key-chord-define-global "xm" 'smex)
 			   (key-chord-define-global "gg" 'keyboard-quit)
+			   (key-chord-define-global "gm" 'god-mode)
 			   (key-chord-define-global "[]" "[]\C-b")
 			   (key-chord-define-global "''" "''\C-b")
 			   (key-chord-define-global "\"\"" "\"\"\C-b")
