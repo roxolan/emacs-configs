@@ -9,6 +9,7 @@
 			   (key-chord-define-global "gm" 'god-mode)
 			   (key-chord-define-global "xb" 'helm-buffers-list)
 			   (key-chord-define-global ";m" 'magit-status)
+			   (key-chord-define-global ";o" 'switch-window)
 			   (key-chord-define-global "3e" "\C-e ")
 			   (key-chord-define-global "[]" "[]\C-b")
 			   (key-chord-define-global "<>" "<>\C-b")
