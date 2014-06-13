@@ -24,10 +24,10 @@
 			   (key-chord-define-global ";2" 'split-window-below)
 			   (key-chord-define-global ";3" 'split-window-right)
 
-			   (key-chord-define-global "1e" "\C-a")
-			   (key-chord-define-global "2e" "\C-a\t")
-			   (key-chord-define-global "3e" "\C-e ")
-			   (key-chord-define-global "4e" "\C-e")
+			   (key-chord-define-global "1e" "\C-a\t")
+			   (key-chord-define-global "2e" "\C-a")
+			   (key-chord-define-global "3e" "\C-e")
+			   (key-chord-define-global "4e" "\C-e ")
 
 			   (key-chord-define-global "[]" "[]\C-b")
 			   (key-chord-define-global "<>" "<>\C-b")
