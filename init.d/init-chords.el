@@ -18,6 +18,7 @@
 			   (key-chord-define-global ";k" 'kill-line)
 			   (key-chord-define-global ";s" 'isearch-forward)
 			   (key-chord-define-global ";r" 'isearch-forward-regexp)
+			   (key-chord-define-global ";y" 'yank)
 
 			   (key-chord-define-global ";o" 'switch-window)
 			   (key-chord-define-global ";1" 'delete-other-windows)
