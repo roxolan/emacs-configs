@@ -1,3 +1,9 @@
+;; track command frequencies
+
+(req-package keyfreq
+  :init (progn (keyfreq-mode 1)
+               (keyfreq-autosave-mode 1)))
+
 ;; narrow region to other window
 
 (req-package narrow-indirect)
