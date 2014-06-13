@@ -4,9 +4,13 @@
   :require (dired cc-mode)
   :init (progn (key-chord-define-global "qq" 'kill-this-buffer)
 			   (key-chord-define-global "qw" 'kill-this-buffer)
+			   (key-chord-define-global "xm" 'smex)
+			   (key-chord-define-global "gg" 'keyboard-quit)
 			   (key-chord-define-global "[]" "[]\C-b")
 			   (key-chord-define-global "''" "''\C-b")
 			   (key-chord-define-global "\"\"" "\"\"\C-b")
+
+			   (key-chord-define minibuffer-local-map "gg" 'abort-recursive-edit)
 
 			   (key-chord-define emacs-lisp-mode-map "()" "()\C-b")
 
