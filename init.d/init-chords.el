@@ -2,7 +2,7 @@
 
 (req-package key-chord
   :require (dired cc-mode god-mode smex helm magit scala-mode2 switch-window
-				  lusty-explorer fiplr paradox)
+				  lusty-explorer fiplr paradox shell-pop)
 
   :init (progn (key-chord-define-global "qq" 'kill-this-buffer)
 			   (key-chord-define-global "qw" 'kill-this-buffer)
@@ -14,6 +14,7 @@
 			   (key-chord-define-global "xc" 'save-buffers-kill-emacs)
 			   (key-chord-define-global "xf" 'fiplr-find-file)
 			   (key-chord-define-global "xd" 'fiplr-find-directory)
+			   (key-chord-define-global "``" 'shell-pop)
 
 			   (key-chord-define-global ";m" 'magit-status)
 			   (key-chord-define-global ";l" 'helm-bookmarks)
