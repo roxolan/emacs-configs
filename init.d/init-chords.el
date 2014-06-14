@@ -32,8 +32,8 @@
 			   (key-chord-define-global ";3" 'split-window-right)
 			   (key-chord-define-global ";4" 'kill-buffer-and-window)
 
-			   (key-chord-define-global "1e" "\C-a\t")
-			   (key-chord-define-global "2e" "\C-a")
+			   (key-chord-define-global "1e" "\C-a")
+			   (key-chord-define-global "2e" "\C-a\t")
 			   (key-chord-define-global "3e" "\C-e")
 			   (key-chord-define-global "4e" "\C-e ")
 
