@@ -1,7 +1,7 @@
 ;; ruby ide
 
-(req-package rinari
-  :require (ruby-compilation inf-ruby))
+;; (req-package rinari
+;;   :require (ruby-compilation inf-ruby))
 
 ;;
 
