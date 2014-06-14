@@ -181,7 +181,7 @@
 
 ;; theme park mode
 
-(req-package theme-park-mode)
+(req-package theme-park-mode :disabled t)
 
 ;; helm themes
 
