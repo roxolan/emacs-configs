@@ -41,8 +41,7 @@
   :require
   (remember-theme column-enforce-mode)
   :init
-  (progn (setq sml/theme 'respectfull)
-         (setq sml/shorten-modes t)
+  (progn (setq sml/shorten-modes t)
          (setq sml/shorten-directory t)
          (setq sml/name-width 20)
          (setq sml/mode-width 'full)
@@ -54,8 +53,10 @@
                       (concat " " (concat (int-to-string column-width) "col")))
          (add-to-list 'sml/hidden-modes " FIC")
          (add-to-list 'sml/hidden-modes " Abbrev")
-         (add-to-list 'sml/hidden-modes " ARev")
-         (sml/setup)))
+         (add-to-list 'sml/hidden-modes " ARev")         
+         (sml/setup)
+         (sml/apply-theme 'respectful)
+         (setq custom-enabled-themes (reverse custom-enabled-themes))))
 
 ;; anzu
 
