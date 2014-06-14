@@ -6,6 +6,6 @@
 ;;
 
 (req-package ruby-mode
-  :init (add-to-list 'auto-mode-alist '("Rakefile\\'" . ruby-mode)))
+  :mode (("Rakefile\\'" . ruby-mode)))
 
 (provide 'init-ruby)
