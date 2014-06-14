@@ -9,12 +9,14 @@
 
 ;; elnode
 
-(req-package elnode)
+(req-package elnode
+  :disabled t)
 
 ;; pick mode
 
 (req-package peek-mode
   :require elnode
+  :disabled t
   :init (elnode-start 'peek-mode-dispatcher-handler :port 8008 :host "localhost"))
 
 ;; xml generation dsl
