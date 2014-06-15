@@ -47,14 +47,6 @@
   (progn (setq gdb-many-windows t)
          (setq gdb-show-main t)))
 
-;; snippets using helm
-
-(req-package helm-c-yasnippet
-  :require
-  (helm yasnippet cc-mode auto-complete auto-complete-clang)
-  :init
-  (define-key global-map (kbd "C-M-y") 'helm-c-yas-complete))
-
 ;; rtags
 
 (req-package rtags)
@@ -74,7 +66,6 @@
     a))
 
 (defun cc-mode-clang-hook ()
-  (add-to-list 'ac-sources 'ac-source-yasnippet)
   (add-to-list 'ac-sources 'ac-source-clang)
   (add-to-list 'ac-sources 'ac-source-c-headers)
 

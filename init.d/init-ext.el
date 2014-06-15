@@ -257,11 +257,6 @@
 (req-package flymake-cursor
   :require flymake)
 
-;; yasnippet
-
-(req-package yasnippet
-  :init (yas-global-mode 1))
-
 ;; shrink/enlarge window
 
 (global-set-key (kbd "s-{") (lambda () (interactive) (shrink-window 10 1)))
