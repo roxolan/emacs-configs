@@ -1,9 +1,4 @@
-;; ruby ide
-
-;; (req-package rinari
-;;   :require (ruby-compilation inf-ruby))
-
-;;
+;; ruby mode for rakefile
 
 (req-package ruby-mode
   :mode (("Rakefile\\'" . ruby-mode)))
