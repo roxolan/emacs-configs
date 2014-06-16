@@ -2,7 +2,7 @@
 
 (req-package key-chord
   :require (dired cc-mode god-mode smex helm magit scala-mode2 switch-window
-				  lusty-explorer fiplr paradox shell-pop)
+				  fiplr paradox shell-pop)
 
   :config (progn (key-chord-define-global "qq" 'kill-this-buffer)
 				 (key-chord-define-global "qw" 'kill-this-buffer)

@@ -30,9 +30,10 @@
 ;; lusty
 
 (req-package lusty-explorer
-  :config
-  (progn (global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
-         (add-hook
+  :commands (lusty-file-explorer)
+  :bind ("C-x C-f" . lusty-file-explorer)
+  :init
+  (progn (add-hook
           'lusty-setup-hook
           (lambda ()
             (define-key lusty-mode-map (kbd "C-b") 'lusty-highlight-previous-column)
