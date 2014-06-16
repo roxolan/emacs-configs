@@ -3,7 +3,7 @@
 (req-package dired
   :require
   (helm-swoop autorevert diff-hl)
-  :init
+  :config
   (progn (define-key dired-mode-map (kbd "M-i") 'helm-swoop)
          (add-hook 'dired-mode-hook (lambda () (auto-revert-mode 1)))
          (add-hook 'dired-mode-hook (lambda () (diff-hl-dired-mode 1)))))
@@ -30,7 +30,7 @@
 ;; lusty
 
 (req-package lusty-explorer
-  :init
+  :config
   (progn (global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
          (add-hook
           'lusty-setup-hook

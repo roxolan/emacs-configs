@@ -1,16 +1,16 @@
 ;; show vertical lines in prog mode
 
 (req-package indent-guide
-  :init (add-hook 'prog-mode-hook (lambda () (indent-guide-mode 1))))
+  :config (add-hook 'prog-mode-hook (lambda () (indent-guide-mode 1))))
 
 ;; some very useful extension
 
 (req-package nyan-mode
-  :init (progn (setq nyan-animation-frame-interval 0.1)
-               (setq nyan-bar-length 8)
-               (setq nyan-wavy-trail t)
-               (nyan-mode)
-               (nyan-start-animation)))
+  :config (progn (setq nyan-animation-frame-interval 0.1)
+                 (setq nyan-bar-length 8)
+                 (setq nyan-wavy-trail t)
+                 (nyan-mode)
+                 (nyan-start-animation)))
 
 ;; fonts
 
@@ -20,19 +20,19 @@
 ;; pretty lambda
 
 (req-package pretty-lambdada
-  :init
+  :config
   (pretty-lambda-for-modes))
 
 ;; customizations
 
 (req-package menu-bar
-  :init
+  :config
   (menu-bar-mode -1))
 
 ;; rotate
 
 (req-package rotate
-  :init
+  :config
   (global-set-key (kbd "s-P") 'rotate-layout))
 
 ;; main line
@@ -40,7 +40,7 @@
 (req-package smart-mode-line
   :require
   (remember-theme column-enforce-mode)
-  :init
+  :config
   (progn (setq sml/shorten-modes t)
          (setq sml/shorten-directory t)
          (setq sml/name-width 20)
@@ -63,25 +63,25 @@
 (req-package anzu
   :require
   smart-mode-line
-  :init
+  :config
   (global-anzu-mode 1))
 
 ;; mode line tweaks
 
 (req-package simple
-  :init
+  :config
   (column-number-mode 1))
 
 ;; toolbar
 
 (req-package tool-bar
-  :init
+  :config
   (tool-bar-mode -1))
 
 ;; scroll bar
 
 (req-package scroll-bar
-  :init
+  :config
   (scroll-bar-mode -1))
 
 ;; expand region
@@ -89,7 +89,7 @@
 (req-package expand-region
   :require
   sml-mode
-  :init
+  :config
   (global-set-key (kbd "C-=") 'er/expand-region))
 
 ;; turn off sctartup screen
@@ -108,9 +108,8 @@
 ;; smooth mouse scroll
 
 (req-package mwheel
-  :init
-  (progn ;; (setq mouse-wheel-scroll-amount '(2 ((shift) . 2)))
-         (setq mouse-wheel-progressive-speed nil)
+  :config
+  (progn (setq mouse-wheel-progressive-speed nil)
          (setq mouse-wheel-follow-mouse t)
          (global-set-key (kbd "<mouse-6>") (lambda () (interactive) nil))
          (global-set-key (kbd "<double-mouse-6>") (lambda () (interactive) nil))
@@ -128,49 +127,35 @@
 (defconst column-width 90)
 
 (req-package column-enforce-mode
-  :init
+  :config
   (progn (add-hook 'prog-mode-hook (lambda () (column-enforce-mode)))
          (setq column-enforce-column column-width)))
 
 ;; line highlight
 
 (req-package hl-line
-  :init
+  :config
   (progn (global-hl-line-mode 1)))
 
 ;; todo, fixme highlighting
 
 (req-package fic-mode
-  :init
+  :config
   (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
 
 ;; highlight parenthesis
 
 (req-package highlight-parentheses
-  :init
+  :config
   (add-hook 'prog-mode-hook (lambda () (highlight-parentheses-mode 1))))
-
-;; hl sexps
-
-(req-package hl-sexp
-  :require
-  hl-line
-  :init
-  (add-hook 'emacs-lisp-mode-hook (lambda () (hl-sexp-mode 1))))
 
 ;; diff highlight
 
 (req-package diff-hl
   :require
   (smartrep fringe)
-  :init
+  :config
   (global-diff-hl-mode 1))
-
-;; highlight defined symbols
-
-(req-package hl-defined
-  :init
-  (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode))
 
 ;; desc unbound keys
 
@@ -194,12 +179,12 @@
 
 (req-package xt-mouse
   :require mouse
-  :init (progn (xterm-mouse-mode 1)
-               (defun track-mouse (e))))
+  :config (progn (xterm-mouse-mode 1)
+                 (defun track-mouse (e))))
 
 (req-package mouse
-  :init (progn (global-set-key (kbd "<C-down-mouse-1>") nil)
-               (global-set-key (kbd "<C-down-mouse-2>") nil)
-               (global-set-key (kbd "<C-down-mouse-3>") nil)))
+  :config (progn (global-set-key (kbd "<C-down-mouse-1>") nil)
+                 (global-set-key (kbd "<C-down-mouse-2>") nil)
+                 (global-set-key (kbd "<C-down-mouse-3>") nil)))
 
 (provide 'init-look-and-feel)

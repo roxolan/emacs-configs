@@ -8,6 +8,6 @@
 
 ;; (req-package flymake-lua
 ;;   :require (flymake lua-mode)
-;;   :init (add-hook 'lua-mode-hook 'flymake-lua-load))
+;;   :config (add-hook 'lua-mode-hook 'flymake-lua-load))
 
 (provide 'init-lua)

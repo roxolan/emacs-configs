@@ -11,7 +11,7 @@
 (req-package auto-complete-clang
   :require
   (auto-complete cc-mode async)
-  :init
+  :config
   (progn (add-hook 'c++-mode-hook 'cc-mode-clang-hook)
          (add-hook 'c-mode-hook 'cc-mode-clang-hook)
          (c-add-style "cc-style" cc-style)
@@ -29,7 +29,7 @@
 (req-package dummy-h-mode
   :require
   cc-mode
-  :init
+  :config
   (progn (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
          (add-hook 'dummy-h-mode-hook
                    (lambda ()
@@ -43,7 +43,7 @@
 (req-package gdb-mi
   :require
   cc-mode
-  :init
+  :config
   (progn (setq gdb-many-windows t)
          (setq gdb-show-main t)))
 

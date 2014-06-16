@@ -17,7 +17,7 @@
 (req-package helm-ls-git
   :require
   helm
-  :init (global-set-key (kbd "M-+") 'helm-ls-git-ls))
+  :config (global-set-key (kbd "M-+") 'helm-ls-git-ls))
 
 ;; git config mode
 
@@ -32,7 +32,7 @@
 (req-package git-messenger
   :require
   magit
-  :init
+  :config
   (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
 
 ;; git blame

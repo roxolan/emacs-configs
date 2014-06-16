@@ -1,5 +1,5 @@
 (req-package org
-  :init
+  :config
   (progn (global-set-key "\C-cl" 'org-store-link)
          (global-set-key "\C-cc" 'org-capture)
          (global-set-key "\C-ca" 'org-agenda)

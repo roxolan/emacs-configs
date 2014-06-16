@@ -1,9 +1,9 @@
 ;; track command frequencies
 
 (req-package keyfreq
-  :init (progn (setq keyfreq-file "~/.emacs.d/keyfreq")
-               (keyfreq-mode 1)
-               (keyfreq-autosave-mode 1)))
+  :config (progn (setq keyfreq-file "~/.emacs.d/keyfreq")
+                 (keyfreq-mode 1)
+                 (keyfreq-autosave-mode 1)))
 
 ;; narrow region to other window
 
@@ -12,36 +12,36 @@
 ;; shit text left/right
 
 (req-package smart-shift
-  :init (progn (global-set-key (kbd "C-{") 'smart-shift-left)
-               (global-set-key (kbd "C-}") 'smart-shift-right)))
+  :config (progn (global-set-key (kbd "C-{") 'smart-shift-left)
+                 (global-set-key (kbd "C-}") 'smart-shift-right)))
 
 ;; save kill ring to disk
 
 (req-package savekill
-  :init (progn (setq savekill-max-saved-items nil)
-               (load save-kill-file-name t)))
+  :config (progn (setq savekill-max-saved-items nil)
+                 (load save-kill-file-name t)))
 
 ;; google tanslate
 
 (req-package google-translate
   :require google-translate-smooth-ui
-  :init (global-set-key (kbd "C-c t") 'google-translate-smooth-translate))
+  :config (global-set-key (kbd "C-c t") 'google-translate-smooth-translate))
 
 ;; swith off some warnings
 
 (req-package warnings
-  :init (add-to-list 'warning-suppress-types '(undo discard-info)))
+  :config (add-to-list 'warning-suppress-types '(undo discard-info)))
 
 ;; smart wthitespace cleanup
 
 (req-package whitespace-cleanup-mode
-  :init (global-whitespace-cleanup-mode 1))
+  :config (global-whitespace-cleanup-mode 1))
 
 ;; use fuzzy for M-x
 
 (req-package smex
-  :init (progn (smex-initialize)
-               (global-set-key (kbd "M-x") 'smex)))
+  :config (progn (smex-initialize)
+                 (global-set-key (kbd "M-x") 'smex)))
 ;; googling
 
 (req-package google-this)
@@ -49,12 +49,12 @@
 ;; shell pop up
 
 (req-package shell-pop
-  :init (global-set-key (kbd "C-`") 'shell-pop))
+  :config (global-set-key (kbd "C-`") 'shell-pop))
 
 ;; string edit
 
 (req-package string-edit
-  :init (global-set-key (kbd "C-c e") 'string-edit-at-point))
+  :config (global-set-key (kbd "C-c e") 'string-edit-at-point))
 
 ;; paradox
 
@@ -63,12 +63,12 @@
 ;; multiple cursors
 
 (req-package multiple-cursors
-  :init (progn (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-               (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-               (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-               (global-set-key (kbd "C-M->") 'mc/mark-next-word-like-this)
-               (global-set-key (kbd "C-M-<") 'mc/mark-previous-word-like-this)
-               (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)))
+  :config (progn (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+                 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+                 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+                 (global-set-key (kbd "C-M->") 'mc/mark-next-word-like-this)
+                 (global-set-key (kbd "C-M-<") 'mc/mark-previous-word-like-this)
+                 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)))
 
 ;; ant
 
@@ -77,7 +77,7 @@
 ;; save packages
 
 (req-package save-packages
-  :init
+  :config
   (progn (setq save-packages-file "~/.emacs.d/saved-packages")
          (add-hook 'kill-emacs-hook 'save-packages)))
 
@@ -96,12 +96,12 @@
 ;; save history
 
 (req-package savehist
-  :init (savehist-mode 1))
+  :config (savehist-mode 1))
 
 ;; go to last change
 
 (req-package goto-last-change
-  :init
+  :config
   (global-set-key (kbd "C-x C-\\") 'goto-last-change))
 
 ;; sudo support
@@ -115,13 +115,13 @@
 ;; hide/show comments
 
 (req-package hide-comnt
-  :init
+  :config
   (global-set-key (kbd "C-c h") 'hide/show-comments-toggle))
 
 ;; scratch persist
 
 (req-package scratch-persist
-  :require (litable eldoc))
+  :require (litable eldoc hl-defined))
 
 ;; scratch ext
 
@@ -130,7 +130,7 @@
 ;; insert shebang
 
 (req-package insert-shebang
-  :init
+  :config
   (add-hook 'find-file-hook 'insert-shebang))
 
 ;; indentation
@@ -176,12 +176,12 @@
 ;; switch window
 
 (req-package switch-window
-  :init (global-set-key (kbd "C-x o") 'switch-window))
+  :config (global-set-key (kbd "C-x o") 'switch-window))
 
 ;; ace jump mode
 
 (req-package ace-jump-mode
-  :init
+  :config
   (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
          (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
          (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
@@ -190,34 +190,34 @@
 
 (req-package ace-jump-buffer
   :require (shell ace-jump-mode)
-  :init (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
-               (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
+  :config (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
+                 (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
 
 ;; move text
 
 (req-package move-text
-  :init (progn (global-set-key (kbd "M-n") 'move-text-down)
-               (global-set-key (kbd "M-p") 'move-text-up)))
+  :config (progn (global-set-key (kbd "M-n") 'move-text-down)
+                 (global-set-key (kbd "M-p") 'move-text-up)))
 
 ;; duplicate thing
 
 (req-package duplicate-thing
-  :init (progn (global-set-key (kbd "M-c") 'duplicate-thing)))
+  :config (progn (global-set-key (kbd "M-c") 'duplicate-thing)))
 
 ;; smart parenthesis
 
 (req-package smartparens-config
   :require smartparens
-  :init (progn (smartparens-global-mode t)
-               (show-smartparens-global-mode t)))
+  :config (progn (smartparens-global-mode t)
+                 (show-smartparens-global-mode t)))
 
 ;; auto reverting
 
 (req-package autorevert
-  :init (progn (setq global-auto-revert-non-file-buffers t)
-               (setq auto-revert-interval 0.5)
-               (add-to-list 'auto-mode-alist
-                            '("\\.log\\'" . auto-revert-tail-mode))))
+  :config (progn (setq global-auto-revert-non-file-buffers t)
+                 (setq auto-revert-interval 0.5)
+                 (add-to-list 'auto-mode-alist
+                              '("\\.log\\'" . auto-revert-tail-mode))))
 
 ;; god mode
 
@@ -225,34 +225,34 @@
   (setq cursor-type (if (or god-local-mode buffer-read-only) 'hollow 'box)))
 
 (req-package god-mode
-  :init (progn (global-set-key (kbd "<escape>") 'god-mode)
-               (global-set-key (kbd "C-x C-1") 'delete-other-windows)
-               (global-set-key (kbd "C-x C-2") 'split-window-below)
-               (global-set-key (kbd "C-x C-3") 'split-window-right)
-               (global-set-key (kbd "C-x C-0") 'delete-window)
-               (define-key god-local-mode-map (kbd ".") 'repeat)
-               (define-key god-local-mode-map (kbd "z") 'repeat)
-               (define-key god-local-mode-map (kbd "i") 'god-mode)
-               (add-hook 'god-mode-enabled-hook 'my-update-cursor)
-               (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
+  :config (progn (global-set-key (kbd "<escape>") 'god-mode)
+                 (global-set-key (kbd "C-x C-1") 'delete-other-windows)
+                 (global-set-key (kbd "C-x C-2") 'split-window-below)
+                 (global-set-key (kbd "C-x C-3") 'split-window-right)
+                 (global-set-key (kbd "C-x C-0") 'delete-window)
+                 (define-key god-local-mode-map (kbd ".") 'repeat)
+                 (define-key god-local-mode-map (kbd "z") 'repeat)
+                 (define-key god-local-mode-map (kbd "i") 'god-mode)
+                 (add-hook 'god-mode-enabled-hook 'my-update-cursor)
+                 (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
 
 ;; auto complete
 
 (req-package auto-complete
-  :init (progn (require 'auto-complete-config)
-               (global-auto-complete-mode t)
-               (setq ac-auto-start 1)
-               (setq ac-quick-help-delay 0.1)
-               (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
+  :config (progn (require 'auto-complete-config)
+                 (global-auto-complete-mode t)
+                 (setq ac-auto-start 1)
+                 (setq ac-quick-help-delay 0.1)
+                 (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
 
 ;; flymake
 
 (req-package flymake
-  :init (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
-               (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-               (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
-               (setq flymake-gui-warnings-enabled nil)
-               (setq flymake-log-level 0)))
+  :config (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
+                 (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+                 (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+                 (setq flymake-gui-warnings-enabled nil)
+                 (setq flymake-log-level 0)))
 
 (req-package flymake-cursor
   :require flymake)

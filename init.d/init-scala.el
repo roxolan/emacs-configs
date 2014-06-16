@@ -1,5 +1,5 @@
 (req-package scala-mode2
-  :init
+  :config
   (setq scala-indent:align-parameters t))
 
 (req-package sbt-mode
@@ -9,7 +9,7 @@
 (req-package ensime
   :require
   (scala-mode2 sbt-mode)
-  :init
+  :config
   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
 (provide 'init-scala)

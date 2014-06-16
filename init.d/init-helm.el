@@ -1,7 +1,7 @@
 ;; helm
 
 (req-package helm
-  :init
+  :config
   (progn (require 'helm-config)
          (define-key global-map (kbd "C-x b") 'helm-buffers-list)
          (global-set-key (kbd "C-c y") 'helm-show-kill-ring)
@@ -22,7 +22,7 @@
 (req-package ac-helm
   :require
   (helm auto-complete)
-  :init
+  :config
   (global-set-key (kbd "C-:") 'ac-complete-with-helm))
 
 ;; helm helm commands
@@ -35,7 +35,7 @@
 (req-package helm-swoop
   :require
   helm
-  :init
+  :config
   (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
 
 ;; helm desc binds
@@ -61,7 +61,7 @@
 (req-package helm-make
   :require
   helm
-  :init
+  :config
   (global-set-key (kbd "s-B") 'helm-make))
 
 ;; helm wgrep
@@ -74,6 +74,6 @@
 
 (req-package helm-github-stars
   :require helm
-  :init (setq helm-github-stars-username (getenv "USER")))
+  :config (setq helm-github-stars-username (getenv "USER")))
 
 (provide 'init-helm)
