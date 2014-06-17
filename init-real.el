@@ -37,14 +37,11 @@
 
 ;; init.d
 
-(use-package load-dir
-  :ensure load-dir
-  :init (load-dir-one "~/.emacs.d/init.d"))
+(req-package-force load-dir :config (load-dir-one "~/.emacs.d/init.d"))
 
 ;; maximize frame
 
-(req-package maxframe
-  :init (maximize-frame))
+(req-package maxframe :config (maximize-frame))
 
 ;; finish loading packages
 
