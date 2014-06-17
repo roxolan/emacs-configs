@@ -1,4 +1,5 @@
 (req-package elfeed
+  :commands elfeed
   :config (progn (add-to-list 'elfeed-feeds "http://www.archlinux.org/feeds/news/")
                  (add-to-list 'elfeed-feeds "http://blogerator.ru/feed")
                  (add-to-list 'elfeed-feeds "http://bugtraq.ru/export/yandex.xml")
