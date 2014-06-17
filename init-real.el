@@ -41,14 +41,13 @@
   :ensure load-dir
   :init (load-dir-one "~/.emacs.d/init.d"))
 
-;; finish loading packages
-
-(req-package-finish)
-
 ;; maximize frame
 
 (req-package maxframe
   :init (maximize-frame))
+
+;; finish loading packages
+
 (req-package-finish)
 
 ;; start emacs server
