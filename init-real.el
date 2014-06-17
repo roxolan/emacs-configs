@@ -39,10 +39,6 @@
 
 (req-package-force load-dir :config (load-dir-one "~/.emacs.d/init.d"))
 
-;; maximize frame
-
-(req-package maxframe :config (maximize-frame))
-
 ;; finish loading packages
 
 (req-package-finish)
