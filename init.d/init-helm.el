@@ -19,10 +19,8 @@
 ;; helm ac
 
 (req-package ac-helm
-  :require
-  (helm auto-complete)
-  :config
-  (global-set-key (kbd "C-:") 'ac-complete-with-helm))
+  :commands ac-complete-with-helm
+  :bind ("C-:" . ac-complete-with-helm))
 
 ;; helm helm commands
 
