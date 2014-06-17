@@ -86,7 +86,7 @@
 
 ;; sos
 
-(req-package sos)
+(req-package sos :commands sos)
 
 ;; howdoi
 
@@ -186,17 +186,17 @@
 ;; ace jump mode
 
 (req-package ace-jump-mode
-  :config
-  (progn (define-key global-map (kbd "M-/") 'ace-jump-word-mode)
-         (define-key global-map (kbd "s-c") 'ace-jump-char-mode)
-         (define-key global-map (kbd "M-g M-g") 'ace-jump-line-mode)))
+  :commands (ace-jump-word-mode ace-jump-char-mode ace-jump-line-mode)
+  :bind ("M-/" . ace-jump-word-mode)
+  :bind ("s-c" . ace-jump-char-mode)
+  :bind ("M-g M-g" . ace-jump-line-mode))
 
 ;; ace jump buffer
 
 (req-package ace-jump-buffer
-  :require (shell ace-jump-mode)
-  :config (progn (define-key shell-mode-map (kbd "M-?") 'ace-jump-buffer)
-                 (define-key global-map (kbd "M-?") 'ace-jump-buffer)))
+  :require (shell)
+  :commands ace-jump-buffer
+  :bind ("M-?" . ace-jump-buffer))
 
 ;; move text
 
