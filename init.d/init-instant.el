@@ -2,6 +2,6 @@
 ;;   :require anything
 ;;   :config (setq skype--my-user-handle "edvorg.k"))
 
-(req-package jabber)
+(req-package jabber :commands jabber-connect)
 
 (provide 'init-instant)
