@@ -87,8 +87,6 @@
 ;; expand region
 
 (req-package expand-region
-  :require
-  sml-mode
   :config
   (global-set-key (kbd "C-=") 'er/expand-region))
 
