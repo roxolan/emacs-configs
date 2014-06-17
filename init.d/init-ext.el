@@ -51,7 +51,8 @@
 ;; shell pop up
 
 (req-package shell-pop
-  :config (global-set-key (kbd "C-`") 'shell-pop))
+  :commands shell-pop
+  :bind ("C-`" . shell-pop))
 
 ;; string edit
 
