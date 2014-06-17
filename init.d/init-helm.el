@@ -9,8 +9,7 @@
 
 ;; helm google
 
-(req-package helm-google
-  :require helm)
+(req-package helm-google :commands helm-google)
 
 ;; helm proc
 
