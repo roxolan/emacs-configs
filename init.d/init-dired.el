@@ -10,10 +10,9 @@
 
 ;; sunrise commander
 
-(req-package sunrise-commander
-  :require dired)
+(req-package sunrise-commander :commands sunrise-cd)
 
-(req-package sunrise-x-loop)
+(req-package sunrise-x-loop :require sunrise-commander)
 
 ;; dired rainbow
 
