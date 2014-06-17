@@ -1,5 +1,5 @@
 ;; yaml
 
-(req-package yaml-mode)
+(req-package yaml-mode :mode "\\.yml\\'")
 
 (provide 'init-yaml)
