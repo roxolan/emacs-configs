@@ -8,6 +8,14 @@
   '("bsd"
     (c-offsets-alist . ((innamespace . [0])))))
 
+(req-package cc-mode
+  :require key-chord
+  :mode ("\\.cpp\\'" . c++-mode)
+  :config (progn (key-chord-define c++-mode-map ";;"  "\C-e;")
+				 (key-chord-define c++-mode-map "//"  "\C-e //")
+				 (key-chord-define c++-mode-map "{}"  "{\n\n}\C-p\t")
+				 (key-chord-define c++-mode-map "(}"  "() {\n\n}\C-p\t")))
+
 (req-package auto-complete-clang
   :require
   (auto-complete cc-mode async)
@@ -49,7 +57,7 @@
 
 ;; rtags
 
-(req-package rtags)
+(req-package rtags :require cc-mode)
 
 ;; some utils
 
