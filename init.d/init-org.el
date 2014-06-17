@@ -6,6 +6,7 @@
          (global-set-key "\C-cb" 'org-iswitchb)))
 
 (req-package org-gcal
+  :disabled t
   :require org)
 
 (provide 'init-org)
