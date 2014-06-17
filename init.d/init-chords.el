@@ -1,8 +1,7 @@
 ;; key chord mode
 
 (req-package key-chord
-  :require (dired cc-mode god-mode helm scala-mode2 switch-window
-				  fiplr paradox)
+  :require (dired cc-mode god-mode helm fiplr)
 
   :config (progn (key-chord-define-global "qq" 'kill-this-buffer)
 				 (key-chord-define-global "qw" 'kill-this-buffer)
@@ -46,11 +45,6 @@
 				 (key-chord-define minibuffer-local-map "gg" 'abort-recursive-edit)
 
 				 (key-chord-define dired-mode-map "qq" 'dired-up-directory)
-
-				 (key-chord-define scala-mode-map ";;"  "\C-e;")
-				 (key-chord-define scala-mode-map "//"  "\C-e //")
-				 (key-chord-define scala-mode-map "{}"  "{\n\n}\C-p\t")
-				 (key-chord-define scala-mode-map "(}"  "() {\n\n}\C-p\t")
 
 				 (key-chord-define c++-mode-map ";;"  "\C-e;")
 				 (key-chord-define c++-mode-map "//"  "\C-e //")

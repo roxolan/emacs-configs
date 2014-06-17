@@ -15,9 +15,9 @@
 ;; helm ls git
 
 (req-package helm-ls-git
-  :require
-  helm
-  :config (global-set-key (kbd "M-+") 'helm-ls-git-ls))
+  :require helm
+  :commands helm-ls-git-ls
+  :bind ("M-+" . helm-ls-git-ls))
 
 ;; git config mode
 

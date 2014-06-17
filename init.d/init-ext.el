@@ -61,7 +61,7 @@
 
 ;; paradox
 
-(req-package paradox)
+(req-package paradox :commands paradox-list-packages)
 
 ;; multiple cursors
 
@@ -179,7 +179,9 @@
 ;; switch window
 
 (req-package switch-window
-  :config (global-set-key (kbd "C-x o") 'switch-window))
+  :require key-chord
+  :commands switch-window
+  :bind ("C-x o" . switch-window))
 
 ;; ace jump mode
 
