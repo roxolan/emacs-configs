@@ -1,10 +1,10 @@
 ;; magit
 
-(req-package magit)
+(req-package magit :commands magit-status)
 
 ;; magit svn
 
-(req-package magit-svn)
+(req-package magit-svn :require magit)
 
 ;; magit github integration
 
@@ -30,10 +30,8 @@
 ;; git message
 
 (req-package git-messenger
-  :require
-  magit
-  :config
-  (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
+  :commands git-messenger:popup-message
+  :bind ("C-x v p" . git-messenger:popup-message))
 
 ;; git blame
 

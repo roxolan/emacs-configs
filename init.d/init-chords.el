@@ -1,7 +1,7 @@
 ;; key chord mode
 
 (req-package key-chord
-  :require (dired cc-mode god-mode helm magit scala-mode2 switch-window
+  :require (dired cc-mode god-mode helm scala-mode2 switch-window
 				  fiplr paradox)
 
   :config (progn (key-chord-define-global "qq" 'kill-this-buffer)
