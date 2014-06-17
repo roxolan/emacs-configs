@@ -40,8 +40,10 @@
 ;; use fuzzy for M-x
 
 (req-package smex
-  :config (progn (smex-initialize)
-                 (global-set-key (kbd "M-x") 'smex)))
+  :commands smex
+  :bind ("M-x" . smex)
+  :config (smex-initialize))
+
 ;; googling
 
 (req-package google-this)
