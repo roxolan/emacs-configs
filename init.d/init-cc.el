@@ -1,6 +1,6 @@
 ;; clang format
 
-(req-package clang-format)
+(req-package clang-format :commands clang-format-region)
 
 ;; completion with clang
 
