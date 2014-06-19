@@ -187,9 +187,9 @@
 
 (req-package ace-jump-mode
   :commands (ace-jump-word-mode ace-jump-char-mode ace-jump-line-mode)
-  :bind ("M-/" . ace-jump-word-mode)
-  :bind ("s-c" . ace-jump-char-mode)
-  :bind ("M-g M-g" . ace-jump-line-mode))
+  :bind (("M-/" . ace-jump-word-mode)
+         ("s-c" . ace-jump-char-mode)
+         ("M-g M-g" . ace-jump-line-mode)))
 
 ;; ace jump buffer
 
