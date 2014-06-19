@@ -11,6 +11,7 @@
 ;; in-project search
 
 (req-package fiplr
+  :commands (fiplr-find-file fiplr-find-directory)
   :config (progn (setq fiplr-ignored-globs
                        (let* ((GLOBS fiplr-ignored-globs)
                               (ADDITIONAL-DIRS '(".zbuild" ".cask"))
@@ -20,9 +21,9 @@
                               (NEW-DIRS (append CURRENT-DIRS ADDITIONAL-DIRS))
                               (NEW-FILES (append CURRENT-FILES ADDITIONAL-FILES)))
                          (list (cons 'directories (list NEW-DIRS))
-                               (cons 'files (list NEW-FILES)))))
-                 (global-set-key (kbd "C-x f") 'fiplr-find-file)
-                 (global-set-key (kbd "C-x d") 'fiplr-find-directory)))
+                               (cons 'files (list NEW-FILES))))))
+  :bind (("C-x f" . fiplr-find-file)
+         ("C-x d" . fiplr-find-directory)))
 
 ;; visual regexp
 

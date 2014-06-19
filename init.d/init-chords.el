@@ -1,7 +1,7 @@
 ;; key chord mode
 
 (req-package key-chord
-  :require (dired god-mode helm fiplr)
+  :require (dired god-mode helm)
 
   :config (progn (key-chord-define-global "qq" 'kill-this-buffer)
 				 (key-chord-define-global "qw" 'kill-this-buffer)
