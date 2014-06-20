@@ -122,7 +122,7 @@
 ;; scratch persist
 
 (req-package scratch-persist
-  :require (litable eldoc hl-defined scratch-ext))
+  :require (eldoc hl-defined scratch-ext))
 
 ;; scratch ext
 

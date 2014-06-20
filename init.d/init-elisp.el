@@ -9,8 +9,7 @@
 
 ;; use litable
 
-(req-package litable
-  :config (add-hook 'lisp-interaction-mode-hook (lambda () (litable-mode 1))))
+(req-package litable :commands litable-mode)
 
 ;; use eldoc
 
