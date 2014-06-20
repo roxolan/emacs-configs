@@ -142,10 +142,8 @@
 ;; diff highlight
 
 (req-package diff-hl
-  :require
-  (smartrep fringe)
-  :config
-  (global-diff-hl-mode 1))
+  :require smartrep
+  :config (global-diff-hl-mode 1))
 
 ;; desc unbound keys
 
