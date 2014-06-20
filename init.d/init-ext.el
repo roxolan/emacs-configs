@@ -40,7 +40,6 @@
 ;; use fuzzy for M-x
 
 (req-package smex
-  :commands smex
   :bind ("M-x" . smex)
   :config (smex-initialize))
 
@@ -51,7 +50,6 @@
 ;; shell pop up
 
 (req-package shell-pop
-  :commands shell-pop
   :bind ("C-`" . shell-pop))
 
 ;; string edit
@@ -180,13 +178,11 @@
 
 (req-package switch-window
   :require key-chord
-  :commands switch-window
   :bind ("C-x o" . switch-window))
 
 ;; ace jump mode
 
 (req-package ace-jump-mode
-  :commands (ace-jump-word-mode ace-jump-char-mode ace-jump-line-mode)
   :bind (("M-/" . ace-jump-word-mode)
          ("s-c" . ace-jump-char-mode)
          ("M-g M-g" . ace-jump-line-mode)))
@@ -195,7 +191,6 @@
 
 (req-package ace-jump-buffer
   :require (shell)
-  :commands ace-jump-buffer
   :bind ("M-?" . ace-jump-buffer))
 
 ;; move text

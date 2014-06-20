@@ -19,7 +19,6 @@
 ;; helm ac
 
 (req-package ac-helm
-  :commands ac-complete-with-helm
   :bind ("C-:" . ac-complete-with-helm))
 
 ;; helm helm commands

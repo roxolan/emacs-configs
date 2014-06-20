@@ -16,7 +16,6 @@
 
 (req-package helm-ls-git
   :require helm
-  :commands helm-ls-git-ls
   :bind ("M-+" . helm-ls-git-ls))
 
 ;; git config mode
@@ -30,7 +29,6 @@
 ;; git message
 
 (req-package git-messenger
-  :commands git-messenger:popup-message
   :bind ("C-x v p" . git-messenger:popup-message))
 
 ;; git blame

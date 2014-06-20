@@ -29,7 +29,6 @@
 ;; lusty
 
 (req-package lusty-explorer
-  :commands (lusty-file-explorer)
   :bind ("C-x C-f" . lusty-file-explorer)
   :init
   (progn (add-hook

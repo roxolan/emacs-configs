@@ -11,7 +11,6 @@
 ;; in-project search
 
 (req-package fiplr
-  :commands (fiplr-find-file fiplr-find-directory)
   :config (progn (setq fiplr-ignored-globs
                        (let* ((GLOBS fiplr-ignored-globs)
                               (ADDITIONAL-DIRS '(".zbuild" ".cask"))
