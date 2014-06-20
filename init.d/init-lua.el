@@ -1,7 +1,7 @@
 ;; lua mode
 
 (req-package lua-mode
-  :mode (("\\.lua$" . lua-mode))
+  :mode ("\\.lua$" . lua-mode)
   :config (setq lua-indent-level 4))
 
 ;; flymake lua

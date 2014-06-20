@@ -10,7 +10,9 @@
 
 (req-package cc-mode
   :require key-chord
-  :mode ("\\.cpp\\'" . c++-mode)
+  :mode (("\\.cpp\\'" . c++-mode)
+         ("\\.hpp\\'" . c++-mode)
+         ("\\.h\\'" . c++-mode))
   :config (progn (key-chord-define c++-mode-map ";;"  "\C-e;")
 				 (key-chord-define c++-mode-map "//"  "\C-e //")
 				 (key-chord-define c++-mode-map "{}"  "{\n\n}\C-p\t")
