@@ -12,8 +12,8 @@
 ;; shit text left/right
 
 (req-package smart-shift
-  :config (progn (global-set-key (kbd "C-{") 'smart-shift-left)
-                 (global-set-key (kbd "C-}") 'smart-shift-right)))
+  :bind (("C-{" . smart-shift-left)
+         ("C-}" . smart-shift-right)))
 
 ;; save kill ring to disk
 
