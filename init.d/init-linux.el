@@ -13,6 +13,6 @@
                              (call-process-shell-command "xdg-open" nil 0 nil url))))
 
            ;; aur interface
-           (req-package aurel)))
+           (req-package aurel :commands aurel-package-search)))
 
 (provide 'init-linux)
