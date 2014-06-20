@@ -7,8 +7,8 @@
 		 (key-chord-define scala-mode-map "{}"  "{\n\n}\C-p\t")
 		 (key-chord-define scala-mode-map "(}"  "() {\n\n}\C-p\t"))
 
-  :mode (("\\.scala\\'" . scala-mode2)
-		 ("\\.sc\\'" . scala-mode2)))
+  :mode (("\\.scala\\'" . scala-mode)
+		 ("\\.sc\\'" . scala-mode)))
 
 (req-package sbt-mode
   :commands sbt-start)
