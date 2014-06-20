@@ -264,4 +264,9 @@
 (add-hook 'find-file-hook
           (lambda () (setq default-input-method 'russian-computer)))
 
+;; expand region
+
+(req-package expand-region
+  :bind ("C-=" . er/expand-region))
+
 (provide 'init-ext)

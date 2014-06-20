@@ -84,12 +84,6 @@
   :config
   (scroll-bar-mode -1))
 
-;; expand region
-
-(req-package expand-region
-  :config
-  (global-set-key (kbd "C-=") 'er/expand-region))
-
 ;; turn off sctartup screen
 
 (setq inhibit-splash-screen t)
