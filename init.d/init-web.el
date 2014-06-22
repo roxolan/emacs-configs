@@ -1,11 +1,10 @@
 ;; http repl
 
-(req-package httprepl
-  :require (s dash))
+(req-package httprepl :require (s dash) :commands httprepl)
 
 ;; restclient
 
-(req-package restclient)
+(req-package restclient :mode "\\.rest\\'")
 
 ;; elnode
 
@@ -20,7 +19,7 @@
 
 ;; xml generation dsl
 
-(req-package xmlgen)
+(req-package xmlgen :idle nil)
 
 ;; html templates editing
 
