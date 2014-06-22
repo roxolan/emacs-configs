@@ -1,3 +1,8 @@
+;; temp file
+
+(req-package find-temp-file
+  :bind ("C-x C-t" . find-temp-file))
+
 ;; track command frequencies
 
 (req-package keyfreq
