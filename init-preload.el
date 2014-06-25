@@ -6,8 +6,4 @@
 
 (setq make-backup-files nil)
 
-;; debug on any error
-
-(setq debug-on-error t)
-
 (provide 'init-preload)
