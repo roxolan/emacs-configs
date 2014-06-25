@@ -1,8 +1,3 @@
-;; makefile runner
-
-(req-package makefile-runner
-  :bind ("C-s-b" . makefile-runner))
-
 ;; temp file
 
 (req-package find-temp-file
