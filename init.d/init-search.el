@@ -1,12 +1,10 @@
 ;; use igrep
 
-(req-package igrep)
+(req-package igrep :commands igrep)
 
 ;; use wgrep
 
-(req-package wgrep
-  :require
-  grep)
+(req-package wgrep :require grep)
 
 ;; in-project search
 
