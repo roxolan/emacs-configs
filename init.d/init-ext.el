@@ -1,3 +1,7 @@
+;; delete trailing whitespaces before saving some buffer
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; temp file
 
 (req-package find-temp-file
