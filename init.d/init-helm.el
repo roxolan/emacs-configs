@@ -36,9 +36,20 @@
 
 ;; helm desc binds
 
-(req-package helm-descbinds
-  :require
-  helm)
+(req-package helm-descbinds :require helm)
+
+;; helm open github
+
+(req-package helm-open-github
+  :require helm
+  :commands (helm-open-github-from-commit
+             helm-open-github-from-file
+             helm-open-github-from-issues
+             helm-open-github-from-pull-requests)
+  :bind (("C-c o f" . helm-open-github-from-file)
+         ("C-c o c" . helm-open-github-from-commit)
+         ("C-c o i" . helm-open-github-from-issues)
+         ("C-c o p" . helm-open-github-from-pull-requests)))
 
 ;; helm package
 
