@@ -140,8 +140,8 @@
 ;; insert shebang
 
 (req-package insert-shebang
-  :config
-  (add-hook 'find-file-hook 'insert-shebang))
+  :commands insert-shebang
+  :init (add-hook 'find-file-hook 'insert-shebang))
 
 ;; indentation
 
