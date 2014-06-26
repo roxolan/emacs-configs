@@ -1,7 +1,7 @@
 ;; key chord mode
 
 (req-package key-chord
-  :require (dired helm)
+  :require (helm)
 
   :config (progn (key-chord-define-global "qq" 'kill-this-buffer)
 				 (key-chord-define-global "qw" 'kill-this-buffer)
@@ -43,8 +43,6 @@
 				 (key-chord-define-global "()" "()\C-b")
 
 				 (key-chord-define minibuffer-local-map "gg" 'abort-recursive-edit)
-
-				 (key-chord-define dired-mode-map "qq" 'dired-up-directory)
 
 				 (key-chord-mode 1)))
 
