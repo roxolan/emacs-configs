@@ -1,3 +1,7 @@
+;; revertible delete other windows
+
+(req-package zygospore :commands zygospore-toggle-delete-other-windows)
+
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

@@ -26,7 +26,7 @@
 				 (key-chord-define-global ";f" 'lusty-file-explorer)
 
 				 (key-chord-define-global ";o" 'switch-window)
-				 (key-chord-define-global ";1" 'delete-other-windows)
+				 (key-chord-define-global ";1" 'zygospore-toggle-delete-other-windows)
 				 (key-chord-define-global ";2" 'split-window-below)
 				 (key-chord-define-global ";3" 'split-window-right)
 				 (key-chord-define-global ";4" 'kill-buffer-and-window)
