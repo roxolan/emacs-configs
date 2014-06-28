@@ -1,1 +1,1 @@
-(req-package ant)
+(req-package ant :commands ant)
