@@ -13,6 +13,8 @@
                  (add-to-list 'elfeed-feeds "http://igromania.ru/rss/rss_all.xml")
                  (add-to-list 'elfeed-feeds "http://www.habrahabr.ru/rss/main/")
                  (add-to-list 'elfeed-feeds "http://typesafe.com/blog/rss.xml")
+                 (add-to-list 'elfeed-feeds "http://blog.scaloid.org/feeds/posts/default?alt=rss")
+                 (add-to-list 'elfeed-feeds "http://feeds.feedburner.com/danielwestheide")
                  (add-to-list 'elfeed-feeds "http://whattheemacsd.com/atom.xml")))
 
 (provide 'init-feeds)
