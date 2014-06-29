@@ -11,13 +11,6 @@
 (req-package find-temp-file
   :bind ("C-x C-t" . find-temp-file))
 
-;; track command frequencies
-
-(req-package keyfreq
-  :config (progn (setq keyfreq-file "~/.emacs.d/keyfreq")
-                 (keyfreq-mode 1)
-                 (keyfreq-autosave-mode 1)))
-
 ;; narrow region to other window
 
 (req-package narrow-indirect)
