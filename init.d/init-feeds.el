@@ -13,6 +13,8 @@
                  (add-to-list 'elfeed-feeds "http://igromania.ru/rss/rss_all.xml")
                  (add-to-list 'elfeed-feeds "http://www.habrahabr.ru/rss/main/")
                  (add-to-list 'elfeed-feeds "http://typesafe.com/blog/rss.xml")
+                 (add-to-list 'elfeed-feeds "http://lanyrd.com/topics/scala/feed")
+                 (add-to-list 'elfeed-feeds "http://feeds.feedburner.com/RuminationsOfAProgrammer")
                  (add-to-list 'elfeed-feeds "http://blog.scaloid.org/feeds/posts/default?alt=rss")
                  (add-to-list 'elfeed-feeds "http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss")
 
