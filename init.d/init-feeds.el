@@ -14,6 +14,8 @@
                  (add-to-list 'elfeed-feeds "http://www.habrahabr.ru/rss/main/")
                  (add-to-list 'elfeed-feeds "http://typesafe.com/blog/rss.xml")
                  (add-to-list 'elfeed-feeds "http://blog.scaloid.org/feeds/posts/default?alt=rss")
+                 (add-to-list 'elfeed-feeds "http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss")
+
                  (add-to-list 'elfeed-feeds "http://feeds.feedburner.com/danielwestheide")
                  (add-to-list 'elfeed-feeds "http://whattheemacsd.com/atom.xml")))
 
