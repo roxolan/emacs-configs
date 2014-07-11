@@ -4,7 +4,7 @@
 
 ;; restclient
 
-(req-package restclient :mode "\\.rest\\'")
+(req-package restclient :mode ("\\.rest\\'" . restclient-mode))
 
 ;; elnode
 
