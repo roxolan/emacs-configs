@@ -17,7 +17,6 @@ jabber-avatar-cache/
 tramp
 saved-packages
 /session.*
-/.mc-lists.el
 /.cask/
 /custom.el
 /.litable-lists.el
