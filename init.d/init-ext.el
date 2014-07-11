@@ -2,9 +2,19 @@
 
 (req-package zygospore :commands zygospore-toggle-delete-other-windows)
 
+;; highlight number in code
+
+(req-package highlight-numbers
+  :config (add-hook 'find-file-hook (lambda () (highlight-numbers-mode 1))))
+
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; user togle quotes
+
+(req-package toggle-quotes
+  :bind ("C-'" . toggle-quotes))
 
 ;; temp file
 
@@ -14,6 +24,14 @@
 ;; narrow region to other window
 
 (req-package narrow-indirect)
+
+;;  folding
+
+(req-package yafolding
+  :config (add-hook 'prog-mode-hook (lambda () (yafolding-mode)))
+  :require fringe
+  :bind (("C-c <C-S-return>" . yafolding-toggle-all)
+         ("C-c <C-return>" . yafolding-toggle-element)))
 
 ;; shit text left/right
 
