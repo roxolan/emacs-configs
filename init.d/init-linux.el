@@ -12,6 +12,11 @@
                            (lambda (url &rest args)
                              (call-process-shell-command "xdg-open" nil 0 nil url))))
 
+           ;; fonts
+
+           (set-default-font "SourceCodePro-9" t)
+           (set-fontset-font "fontset-default" 'cyrillic-iso8859-5 '("Liberation Mono" . "iso10646-1"))
+
            ;; aur interface
            (req-package aurel :commands aurel-package-search)))
 

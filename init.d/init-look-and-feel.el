@@ -12,11 +12,6 @@
                  (nyan-mode)
                  (nyan-start-animation)))
 
-;; fonts
-
-(set-default-font "SourceCodePro-9" t)
-(set-fontset-font "fontset-default" 'cyrillic-iso8859-5 '("Liberation Mono" . "iso10646-1"))
-
 ;; pretty lambda
 
 (req-package pretty-lambdada
