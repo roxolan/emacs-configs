@@ -1,3 +1,7 @@
+;; spray reading mode
+
+(req-package spray :bind ("<f6>" . spray-mode))
+
 ;; revertible delete other windows
 
 (req-package zygospore :commands zygospore-toggle-delete-other-windows)
