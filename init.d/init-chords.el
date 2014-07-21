@@ -7,7 +7,6 @@
 				 (key-chord-define-global "qw" 'kill-this-buffer)
 				 (key-chord-define-global "xm" 'smex)
 				 (key-chord-define-global "gg" 'keyboard-quit)
-				 (key-chord-define-global "gm" 'god-mode)
 				 (key-chord-define-global "xb" 'helm-buffers-list)
 				 (key-chord-define-global "xs" 'save-buffer)
 				 (key-chord-define-global "xc" 'save-buffers-kill-emacs)
