@@ -1,3 +1,11 @@
+(req-package recentf
+  :config (recentf-mode 1))
+
+;; use hungry delete
+
+(req-package hungry-delete
+  :config (global-hungry-delete-mode 1))
+
 ;; spray reading mode
 
 (req-package spray :bind ("<f6>" . spray-mode))
