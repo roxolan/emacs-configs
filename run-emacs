@@ -15,14 +15,14 @@ if [[ "$HAS_INSTANCE" == "1" ]] ; then
 	echo marker has instance, unlock and create frame >> ~/.emacs.d/log
 	rm ~/.emacs.d/daemon.lock
 
-	emacsclient -c &
+	emacsclient -c "$1" "$2" &
 elif [[ "$HAS_LOCK" == "0" ]] ; then
 	/usr/bin/emacs --daemon
 
 	echo marker unlocking >> ~/.emacs.d/log
 	rm ~/.emacs.d/daemon.lock
 
-	emacsclient -c &
+	emacsclient -c "$1" "$2" &
 else
 	sleep 0.1s
 	echo marker retry >> ~/.emacs.d/log
