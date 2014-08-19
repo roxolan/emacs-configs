@@ -9,7 +9,7 @@
 				 (key-chord-define-global "gg" 'keyboard-quit)
 				 (key-chord-define-global "xb" 'helm-buffers-list)
 				 (key-chord-define-global "xs" 'save-buffer)
-				 (key-chord-define-global "xc" 'save-buffers-kill-emacs)
+				 (key-chord-define-global "xc" 'save-buffers-kill-terminal)
 				 (key-chord-define-global "xf" 'fiplr-find-file)
 				 (key-chord-define-global "xd" 'fiplr-find-directory)
 				 (key-chord-define-global "``" 'shell-pop)
