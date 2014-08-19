@@ -1,3 +1,7 @@
+;; use timemachine
+
+(req-package git-timemachine)
+
 ;; magit
 
 (req-package magit :commands magit-status)
