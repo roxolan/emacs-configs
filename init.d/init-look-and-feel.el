@@ -39,6 +39,7 @@
          (setq sml/shorten-directory t)
          (setq sml/name-width 20)
          (setq sml/mode-width 'full)
+         (setq sml/hidden-modes nil)
          (add-to-list 'sml/hidden-modes " Anzu")
          (add-to-list 'sml/hidden-modes " AC")
          (add-to-list 'sml/hidden-modes " yas")
