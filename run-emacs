@@ -3,28 +3,19 @@
 HAS_INSTANCE=`ps -A all | grep "/usr/bin/emacs --daemon" | grep -v grep | wc -l`
 HAS_LOCK=`ls ~/.emacs.d/ | grep daemon.lock | wc -l`
 
-ps -A all | grep "emacs --daemon" | grep -v grep >> ~/.emacs.d/log
-
-echo marker $HAS_INSTANCE >> ~/.emacs.d/log
-echo marker $HAS_LOCK >> ~/.emacs.d/log
-
-echo marker locking >> ~/.emacs.d/log
 touch ~/.emacs.d/daemon.lock
 
 if [[ "$HAS_INSTANCE" == "1" ]] ; then
-	echo marker has instance, unlock and create frame >> ~/.emacs.d/log
 	rm ~/.emacs.d/daemon.lock
 
-	emacsclient -c "$1" "$2" &
+	emacsclient -c "$1" "$2"
 elif [[ "$HAS_LOCK" == "0" ]] ; then
 	/usr/bin/emacs --daemon
 
-	echo marker unlocking >> ~/.emacs.d/log
 	rm ~/.emacs.d/daemon.lock
 
-	emacsclient -c "$1" "$2" &
+	emacsclient -c "$1" "$2"
 else
 	sleep 0.1s
-	echo marker retry >> ~/.emacs.d/log
 	~/.emacs.d/run-emacs
 fi
