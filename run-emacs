@@ -1,6 +1,6 @@
 #! /bin/bash
 
-HAS_INSTANCE=`ps -A all | grep "/usr/bin/emacs --daemon" | grep -v grep | wc -l`
+HAS_INSTANCE=`ls ~/.emacs.d/ | grep server.lock | wc -l`
 HAS_LOCK=`ls ~/.emacs.d/ | grep daemon.lock | wc -l`
 
 touch ~/.emacs.d/daemon.lock
@@ -8,13 +8,13 @@ touch ~/.emacs.d/daemon.lock
 if [[ "$HAS_INSTANCE" == "1" ]] ; then
 	rm ~/.emacs.d/daemon.lock
 
-	emacsclient -c "$1" "$2"
+	echo $@ | xargs emacsclient -c -n &
 elif [[ "$HAS_LOCK" == "0" ]] ; then
-	/usr/bin/emacs --daemon
+	emacs --daemon
 
 	rm ~/.emacs.d/daemon.lock
 
-	emacsclient -c "$1" "$2"
+	echo $@ | xargs emacsclient -c -n &
 else
 	sleep 0.1s
 	~/.emacs.d/run-emacs

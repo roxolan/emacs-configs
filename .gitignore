@@ -26,3 +26,5 @@ saved-packages
 /emacs-theme
 /kill-ring-saved.el
 /deepin-emacs/
+/server.lock
+/daemon.lock

@@ -46,3 +46,8 @@
 ;; start emacs server
 
 (server-start)
+
+(setq emacs-shell-buffer "*emacs-shell*")
+(shell-command "touch ~/.emacs.d/server.lock")
+(add-hook 'kill-emacs-hook
+          (lambda () (shell-command "rm -f ~/.emacs.d/server.lock")))
