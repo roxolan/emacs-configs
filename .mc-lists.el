@@ -11,6 +11,8 @@
 		kill-region
 		sp--self-insert-command
 		c-electric-lt-gt
+		eval-print-last-sexp
+		hungry-delete-forward
 		))
 
 (setq mc/cmds-to-run-once
