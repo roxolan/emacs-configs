@@ -8,9 +8,11 @@
 		c-electric-lt-gt
 		c-electric-semi&comma
 		c-indent-line-or-region
+		kill-region
+		sp--self-insert-command
+		c-electric-lt-gt
 		))
 
 (setq mc/cmds-to-run-once
       '(
-		helm-show-kill-ring
 		))
