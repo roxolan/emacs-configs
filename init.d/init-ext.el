@@ -101,11 +101,19 @@
 
 (req-package multiple-cursors
   :config (progn (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-                 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-                 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-                 (global-set-key (kbd "C-M->") 'mc/mark-next-word-like-this)
-                 (global-set-key (kbd "C-M-<") 'mc/mark-previous-word-like-this)
-                 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)))
+                 (global-set-key (kbd "C-<")
+                                 (lambda ()
+                                   (interactive)
+                                   (progn
+                                     (if (not (use-region-p)) (er/expand-region 1))
+                                     (mc/mark-previous-like-this 1))))
+                 (global-set-key (kbd "C->")
+                                 (lambda ()
+                                   (interactive)
+                                   (progn
+                                     ;; (if (not (use-region-p)) (er/expand-region 1))
+                                     (mc/mark-next-like-this))))
+                 (global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this)))
 
 ;; ant
 
@@ -304,5 +312,14 @@
 
 (req-package expand-region
   :bind ("C-=" . er/expand-region))
+
+;; shell completion
+
+(req-package readline-complete
+  :config (progn (setq explicit-shell-file-name "bash")
+                 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
+                 (setq comint-process-echoes t)
+                 (add-to-list 'ac-modes 'shell-mode)
+                 (add-hook 'shell-mode-hook 'ac-rlc-setup-sources)))
 
 (provide 'init-ext)
