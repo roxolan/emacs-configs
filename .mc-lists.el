@@ -6,6 +6,8 @@
 		c-electric-colon
 		c-electric-delete-forward
 		c-electric-lt-gt
+		c-electric-lt-gt
+		c-electric-pound
 		c-electric-semi&comma
 		c-indent-line-or-region
 		kill-region
@@ -13,6 +15,7 @@
 		c-electric-lt-gt
 		eval-print-last-sexp
 		hungry-delete-forward
+		sp--self-insert-command
 		))
 
 (setq mc/cmds-to-run-once
