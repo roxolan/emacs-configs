@@ -19,6 +19,9 @@
                  (add-to-list 'elfeed-feeds "http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss")
 
                  (add-to-list 'elfeed-feeds "http://feeds.feedburner.com/danielwestheide")
-                 (add-to-list 'elfeed-feeds "http://whattheemacsd.com/atom.xml")))
+                 (add-to-list 'elfeed-feeds "http://whattheemacsd.com/atom.xml")
+                 (add-to-list 'elfeed-feeds "http://www.aaronsw.com/2002/feeds/pgessays.rss")
+                 (add-to-list 'elfeed-feeds "http://avva.livejournal.com/data/rss")
+                 (add-to-list 'elfeed-feeds "https://news.ycombinator.com/rss")))
 
 (provide 'init-feeds)
