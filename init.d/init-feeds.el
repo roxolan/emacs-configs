@@ -3,7 +3,7 @@
   :config (progn (add-to-list 'elfeed-feeds "http://www.archlinux.org/feeds/news/")
                  (add-to-list 'elfeed-feeds "http://blogerator.ru/feed")
                  (add-to-list 'elfeed-feeds "http://bugtraq.ru/export/yandex.xml")
-                 (add-to-list 'elfeed-feeds "http://blog.gamedeff.com/?feed=rss2")
+                 ;; (add-to-list 'elfeed-feeds "http://blog.gamedeff.com/?feed=rss2")
                  (add-to-list 'elfeed-feeds "http://www.linux.org.ru/section-rss.jsp?section=1")
                  (add-to-list 'elfeed-feeds "http://www.linuxcenter.ru/trans/news.rss")
                  (add-to-list 'elfeed-feeds "http://www.opennet.ru/opennews/opennews_6.rss")
