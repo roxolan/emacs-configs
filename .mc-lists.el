@@ -9,15 +9,28 @@
 		c-electric-lt-gt
 		c-electric-pound
 		c-electric-semi&comma
+		c-electric-slash
+		c-electric-star
 		c-indent-line-or-region
-		kill-region
-		sp--self-insert-command
-		c-electric-lt-gt
+		c-toggle-electric-state
+		downcase-region
 		eval-print-last-sexp
+		helm-show-kill-ring
+		hungry-delete-backward
 		hungry-delete-forward
+		kill-region
+		move-text-up
+		org-end-of-line
+		org-self-insert-command
+		smex
 		sp--self-insert-command
+		transpose-words
+		upcase-region
+		duplicate-thing
 		))
 
 (setq mc/cmds-to-run-once
       '(
+		helm-buffers-list
+		switch-window
 		))
