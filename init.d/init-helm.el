@@ -3,6 +3,7 @@
 (req-package helm
   :config
   (progn (require 'helm-config)
+         (require 'helm-match-plugin)
          (define-key global-map (kbd "C-x b") 'helm-buffers-list)
          (global-set-key (kbd "C-c y") 'helm-show-kill-ring)
          (global-set-key (kbd "C-x C-r") 'helm-recentf)
