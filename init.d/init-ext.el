@@ -231,6 +231,11 @@
          ("s-c" . ace-jump-char-mode)
          ("M-g M-g" . ace-jump-line-mode)))
 
+;; ace-isearch
+
+(req-package ace-isearch
+  :config (global-ace-isearch-mode +1))
+
 ;; ace jump buffer
 
 (req-package ace-jump-buffer
