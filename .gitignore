@@ -28,3 +28,5 @@ saved-packages
 /deepin-emacs/
 /server.lock
 /daemon.lock
+/recentf
+/smex-items
