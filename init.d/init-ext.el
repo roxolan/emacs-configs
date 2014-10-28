@@ -101,18 +101,8 @@
 
 (req-package multiple-cursors
   :config (progn (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-                 (global-set-key (kbd "C-<")
-                                 (lambda ()
-                                   (interactive)
-                                   (progn
-                                     (if (not (use-region-p)) (er/expand-region 1))
-                                     (mc/mark-previous-like-this 1))))
-                 (global-set-key (kbd "C->")
-                                 (lambda ()
-                                   (interactive)
-                                   (progn
-                                     ;; (if (not (use-region-p)) (er/expand-region 1))
-                                     (mc/mark-next-like-this))))
+                 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+                 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
                  (global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this)))
 
 ;; ant
