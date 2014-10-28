@@ -321,6 +321,7 @@
 ;; shell completion
 
 (req-package readline-complete
+  :disabled t
   :config (progn (setq explicit-shell-file-name "bash")
                  (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
                  (setq comint-process-echoes t)
