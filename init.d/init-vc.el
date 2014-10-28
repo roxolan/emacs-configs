@@ -1,3 +1,8 @@
+;; svn integration
+
+(req-package psvn
+  :commands svn-status)
+
 ;; use timemachine
 
 (req-package git-timemachine)
