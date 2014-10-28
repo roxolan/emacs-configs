@@ -12,7 +12,9 @@
 		c-electric-star
 		c-indent-line-or-region
 		c-toggle-electric-state
+		complete-symbol
 		downcase-region
+		duplicate-thing
 		eval-print-last-sexp
 		helm-show-kill-ring
 		hungry-delete-backward
@@ -25,7 +27,6 @@
 		sp--self-insert-command
 		transpose-words
 		upcase-region
-		duplicate-thing
 		))
 
 (setq mc/cmds-to-run-once
