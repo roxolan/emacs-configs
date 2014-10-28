@@ -47,8 +47,13 @@
          (add-to-list 'sml/hidden-modes " Abbrev")
          (add-to-list 'sml/hidden-modes " ARev")
          (sml/setup)
-         (sml/apply-theme 'respectful)
-         (setq custom-enabled-themes (reverse custom-enabled-themes))))
+         (sml/apply-theme 'respectful)))
+
+;; theme
+
+(req-package gruvbox-theme
+  :require smart-mode-line
+  :config (load-theme 'gruvbox t))
 
 ;; anzu
 
