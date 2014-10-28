@@ -33,7 +33,6 @@
 ;; main line
 
 (req-package smart-mode-line
-  :require remember-theme
   :config
   (progn (setq sml/shorten-modes t)
          (setq sml/shorten-directory t)
@@ -144,10 +143,6 @@
 ;; desc unbound keys
 
 (req-package unbound)
-
-;; remember theme
-
-(req-package remember-theme)
 
 ;; theme park mode
 
