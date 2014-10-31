@@ -11,6 +11,12 @@
 
 (req-package magit :commands magit-status)
 
+;; git flow
+
+(req-package magit-gitflow
+  :require magit
+  :config (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
+
 ;; magit svn
 
 (req-package magit-svn :require magit)
