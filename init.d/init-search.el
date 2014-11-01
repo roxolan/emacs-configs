@@ -30,4 +30,14 @@
                  (define-key global-map (kbd "C-c q") 'vr/query-replace)
                  (define-key global-map (kbd "C-c m") 'vr/mc-mark)))
 
+;; ignored folders
+
+(req-package grep
+  :config (progn
+            (add-to-list 'grep-find-ignored-directories "auto")
+            (add-to-list 'grep-find-ignored-directories "elpa")
+            (add-to-list 'grep-find-ignored-directories ".git")
+            (add-to-list 'grep-find-ignored-directories ".svn")
+            (add-hook 'grep-mode-hook (lambda () (toggle-truncate-lines 1)))))
+
 (provide 'init-search)
