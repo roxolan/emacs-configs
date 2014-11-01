@@ -208,6 +208,10 @@
 
 (setq enable-local-variables nil)
 
+;; simplify yes or no
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; switch window
 
 (req-package switch-window
