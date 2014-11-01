@@ -9,4 +9,6 @@
 
 (req-package org-jira :require org)
 
+(req-package jira :require xml-rpc)
+
 (provide 'init-org)
