@@ -7,4 +7,6 @@
 
 (req-package org-gcal :disabled t :require org)
 
+(req-package org-jira :require org)
+
 (provide 'init-org)
