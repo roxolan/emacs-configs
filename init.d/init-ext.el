@@ -23,11 +23,6 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; user togle quotes
-
-(req-package toggle-quotes
-  :bind ("C-'" . toggle-quotes))
-
 ;; temp file
 
 (req-package find-temp-file
