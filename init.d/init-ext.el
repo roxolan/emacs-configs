@@ -312,14 +312,4 @@
 (req-package expand-region
   :bind ("C-=" . er/expand-region))
 
-;; shell completion
-
-(req-package readline-complete
-  :disabled t
-  :config (progn (setq explicit-shell-file-name "bash")
-                 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
-                 (setq comint-process-echoes t)
-                 (add-to-list 'ac-modes 'shell-mode)
-                 (add-hook 'shell-mode-hook 'ac-rlc-setup-sources)))
-
 (provide 'init-ext)
