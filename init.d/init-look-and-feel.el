@@ -149,10 +149,6 @@
 
 (req-package unbound)
 
-;; theme park mode
-
-(req-package theme-park-mode :disabled t)
-
 ;; helm themes
 
 (req-package helm-themes

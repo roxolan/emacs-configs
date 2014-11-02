@@ -3,6 +3,7 @@
   :bind (("C-c l" . org-store-link)
          ("C-c c" . org-capture)
          ("C-c a" . org-agenda)
+         ("C-'" . org-cycle-agenda-files)
          ("C-c b" . org-iswitchb)))
 
 (req-package org-gcal :disabled t :require org)

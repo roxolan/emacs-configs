@@ -142,12 +142,6 @@
 
 (req-package shell-command)
 
-;; hide/show comments
-
-(req-package hide-comnt
-  :config
-  (global-set-key (kbd "C-c h") 'hide/show-comments-toggle))
-
 ;; scratch persist
 
 (req-package scratch-persist
@@ -256,16 +250,6 @@
                  (setq auto-revert-interval 0.5)
                  (add-to-list 'auto-mode-alist
                               '("\\.log\\'" . auto-revert-tail-mode))))
-
-;; god mode
-
-(defun my-update-cursor ()
-  (setq cursor-type (if (or god-local-mode buffer-read-only) 'hollow 'box)))
-
-(req-package god-mode
-  :bind ("<escape>" . god-mode)
-  :config (progn (add-hook 'god-mode-enabled-hook 'my-update-cursor)
-                 (add-hook 'god-mode-disabled-hook 'my-update-cursor)))
 
 ;; auto complete
 
