@@ -37,7 +37,9 @@
 
 ;; init.d
 
-(req-package-force el-get :init (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes"))
+(req-package-force el-get :init
+  (progn (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
+         (el-get 'sync)))
 (req-package-force load-dir :init (load-dir-one "~/.emacs.d/init.d"))
 
 ;; finish loading packages
