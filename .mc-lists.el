@@ -22,7 +22,9 @@
 		kill-region
 		move-text-up
 		org-end-of-line
+		org-meta-return
 		org-self-insert-command
+		org-shiftright
 		smex
 		sp--self-insert-command
 		transpose-words
