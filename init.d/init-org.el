@@ -7,6 +7,7 @@
          ("C-c b" . org-iswitchb))
   :config (progn (setq org-default-notes-file (concat org-directory "/notes.org"))
                  (setq org-capture-bookmark t)
+                 (setq org-refile-use-outline-path 'file)
                  (setq org-startup-folded 'showeverything)))
 
 (req-package org-gcal :disabled t :require org)
