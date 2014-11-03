@@ -4,7 +4,10 @@
          ("C-c c" . org-capture)
          ("C-c a" . org-agenda)
          ("C-'" . org-cycle-agenda-files)
-         ("C-c b" . org-iswitchb)))
+         ("C-c b" . org-iswitchb))
+  :config (progn (setq org-default-notes-file (concat org-directory "/notes.org"))
+                 (setq org-capture-bookmark t)
+                 (setq org-startup-folded 'showeverything)))
 
 (req-package org-gcal :disabled t :require org)
 
