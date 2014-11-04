@@ -23,6 +23,7 @@
 		move-text-up
 		org-end-of-line
 		org-meta-return
+		org-metaright
 		org-self-insert-command
 		org-shiftright
 		smex

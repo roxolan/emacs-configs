@@ -18,6 +18,10 @@
   :config
   (pretty-lambda-for-modes))
 
+;; pretty symbols mode
+
+(global-prettify-symbols-mode 1)
+
 ;; customizations
 
 (req-package menu-bar
@@ -51,9 +55,8 @@
 
 ;; theme
 
-(req-package gruvbox-theme
-  :require smart-mode-line
-  :config (load-theme 'gruvbox t))
+(req-package gotham-theme
+  :require smart-mode-line)
 
 ;; anzu
 
