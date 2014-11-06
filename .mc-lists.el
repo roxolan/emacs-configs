@@ -25,6 +25,7 @@
 		org-meta-return
 		org-metaright
 		org-self-insert-command
+		org-set-tags-command
 		org-shiftright
 		smex
 		sp--self-insert-command
