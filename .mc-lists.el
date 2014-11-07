@@ -21,7 +21,9 @@
 		hungry-delete-forward
 		kill-region
 		move-text-up
+		org-beginning-of-line
 		org-end-of-line
+		org-insert-todo-heading
 		org-meta-return
 		org-metaright
 		org-self-insert-command
