@@ -10,6 +10,9 @@
                  (setq org-refile-use-outline-path 'file)
                  (setq org-startup-folded 'showeverything)))
 
+(req-package org-cliplink :require org
+  :bind ("C-M-y" . org-cliplink))
+
 (req-package org-gcal :disabled t :require org)
 
 (req-package org-jira :require org)
