@@ -1,3 +1,9 @@
+;; use timeclock
+
+(req-package timeclock
+  :config (progn (timeclock-mode-line-display 1)
+                 (add-hook 'kill-emacs-query-functions 'timeclock-query-out)))
+
 ;; show vertical lines in prog mode
 
 (req-package indent-guide
