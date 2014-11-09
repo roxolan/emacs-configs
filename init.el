@@ -1,3 +1,5 @@
+(require 'package)
+
 ;; bootstrap utils
 
 (defconst my-custom-file "~/.emacs.d/custom.el")
