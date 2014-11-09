@@ -1,8 +1,15 @@
-;; req-package
+;; elpa
+
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("sunrise" . "http://joseito.republika.pl/sunrise-commander/"))
+
+(if (not (has-emacs-version 24 0))
+    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (eval-when-compile (package-initialize))
-
-;; bootstrap
 
 (defun require-package (package)
   "refresh package archives, check package presence and install if it's not installed"
@@ -16,15 +23,18 @@
                    (package-install package)))
              (require package))))
 
-(require-package 'req-package)
+;; el-get
 
-;; bootstrap -^
+(require-package 'el-get)
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
+(el-get 'sync)
+
+;; req-package
+
+(require-package 'req-package)
 
 ;; init.d
 
-(req-package-force el-get
-  :init (progn (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-               (el-get 'sync)))
 (req-package-force load-dir :init (load-dir-one "~/.emacs.d/init.d"))
 
 ;; finish loading packages
