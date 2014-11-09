@@ -26,7 +26,8 @@
 
 ;; pretty symbols mode
 
-(global-prettify-symbols-mode 1)
+(if (has-emacs-version 24 4)
+    (global-prettify-symbols-mode 1))
 
 ;; customizations
 
@@ -62,6 +63,7 @@
 ;; theme
 
 (req-package gotham-theme
+  :loader req-package-try-el-get
   :require smart-mode-line)
 
 ;; anzu
