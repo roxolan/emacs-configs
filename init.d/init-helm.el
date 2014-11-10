@@ -18,10 +18,13 @@
 (req-package helm-proc
   :require helm)
 
-;; helm ac
+;; helm company
 
-(req-package ac-helm
-  :bind ("C-:" . ac-complete-with-helm))
+(req-package helm-company
+  :require company
+  :commands helm-company
+  :config (progn (define-key company-mode-map (kbd "C-:") 'helm-company)
+                 (define-key company-active-map (kbd "C-:") 'helm-company)))
 
 ;; helm helm commands
 

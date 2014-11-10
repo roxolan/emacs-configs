@@ -251,15 +251,6 @@
                  (add-to-list 'auto-mode-alist
                               '("\\.log\\'" . auto-revert-tail-mode))))
 
-;; auto complete
-
-(req-package auto-complete
-  :config (progn (require 'auto-complete-config)
-                 (global-auto-complete-mode t)
-                 (setq ac-auto-start 1)
-                 (setq ac-quick-help-delay 0.1)
-                 (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)))
-
 ;; flymake
 
 (req-package flymake

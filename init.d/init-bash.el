@@ -1,9 +1,3 @@
-;; bash complete
-
-(req-package bash-completion
-  :require auto-complete
-  :config (bash-completion-setup))
-
 ;; flymake shell
 
 (req-package flymake-shell
