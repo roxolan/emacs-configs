@@ -40,11 +40,11 @@
 
 ;;  folding
 
-(req-package yafolding
-  :config (add-hook 'prog-mode-hook (lambda () (yafolding-mode)))
-  :require fringe
-  :bind (("C-c <C-S-return>" . yafolding-toggle-all)
-         ("C-c <C-return>" . yafolding-toggle-element)))
+(req-package origami
+  :init (add-hook 'prog-mode-hook (lambda () (origami-mode 1)))
+  :commands origami-mode
+  :bind (("C-c <C-S-return>" . origami-toggle-all-nodes)
+         ("C-c <C-return>" . origami-toggle-node)))
 
 ;; shit text left/right
 
@@ -255,7 +255,7 @@
 ;; flymake
 
 (req-package flymake
-  :config (progn (add-hook 'find-file-hook 'flymake-find-file-hook)
+  :config (progn ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
                  (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
                  (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
                  (setq flymake-gui-warnings-enabled nil)
