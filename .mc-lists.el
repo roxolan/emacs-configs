@@ -37,6 +37,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+		handle-select-window
 		helm-buffers-list
 		switch-window
 		))
