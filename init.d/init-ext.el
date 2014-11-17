@@ -281,6 +281,8 @@
 ;; expand region
 
 (req-package expand-region
+  :require key-chord
+  :init (key-chord-define-global "xx" 'er/expand-region)
   :bind ("C-=" . er/expand-region))
 
 (provide 'init-ext)
