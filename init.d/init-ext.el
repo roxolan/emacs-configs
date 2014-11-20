@@ -1,3 +1,8 @@
+;; edit server
+
+(req-package edit-server
+  :config (edit-server-start))
+
 ;; emacs bugtracker
 
 (req-package debbugs)
