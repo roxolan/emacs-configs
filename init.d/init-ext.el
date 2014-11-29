@@ -1,3 +1,7 @@
+;; camcoder
+
+(req-package camcorder :commands camcorder-record)
+
 ;; edit server
 
 (req-package edit-server
