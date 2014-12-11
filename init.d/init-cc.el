@@ -1,11 +1,7 @@
 ;; clang format
 
 (req-package clang-format
-  :commands clang-format-region
-  :init (add-hook 'before-save-hook
-                  (lambda ()
-                    (if (or (eq major-mode 'c++-mode) (eq major-mode 'c-mode))
-                        (clang-format-region (point-min) (point-max))))))
+  :commands clang-format-region)
 
 ;; completion with clang
 
