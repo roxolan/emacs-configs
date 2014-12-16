@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+		ace-jump-word-mode
 		c-electric-colon
 		c-electric-delete-forward
 		c-electric-lt-gt
@@ -12,6 +13,7 @@
 		c-electric-star
 		c-indent-line-or-region
 		c-toggle-electric-state
+		comment-dwim
 		complete-symbol
 		downcase-region
 		duplicate-thing
@@ -19,7 +21,11 @@
 		helm-show-kill-ring
 		hungry-delete-backward
 		hungry-delete-forward
+		indent-for-tab-command
+		insert-register
+		keyboard-quit
 		kill-region
+		move-text-down
 		move-text-up
 		org-beginning-of-line
 		org-end-of-line
@@ -37,6 +43,9 @@
 
 (setq mc/cmds-to-run-once
       '(
+		c-up-conditional
+		diff-hl-next-hunk
+		end-of-buffer
 		handle-select-window
 		helm-buffers-list
 		switch-window
