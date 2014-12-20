@@ -17,6 +17,7 @@
 		complete-symbol
 		downcase-region
 		duplicate-thing
+		electric-newline-and-maybe-indent
 		eval-print-last-sexp
 		helm-show-kill-ring
 		hungry-delete-backward
