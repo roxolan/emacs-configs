@@ -52,5 +52,7 @@
 
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function 'split-window-horizontally)
+(setq-default ediff-ignore-similar-regions t)
+(setq-default ediff-highlight-all-diffs nil)
 
 (provide 'init-vc)
