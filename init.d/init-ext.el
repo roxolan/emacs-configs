@@ -62,7 +62,7 @@
   :init (add-hook 'prog-mode-hook (lambda () (origami-mode 1)))
   :commands origami-mode
   :bind (("C-c <C-S-return>" . origami-toggle-all-nodes)
-         ("C-c <C-return>" . origami-toggle-node)))
+         ("C-c <C-return>" . origami-recursively-toggle-node)))
 
 ;; shit text left/right
 
