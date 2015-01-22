@@ -57,14 +57,14 @@
          (add-to-list 'sml/hidden-modes " FIC")
          (add-to-list 'sml/hidden-modes " Abbrev")
          (add-to-list 'sml/hidden-modes " ARev")
-         (sml/setup)
-         (sml/apply-theme 'respectful)))
+         (sml/setup)))
 
 ;; theme
 
-(req-package gotham-theme
-  :loader req-package-try-el-get
-  :require smart-mode-line)
+(req-package sublime-themes
+  :require smart-mode-line
+  :config (progn (load-theme 'wilson t)
+				 (sml/apply-theme 'dark)))
 
 ;; anzu
 
