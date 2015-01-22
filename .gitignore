@@ -35,3 +35,5 @@ saved-packages
 /notes
 /irony/
 /async-bytecomp.log
+/#tramp#
+/rake.cache
