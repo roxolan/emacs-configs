@@ -1,5 +1,11 @@
 (if (eq system-type 'darwin)
     (progn (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+		   (setenv "LANG" "en_US.UTF-8")
+		   (setenv "LC_ALL" "en_US.UTF-8")
+		   (setenv "LC_ALL" "en_US.UTF-8")
+		   (setenv "ANDROID_SDK" "/usr/local/opt/android-sdk")
+		   (setenv "ANDROID_HOME" "/usr/local/opt/android-sdk")
+		   (setenv "ANDROID_NDK" "/usr/local/opt/android-ndk")
            (add-to-list 'exec-path "/usr/local/bin")))
 
 (provide 'init-darwin)
