@@ -175,12 +175,6 @@
 
 (req-package scratch-ext)
 
-;; insert shebang
-
-(req-package insert-shebang
-  :commands insert-shebang
-  :init (add-hook 'find-file-hook 'insert-shebang))
-
 ;; indentation
 
 (setq-default tab-width 4)
