@@ -50,6 +50,7 @@
          (setq sml/name-width 20)
          (setq sml/mode-width 'full)
          (setq sml/hidden-modes nil)
+		 (setq sml/theme nil)
          (add-to-list 'sml/hidden-modes " Anzu")
          (add-to-list 'sml/hidden-modes " AC")
          (add-to-list 'sml/hidden-modes " yas")
@@ -62,9 +63,7 @@
 ;; theme
 
 (req-package sublime-themes
-  :require smart-mode-line
-  :config (progn (load-theme 'wilson t)
-				 (sml/apply-theme 'dark)))
+  :config (load-theme 'wilson t))
 
 ;; anzu
 
