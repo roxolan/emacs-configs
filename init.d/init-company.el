@@ -5,7 +5,7 @@
                  (setq company-minimum-prefix-length 2)
                  (setq company-dabbrev-downcase nil)
                  (setq company-dabbrev-other-buffers t)
-                 (setq company-auto-complete t)
+				 (setq company-auto-complete nil)
                  (setq company-dabbrev-code-other-buffers 'all)
                  (setq company-dabbrev-code-everywhere t)
                  (setq company-dabbrev-code-ignore-case t)
