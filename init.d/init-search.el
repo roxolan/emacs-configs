@@ -8,6 +8,25 @@
 
 ;; in-project search
 
+(defun find-upper-vcs-root (from acc)
+  (let* ((UPPER (expand-file-name (concat from "/..")))
+		 (NEWACC (if (file-exists-p (concat from "/.svn")) from acc)))
+	(if (equal from "/")
+		NEWACC
+	  (find-upper-vcs-root UPPER NEWACC))))
+
+(defun find-file-in-vcs-directory ()
+  (interactive)
+  (with-temp-buffer
+	(progn (setq default-directory (find-upper-vcs-root default-directory default-directory))
+		   (fiplr-find-file))))
+
+(defun find-directory-in-vcs-directory ()
+  (interactive)
+  (with-temp-buffer
+	(progn (setq default-directory (find-upper-vcs-root default-directory default-directory))
+		   (fiplr-find-directory))))
+
 (req-package fiplr
   :config (progn (setq fiplr-ignored-globs
                        (let* ((GLOBS fiplr-ignored-globs)
@@ -19,8 +38,8 @@
                               (NEW-FILES (append CURRENT-FILES ADDITIONAL-FILES)))
                          (list (cons 'directories (list NEW-DIRS))
                                (cons 'files (list NEW-FILES))))))
-  :bind (("C-x f" . fiplr-find-file)
-         ("C-x d" . fiplr-find-directory)))
+  :bind (("C-x f" . find-file-in-vcs-directory)
+         ("C-x d" . find-directory-in-vcs-directory)))
 
 ;; visual regexp
 

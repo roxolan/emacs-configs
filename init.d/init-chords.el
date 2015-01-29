@@ -10,8 +10,8 @@
                  (key-chord-define-global "xb" 'helm-buffers-list)
                  (key-chord-define-global "xs" 'save-buffer)
                  (key-chord-define-global "xc" 'save-buffers-kill-terminal)
-                 (key-chord-define-global "xf" 'fiplr-find-file)
-                 (key-chord-define-global "xd" 'fiplr-find-directory)
+                 (key-chord-define-global "xf" 'find-file-in-vcs-directory)
+                 (key-chord-define-global "xd" 'find-directory-in-vcs-directory)
                  (key-chord-define-global "``" 'shell-pop)
 
                  (key-chord-define-global ";m" 'magit-status)
