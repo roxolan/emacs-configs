@@ -31,6 +31,7 @@
 		org-beginning-of-line
 		org-end-of-line
 		org-insert-todo-heading
+		org-kill-line
 		org-meta-return
 		org-metaright
 		org-self-insert-command
@@ -40,6 +41,7 @@
 		sp--self-insert-command
 		transpose-words
 		upcase-region
+		yaml-electric-backspace
 		))
 
 (setq mc/cmds-to-run-once
