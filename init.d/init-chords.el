@@ -1,5 +1,19 @@
 ;; key chord mode
 
+;; in-project search
+
+(defun find-upper-svn-root (from acc)
+  (let* ((UPPER (expand-file-name (concat from "/..")))
+		 (NEWACC (cond ((file-exists-p (concat from "/.svn")) from)
+					   (t acc))))
+	(if (equal from "/")
+		NEWACC
+	  (find-upper-svn-root UPPER NEWACC))))
+
+(defun upper-svn-status ()
+  (interactive)
+  (svn-status (find-upper-svn-root default-directory default-directory)))
+
 (req-package key-chord
   :require (helm)
 
@@ -19,7 +33,7 @@
                  (key-chord-define-global ";p" 'paradox-list-packages)
                  (key-chord-define-global ";j" 'open-line)
                  (key-chord-define-global ";k" 'kill-line)
-                 (key-chord-define-global ";s" 'svn-status)
+                 (key-chord-define-global ";s" 'upper-svn-status)
                  (key-chord-define-global ";r" 'isearch-forward-regexp)
                  (key-chord-define-global ";y" 'yank)
                  (key-chord-define-global ";f" 'lusty-file-explorer)
