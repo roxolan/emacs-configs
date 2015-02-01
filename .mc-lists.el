@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
 		ace-jump-word-mode
+		c-electric-brace
 		c-electric-colon
 		c-electric-delete-forward
 		c-electric-lt-gt
@@ -13,6 +14,7 @@
 		c-electric-star
 		c-indent-line-or-region
 		c-toggle-electric-state
+		comint-delchar-or-maybe-eof
 		comment-dwim
 		complete-symbol
 		downcase-region
