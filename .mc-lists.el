@@ -8,6 +8,7 @@
 		c-electric-colon
 		c-electric-delete-forward
 		c-electric-lt-gt
+		c-electric-paren
 		c-electric-pound
 		c-electric-semi&comma
 		c-electric-slash
