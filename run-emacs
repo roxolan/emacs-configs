@@ -5,17 +5,21 @@ HAS_LOCK=`ls ~/.emacs.d/ | grep daemon.lock | wc -l`
 
 touch ~/.emacs.d/daemon.lock
 
-if [[ "$HAS_INSTANCE" == "1" ]] ; then
+function runClient() {
+	if [ -z "$1" ] ; then
+		emacsclient -c -n . &
+	else
+		echo "$1" | xargs emacsclient -c -n &
+	fi
 	rm ~/.emacs.d/daemon.lock
+}
 
-	echo $@ | xargs emacsclient -c -n &
-elif [[ "$HAS_LOCK" == "0" ]] ; then
+if [ "$HAS_INSTANCE" -eq "1" ] ; then
+	runClient "$@"
+elif [ "$HAS_LOCK" -eq "0" ] ; then
 	emacs --daemon
-
-	rm ~/.emacs.d/daemon.lock
-
-	echo $@ | xargs emacsclient -c -n &
+	runClient "$@"
 else
-	sleep 0.1s
+	sleep 0.2s
 	~/.emacs.d/run-emacs
 fi
