@@ -12,8 +12,6 @@
 (defconst emacs-major-version-rad 1000000)
 
 (defun has-emacs-version (major minor)
-  "Will be broken when emacs major version will jump over emacs-major-version-rad
-   I think I will die before the time it happen"
   (<= (+ (* major emacs-major-version-rad) minor)
       (+ (* emacs-major-version emacs-major-version-rad) emacs-minor-version)))
 
