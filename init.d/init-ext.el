@@ -7,6 +7,14 @@
 			   (define-key ctl-x-map [(control ?=)] 'zoom-in/out)
 			   (define-key ctl-x-map [(control ?0)] 'zoom-in/out)))
 
+;; ido mode
+
+(req-package ido-better-flex
+  :init (progn (ido-mode 1)
+			   (ido-everywhere 1)
+			   (ido-better-flex/enable)
+			   (global-set-key (kbd "C-x C-f") 'ido-find-file)))
+
 ;; camcoder
 
 (req-package camcorder :commands camcorder-record)

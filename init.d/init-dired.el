@@ -25,17 +25,4 @@
 
 (req-package dired-open :require dired)
 
-;; lusty
-
-(req-package lusty-explorer
-  :bind ("C-x C-f" . lusty-file-explorer)
-  :init
-  (progn (add-hook
-          'lusty-setup-hook
-          (lambda ()
-            (define-key lusty-mode-map (kbd "C-b") 'lusty-highlight-previous-column)
-            (define-key lusty-mode-map (kbd "C-f") 'lusty-highlight-next-column)
-            (define-key lusty-mode-map (kbd "C-p") 'lusty-highlight-previous)
-            (define-key lusty-mode-map (kbd "C-n") 'lusty-highlight-next)))))
-
 (provide 'init-dired)

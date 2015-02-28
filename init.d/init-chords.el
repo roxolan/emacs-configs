@@ -36,7 +36,7 @@
                  (key-chord-define-global ";s" 'upper-svn-status)
                  (key-chord-define-global ";r" 'isearch-forward-regexp)
                  (key-chord-define-global ";y" 'yank)
-                 (key-chord-define-global ";f" 'lusty-file-explorer)
+                 (key-chord-define-global ";f" 'ido-find-file)
 
                  (key-chord-define-global ";o" 'switch-window)
                  (key-chord-define-global ";1" 'zygospore-toggle-delete-other-windows)
