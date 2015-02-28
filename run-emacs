@@ -7,9 +7,9 @@ touch ~/.emacs.d/daemon.lock
 
 function runClient() {
 	if [ -z "$1" ] ; then
-		emacsclient -c -n . &
+		emacsclient .
 	else
-		echo "$1" | xargs emacsclient -c -n &
+		echo "$1" | xargs emacsclient
 	fi
 	rm ~/.emacs.d/daemon.lock
 }
