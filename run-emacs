@@ -6,10 +6,10 @@ HAS_LOCK=`ls ~/.emacs.d/ | grep daemon.lock | wc -l`
 touch ~/.emacs.d/daemon.lock
 
 function runClient() {
-	if [ -z "$1" ] ; then
+	if [ -z "$@" ] ; then
 		emacsclient .
 	else
-		echo "$1" | xargs emacsclient
+		echo "$@" | xargs emacsclient
 	fi
 	rm ~/.emacs.d/daemon.lock
 }
@@ -21,5 +21,5 @@ elif [ "$HAS_LOCK" -eq "0" ] ; then
 	runClient "$@"
 else
 	sleep 0.2s
-	~/.emacs.d/run-emacs
+	echo "$@" | xargs ~/.emacs.d/run-emacs
 fi
