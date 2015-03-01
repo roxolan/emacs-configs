@@ -1,0 +1,11 @@
+#! /bin/bash
+
+LOCK="${1}.lock"
+
+if mkdir "${LOCK}" ; then
+	echo locked
+	exit 0
+else
+	echo cannot lock
+	exit 1
+fi
