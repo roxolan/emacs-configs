@@ -44,6 +44,7 @@
 ;; main line
 
 (req-package smart-mode-line
+  :require noctilux-theme
   :config
   (progn (setq sml/shorten-modes t)
          (setq sml/shorten-directory t)
@@ -58,12 +59,13 @@
          (add-to-list 'sml/hidden-modes " FIC")
          (add-to-list 'sml/hidden-modes " Abbrev")
          (add-to-list 'sml/hidden-modes " ARev")
-         (sml/setup)))
+         (sml/setup)
+		 (sml/apply-theme 'smart-mode-line-respectful)))
 
 ;; theme
 
-(req-package sublime-themes
-  :config (load-theme 'wilson t))
+(req-package-force noctilux-theme
+  :config (load-theme 'noctilux t))
 
 ;; anzu
 
