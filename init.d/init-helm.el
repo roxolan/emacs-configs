@@ -1,13 +1,14 @@
 ;; helm
 
 (req-package helm
-  :config
-  (progn (require 'helm-config)
-         (require 'helm-match-plugin)
-         (define-key global-map (kbd "C-x b") 'helm-buffers-list)
-         (global-set-key (kbd "C-c y") 'helm-show-kill-ring)
-         (global-set-key (kbd "C-x C-r") 'helm-recentf)
-         (global-set-key (kbd "C-x r l") 'helm-bookmarks)))
+  :require key-chord
+  :config (progn (require 'helm-config)
+				 (require 'helm-match-plugin)
+				 (define-key global-map (kbd "C-x C-b") 'helm-buffers-list)
+				 (key-chord-define-global ";l" 'helm-bookmarks)
+				 (global-set-key (kbd "C-c y") 'helm-show-kill-ring)
+				 (global-set-key (kbd "C-x C-r") 'helm-recentf)
+				 (global-set-key (kbd "C-x r l") 'helm-bookmarks)))
 
 ;; helm google
 
