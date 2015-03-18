@@ -36,7 +36,10 @@
 
 ;; revertible delete other windows
 
-(req-package zygospore :commands zygospore-toggle-delete-other-windows)
+(req-package zygospore
+  :require key-chord
+  :commands zygospore-toggle-delete-other-windows
+  :init (key-chord-define-global ";1" 'zygospore-toggle-delete-other-windows))
 
 ;; highlight number in code
 
@@ -95,8 +98,10 @@
 ;; use fuzzy for M-x
 
 (req-package smex
+  :require key-chord
   :bind ("M-x" . smex)
-  :config (smex-initialize))
+  :config (smex-initialize)
+  :init (key-chord-define-global "xm" 'smex))
 
 ;; googling
 
@@ -105,7 +110,9 @@
 ;; shell pop up
 
 (req-package shell-pop
-  :bind ("C-`" . shell-pop))
+  :require key-chord
+  :bind ("C-`" . shell-pop)
+  :init (key-chord-define-global "``" 'shell-pop))
 
 ;; string edit
 
@@ -114,7 +121,10 @@
 
 ;; paradox
 
-(req-package paradox :commands paradox-list-packages)
+(req-package paradox
+  :require key-chord
+  :commands paradox-list-packages
+  :init (key-chord-define-global ";p" 'paradox-list-packages))
 
 ;; multiple cursors
 
@@ -223,7 +233,8 @@
 
 (req-package switch-window
   :require key-chord
-  :bind ("C-x o" . switch-window))
+  :bind ("C-x o" . switch-window)
+  :init (key-chord-define-global ";o" 'switch-window))
 
 ;; ace jump mode
 

@@ -30,6 +30,7 @@
 		   (fiplr-find-directory))))
 
 (req-package fiplr
+  :require key-chord
   :config (progn (setq fiplr-ignored-globs
                        (let* ((GLOBS fiplr-ignored-globs)
                               (ADDITIONAL-DIRS '(".zbuild" ".cask"))
@@ -41,7 +42,9 @@
                          (list (cons 'directories (list NEW-DIRS))
                                (cons 'files (list NEW-FILES))))))
   :bind (("C-x f" . find-file-in-vcs-directory)
-         ("C-x d" . find-directory-in-vcs-directory)))
+         ("C-x d" . find-directory-in-vcs-directory))
+  :init (progn (key-chord-define-global "xf" 'find-file-in-vcs-directory)
+			   (key-chord-define-global "xd" 'find-directory-in-vcs-directory)))
 
 ;; visual regexp
 

@@ -1,7 +1,23 @@
 ;; svn integration
 
+;; in-project search
+
+(defun find-upper-svn-root (from acc)
+  (let* ((UPPER (expand-file-name (concat from "/..")))
+		 (NEWACC (cond ((file-exists-p (concat from "/.svn")) from)
+					   (t acc))))
+	(if (equal from "/")
+		NEWACC
+	  (find-upper-svn-root UPPER NEWACC))))
+
+(defun upper-svn-status ()
+  (interactive)
+  (svn-status (find-upper-svn-root default-directory default-directory)))
+
 (req-package psvn
-  :commands svn-status)
+  :require key-chord
+  :commands svn-status
+  :init (key-chord-define-global ";s" 'upper-svn-status))
 
 ;; use timemachine
 
@@ -9,7 +25,10 @@
 
 ;; magit
 
-(req-package magit :commands magit-status)
+(req-package magit
+  :require key-chord
+  :commands magit-status
+  :init (key-chord-define-global ";m" 'magit-status))
 
 ;; git flow
 

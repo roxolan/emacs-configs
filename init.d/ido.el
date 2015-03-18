@@ -6,4 +6,8 @@
 			   (ido-everywhere 1)
 			   (ido-better-flex/enable)
 			   (global-set-key (kbd "C-x C-f") 'ido-find-file)
+			   (key-chord-define-global ";f" 'ido-find-file)
 			   (key-chord-define-global "xb" 'ido-switch-buffer)))
+
+(req-package ido-at-point
+  :init (ido-at-point-mode 1))
