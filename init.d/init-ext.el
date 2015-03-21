@@ -82,7 +82,7 @@
 ;; google tanslate
 
 (req-package google-translate
-  :pre-load (require 'google-translate-smooth-ui)
+  :init (require 'google-translate-smooth-ui)
   :bind ("C-c t" . google-translate-smooth-translate))
 
 ;; swith off some warnings

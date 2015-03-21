@@ -19,7 +19,7 @@
 
 ;; xml generation dsl
 
-(req-package xmlgen :idle nil)
+(req-package xmlgen)
 
 ;; html templates editing
 
