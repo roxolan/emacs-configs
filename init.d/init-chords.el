@@ -2,6 +2,7 @@
 
 (req-package key-chord
   :config (progn (key-chord-define-global "qw" 'kill-this-buffer)
+                 (key-chord-define-global "qq" 'kill-this-buffer)
                  (key-chord-define-global ";r" 'isearch-forward-regexp)
                  (key-chord-define-global ";2" 'split-window-below)
                  (key-chord-define-global ";3" 'split-window-right)
