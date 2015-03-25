@@ -107,13 +107,6 @@
 
 (req-package google-this)
 
-;; shell pop up
-
-(req-package shell-pop
-  :require key-chord
-  :bind ("C-`" . shell-pop)
-  :init (key-chord-define-global "``" 'shell-pop))
-
 ;; string edit
 
 (req-package string-edit
@@ -172,10 +165,6 @@
 
 (req-package sudo-ext)
 
-;; shell command
-
-(req-package shell-command)
-
 ;; scratch persist
 
 (req-package scratch-persist
@@ -188,7 +177,7 @@
 ;; indentation
 
 (setq-default tab-width 4)
-(add-hook 'find-file-hook (lambda () (setq indent-tabs-mode t)))
+;; (add-hook 'find-file-hook (lambda () (setq indent-tabs-mode t)))
 (electric-indent-mode 1)
 
 ;; mark ring tweaks
@@ -272,8 +261,7 @@
 (req-package autorevert
   :config (progn (setq global-auto-revert-non-file-buffers t)
                  (setq auto-revert-interval 0.5)
-                 (add-to-list 'auto-mode-alist
-                              '("\\.log\\'" . auto-revert-tail-mode))))
+                 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))))
 
 ;; flymake
 
@@ -298,8 +286,7 @@
 
 ;; ru keys
 
-(add-hook 'find-file-hook
-          (lambda () (setq default-input-method 'russian-computer)))
+(add-hook 'find-file-hook (lambda () (setq default-input-method 'russian-computer)))
 
 ;; expand region
 

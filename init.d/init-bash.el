@@ -12,4 +12,11 @@
 			   (add-hook 'shell-dynamic-complete-functions 'bash-completion-dynamic-complete)
 			   (add-hook 'shell-command-complete-functions 'bash-completion-dynamic-complete)))
 
+(req-package shell-pop
+  :require key-chord
+  :bind ("C-`" . shell-pop)
+  :init (key-chord-define-global "``" 'shell-pop))
+
+(req-package shell-command)
+
 (provide 'init-bash)
