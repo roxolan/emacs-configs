@@ -6,6 +6,10 @@
 
 (req-package restclient :mode ("\\.rest\\'" . restclient-mode))
 
+(req-package company-restclient
+  :require company
+  :config (add-to-list 'company-backends 'company-restclient))
+
 ;; elnode
 
 (req-package elnode :commands (elnode-stop elnode-start))
