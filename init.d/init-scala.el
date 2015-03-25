@@ -1,20 +1,13 @@
 (req-package scala-mode2
-  :require key-chord
-  :config
-  (progn (setq scala-indent:align-parameters t)
-         (key-chord-define scala-mode-map ";;"  "\C-e;")
-         (key-chord-define scala-mode-map "//"  "\C-e //")
-         (key-chord-define scala-mode-map "{}"  "{\n\n}\C-p\t")
-         (key-chord-define scala-mode-map "(}"  "() {\n\n}\C-p\t"))
-
+  :config (progn (setq scala-indent:align-parameters t)
   :mode (("\\.scala\\'" . scala-mode)
-         ("\\.sc\\'" . scala-mode)))
+         ("\\.sc\\'" .p scala-mode))))
 
 (req-package sbt-mode
   :commands sbt-start)
 
-(req-package ensime
-  :require (scala-mode2 auto-complete)
-  :config (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+;; (req-package ensime
+;;   :require (scala-mode2 auto-complete)
+;;   :config (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
 (provide 'init-scala)
