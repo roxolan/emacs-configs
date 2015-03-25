@@ -139,9 +139,9 @@
 
 ;; line highlight
 
-(req-package hl-line
-  :config
-  (progn (global-hl-line-mode 1)))
+;; (req-package hl-line
+;;   :config
+;;   (progn (global-hl-line-mode 1)))
 
 ;; todo, fixme highlighting
 
