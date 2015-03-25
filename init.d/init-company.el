@@ -12,4 +12,8 @@
                  (global-set-key (kbd "C-<tab>") 'company-dabbrev)
                  (global-set-key (kbd "M-<tab>") 'company-complete)))
 
+(req-package company-quickhelp
+  :require company
+  :config (company-quickhelp-mode 1))
+
 (provide 'init-company)
