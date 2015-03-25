@@ -1,3 +1,6 @@
+(req-package multifiles
+  :bind ("C-!" . mf/mirror-region-in-multifile))
+
 ;; zoom frame
 
 (req-package zoom-frm
@@ -267,10 +270,10 @@
 
 (req-package flymake
   :config (progn ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
-                 (global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-                 (global-set-key (kbd "<f3>") 'flymake-goto-next-error)
-                 (setq flymake-gui-warnings-enabled nil)
-                 (setq flymake-log-level 0)))
+			(global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
+			(global-set-key (kbd "<f3>") 'flymake-goto-next-error)
+			(setq flymake-gui-warnings-enabled nil)
+			(setq flymake-log-level 0)))
 
 (req-package flymake-cursor
   :require flymake)
