@@ -35,7 +35,9 @@
 
 ;; init.d
 
-(req-package-force load-dir :init (load-dir-one "~/.emacs.d/init.d"))
+(defconst my-init-dir "~/.emacs.d/init.d")
+(byte-recompile-directory my-init-dir 0 t)
+(req-package-force load-dir :config (load-dir-one my-init-dir))
 
 ;; finish loading packages
 
