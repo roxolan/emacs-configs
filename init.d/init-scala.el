@@ -1,7 +1,7 @@
 (req-package scala-mode2
-  :config (progn (setq scala-indent:align-parameters t)
+  :config (progn (setq scala-indent:align-parameters t))
   :mode (("\\.scala\\'" . scala-mode)
-         ("\\.sc\\'" .p scala-mode))))
+         ("\\.sc\\'" . scala-mode)))
 
 (req-package sbt-mode
   :commands sbt-start)
