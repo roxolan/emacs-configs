@@ -1,6 +1,7 @@
 * .emacs.d
 
 init.el and other stuff for my emacs environment.
+use it as a starter kit for your own configuration.
 
 it's self bootstrapping.
 
