@@ -25,9 +25,10 @@
 
 ;; el-get
 
-;;(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-;;(require-package 'el-get)
-;;(el-get 'sync)
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(require-package 'el-get)
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
+(el-get 'sync)
 
 ;; req-package
 
