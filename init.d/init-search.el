@@ -33,7 +33,7 @@
   :require key-chord
   :config (progn (setq fiplr-ignored-globs
                        (let* ((GLOBS fiplr-ignored-globs)
-                              (ADDITIONAL-DIRS '(".zbuild" ".cask"))
+                              (ADDITIONAL-DIRS '(".zbuild" ".cask" "target"))
                               (ADDITIONAL-FILES '("*.d" "*.elc" "*.dat" "*.raw" "*.wav" "*.class" "*.cache" "*.o"))
                               (CURRENT-DIRS (if GLOBS (cadar GLOBS) nil))
                               (CURRENT-FILES (if GLOBS (cadadr GLOBS) nil))
