@@ -1,6 +1,9 @@
 ;; json reformatter
 
-(req-package json-reformat :commands json-reformat-region)
+(req-package json-reformat
+  :commands json-reformat-region
+  :init (progn (setq json-reformat:indent-width 2)
+			   (setq json-reformat:pretty-string? t)))
 
 (req-package flymake-json
   :require flymake)
