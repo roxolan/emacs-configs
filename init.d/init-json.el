@@ -11,6 +11,10 @@
 (req-package json-mode
   :require flymake-json
   :mode ("\\.json$" . json-mode)
-  :init (add-hook 'json-mode-hook (lambda () (flymake-json-load))))
+  :init (add-hook 'json-mode-hook
+                  (lambda ()
+                    (flymake-json-load)
+                    (make-local-variable 'js-indent-level)
+                    (setq js-indent-level 2))))
 
 (provide 'init-json)
