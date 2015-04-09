@@ -19,6 +19,12 @@
 (req-package slamhound
   :commands slamhound)
 
+(req-package cider-profile
+  :require cider
+  :commands cider-profile-mode
+  :init (progn (add-hook 'cider-mode-hook 'cider-profile-mode)
+               (add-hook 'cider-repl-mode-hook 'cider-profile-mode)))
+
 (req-package clj-refactor
   :require clojure-mode
   :commands clj-refactor-mode
