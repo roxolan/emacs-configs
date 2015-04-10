@@ -43,6 +43,10 @@
   :commands typed-clojure-mode
   :init (add-hook 'clojure-mode-hook 'typed-clojure-mode))
 
+(req-package flycheck-clojure
+  :require flycheck
+  :config (flycheck-clojure-setup))
+
 ;; (req-package flycheck-clojure)
 ;; (req-package discover-clj-refactor)
 
