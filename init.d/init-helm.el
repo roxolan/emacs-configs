@@ -63,12 +63,6 @@
   :require
   helm)
 
-;; helm flymake
-
-(req-package helm-flymake
-  :require
-  (helm flymake))
-
 ;; helm make
 
 (req-package helm-make

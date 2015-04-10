@@ -267,18 +267,6 @@
                  (setq auto-revert-interval 0.5)
                  (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))))
 
-;; flymake
-
-(req-package flymake
-  :config (progn ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
-			(global-set-key (kbd "<f2>") 'flymake-goto-prev-error)
-			(global-set-key (kbd "<f3>") 'flymake-goto-next-error)
-			(setq flymake-gui-warnings-enabled nil)
-			(setq flymake-log-level 0)))
-
-(req-package flymake-cursor
-  :require flymake)
-
 ;; shrink/enlarge window
 
 (global-set-key (kbd "s-{") (lambda () (interactive) (shrink-window 10 1)))
