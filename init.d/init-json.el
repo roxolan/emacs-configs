@@ -5,9 +5,6 @@
   :init (progn (setq json-reformat:indent-width 2)
 			   (setq json-reformat:pretty-string? t)))
 
-;; (req-package flymake-json
-;;   :require flymake)
-
 (req-package json-mode
   :mode ("\\.json$" . json-mode)
   :init (add-hook 'json-mode-hook

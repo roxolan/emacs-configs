@@ -4,10 +4,4 @@
   :mode ("\\.lua$" . lua-mode)
   :config (setq lua-indent-level 4))
 
-;; flymake lua
-
-;; (req-package flymake-lua
-;;   :require (flymake lua-mode)
-;;   :config (add-hook 'lua-mode-hook 'flymake-lua-load))
-
 (provide 'init-lua)
