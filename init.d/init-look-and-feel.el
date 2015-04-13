@@ -97,7 +97,9 @@
                                       (gen-my-theme-form 'sublime-themes 'odersky)
                                       (gen-my-theme-form 'warm-night-theme 'warm-night)))
 
-(eval (elt my-favourite-themes (random (length my-favourite-themes))))
+(let ((theme-form (elt my-favourite-themes (random (length my-favourite-themes)))))
+  (print (concat "selected theme: "(symbol-name (car (cdr theme-form)))))
+  (eval theme-form))
 
 ;; anzu
 
