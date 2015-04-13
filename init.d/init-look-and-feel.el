@@ -95,7 +95,10 @@
                                       (gen-my-theme-form 'nzenburn-theme 'nzenburn)
                                       (gen-my-theme-form 'stekene-dark-theme 'stekene-dark)
                                       (gen-my-theme-form 'sublime-themes 'odersky)
-                                      (gen-my-theme-form 'warm-night-theme 'warm-night)))
+                                      (gen-my-theme-form 'warm-night-theme 'warm-night)
+                                      (gen-my-theme-form 'sublime-themes 'brin)
+                                      (gen-my-theme-form 'sublime-themes 'junio)
+                                      (gen-my-theme-form 'sublime-themes 'wilson)))
 
 (let ((theme-form (elt my-favourite-themes (random (length my-favourite-themes)))))
   (print (concat "selected theme: "(symbol-name (car (cdr theme-form)))))
