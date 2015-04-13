@@ -71,41 +71,33 @@
 
 ;; theme
 
-(defconst my-favourite-themes [(req-package tao-yin-theme
-                                 :ensure tao-theme
-                                 :config (load-theme 'tao-yin t))
-                               (req-package soothe-theme
-                                 :config (load-theme 'soothe t))
-                               (req-package gotham-theme
-                                 :config (load-theme 'gotham))
-                               (req-package gruvbox-theme
-                                 :config (load-theme 'gruvbox))
-                               (req-package firecode-theme
-                                 :config (load-theme 'firecode))
-                               (req-package firebelly-theme
-                                 :config (load-theme 'firebelly))
-                               (req-package darktooth-theme
-                                 :config (load-theme 'darktooth))
-                               (req-package hc-zenburn-theme
-                                 :config (load-theme 'hc-zenburn))
-                               (req-package jazz-theme
-                                 :config (load-theme 'jazz))
-                               (req-package mbo70s-theme
-                                 :config (load-theme 'mbo70s))
-                               (req-package niflheim-theme
-                                 :config (load-theme 'niflheim))
-                               (req-package noctilux-theme
-                                 :config (load-theme 'noctilux))
-                               (req-package nzenburn-theme
-                                 :config (load-theme 'nzenburn))
-                               (req-package stekene-dark-theme
-                                 :config (load-theme 'stekene-dark))
-                               (req-package sublime-themes
-                                 :config (load-theme 'odersky))
-                               (req-package warm-night-theme
-                                 :config (load-theme 'warm-night))])
+(defun gen-my-theme-form (file theme &optional package)
+  (append (list 'req-package file)
+          (list :require 'smart-mode-line)
+          (if package (list :ensure package) nil)
+          (list :config (list 'progn
+                              '(sml/apply-theme (quote respectful) nil t)
+                              (list 'load-theme (list 'quote 'smart-mode-line-respectful) t)
+                              '(sml/apply-theme (quote respectful) nil t)))))
 
-(eval (aref my-favourite-themes (random (length my-favourite-themes))))
+(defconst my-favourite-themes (vector (gen-my-theme-form 'tao-yin-theme 'tao-yin 'tao-theme)
+                                      (gen-my-theme-form 'soothe-theme 'soothe)
+                                      (gen-my-theme-form 'gotham-theme 'gotham)
+                                      (gen-my-theme-form 'gruvbox-theme 'gruvbox)
+                                      (gen-my-theme-form 'firecode-theme 'firecode)
+                                      (gen-my-theme-form 'firebelly-theme 'firebelly)
+                                      (gen-my-theme-form 'darktooth-theme 'darktooth)
+                                      (gen-my-theme-form 'hc-zenburn-theme 'hc-zenburn)
+                                      (gen-my-theme-form 'jazz-theme 'jazz)
+                                      (gen-my-theme-form 'mbo70s-theme 'mbo70s)
+                                      (gen-my-theme-form 'niflheim-theme 'niflheim)
+                                      (gen-my-theme-form 'noctilux-theme 'noctilux)
+                                      (gen-my-theme-form 'nzenburn-theme 'nzenburn)
+                                      (gen-my-theme-form 'stekene-dark-theme 'stekene-dark)
+                                      (gen-my-theme-form 'sublime-themes 'odersky)
+                                      (gen-my-theme-form 'warm-night-theme 'warm-night)))
+
+(eval (elt my-favourite-themes (random (length my-favourite-themes))))
 
 ;; anzu
 
