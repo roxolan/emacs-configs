@@ -18,13 +18,6 @@
   :init (progn (add-hook 'emacs-lisp-mode-hook (lambda () (eldoc-mode 1)))
 			   (add-hook 'lisp-interaction-mode-hook (lambda () (eldoc-mode 1)))))
 
-;; highlight defined symbols
-
-(req-package hl-defined
-  :config
-  (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode)
-  (add-hook 'lisp-interaction-mode-hook 'hdefd-highlight-mode))
-
 ;; hl sexps
 
 (req-package hl-sexp
