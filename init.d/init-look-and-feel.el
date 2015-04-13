@@ -1,8 +1,17 @@
+;; cursor configuration
+
+(setq-default cursor-type 'bar)
+
 ;; use timeclock
 
 (req-package timeclock
   :config (progn (timeclock-mode-line-display 1)
                  (add-hook 'kill-emacs-query-functions 'timeclock-query-out)))
+
+;; highlight number in code
+
+(req-package highlight-numbers
+  :config (add-hook 'find-file-hook (lambda () (highlight-numbers-mode 1))))
 
 ;; show vertical lines in prog mode
 
@@ -62,8 +71,41 @@
 
 ;; theme
 
-(req-package-force soothe-theme
-  :config (load-theme 'soothe t))
+(defconst my-favourite-themes [(req-package tao-yin-theme
+                                 :ensure tao-theme
+                                 :config (load-theme 'tao-yin t))
+                               (req-package soothe-theme
+                                 :config (load-theme 'soothe t))
+                               (req-package gotham-theme
+                                 :config (load-theme 'gotham))
+                               (req-package gruvbox-theme
+                                 :config (load-theme 'gruvbox))
+                               (req-package firecode-theme
+                                 :config (load-theme 'firecode))
+                               (req-package firebelly-theme
+                                 :config (load-theme 'firebelly))
+                               (req-package darktooth-theme
+                                 :config (load-theme 'darktooth))
+                               (req-package hc-zenburn-theme
+                                 :config (load-theme 'hc-zenburn))
+                               (req-package jazz-theme
+                                 :config (load-theme 'jazz))
+                               (req-package mbo70s-theme
+                                 :config (load-theme 'mbo70s))
+                               (req-package niflheim-theme
+                                 :config (load-theme 'niflheim))
+                               (req-package noctilux-theme
+                                 :config (load-theme 'noctilux))
+                               (req-package nzenburn-theme
+                                 :config (load-theme 'nzenburn))
+                               (req-package stekene-dark-theme
+                                 :config (load-theme 'stekene-dark))
+                               (req-package sublime-themes
+                                 :config (load-theme 'odersky))
+                               (req-package warm-night-theme
+                                 :config (load-theme 'warm-night))])
+
+(eval (aref my-favourite-themes (random (length my-favourite-themes))))
 
 ;; anzu
 
@@ -136,12 +178,6 @@
          (setq column-enforce-column 90)
          (add-to-list 'sml/hidden-modes
                       (concat " " (concat (int-to-string 90) "col")))))
-
-;; line highlight
-
-;; (req-package hl-line
-;;   :config
-;;   (progn (global-hl-line-mode 1)))
 
 ;; todo, fixme highlighting
 

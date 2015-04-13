@@ -44,11 +44,6 @@
   :commands zygospore-toggle-delete-other-windows
   :init (key-chord-define-global ";1" 'zygospore-toggle-delete-other-windows))
 
-;; highlight number in code
-
-(req-package highlight-numbers
-  :config (add-hook 'find-file-hook (lambda () (highlight-numbers-mode 1))))
-
 ;; delete trailing whitespaces before saving some buffer
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -181,7 +176,7 @@
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-;; (add-hook 'find-file-hook (lambda () (setq indent-tabs-mode t)))
+(add-hook 'find-file-hook (lambda () (setq indent-tabs-mode nil)))
 (electric-indent-mode 1)
 
 ;; mark ring tweaks

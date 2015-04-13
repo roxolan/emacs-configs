@@ -18,12 +18,4 @@
   :init (progn (add-hook 'emacs-lisp-mode-hook (lambda () (eldoc-mode 1)))
 			   (add-hook 'lisp-interaction-mode-hook (lambda () (eldoc-mode 1)))))
 
-;; hl sexps
-
-(req-package hl-sexp
-  :require
-  hl-line
-  :config
-  (add-hook 'emacs-lisp-mode-hook (lambda () (hl-sexp-mode 1))))
-
 (provide 'init-elisp)
