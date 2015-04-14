@@ -28,7 +28,9 @@
 (req-package magit
   :require key-chord
   :commands magit-status
-  :init (key-chord-define-global ";m" 'magit-status))
+  :init (progn (key-chord-define-global ";m" 'magit-status)
+               (setq magit-auto-revert-mode t)
+               (setq magit-last-seen-setup-instructions "1.4.0")))
 
 ;; git flow
 
