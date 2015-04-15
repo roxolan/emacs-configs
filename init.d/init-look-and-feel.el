@@ -99,7 +99,8 @@
                                       (gen-my-theme-form 'warm-night-theme 'warm-night)
                                       (gen-my-theme-form 'sublime-themes 'brin)
                                       (gen-my-theme-form 'sublime-themes 'junio)
-                                      (gen-my-theme-form 'sublime-themes 'wilson)))
+                                      (gen-my-theme-form 'sublime-themes 'wilson)
+                                      (gen-my-theme-form 'plan9-theme 'plan9)))
 
 (let ((theme-form (elt my-favourite-themes (random (length my-favourite-themes)))))
   (print (concat "selected theme: "(symbol-name (car (cdr theme-form)))))
