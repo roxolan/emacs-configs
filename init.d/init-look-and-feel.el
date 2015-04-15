@@ -45,12 +45,6 @@
   :config
   (menu-bar-mode -1))
 
-;; rotate
-
-(req-package rotate
-  :config
-  (global-set-key (kbd "s-P") 'rotate-layout))
-
 ;; main line
 
 (req-package smart-mode-line
@@ -145,29 +139,6 @@
 
 (setq make-pointer-invisible nil)
 
-;; smooth mouse scroll
-
-(req-package mwheel
-  :config
-  (progn (setq mouse-wheel-progressive-speed nil)
-         (setq mouse-wheel-follow-mouse t)
-         (global-set-key (kbd "<mouse-6>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<double-mouse-6>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<triple-mouse-6>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<mouse-7>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<double-mouse-7>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<triple-mouse-7>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<triple-wheel-left>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<double-wheel-left>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<wheel-left>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<triple-wheel-right>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<double-wheel-right>") (lambda () (interactive) nil))
-         (global-set-key (kbd "<wheel-right>") (lambda () (interactive) nil))
-         (setq scroll-step 2)
-         (setq auto-window-vscroll nil)
-         (setq scroll-preserve-screen-position t)
-         (setq isearch-allow-scroll t)))
-
 ;; highlight text beyond 80 column
 
 (req-package column-enforce-mode
@@ -195,27 +166,5 @@
 (req-package diff-hl
   :require smartrep
   :config (global-diff-hl-mode 1))
-
-;; desc unbound keys
-
-(req-package unbound)
-
-;; helm themes
-
-(req-package helm-themes
-  :require
-  helm)
-
-;; xt mosue
-
-(req-package xt-mouse
-  :require mouse
-  :config (progn (xterm-mouse-mode 1)
-                 (defun track-mouse (e))))
-
-(req-package mouse
-  :config (progn (global-set-key (kbd "<C-down-mouse-1>") nil)
-                 (global-set-key (kbd "<C-down-mouse-2>") nil)
-                 (global-set-key (kbd "<C-down-mouse-3>") nil)))
 
 (provide 'init-look-and-feel)

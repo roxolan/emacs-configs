@@ -212,10 +212,6 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 
-;; focus follows mouse
-
-(setq mouse-autoselect-window t)
-
 ;; default mode for text editing
 
 (setq-default major-mode 'text-mode)
@@ -292,5 +288,15 @@
   :require key-chord
   :init (key-chord-define-global "xx" 'er/expand-region)
   :bind ("C-=" . er/expand-region))
+
+;; desc unbound keys
+
+(req-package unbound)
+
+;; rotate
+
+(req-package rotate
+  :config
+  (global-set-key (kbd "s-P") 'rotate-layout))
 
 (provide 'init-ext)

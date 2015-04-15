@@ -82,4 +82,10 @@
   :require helm
   :config (setq helm-github-stars-username (getenv "USER")))
 
+;; helm themes
+
+(req-package helm-themes
+  :require
+  helm)
+
 (provide 'init-helm)
