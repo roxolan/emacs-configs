@@ -1,6 +1,7 @@
 ;; cursor configuration
 
 (setq-default cursor-type 'bar)
+(blink-cursor-mode 1)
 
 ;; use timeclock
 
