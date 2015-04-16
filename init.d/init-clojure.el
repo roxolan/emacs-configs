@@ -1,6 +1,8 @@
 (req-package clojure-cheatsheet
   :require helm
-  :commands clojure-cheatsheet)
+  :commands clojure-cheatsheet
+  :init (progn (define-key clojure-mode-map (kbd "C-h j") 'clojure-cheatsheet)
+               (define-key cider-repl-mode-map (kbd "C-h j") 'clojure-cheatsheet)))
 
 (req-package clojure-mode
   :mode (("clj\\'" . clojure-mode)
@@ -46,8 +48,5 @@
 (req-package flycheck-clojure
   :require flycheck
   :config (flycheck-clojure-setup))
-
-;; (req-package flycheck-clojure)
-;; (req-package discover-clj-refactor)
 
 (provide 'init-clojure)
