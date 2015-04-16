@@ -10,6 +10,13 @@
 				 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 				 (global-set-key (kbd "C-x r l") 'helm-bookmarks)))
 
+;; ace jump to helm item
+
+(req-package ace-jump-helm-line
+  :commands ace-jump-helm-line
+  :require helm
+  :init (define-key helm-map (kbd "C-;") 'ace-jump-helm-line))
+
 ;; helm google
 
 (req-package helm-google :commands helm-google)
