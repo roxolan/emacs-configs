@@ -14,11 +14,6 @@
 (req-package highlight-numbers
   :config (add-hook 'find-file-hook (lambda () (highlight-numbers-mode 1))))
 
-;; show vertical lines in prog mode
-
-(req-package indent-guide
-  :config (add-hook 'prog-mode-hook (lambda () (indent-guide-mode 1))))
-
 ;; some very useful extension
 
 (req-package nyan-mode
