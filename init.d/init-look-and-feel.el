@@ -137,10 +137,6 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
-;; show function name
-
-(add-hook 'prog-mode-hook (lambda () (which-function-mode 1)))
-
 ;; miscaleous tweeks
 
 (setq make-pointer-invisible nil)
