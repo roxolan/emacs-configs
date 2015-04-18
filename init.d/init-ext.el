@@ -69,14 +69,6 @@
 
 (req-package narrow-indirect)
 
-;;  folding
-
-(req-package origami
-  :init (add-hook 'prog-mode-hook (lambda () (origami-mode 1)))
-  :commands origami-mode
-  :bind (("C-c <C-S-return>" . origami-toggle-all-nodes)
-         ("C-c <C-return>" . origami-recursively-toggle-node)))
-
 ;; shit text left/right
 
 (req-package smart-shift
@@ -141,13 +133,6 @@
 
 (req-package ant)
 
-;; save packages
-
-(req-package save-packages
-  :config
-  (progn (setq save-packages-file "~/.emacs.d/saved-packages")
-         (add-hook 'kill-emacs-hook 'save-packages)))
-
 ;; sos
 
 (req-package sos :commands sos)
@@ -164,12 +149,6 @@
 
 (req-package savehist
   :config (savehist-mode 1))
-
-;; go to last change
-
-(req-package goto-last-change
-  :config
-  (global-set-key (kbd "C-x C-\\") 'goto-last-change))
 
 ;; sudo support
 
@@ -268,6 +247,7 @@
 (req-package autorevert
   :config (progn (setq global-auto-revert-non-file-buffers t)
                  (setq auto-revert-interval 0.5)
+                 (setq auto-revert-verbose nil)
                  (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))))
 
 ;; shrink/enlarge window
