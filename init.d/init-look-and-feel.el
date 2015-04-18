@@ -67,13 +67,16 @@
 ;; theme
 
 (defun gen-my-theme-form (file theme &optional package)
-  (append (list 'req-package file)
-          (list :require 'smart-mode-line)
-          (if package (list :ensure package) nil)
-          (list :config (list 'progn
-                              '(sml/apply-theme (quote respectful) nil t)
-                              (list 'load-theme (list 'quote 'smart-mode-line-respectful) t)
-                              '(sml/apply-theme (quote respectful) nil t)))))
+  (list (if package package file)
+        theme
+        (append (list 'req-package file)
+                (list :require 'smart-mode-line)
+                (list :defer 2)
+                (if package (list :ensure package) nil)
+                (list :config (list 'progn
+                                    '(sml/apply-theme (quote respectful) nil t)
+                                    (list 'load-theme (list 'quote 'smart-mode-line-respectful) t)
+                                    '(sml/apply-theme (quote respectful) nil t))))))
 
 (defconst my-favourite-themes (vector (gen-my-theme-form 'tao-yin-theme 'tao-yin 'tao-theme)
                                       (gen-my-theme-form 'soothe-theme 'soothe)
@@ -89,16 +92,19 @@
                                       (gen-my-theme-form 'noctilux-theme 'noctilux)
                                       (gen-my-theme-form 'nzenburn-theme 'nzenburn)
                                       (gen-my-theme-form 'stekene-dark-theme 'stekene-dark)
-                                      (gen-my-theme-form 'sublime-themes 'odersky)
                                       (gen-my-theme-form 'warm-night-theme 'warm-night)
-                                      (gen-my-theme-form 'sublime-themes 'brin)
-                                      (gen-my-theme-form 'sublime-themes 'junio)
-                                      (gen-my-theme-form 'sublime-themes 'wilson)
+                                      (gen-my-theme-form 'odersky-theme 'odersky 'sublime-themes)
+                                      (gen-my-theme-form 'brin-theme 'brin 'sublime-themes)
+                                      (gen-my-theme-form 'junio-theme 'junio 'sublime-themes)
+                                      (gen-my-theme-form 'wilson-theme 'wilson 'sublime-themes)
                                       (gen-my-theme-form 'plan9-theme 'plan9)))
 
 (let ((theme-form (elt my-favourite-themes (random (length my-favourite-themes)))))
-  (print (concat "selected theme: "(symbol-name (car (cdr theme-form)))))
-  (eval theme-form))
+  (print (concat "selected theme: "
+                 (symbol-name (car theme-form))
+                 " : "
+                 (symbol-name (car (cdr theme-form)))))
+  (eval (car (cdr (cdr theme-form)))))
 
 ;; anzu
 
