@@ -145,16 +145,6 @@
 
 (setq make-pointer-invisible nil)
 
-;; highlight text beyond 80 column
-
-(req-package column-enforce-mode
-  :require smart-mode-line
-  :config
-  (progn (add-hook 'prog-mode-hook (lambda () (column-enforce-mode)))
-         (setq column-enforce-column 90)
-         (add-to-list 'sml/hidden-modes
-                      (concat " " (concat (int-to-string 90) "col")))))
-
 ;; todo, fixme highlighting
 
 (req-package fic-mode
