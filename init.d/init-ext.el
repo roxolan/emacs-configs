@@ -7,6 +7,7 @@
                                                         ("Emacs" . "edvorg/emacs1")
                                                         ("Guys" . "edvorg/guys")
                                                         ("JVM" . "edvorg/jvm")))
+                 (setq twittering-use-master-password t)
                  (twittering-enable-unread-status-notifier)))
 
 (req-package multifiles
