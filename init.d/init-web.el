@@ -27,6 +27,6 @@
 
 ;; html templates editing
 
-(req-package web-mode :commands web-mode)
+;; (req-package web-mode :commands web-mode)
 
 (provide 'init-web)
