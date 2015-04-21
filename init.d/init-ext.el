@@ -102,8 +102,7 @@
 (req-package smex
   :require key-chord
   :bind ("M-x" . smex)
-  :config (smex-initialize)
-  :init (key-chord-define-global "xm" 'smex))
+  :config (smex-initialize))
 
 ;; googling
 
