@@ -1,5 +1,5 @@
 (req-package clojure-cheatsheet
-  :require helm
+  :require (helm clojure-mode cider)
   :commands clojure-cheatsheet
   :init (progn (define-key clojure-mode-map (kbd "C-h j") 'clojure-cheatsheet)
                (define-key cider-repl-mode-map (kbd "C-h j") 'clojure-cheatsheet)))
