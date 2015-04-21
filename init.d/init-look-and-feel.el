@@ -67,11 +67,7 @@
         (append (list 'req-package file)
                 (list :require 'smart-mode-line)
                 (list :defer 2)
-                (if package (list :ensure package) nil)
-                (list :config (list 'progn
-                                    '(sml/apply-theme (quote respectful) nil t)
-                                    (list 'load-theme (list 'quote 'smart-mode-line-respectful) t)
-                                    '(sml/apply-theme (quote respectful) nil t))))))
+                (if package (list :ensure package) nil))))
 
 (defconst my-favourite-themes (vector (gen-my-theme-form 'tao-yin-theme 'tao-yin 'tao-theme)
                                       (gen-my-theme-form 'soothe-theme 'soothe)
