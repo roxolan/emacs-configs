@@ -74,6 +74,7 @@
                                       (gen-my-theme-form 'gotham-theme 'gotham)
                                       (gen-my-theme-form 'gruvbox-theme 'gruvbox)
                                       (gen-my-theme-form 'firecode-theme 'firecode)
+                                      (gen-my-theme-form 'busybee-theme 'busybee)
                                       (gen-my-theme-form 'firebelly-theme 'firebelly)
                                       (gen-my-theme-form 'darktooth-theme 'darktooth)
                                       (gen-my-theme-form 'hc-zenburn-theme 'hc-zenburn)
@@ -88,7 +89,8 @@
                                       (gen-my-theme-form 'brin-theme 'brin 'sublime-themes)
                                       (gen-my-theme-form 'junio-theme 'junio 'sublime-themes)
                                       (gen-my-theme-form 'wilson-theme 'wilson 'sublime-themes)
-                                      (gen-my-theme-form 'plan9-theme 'plan9)))
+                                      (gen-my-theme-form 'plan9-theme 'plan9)
+                                      ))
 
 (let ((theme-form (elt my-favourite-themes (random (length my-favourite-themes)))))
   (print (concat "selected theme: "
