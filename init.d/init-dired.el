@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; single dired
 
 (req-package dired

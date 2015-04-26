@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; use igrep
 
 (req-package igrep :commands igrep)

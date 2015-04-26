@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; http repl
 
 (req-package httprepl :require (s dash) :commands httprepl)

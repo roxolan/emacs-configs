@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (req-package bash-completion
   :require shell
   :commands bash-completion-dynamic-complete

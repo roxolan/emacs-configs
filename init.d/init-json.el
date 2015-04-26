@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; json reformatter
 
 (req-package json-reformat

@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; xt mosue
 
 (req-package xt-mouse

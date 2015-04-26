@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; key chord mode
 
 (req-package key-chord

@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; cursor configuration
 
 (setq-default cursor-type 'bar)

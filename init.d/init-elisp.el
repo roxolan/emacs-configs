@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ; use emr
 
 (req-package emr

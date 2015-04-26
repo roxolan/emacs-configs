@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; ido mode
 
 (req-package ido-better-flex

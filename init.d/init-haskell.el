@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; haskell mode
 
 (req-package haskell-mode

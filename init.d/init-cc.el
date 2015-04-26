@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; clang format
 
 (req-package clang-format

@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; lua mode
 
 (req-package lua-mode

@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; helm
 
 (req-package helm

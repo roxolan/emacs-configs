@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (req-package company
   :require yasnippet
   :config (progn (global-company-mode 1)

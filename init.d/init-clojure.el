@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (req-package clojure-cheatsheet
   :require (helm clojure-mode cider)
   :commands clojure-cheatsheet

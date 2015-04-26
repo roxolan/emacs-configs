@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (if (eq system-type 'gnu/linux)
 
 	(progn ;; open links with xdg

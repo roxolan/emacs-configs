@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (req-package scala-mode2
   :config (progn (setq scala-indent:align-parameters t))
   :mode (("\\.scala\\'" . scala-mode)

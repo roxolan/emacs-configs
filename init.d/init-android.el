@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; package for android sdk/ndk toolchain
 
 (req-package android-mode

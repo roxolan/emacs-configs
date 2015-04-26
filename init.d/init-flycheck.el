@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (req-package flycheck
   :config (progn (global-flycheck-mode 1)
                  (set-face-attribute 'flycheck-warning nil

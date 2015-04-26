@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (req-package org
   :mode ("\\.org$" . org-mode)
   :bind (("C-c l" . org-store-link)

@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; glsl
 
 (req-package glsl-mode

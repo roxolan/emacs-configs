@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; ruby mode for rakefile
 
 (req-package ruby-mode

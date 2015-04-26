@@ -1,3 +1,5 @@
+(require 'req-package)
+
 (req-package twittering-mode
   :commands twit
   :config (progn (setq twittering-icon-mode t)

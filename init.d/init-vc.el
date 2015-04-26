@@ -1,3 +1,5 @@
+(require 'req-package)
+
 ;; svn integration
 
 ;; in-project search
