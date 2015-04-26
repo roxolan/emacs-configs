@@ -1,4 +1,5 @@
 (req-package company
+  :require yasnippet
   :config (progn (global-company-mode 1)
                  (setq company-idle-delay 0.1)
                  (setq company-show-numbers t)
@@ -10,7 +11,8 @@
                  (setq company-dabbrev-code-everywhere t)
                  (setq company-dabbrev-code-ignore-case t)
                  (global-set-key (kbd "C-<tab>") 'company-dabbrev)
-                 (global-set-key (kbd "M-<tab>") 'company-complete)))
+                 (global-set-key (kbd "M-<tab>") 'company-complete)
+                 (global-set-key (kbd "C-c C-y") 'company-yasnippet)))
 
 (req-package company-quickhelp
   :require company
