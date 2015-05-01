@@ -28,4 +28,9 @@
   :config (add-hook 'emacs-lisp-mode-hook
                     (lambda () (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc)))))
 
+(req-package elisp-slime-nav
+  :commands elisp-slime-nav-mode
+  :init (dolist (hook '(emacs-lisp-mode-hook lisp-interaction-mode-hook))
+          (add-hook hook 'elisp-slime-nav-mode)))
+
 (provide 'init-elisp)
