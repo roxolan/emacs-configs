@@ -22,6 +22,7 @@
         duplicate-thing
         electric-newline-and-maybe-indent
         eval-print-last-sexp
+        helm-maybe-exit-minibuffer
         helm-show-kill-ring
         hungry-delete-backward
         hungry-delete-forward
