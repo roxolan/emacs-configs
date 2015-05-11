@@ -177,7 +177,7 @@
 
 ;; save bookmarks on emacs exit
 
-(setq bookmark-save-flag 1)
+(setq-default bookmark-save-flag 1)
 
 ;; do not use dialog boxes
 
