@@ -10,6 +10,7 @@
                  (key-chord-define-global ";4" 'kill-buffer-and-window)
                  (key-chord-define-global ";n" 'scroll-up-command)
                  (key-chord-define-global ";h" 'scroll-down-command)
+                 (key-chord-define-global ";/" 'undo)
                  (key-chord-define-global ";u" "\C-u")
                  (key-chord-define-global ";j" "\C-n")
                  (key-chord-define-global ";k" "\C-p")
