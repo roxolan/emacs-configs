@@ -207,10 +207,10 @@
 
 ;; switch window
 
-(req-package switch-window
+(req-package ace-window
   :require key-chord
-  :bind ("C-x o" . switch-window)
-  :init (key-chord-define-global ";o" 'switch-window))
+  :bind ("C-x o" . ace-window)
+  :init (key-chord-define-global ";o" 'ace-window))
 
 ;; ace jump mode
 
