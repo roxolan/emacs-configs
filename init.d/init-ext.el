@@ -219,6 +219,10 @@
          ("s-c" . ace-jump-char-mode)
          ("M-g M-g" . ace-jump-line-mode)))
 
+;; quickly jump to links
+
+(req-package ace-link :config (ace-link-setup-default))
+
 ;; ace jump buffer
 
 (req-package ace-jump-buffer
