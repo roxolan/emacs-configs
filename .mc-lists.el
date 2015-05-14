@@ -42,6 +42,7 @@
         org-set-tags-command
         org-shiftleft
         org-shiftright
+        sgml-slash
         smex
         sp--self-insert-command
         transpose-words
