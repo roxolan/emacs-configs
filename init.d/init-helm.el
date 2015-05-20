@@ -28,6 +28,10 @@
 (req-package helm-proc
   :require helm)
 
+;; helm .gitignore
+
+(req-package helm-gitignore :commands helm-gitignore)
+
 ;; helm company
 
 (req-package helm-company
