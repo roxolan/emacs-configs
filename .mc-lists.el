@@ -48,6 +48,7 @@
         transpose-words
         upcase-region
         yaml-electric-backspace
+        yas-expand
         ))
 
 (setq mc/cmds-to-run-once
