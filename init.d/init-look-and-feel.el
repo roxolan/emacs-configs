@@ -71,8 +71,7 @@
                 (list :defer 2)
                 (if package (list :ensure package) nil))))
 
-(defconst my-favourite-themes (vector (gen-my-theme-form 'tao-yin-theme 'tao-yin 'tao-theme)
-                                      (gen-my-theme-form 'soothe-theme 'soothe)
+(defconst my-favourite-themes (vector (gen-my-theme-form 'soothe-theme 'soothe)
                                       (gen-my-theme-form 'gotham-theme 'gotham)
                                       (gen-my-theme-form 'gruvbox-theme 'gruvbox)
                                       (gen-my-theme-form 'firecode-theme 'firecode)
