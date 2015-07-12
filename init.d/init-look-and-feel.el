@@ -73,6 +73,7 @@
 
 (defconst my-favourite-themes (vector (gen-my-theme-form 'soothe-theme 'soothe)
                                       (gen-my-theme-form 'gotham-theme 'gotham)
+                                      (gen-my-theme-form 'zerodark-theme 'zerodark)
                                       (gen-my-theme-form 'gruvbox-theme 'gruvbox)
                                       (gen-my-theme-form 'firecode-theme 'firecode)
                                       (gen-my-theme-form 'busybee-theme 'busybee)
