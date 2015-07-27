@@ -41,3 +41,4 @@ saved-packages
 /ido.last
 /run-emacs
 /request/
+/check-protoc.sh
