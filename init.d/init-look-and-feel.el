@@ -83,7 +83,6 @@
                                       (gen-my-theme-form 'jazz-theme 'jazz)
                                       (gen-my-theme-form 'mbo70s-theme 'mbo70s)
                                       (gen-my-theme-form 'niflheim-theme 'niflheim)
-                                      (gen-my-theme-form 'noctilux-theme 'noctilux)
                                       (gen-my-theme-form 'nzenburn-theme 'nzenburn)
                                       (gen-my-theme-form 'stekene-dark-theme 'stekene-dark)
                                       (gen-my-theme-form 'warm-night-theme 'warm-night)
