@@ -84,7 +84,6 @@
                                       (gen-my-theme-form 'mbo70s-theme 'mbo70s)
                                       (gen-my-theme-form 'niflheim-theme 'niflheim)
                                       (gen-my-theme-form 'nzenburn-theme 'nzenburn)
-                                      (gen-my-theme-form 'stekene-dark-theme 'stekene-dark)
                                       (gen-my-theme-form 'warm-night-theme 'warm-night)
                                       (gen-my-theme-form 'odersky-theme 'odersky 'sublime-themes)
                                       (gen-my-theme-form 'brin-theme 'brin 'sublime-themes)
