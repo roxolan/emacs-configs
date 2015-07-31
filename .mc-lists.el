@@ -56,6 +56,7 @@
         c-up-conditional
         diff-hl-next-hunk
         end-of-buffer
+        find-file-in-vcs-directory
         handle-select-window
         helm-buffers-list
         switch-window
