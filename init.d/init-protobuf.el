@@ -7,7 +7,7 @@
   (progn
     (flycheck-define-checker protobuf-protoc-reporter
       "A protobuf syntax checker based on protoc compiler"
-      :command ("protoc" "--error_format" "gcc" "--java_out=/tmp" "--proto_path" source-directory source-inplace)
+      :command ("protoc" "--error_format" "gcc" "--java_out=/tmp" "--proto_path" (eval (file-name-directory (buffer-file-name))) source-inplace)
       :error-patterns
       ((error line-start
               (message "In file included from") " " (file-name) ":" line ":"
