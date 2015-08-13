@@ -12,6 +12,11 @@
                  (setq org-refile-use-outline-path 'file)
                  (setq org-startup-folded 'showeverything)))
 
+(req-package org-bullets
+  :require org
+  :commands org-bullets-mode
+  :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
 (req-package org-cliplink :require org
   :bind ("C-M-y" . org-cliplink))
 
