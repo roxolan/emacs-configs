@@ -8,7 +8,7 @@
 (load my-custom-file t)
 (setq make-backup-files nil)
 (put 'erase-buffer 'disabled nil)
-;; (setq debug-on-error t)
+(setq debug-on-error t)
 
 (defconst emacs-major-version-rad 1000000)
 
