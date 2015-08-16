@@ -16,6 +16,8 @@
         c-indent-line-or-region
         c-toggle-electric-state
         comint-delchar-or-maybe-eof
+        comint-interrupt-subjob
+        comint-previous-input
         comment-dwim
         complete-symbol
         downcase-region
