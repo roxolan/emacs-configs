@@ -51,4 +51,10 @@
   :require flycheck
   :config (flycheck-clojure-setup))
 
+(req-package align-cljlet :disabled t)
+(req-package cljsbuild-mode :disabled t)
+(req-package clojure-snippets :disabled t)
+(req-package sotclojure :disabled t)
+(req-package insfactor :disabled t)
+
 (provide 'init-clojure)
