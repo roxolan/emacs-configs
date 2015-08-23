@@ -42,3 +42,4 @@ saved-packages
 /run-emacs
 /request/
 /check-protoc.sh
+/.trello

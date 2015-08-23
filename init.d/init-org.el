@@ -26,4 +26,9 @@
 
 (req-package jira :require xml-rpc)
 
+(req-package org-trello
+  :require org
+  :commands org-trell-mode
+  :init (add-hook 'org-mode-hook (lambda () (org-trello-mode 1))))
+
 (provide 'init-org)
