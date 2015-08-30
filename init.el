@@ -5,6 +5,7 @@
 (defconst my-custom-file "~/.emacs.d/custom.el")
 
 (setq custom-file my-custom-file)
+(setq package-enable-at-startup nil)
 (load my-custom-file t)
 (setq make-backup-files nil)
 (put 'erase-buffer 'disabled nil)
