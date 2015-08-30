@@ -47,7 +47,8 @@
 
 ;; start emacs server
 
-(server-start)
+(unless (server-running-p)
+  (server-start))
 
 (setq emacs-shell-buffer "*emacs-shell*")
 (shell-command "touch ~/.emacs.d/server.lock")
