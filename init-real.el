@@ -43,6 +43,7 @@
 ;; finish loading packages
 
 (req-package-finish)
+(setq debug-on-error t)
 
 ;; start emacs server
 
