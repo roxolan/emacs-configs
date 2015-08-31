@@ -47,6 +47,7 @@
         sgml-slash
         smex
         sp--self-insert-command
+        sp-delete-char
         transpose-words
         upcase-region
         yaml-electric-backspace
