@@ -21,6 +21,7 @@
 			   (setq nrepl-log-messages t)))
 
 (req-package slamhound
+  :require clojure-mode
   :commands slamhound)
 
 (req-package cider-profile
@@ -48,7 +49,7 @@
   :init (add-hook 'clojure-mode-hook 'typed-clojure-mode))
 
 (req-package flycheck-clojure
-  :require flycheck
+  :require (clojure-mode flycheck)
   :config (flycheck-clojure-setup))
 
 (req-package align-cljlet :disabled t)
