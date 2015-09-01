@@ -6,6 +6,12 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("sunrise" . "http://joseito.republika.pl/sunrise-commander/"))
 
+(defconst emacs-major-version-rad 1000000)
+
+(defun has-emacs-version (major minor)
+  (<= (+ (* major emacs-major-version-rad) minor)
+      (+ (* emacs-major-version emacs-major-version-rad) emacs-minor-version)))
+
 (if (not (has-emacs-version 24 0))
     (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
@@ -33,11 +39,11 @@
 ;; req-package
 
 (require-package 'req-package)
+(require 'req-package)
 
 ;; init.d
 
 (defconst my-init-dir "~/.emacs.d/init.d")
-(byte-recompile-directory my-init-dir 0 t)
 (req-package-force load-dir :config (load-dir-one my-init-dir))
 
 ;; finish loading packages
@@ -53,5 +59,5 @@
 
 (setq emacs-shell-buffer "*emacs-shell*")
 (shell-command "touch ~/.emacs.d/server.lock")
-(add-hook 'kill-emacs-hook
-          (lambda () (shell-command "rm -f ~/.emacs.d/server.lock")))
+(add-hook 'kill-emacs-hook (lambda () (shell-command "rm -f ~/.emacs.d/server.lock")))
+(add-hook 'kill-emacs-hook (lambda () (byte-recompile-directory my-init-dir 0 t)))

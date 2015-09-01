@@ -63,10 +63,6 @@
 
 (req-package helm-open-github
   :require helm
-  :commands (helm-open-github-from-commit
-             helm-open-github-from-file
-             helm-open-github-from-issues
-             helm-open-github-from-pull-requests)
   :bind (("C-c o f" . helm-open-github-from-file)
          ("C-c o c" . helm-open-github-from-commit)
          ("C-c o i" . helm-open-github-from-issues)
@@ -83,8 +79,8 @@
 (req-package helm-make
   :commands helm-make
   :require makefile-runner
-  :config (global-set-key (kbd "s-B")
-						  (lambda () (interactive) (helm-make (makefile-runner--find-makefile)))))
+  :init (global-set-key (kbd "s-B")
+                        (lambda () (interactive) (helm-make (makefile-runner--find-makefile)))))
 
 ;; helm wgrep
 

@@ -47,7 +47,10 @@
         sgml-slash
         smex
         sp--self-insert-command
+        sp-backward-delete-char
+        sp-backward-kill-word
         sp-delete-char
+        sp-kill-word
         transpose-words
         upcase-region
         yaml-electric-backspace

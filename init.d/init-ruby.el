@@ -6,6 +6,6 @@
   :mode (("Rakefile\\'" . ruby-mode)
 		 ("rb\\'" . ruby-mode)))
 
-(req-package rake)
+(req-package rake :commands rake)
 
 (provide 'init-ruby)

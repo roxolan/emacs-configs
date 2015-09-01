@@ -158,6 +158,7 @@
 ;; diff highlight
 
 (req-package diff-hl
+  :defer 5
   :require smartrep
   :config (global-diff-hl-mode 1))
 

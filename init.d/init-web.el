@@ -9,7 +9,7 @@
 (req-package restclient :mode ("\\.rest\\'" . restclient-mode))
 
 (req-package company-restclient
-  :require company
+  :require (restclient company)
   :config (add-to-list 'company-backends 'company-restclient))
 
 ;; elnode

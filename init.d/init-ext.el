@@ -35,7 +35,7 @@
 
 ;; emacs bugtracker
 
-(req-package debbugs)
+(req-package debbugs :commands debbugs)
 
 ;; open recent files
 
@@ -125,10 +125,14 @@
 ;; multiple cursors
 
 (req-package multiple-cursors
-  :config (progn (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-                 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-                 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-                 (global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this)))
+  :commands (mc/edit-lines
+             mc/mark-previous-like-this
+             mc/mark-next-like-this
+             mc/mark-all-like-this)
+  :init (progn (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+               (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+               (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+               (global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this)))
 
 ;; ant
 
@@ -243,9 +247,19 @@
 ;; smart parenthesis
 
 (req-package smartparens-config
+  :defer 2
   :require smartparens
   :config (progn (smartparens-global-mode t)
-                 (show-smartparens-global-mode t)))
+                 (smartparens-global-strict-mode t)
+                 (show-smartparens-global-mode t)
+                 (global-set-key (kbd "C-M-a") 'sp-beginning-of-sexp)
+                 (global-set-key (kbd "C-M-e") 'sp-end-of-sexp)
+                 (global-set-key (kbd "C-M-k") 'sp-kill-sexp)
+                 (global-set-key (kbd "C-M-k") 'sp-kill-sexp)
+                 (global-set-key (kbd "C-M-n") 'sp-forward-sexp)
+                 (global-set-key (kbd "C-M-p") 'sp-backward-sexp)
+                 (global-set-key (kbd "C-M-b") 'sp-up-sexp)
+                 (global-set-key (kbd "C-M-f") 'sp-down-sexp)))
 
 ;; auto reverting
 
