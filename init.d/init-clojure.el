@@ -20,9 +20,9 @@
 			   (add-hook 'cider-mode-hook #'eldoc-mode)
 			   (setq nrepl-log-messages t)))
 
-(req-package slamhound
-  :require clojure-mode
-  :commands slamhound)
+;; (req-package slamhound
+;;   :require clojure-mode
+;;   :commands slamhound)
 
 (req-package cider-profile
   :require cider
@@ -43,18 +43,21 @@
 (req-package 4clojure
   :commands (4clojure-check-answers 4clojure-open-question))
 
-(req-package typed-clojure-mode
-  :require clojure-mode
-  :commands typed-clojure-mode
-  :init (add-hook 'clojure-mode-hook 'typed-clojure-mode))
+;; (req-package typed-clojure-mode
+;;   :require clojure-mode
+;;   :commands typed-clojure-mode
+;;   :init (add-hook 'clojure-mode-hook 'typed-clojure-mode))
 
-(req-package flycheck-clojure
-  :require (clojure-mode flycheck)
-  :config (flycheck-clojure-setup))
+;; (req-package flycheck-clojure
+;;   :require (clojure-mode flycheck)
+;;   :config (flycheck-clojure-setup))
+
+(req-package clojure-snippets
+  :require (clojure-mode yasnippet)
+  :config (clojure-snippets-initialize))
 
 (req-package align-cljlet :disabled t)
 (req-package cljsbuild-mode :disabled t)
-(req-package clojure-snippets :disabled t)
 (req-package sotclojure :disabled t)
 (req-package insfactor :disabled t)
 
