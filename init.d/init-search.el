@@ -2,11 +2,11 @@
 
 ;; use igrep
 
-(req-package igrep :require grep :commands igrep)
+(req-package igrep :commands igrep)
 
 ;; use wgrep
 
-(req-package wgrep :require grep :commands wgrep)
+(req-package wgrep :commands wgrep)
 
 ;; in-project search
 
@@ -59,6 +59,7 @@
 ;; ignored folders
 
 (req-package grep
+  :defer 7
   :config (progn
             (add-to-list 'grep-find-ignored-directories "auto")
             (add-to-list 'grep-find-ignored-directories "elpa")

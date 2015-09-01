@@ -25,7 +25,7 @@
 
 (req-package org-jira :require org)
 
-(req-package jira :require xml-rpc)
+(req-package jira :commands jira-login)
 
 (req-package org-trello
   :disabled t

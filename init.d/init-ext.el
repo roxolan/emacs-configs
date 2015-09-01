@@ -148,7 +148,7 @@
 
 ;; swoop
 
-(req-package swoop)
+(req-package swoop :commands swoop)
 
 ;; save history
 
