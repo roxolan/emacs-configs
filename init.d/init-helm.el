@@ -25,6 +25,7 @@
 ;; helm proc
 
 (req-package helm-proc
+  :commands helm-proc
   :require helm)
 
 ;; helm .gitignore
@@ -42,19 +43,21 @@
 ;; helm helm commands
 
 (req-package helm-helm-commands
+  :commands helm-helm-commands
   :require helm)
 
 ;; helm swoop
 
 (req-package helm-swoop
-  :require
-  helm
-  :config
-  (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
+  :commands helm-swoop-from-isearch
+  :require helm
+  :init (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
 
 ;; helm desc binds
 
-(req-package helm-descbinds :require helm)
+(req-package helm-descbinds
+  :commands helm-descbinds
+  :require helm)
 
 ;; helm open github
 
@@ -72,12 +75,13 @@
 ;; helm package
 
 (req-package helm-package
-  :require
-  helm)
+  :commands helm-package
+  :require helm)
 
 ;; helm make
 
 (req-package helm-make
+  :commands helm-make
   :require makefile-runner
   :config (global-set-key (kbd "s-B")
 						  (lambda () (interactive) (helm-make (makefile-runner--find-makefile)))))
@@ -85,19 +89,19 @@
 ;; helm wgrep
 
 (req-package wgrep-helm
-  :require
-  (helm wgrep grep))
+  :require (helm wgrep grep))
 
 ;; helm github stars
 
 (req-package helm-github-stars
+  :commands helm-github-stars
   :require helm
   :config (setq helm-github-stars-username (getenv "USER")))
 
 ;; helm themes
 
 (req-package helm-themes
-  :require
-  helm)
+  :commands helm-themes
+  :require helm)
 
 (provide 'init-helm)

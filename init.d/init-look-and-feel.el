@@ -19,6 +19,7 @@
 ;; some very useful extension
 
 (req-package nyan-mode
+  :defer 5
   :config (progn (setq nyan-animation-frame-interval 0.1)
                  (setq nyan-bar-length 8)
                  (setq nyan-wavy-trail t)
