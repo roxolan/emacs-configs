@@ -10,7 +10,8 @@
   :config (progn (setq org-default-notes-file (concat org-directory "/notes.org"))
                  (setq org-capture-bookmark t)
                  (setq org-refile-use-outline-path 'file)
-                 (setq org-startup-folded 'showeverything)))
+                 (setq org-startup-folded 'showeverything)
+                 (setq org-log-done 'note)))
 
 (req-package org-bullets
   :require org
@@ -27,6 +28,7 @@
 (req-package jira :require xml-rpc)
 
 (req-package org-trello
+  :disabled t
   :require org
   :commands org-trello-mode
   :init (add-hook 'org-mode-hook (lambda () (org-trello-mode 1))))
