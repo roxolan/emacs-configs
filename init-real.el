@@ -31,10 +31,18 @@
 
 ;; el-get
 
+(require-package 'use-package)
+(require 'use-package)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require-package 'el-get)
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-(el-get 'sync)
+(use-package el-get
+  :functions
+  el-get
+  :defines
+  el-get-recipe-path
+  :config
+  (progn (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
+         (el-get 'sync)))
 
 ;; req-package
 
@@ -57,7 +65,7 @@
 (unless (server-running-p)
   (server-start))
 
-(setq emacs-shell-buffer "*emacs-shell*")
+(defconst emacs-shell-buffer "*emacs-shell*")
 (shell-command "touch ~/.emacs.d/server.lock")
 (add-hook 'kill-emacs-hook (lambda () (shell-command "rm -f ~/.emacs.d/server.lock")))
 (add-hook 'kill-emacs-hook (lambda () (byte-recompile-directory my-init-dir 0 t)))
