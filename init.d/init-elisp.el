@@ -3,11 +3,12 @@
 ; use emr
 
 (req-package emr
+  :commands
+  emr-show-refactor-menu
+  :init
+  (define-key emacs-lisp-mode-map (kbd "M-RET") 'emr-show-refactor-menu)
   :config
-  (progn (emr-initialize)
-		 (define-key emacs-lisp-mode-map
-		   (kbd "M-RET")
-		   'emr-show-refactor-menu)))
+  (emr-initialize))
 
 ; use litable
 
