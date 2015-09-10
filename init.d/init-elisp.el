@@ -34,4 +34,8 @@
   :init (dolist (hook '(emacs-lisp-mode-hook lisp-interaction-mode-hook))
           (add-hook hook 'elisp-slime-nav-mode)))
 
+(req-package nameless
+  :commands nameless-mode-from-hook
+  :init (add-hook 'emacs-lisp-mode-hook 'nameless-mode-from-hook))
+
 (provide 'init-elisp)
