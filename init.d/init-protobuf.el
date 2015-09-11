@@ -3,6 +3,7 @@
 (req-package protobuf-mode
   :require (flycheck flycheck-protobuf)
   :mode(("proto\\'" . protobuf-mode))
-  :config (add-hook 'protobuf-mode-hook (lambda () (flycheck-select-checker 'protobuf-protoc-reporter))))
+  :config (req-package-add-hook-execute 'protobuf-mode
+            (lambda () (flycheck-select-checker 'protobuf-protoc-reporter))))
 
 (provide 'init-protobuf)

@@ -16,9 +16,9 @@
 (req-package cider
   :require (clojure-mode eldoc)
   :commands cider-mode
-  :init (progn (add-hook 'clojure-mode-hook #'cider-mode)
-			   (add-hook 'cider-mode-hook #'eldoc-mode)
-			   (setq nrepl-log-messages t)))
+  :init (progn (req-package-add-hook-execute 'clojure-mode #'cider-mode)
+			   (req-package-add-hook-execute 'cider-mode #'eldoc-mode))
+  :config (setq nrepl-log-messages t))
 
 ;; (req-package slamhound
 ;;   :require clojure-mode
@@ -27,13 +27,13 @@
 (req-package cider-profile
   :require cider
   :commands cider-profile-mode
-  :init (progn (add-hook 'cider-mode-hook 'cider-profile-mode)
-               (add-hook 'cider-repl-mode-hook 'cider-profile-mode)))
+  :init (progn (req-package-add-hook-execute 'cider-mode 'cider-profile-mode)
+               (req-package-add-hook-execute 'cider-repl-mode 'cider-profile-mode)))
 
 (req-package clj-refactor
-  :require clojure-mode
+  :require cider
   :commands clj-refactor-mode
-  :init (add-hook 'clojure-mode-hook #'clj-refactor-mode))
+  :init (req-package-add-hook-execute 'cider-mode #'clj-refactor-mode))
 
 (req-package cljr-helm
   :require clj-refactor
@@ -46,7 +46,7 @@
 (req-package typed-clojure-mode
   :require clojure-mode
   :commands typed-clojure-mode
-  :init (add-hook 'clojure-mode-hook 'typed-clojure-mode))
+  :init (req-package-add-hook-execute 'clojure-mode 'typed-clojure-mode))
 
 ;; (req-package flycheck-clojure
 ;;   :require (clojure-mode flycheck)
@@ -55,7 +55,7 @@
 (req-package discover-clj-refactor
   :require clj-refactor
   :commands clj-refactor-turn-on-discover
-  :init (add-hook 'clojure-mode-hook 'clj-refactor-turn-on-discover))
+  :init (req-package-add-hook-execute 'clojure-mode 'clj-refactor-turn-on-discover))
 
 (req-package clojure-snippets
   :require (clojure-mode yasnippet)

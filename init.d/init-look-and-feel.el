@@ -8,13 +8,12 @@
 ;; use timeclock
 
 (req-package timeclock
-  :config (progn (timeclock-mode-line-display 1)
-                 (add-hook 'kill-emacs-query-functions 'timeclock-query-out)))
+  :config (progn (display-time-mode 1)))
 
 ;; highlight number in code
 
 (req-package highlight-numbers
-  :config (add-hook 'find-file-hook (lambda () (highlight-numbers-mode 1))))
+  :config (req-package-add-hook-execute 'find-file (lambda () (highlight-numbers-mode 1))))
 
 ;; some very useful extension
 
@@ -138,7 +137,7 @@
 
 (req-package fic-mode
   :config
-  (add-hook 'prog-mode-hook (lambda () (fic-mode 1))))
+  (req-package-add-hook-execute 'prog-mode (lambda () (fic-mode 1))))
 
 (req-package rainbow-delimiters
   :require clojure-mode
@@ -152,13 +151,12 @@
                (custom-set-faces '(rainbow-delimiters-depth-6-face ((t (:inherit org-level-6)))))
                (custom-set-faces '(rainbow-delimiters-depth-7-face ((t (:inherit org-level-7)))))
                (custom-set-faces '(rainbow-delimiters-depth-8-face ((t (:inherit org-level-8)))))
-               (add-hook 'emacs-lisp-mode-hook (lambda () (rainbow-delimiters-mode 1)))
-               (add-hook 'clojure-mode-hook (lambda () (rainbow-delimiters-mode 1)))))
+               (req-package-add-hook-execute 'emacs-lisp-mode (lambda () (rainbow-delimiters-mode 1)))
+               (req-package-add-hook-execute 'clojure-mode (lambda () (rainbow-delimiters-mode 1)))))
 
 ;; diff highlight
 
 (req-package diff-hl
-  :defer 5
   :require smartrep
   :config (global-diff-hl-mode 1))
 

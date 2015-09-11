@@ -42,11 +42,6 @@
 (req-package recentf
   :config (recentf-mode 1))
 
-;; use hungry delete
-
-(req-package hungry-delete
-  :config (global-hungry-delete-mode 1))
-
 ;; spray reading mode
 
 (req-package spray :bind ("<f6>" . spray-mode))
@@ -60,7 +55,7 @@
 
 ;; delete trailing whitespaces before saving some buffer
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(req-package-add-hook-execute 'before-save 'delete-trailing-whitespace)
 
 ;; temp file
 
@@ -172,7 +167,7 @@
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-(add-hook 'find-file-hook (lambda () (setq indent-tabs-mode nil)))
+(req-package-add-hook-execute 'find-file (lambda () (setq indent-tabs-mode nil)))
 (electric-indent-mode 1)
 
 ;; mark ring tweaks
@@ -280,7 +275,7 @@
 
 ;; ru keys
 
-(add-hook 'find-file-hook (lambda () (setq default-input-method 'russian-computer)))
+(req-package-add-hook-execute 'find-file (lambda () (setq default-input-method 'russian-computer)))
 
 ;; expand region
 

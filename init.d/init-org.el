@@ -16,7 +16,7 @@
 (req-package org-bullets
   :require org
   :commands org-bullets-mode
-  :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  :init (req-package-add-hook-execute 'org-mode (lambda () (org-bullets-mode 1))))
 
 (req-package org-cliplink :require org
   :bind ("C-M-y" . org-cliplink))
@@ -31,6 +31,6 @@
   :disabled t
   :require org
   :commands org-trello-mode
-  :init (add-hook 'org-mode-hook (lambda () (org-trello-mode 1))))
+  :init (req-package-add-hook-execute 'org-mode (lambda () (org-trello-mode 1))))
 
 (provide 'init-org)
