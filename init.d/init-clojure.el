@@ -68,6 +68,5 @@
   :commands cljsbuild-start)
 
 (req-package sotclojure :disabled t)
-(req-package insfactor :disabled t)
 
 (provide 'init-clojure)
