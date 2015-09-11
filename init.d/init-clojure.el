@@ -43,10 +43,10 @@
 (req-package 4clojure
   :commands (4clojure-check-answers 4clojure-open-question))
 
-;; (req-package typed-clojure-mode
-;;   :require clojure-mode
-;;   :commands typed-clojure-mode
-;;   :init (add-hook 'clojure-mode-hook 'typed-clojure-mode))
+(req-package typed-clojure-mode
+  :require clojure-mode
+  :commands typed-clojure-mode
+  :init (add-hook 'clojure-mode-hook 'typed-clojure-mode))
 
 ;; (req-package flycheck-clojure
 ;;   :require (clojure-mode flycheck)
