@@ -64,7 +64,9 @@
 (req-package align-cljlet
   :require clojure-mode)
 
-(req-package cljsbuild-mode :disabled t)
+(req-package cljsbuild-mode
+  :commands cljsbuild-start)
+
 (req-package sotclojure :disabled t)
 (req-package insfactor :disabled t)
 
