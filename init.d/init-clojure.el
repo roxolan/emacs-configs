@@ -36,7 +36,7 @@
   :init (add-hook 'clojure-mode-hook #'clj-refactor-mode))
 
 (req-package cljr-helm
-  :require clojure-mode
+  :require clj-refactor
   :commands cljr-helm
   :init (define-key clojure-mode-map (kbd "M-RET") 'cljr-helm))
 
