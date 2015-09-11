@@ -89,11 +89,6 @@
 (req-package warnings
   :config (add-to-list 'warning-suppress-types '(undo discard-info)))
 
-;; smart wthitespace cleanup
-
-(req-package whitespace-cleanup-mode
-  :config (global-whitespace-cleanup-mode 1))
-
 ;; use fuzzy for M-x
 
 (req-package smex
