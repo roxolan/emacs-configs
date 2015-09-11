@@ -61,7 +61,9 @@
   :require (clojure-mode yasnippet)
   :config (clojure-snippets-initialize))
 
-(req-package align-cljlet :disabled t)
+(req-package align-cljlet
+  :require clojure-mode)
+
 (req-package cljsbuild-mode :disabled t)
 (req-package sotclojure :disabled t)
 (req-package insfactor :disabled t)
