@@ -52,6 +52,11 @@
 ;;   :require (clojure-mode flycheck)
 ;;   :config (flycheck-clojure-setup))
 
+(req-package discover-clj-refactor
+  :require clj-refactor
+  :commands clj-refactor-turn-on-discover
+  :init (add-hook 'clojure-mode-hook 'clj-refactor-turn-on-discover))
+
 (req-package clojure-snippets
   :require (clojure-mode yasnippet)
   :config (clojure-snippets-initialize))
