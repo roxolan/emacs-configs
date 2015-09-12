@@ -38,8 +38,17 @@
   :init (req-package-add-hook-execute 'emacs-lisp-mode 'ert-modeline-mode))
 
 (req-package overseer
-  :require f
+  :require (ert-runner f)
   :commands overseer-mode
   :init (req-package-add-hook-execute 'emacs-lisp-mode 'overseer-mode))
+
+(req-package el-mock
+  :require lisp-mode)
+
+(req-package ert-expectations
+  :require lisp-mode)
+
+(req-package ert-runner
+  :require lisp-mode)
 
 (provide 'init-elisp)
