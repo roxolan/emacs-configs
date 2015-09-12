@@ -33,4 +33,8 @@
   :commands nameless-mode-from-hook
   :init (req-package-add-hook-execute 'emacs-lisp-mode 'nameless-mode-from-hook))
 
+(req-package ert-modeline
+  :commands ert-modeline-mode
+  :init (req-package-add-hook-execute 'emacs-lisp-mode 'ert-modeline-mode))
+
 (provide 'init-elisp)
