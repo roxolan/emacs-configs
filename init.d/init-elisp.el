@@ -38,7 +38,7 @@
   :init (req-package-add-hook-execute 'emacs-lisp-mode 'ert-modeline-mode))
 
 (req-package overseer
-  :require (ert-runner f)
+  :require f
   :commands overseer-mode
   :init (req-package-add-hook-execute 'emacs-lisp-mode 'overseer-mode))
 
@@ -48,7 +48,7 @@
 (req-package ert-expectations
   :require lisp-mode)
 
-(req-package ert-runner
+(req-package undercover
   :require lisp-mode)
 
 (provide 'init-elisp)
