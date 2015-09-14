@@ -20,9 +20,9 @@
 			   (req-package-add-hook-execute 'cider-mode #'eldoc-mode))
   :config (setq nrepl-log-messages t))
 
-;; (req-package slamhound
-;;   :require clojure-mode
-;;   :commands slamhound)
+(req-package slamhound
+  :require cider
+  :commands slamhound)
 
 (req-package cider-profile
   :require cider
