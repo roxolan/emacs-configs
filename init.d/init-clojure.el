@@ -48,9 +48,12 @@
   :commands typed-clojure-mode
   :init (req-package-add-hook-execute 'clojure-mode 'typed-clojure-mode))
 
-;; (req-package flycheck-clojure
-;;   :require (clojure-mode flycheck)
-;;   :config (flycheck-clojure-setup))
+(req-package flycheck-clojure
+  :require (clojure-mode flycheck)
+  :config (progn (req-package-add-hook-execute 'clojure-mode
+                   (lambda ()
+                     (add-to-list 'flycheck-disabled-checkers 'clojure-cider-typed)))
+                 (flycheck-clojure-setup)))
 
 (req-package discover-clj-refactor
   :require clj-refactor
