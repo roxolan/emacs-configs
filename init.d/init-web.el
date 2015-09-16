@@ -30,9 +30,10 @@
 ;; html templates editing
 
 (req-package emmet-mode
-  :require sgml-mode
+  :require (css-mode sgml-mode)
   :commands emmet-mode
-  :init (req-package-add-hook-execute 'sgml-mode 'emmet-mode))
+  :init (progn (req-package-add-hook-execute 'sgml-mode 'emmet-mode)
+               (req-package-add-hook-execute 'css-mode 'emmet-mode)))
 
 ;; (req-package web-mode :commands web-mode)
 
