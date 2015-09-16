@@ -29,6 +29,11 @@
 
 ;; html templates editing
 
+(req-package emmet-mode
+  :require sgml-mode
+  :commands emmet-mode
+  :init (req-package-add-hook-execute 'sgml-mode 'emmet-mode))
+
 ;; (req-package web-mode :commands web-mode)
 
 (provide 'init-web)
