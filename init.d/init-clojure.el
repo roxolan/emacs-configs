@@ -16,8 +16,8 @@
 (req-package cider
   :require (clojure-mode eldoc)
   :commands cider-mode
-  :init (progn (req-package-add-hook-execute 'clojure-mode #'cider-mode)
-			   (req-package-add-hook-execute 'cider-mode #'eldoc-mode))
+  :init (progn (req-package-hooks-add-execute 'clojure-mode #'cider-mode)
+			   (req-package-hooks-add-execute 'cider-mode #'eldoc-mode))
   :config (setq nrepl-log-messages t))
 
 (req-package slamhound
@@ -27,13 +27,13 @@
 (req-package cider-profile
   :require cider
   :commands cider-profile-mode
-  :init (progn (req-package-add-hook-execute 'cider-mode 'cider-profile-mode)
-               (req-package-add-hook-execute 'cider-repl-mode 'cider-profile-mode)))
+  :init (progn (req-package-hooks-add-execute 'cider-mode 'cider-profile-mode)
+               (req-package-hooks-add-execute 'cider-repl-mode 'cider-profile-mode)))
 
 (req-package clj-refactor
   :require cider
   :commands clj-refactor-mode
-  :init (req-package-add-hook-execute 'cider-mode #'clj-refactor-mode))
+  :init (req-package-hooks-add-execute 'cider-mode #'clj-refactor-mode))
 
 (req-package cljr-helm
   :require clj-refactor
@@ -46,11 +46,11 @@
 (req-package typed-clojure-mode
   :require clojure-mode
   :commands typed-clojure-mode
-  :init (req-package-add-hook-execute 'clojure-mode 'typed-clojure-mode))
+  :init (req-package-hooks-add-execute 'clojure-mode 'typed-clojure-mode))
 
 (req-package flycheck-clojure
   :require (clojure-mode flycheck)
-  :config (progn (req-package-add-hook-execute 'clojure-mode
+  :config (progn (req-package-hooks-add-execute 'clojure-mode
                    (lambda ()
                      (add-to-list 'flycheck-disabled-checkers 'clojure-cider-typed)))
                  (flycheck-clojure-setup)))
@@ -58,7 +58,7 @@
 (req-package discover-clj-refactor
   :require clj-refactor
   :commands clj-refactor-turn-on-discover
-  :init (req-package-add-hook-execute 'clojure-mode 'clj-refactor-turn-on-discover))
+  :init (req-package-hooks-add-execute 'clojure-mode 'clj-refactor-turn-on-discover))
 
 (req-package clojure-snippets
   :require (clojure-mode yasnippet)

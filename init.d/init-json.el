@@ -9,7 +9,7 @@
 
 (req-package json-mode
   :mode ("\\.json$" . json-mode)
-  :init (req-package-add-hook-execute 'json-mode
+  :init (req-package-hooks-add-execute 'json-mode
           (lambda ()
             (make-local-variable 'js-indent-level)
             (setq js-indent-level 2))))

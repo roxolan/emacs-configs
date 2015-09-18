@@ -11,36 +11,36 @@
 
 (req-package litable
   :commands (litable-mode litable-accept-as-pure)
-  :init (req-package-add-hook-execute 'lisp-interaction-mode (lambda () (litable-mode 1))))
+  :init (req-package-hooks-add-execute 'lisp-interaction-mode (lambda () (litable-mode 1))))
 
 (req-package eldoc
   :commands eldoc-mode
-  :init (progn (req-package-add-hook-execute 'emacs-lisp-mode (lambda () (eldoc-mode 1)))
-			   (req-package-add-hook-execute 'lisp-interaction-mode (lambda () (eldoc-mode 1)))))
+  :init (progn (req-package-hooks-add-execute 'emacs-lisp-mode (lambda () (eldoc-mode 1)))
+			   (req-package-hooks-add-execute 'lisp-interaction-mode (lambda () (eldoc-mode 1)))))
 
 (req-package lisp-mode
   :require flycheck
   :commands lisp-mode
-  :config (req-package-add-hook-execute 'emacs-lisp-mode
+  :config (req-package-hooks-add-execute 'emacs-lisp-mode
             (lambda () (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc)))))
 
 (req-package elisp-slime-nav
   :commands elisp-slime-nav-mode
-  :init (progn (req-package-add-hook-execute 'emacs-lisp-mode 'elisp-slime-nav-mode)
-               (req-package-add-hook-execute 'lisp-interaction-mode 'elisp-slime-nav-mode)))
+  :init (progn (req-package-hooks-add-execute 'emacs-lisp-mode 'elisp-slime-nav-mode)
+               (req-package-hooks-add-execute 'lisp-interaction-mode 'elisp-slime-nav-mode)))
 
 (req-package nameless
   :commands nameless-mode-from-hook
-  :init (req-package-add-hook-execute 'emacs-lisp-mode 'nameless-mode-from-hook))
+  :init (req-package-hooks-add-execute 'emacs-lisp-mode 'nameless-mode-from-hook))
 
 (req-package ert-modeline
   :commands ert-modeline-mode
-  :init (req-package-add-hook-execute 'emacs-lisp-mode 'ert-modeline-mode))
+  :init (req-package-hooks-add-execute 'emacs-lisp-mode 'ert-modeline-mode))
 
 (req-package overseer
   :require f
   :commands overseer-mode
-  :init (req-package-add-hook-execute 'emacs-lisp-mode 'overseer-mode))
+  :init (req-package-hooks-add-execute 'emacs-lisp-mode 'overseer-mode))
 
 (req-package el-mock
   :require lisp-mode)

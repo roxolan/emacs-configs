@@ -30,10 +30,10 @@
   :commands dummy-h-mode
   :init (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
   :config (progn
-            (req-package-add-hook-execute 'dummy-h-mode
+            (req-package-hooks-add-execute 'dummy-h-mode
               (lambda ()
                 (setq dummy-h-mode-default-major-mode 'c++-mode)))
-            (req-package-add-hook-execute 'dummy-h-mode
+            (req-package-hooks-add-execute 'dummy-h-mode
               (lambda ()
                 (setq dummy-h-mode-search-limit 60000)))))
 

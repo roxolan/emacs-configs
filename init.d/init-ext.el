@@ -55,7 +55,7 @@
 
 ;; delete trailing whitespaces before saving some buffer
 
-(req-package-add-hook-execute 'before-save 'delete-trailing-whitespace)
+(req-package-hooks-add-execute 'before-save 'delete-trailing-whitespace)
 
 ;; temp file
 
@@ -162,7 +162,7 @@
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-(req-package-add-hook-execute 'find-file (lambda () (setq indent-tabs-mode nil)))
+(req-package-hooks-add-execute 'find-file (lambda () (setq indent-tabs-mode nil)))
 (electric-indent-mode 1)
 
 ;; mark ring tweaks
@@ -270,7 +270,7 @@
 
 ;; ru keys
 
-(req-package-add-hook-execute 'find-file (lambda () (setq default-input-method 'russian-computer)))
+(req-package-hooks-add-execute 'find-file (lambda () (setq default-input-method 'russian-computer)))
 
 ;; expand region
 

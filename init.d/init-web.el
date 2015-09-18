@@ -32,8 +32,8 @@
 (req-package emmet-mode
   :require (css-mode sgml-mode)
   :commands emmet-mode
-  :init (progn (req-package-add-hook-execute 'sgml-mode 'emmet-mode)
-               (req-package-add-hook-execute 'css-mode 'emmet-mode)))
+  :init (progn (req-package-hooks-add-execute 'sgml-mode 'emmet-mode)
+               (req-package-hooks-add-execute 'css-mode 'emmet-mode)))
 
 ;; (req-package web-mode :commands web-mode)
 
