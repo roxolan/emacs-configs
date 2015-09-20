@@ -23,6 +23,7 @@
         downcase-region
         duplicate-thing
         electric-newline-and-maybe-indent
+        emmet-expand-line
         eval-print-last-sexp
         helm-maybe-exit-minibuffer
         helm-show-kill-ring
