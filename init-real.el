@@ -6,6 +6,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("sunrise" . "http://joseito.republika.pl/sunrise-commander/"))
 
+(defconst my-init-dir "~/.emacs.d/init.d")
 (defconst emacs-major-version-rad 1000000)
 
 (defun has-emacs-version (major minor)
@@ -49,15 +50,6 @@
 (require-package 'req-package)
 (require 'req-package)
 
-;; init.d
-
-(defconst my-init-dir "~/.emacs.d/init.d")
-(req-package-force load-dir :config (load-dir-one my-init-dir))
-
-;; finish loading packages
-
-(req-package-finish)
-
 ;; start emacs server
 
 (require 'server)
@@ -68,3 +60,13 @@
 (shell-command "touch ~/.emacs.d/server.lock")
 (add-hook 'kill-emacs-hook (lambda () (shell-command "rm -f ~/.emacs.d/server.lock")))
 (add-hook 'kill-emacs-hook (lambda () (byte-recompile-directory my-init-dir 0 t)))
+
+;; init.d
+
+(req-package-force load-dir
+  :defer 1
+  :init (progn (setq force-load-messages nil)
+               (setq load-dir-debug nil)
+               (setq load-dir-recursive t))
+  :config (progn (load-dir-one my-init-dir)
+                 (req-package-finish)))
