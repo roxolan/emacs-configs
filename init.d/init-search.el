@@ -36,8 +36,10 @@
   :config (progn (setq fiplr-ignored-globs
                        (let* ((GLOBS fiplr-ignored-globs)
                               (ADDITIONAL-DIRS '(".zbuild"
+                                                 ".cljs_rhino_repl"
                                                  ".cask"
                                                  "target"
+                                                 "out"
                                                  "compiled"))
                               (ADDITIONAL-FILES '("*.d" "*.elc" "*.dat" "*.raw" "*.wav" "*.class" "*.cache" "*.o"))
                               (CURRENT-DIRS (if GLOBS (cadar GLOBS) nil))
