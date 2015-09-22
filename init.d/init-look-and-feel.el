@@ -18,7 +18,6 @@
 ;; some very useful extension
 
 (req-package nyan-mode
-  :defer 5
   :config (progn (setq nyan-animation-frame-interval 0.1)
                  (setq nyan-bar-length 8)
                  (setq nyan-wavy-trail t)
@@ -63,13 +62,12 @@
 
 ;; theme
 
-(defun gen-my-theme-form (file theme &optional package)
-  (list (if package package file)
+(defun gen-my-theme-form (package theme)
+  (list package
         theme
-        (append (list 'req-package file)
+        (append (list 'req-package package)
                 (list :require 'smart-mode-line)
-                (list :defer 2)
-                (if package (list :ensure package) nil))))
+                (list :config (list 'load-theme (list 'quote theme) t)))))
 
 (defconst my-favourite-themes (vector (gen-my-theme-form 'soothe-theme 'soothe)
                                       (gen-my-theme-form 'gotham-theme 'gotham)
@@ -84,18 +82,16 @@
                                       (gen-my-theme-form 'mbo70s-theme 'mbo70s)
                                       (gen-my-theme-form 'nzenburn-theme 'nzenburn)
                                       (gen-my-theme-form 'warm-night-theme 'warm-night)
-                                      (gen-my-theme-form 'odersky-theme 'odersky 'sublime-themes)
-                                      (gen-my-theme-form 'brin-theme 'brin 'sublime-themes)
-                                      (gen-my-theme-form 'junio-theme 'junio 'sublime-themes)
-                                      (gen-my-theme-form 'wilson-theme 'wilson 'sublime-themes)
-                                      (gen-my-theme-form 'plan9-theme 'plan9)
-                                      ))
+                                      (gen-my-theme-form 'sublime-themes 'odersky)
+                                      (gen-my-theme-form 'sublime-themes 'brin)
+                                      (gen-my-theme-form 'sublime-themes 'junio)
+                                      (gen-my-theme-form 'sublime-themes 'wilson)
+                                      (gen-my-theme-form 'plan9-theme 'plan9)))
 
-(let ((theme-form (elt my-favourite-themes (random (length my-favourite-themes)))))
-  (print (concat "selected theme: "
-                 (symbol-name (car theme-form))
-                 " : "
-                 (symbol-name (car (cdr theme-form)))))
+(let* ((theme-form (elt my-favourite-themes (random (length my-favourite-themes))))
+       (package (symbol-name (car theme-form)))
+       (theme (symbol-name (car (cdr theme-form)))))
+  (print (format "selected theme: %s %s" package theme))
   (eval (car (cdr (cdr theme-form)))))
 
 ;; anzu
