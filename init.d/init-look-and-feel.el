@@ -62,31 +62,34 @@
 
 ;; theme
 
-(defun gen-my-theme-form (package theme)
-  (list package
-        theme
-        (append (list 'req-package package)
-                (list :require 'smart-mode-line)
-                (list :config (list 'load-theme (list 'quote theme) t)))))
+(defun gen-theme-form (theme &optional package)
+  (let ((PACKAGE (if package
+                     package
+                   (intern (format "%s-theme" theme)))))
+    (list PACKAGE
+          theme
+          (append (list 'req-package PACKAGE)
+                  (list :require 'smart-mode-line)
+                  (list :config (list 'load-theme (list 'quote theme) t))))))
 
-(defconst my-favourite-themes (vector (gen-my-theme-form 'soothe-theme 'soothe)
-                                      (gen-my-theme-form 'gotham-theme 'gotham)
-                                      (gen-my-theme-form 'zerodark-theme 'zerodark)
-                                      (gen-my-theme-form 'gruvbox-theme 'gruvbox)
-                                      (gen-my-theme-form 'firecode-theme 'firecode)
-                                      (gen-my-theme-form 'busybee-theme 'busybee)
-                                      (gen-my-theme-form 'firebelly-theme 'firebelly)
-                                      (gen-my-theme-form 'darktooth-theme 'darktooth)
-                                      (gen-my-theme-form 'hc-zenburn-theme 'hc-zenburn)
-                                      (gen-my-theme-form 'jazz-theme 'jazz)
-                                      (gen-my-theme-form 'mbo70s-theme 'mbo70s)
-                                      (gen-my-theme-form 'nzenburn-theme 'nzenburn)
-                                      (gen-my-theme-form 'warm-night-theme 'warm-night)
-                                      (gen-my-theme-form 'sublime-themes 'odersky)
-                                      (gen-my-theme-form 'sublime-themes 'brin)
-                                      (gen-my-theme-form 'sublime-themes 'junio)
-                                      (gen-my-theme-form 'sublime-themes 'wilson)
-                                      (gen-my-theme-form 'plan9-theme 'plan9)))
+(defconst my-favourite-themes (vector (gen-theme-form 'soothe)
+                                      (gen-theme-form 'gotham)
+                                      (gen-theme-form 'zerodark)
+                                      (gen-theme-form 'gruvbox)
+                                      (gen-theme-form 'firecode)
+                                      (gen-theme-form 'busybee)
+                                      (gen-theme-form 'firebelly)
+                                      (gen-theme-form 'darktooth)
+                                      (gen-theme-form 'hc-zenburn)
+                                      (gen-theme-form 'jazz)
+                                      (gen-theme-form 'mbo70s)
+                                      (gen-theme-form 'nzenburn)
+                                      (gen-theme-form 'warm-night)
+                                      (gen-theme-form 'odersky 'sublime-themes)
+                                      (gen-theme-form 'brin 'sublime-themes)
+                                      (gen-theme-form 'junio 'sublime-themes)
+                                      (gen-theme-form 'wilson 'sublime-themes)
+                                      (gen-theme-form 'plan9)))
 
 (let* ((theme-form (elt my-favourite-themes (random (length my-favourite-themes))))
        (package (symbol-name (car theme-form)))
