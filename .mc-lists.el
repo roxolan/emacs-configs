@@ -35,6 +35,7 @@
         kill-region
         move-text-down
         move-text-up
+        nameless-insert-name
         org-beginning-of-line
         org-end-of-line
         org-insert-todo-heading
