@@ -4,6 +4,10 @@
 (unless (server-running-p)
   (server-start))
 
+;; recompile configs
+
+(add-hook 'kill-emacs-hook (lambda () (byte-recompile-directory my-init-dir 0 t)))
+
 ;; elpa
 
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -53,15 +57,8 @@
 
 ;; req-package
 
-(setq req-package-log-level 'trace)
-;; (setq debug-on-error t)
 (require-package 'req-package)
 (require 'req-package)
-
-;;
-
-(defconst emacs-shell-buffer "*emacs-shell*")
-(add-hook 'kill-emacs-hook (lambda () (byte-recompile-directory my-init-dir 0 t)))
 
 ;; init.d
 
