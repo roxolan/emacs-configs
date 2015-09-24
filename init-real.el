@@ -1,3 +1,9 @@
+;; start emacs server
+
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
 ;; elpa
 
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -47,18 +53,14 @@
 
 ;; req-package
 
+(setq req-package-log-level 'trace)
+;; (setq debug-on-error t)
 (require-package 'req-package)
 (require 'req-package)
 
-;; start emacs server
-
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+;;
 
 (defconst emacs-shell-buffer "*emacs-shell*")
-(shell-command "touch ~/.emacs.d/server.lock")
-(add-hook 'kill-emacs-hook (lambda () (shell-command "rm -f ~/.emacs.d/server.lock")))
 (add-hook 'kill-emacs-hook (lambda () (byte-recompile-directory my-init-dir 0 t)))
 
 ;; init.d
