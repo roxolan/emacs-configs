@@ -15,10 +15,12 @@
 
 (req-package cider
   :require (clojure-mode eldoc)
-  :commands cider-mode
+  :commands cider-mode cider-jack-in-clojurescript
   :init (progn (req-package-hooks-add-execute 'clojure-mode #'cider-mode)
 			   (req-package-hooks-add-execute 'cider-mode #'eldoc-mode))
-  :config (setq nrepl-log-messages t))
+  :config
+  (setq nrepl-log-messages t)
+  (define-key cider-mode-map (kbd "C-c M-J") 'cider-jack-in-clojurescript))
 
 (req-package slamhound
   :require cider
@@ -50,15 +52,7 @@
 
 (req-package flycheck-clojure
   :require (clojure-mode flycheck)
-  :config (progn (req-package-hooks-add-execute 'clojure-mode
-                   (lambda ()
-                     (add-to-list 'flycheck-disabled-checkers 'clojure-cider-typed)))
-                 (flycheck-clojure-setup)))
-
-(req-package discover-clj-refactor
-  :require clj-refactor
-  :commands clj-refactor-turn-on-discover
-  :init (req-package-hooks-add-execute 'clojure-mode 'clj-refactor-turn-on-discover))
+  :config (flycheck-clojure-setup))
 
 (req-package clojure-snippets
   :require (clojure-mode yasnippet)
