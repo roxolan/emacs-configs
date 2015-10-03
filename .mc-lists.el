@@ -15,6 +15,7 @@
         c-electric-star
         c-indent-line-or-region
         c-toggle-electric-state
+        cljr-slash
         comint-delchar-or-maybe-eof
         comint-interrupt-subjob
         comint-previous-input
