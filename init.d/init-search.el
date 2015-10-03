@@ -41,7 +41,7 @@
                                                  "target"
                                                  "out"
                                                  "compiled"))
-                              (ADDITIONAL-FILES '("*.d" "*.elc" "*.dat" "*.raw" "*.wav" "*.class" "*.cache" "*.o"))
+                              (ADDITIONAL-FILES '("*.DS_Store" "*.d" "*.elc" "*.dat" "*.raw" "*.wav" "*.class" "*.cache" "*.o"))
                               (CURRENT-DIRS (if GLOBS (cadar GLOBS) nil))
                               (CURRENT-FILES (if GLOBS (cadadr GLOBS) nil))
                               (NEW-DIRS (append CURRENT-DIRS ADDITIONAL-DIRS))
