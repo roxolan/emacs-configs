@@ -44,3 +44,4 @@ saved-packages
 /check-protoc.sh
 /.trello
 thumbs/
+/*/flycheck_*.el
