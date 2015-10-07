@@ -52,7 +52,14 @@
 
 (req-package flycheck-clojure
   :require (clojure-mode flycheck)
-  :config (flycheck-clojure-setup))
+  :config
+  (req-package-hooks-add-execute 'clojure-mode
+    (lambda ()
+      ;; currently not working with cljs
+      (add-to-list 'flycheck-disabled-checkers 'clojure-cider-typed)
+      (add-to-list 'flycheck-disabled-checkers 'clojure-cider-kibit)
+      (add-to-list 'flycheck-disabled-checkers 'clojure-cider-eastwood)))
+  (flycheck-clojure-setup))
 
 (req-package clojure-snippets
   :require (clojure-mode yasnippet)
