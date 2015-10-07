@@ -51,6 +51,7 @@
   :init (req-package-hooks-add-execute 'clojure-mode 'typed-clojure-mode))
 
 (req-package flycheck-clojure
+  :disabled t
   :require (clojure-mode flycheck)
   :config
   (req-package-hooks-add-execute 'clojure-mode

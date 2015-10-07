@@ -11,8 +11,9 @@
 
            ;; fonts
 
-           (set-default-font "SourceCodePro-13" t)
-           (set-fontset-font "fontset-default" 'cyrillic-iso8859-5 '("Liberation Mono" . "iso10646-1"))
+           ;; FIXME install this fonts somehow first
+           ;; (set-default-font "SourceCodePro-13" t)
+           ;; (set-fontset-font "fontset-default" 'cyrillic-iso8859-5 '("Liberation Mono" . "iso10646-1"))
 
            ;; aur interface
            (req-package aurel :commands aurel-package-search)))
