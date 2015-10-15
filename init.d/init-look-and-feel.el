@@ -77,7 +77,6 @@
                                (gen-theme-form 'gotham)
                                (gen-theme-form 'zerodark)
                                (gen-theme-form 'gruvbox)
-                               (gen-theme-form 'busybee)
                                (gen-theme-form 'firebelly)
                                (gen-theme-form 'darktooth)
                                (gen-theme-form 'hc-zenburn)
