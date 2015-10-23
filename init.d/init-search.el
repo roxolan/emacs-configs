@@ -38,6 +38,7 @@
                               (ADDITIONAL-DIRS '(".zbuild"
                                                  ".cljs_rhino_repl"
                                                  ".cask"
+                                                 ".repl"
                                                  "target"
                                                  "out"
                                                  "compiled"))
