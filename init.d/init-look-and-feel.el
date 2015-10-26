@@ -85,6 +85,7 @@
                                (gen-theme-form 'mbo70s)
                                (gen-theme-form 'nzenburn)
                                (gen-theme-form 'warm-night)
+                               (gen-theme-form 'paper)
                                (gen-theme-form 'odersky 'sublime-themes)
                                (gen-theme-form 'brin 'sublime-themes)
                                (gen-theme-form 'junio 'sublime-themes)
