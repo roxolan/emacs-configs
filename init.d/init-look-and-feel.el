@@ -80,6 +80,7 @@
                                (gen-theme-form 'firebelly)
                                (gen-theme-form 'darktooth)
                                (gen-theme-form 'hc-zenburn)
+                               (gen-theme-form 'dracula)
                                (gen-theme-form 'jazz)
                                (gen-theme-form 'cyberpunk)
                                (gen-theme-form 'mbo70s)
