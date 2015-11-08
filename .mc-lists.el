@@ -34,6 +34,7 @@
         insert-register
         keyboard-quit
         kill-region
+        markdown-exdent-or-delete
         move-text-down
         move-text-up
         nameless-insert-name
