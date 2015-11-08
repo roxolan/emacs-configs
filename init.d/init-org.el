@@ -11,7 +11,8 @@
                  (setq org-capture-bookmark t)
                  (setq org-refile-use-outline-path 'file)
                  (setq org-startup-folded 'showeverything)
-                 (setq org-log-done 'note)))
+                 (setq org-log-done 'note)
+                 (define-key org-mode-map (kbd "C-M-\\") 'org-indent-region)))
 
 (req-package org-bullets
   :require org
