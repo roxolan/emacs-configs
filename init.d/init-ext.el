@@ -24,6 +24,11 @@
 			   (define-key ctl-x-map [(control ?=)] 'zoom-in/out)
 			   (define-key ctl-x-map [(control ?0)] 'zoom-in/out)))
 
+;; process management
+
+(req-package list-processes+
+  :bind ("<f2>" . list-processes+))
+
 ;; camcoder
 
 (req-package camcorder :commands camcorder-record)
