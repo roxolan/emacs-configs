@@ -24,6 +24,11 @@
                  (nyan-mode)
                  (nyan-start-animation)))
 
+;; beacon
+
+(req-package beacon
+  :config (beacon-mode))
+
 ;; pretty lambda
 
 (req-package pretty-lambdada
