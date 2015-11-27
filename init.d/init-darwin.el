@@ -9,8 +9,10 @@
 		   (setenv "ANDROID_HOME" "/usr/local/opt/android-sdk")
 		   (setenv "ANDROID_NDK" "/usr/local/opt/android-ndk")
            (add-to-list 'exec-path "/usr/local/bin")
-
-           (set-default-font "Hack-12" t)
-           (set-fontset-font "fontset-default" 'cyrillic-iso8859-5 '("Monaco-12" . "iso10646-1"))))
+           ;; (set-default-font "Hack-12" t)
+           ;; (set-default-font "Liberation Mono-12" t)
+           ;; (set-default-font "Oxygen Mono-12" t)
+           ;; (set-default-font "Anonymous-12" t)
+           (set-default-font "Source Code Pro-12" t)))
 
 (provide 'init-darwin)
