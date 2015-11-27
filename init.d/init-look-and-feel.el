@@ -146,7 +146,7 @@
   :defer t
   :init
   (add-to-list 'my-random-themes 'spolsky)
-  (add-to-list 'my-random-themes 'graha)
+  (add-to-list 'my-random-themes 'graham)
   (add-to-list 'my-random-themes 'odersky)
   (add-to-list 'my-random-themes 'junio)
   (add-to-list 'my-random-themes 'wilson))
@@ -156,6 +156,8 @@
     (let* ((themes-vec (vconcat my-random-themes))
            (len        (length themes-vec))
            (selection  (aref themes-vec (random len))))
+      (dolist (theme custom-enabled-themes)
+        (disable-theme theme))
       (message "selected theme %s" selection)
       (load-theme selection t)))
 
