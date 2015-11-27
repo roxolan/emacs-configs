@@ -16,11 +16,7 @@
   :mode (("\\.cpp\\'" . c++-mode)
          ("\\.hpp\\'" . c++-mode)
          ("\\.h\\'" . c++-mode))
-  :config (progn (key-chord-define c++-mode-map ";;"  "\C-e;")
-				 (key-chord-define c++-mode-map "//"  "\C-e //")
-				 (key-chord-define c++-mode-map "{}"  "{\n\n}\C-p\t")
-				 (key-chord-define c++-mode-map "(}"  "() {\n\n}\C-p\t")
-                 (c-add-style "cc-style" cc-style)
+  :config (progn (c-add-style "cc-style" cc-style)
                  (setq-default c-basic-offset 4)
                  (setq-default c-default-style "cc-style")))
 
@@ -45,9 +41,5 @@
   :config
   (progn (setq gdb-many-windows t)
          (setq gdb-show-main t)))
-
-;; rtags
-
-(req-package rtags :require cc-mode)
 
 (provide 'init-cc)
