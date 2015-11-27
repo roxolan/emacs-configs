@@ -170,6 +170,10 @@
 (req-package-hooks-add-execute 'find-file (lambda () (setq indent-tabs-mode nil)))
 (electric-indent-mode 1)
 
+;; show keystrockes early
+
+(setq echo-keystrokes 0.2)
+
 ;; mark ring tweaks
 
 (setq set-mark-command-repeat-pop t)
