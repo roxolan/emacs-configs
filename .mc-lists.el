@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         ace-jump-word-mode
+        beginning-of-buffer
         c-electric-brace
         c-electric-colon
         c-electric-delete-forward
@@ -43,6 +44,7 @@
         org-insert-todo-heading
         org-kill-line
         org-meta-return
+        org-metaleft
         org-metaright
         org-self-insert-command
         org-set-tags-command
@@ -58,6 +60,7 @@
         sp-kill-word
         transpose-words
         upcase-region
+        wdired-finish-edit
         yaml-electric-backspace
         yas-expand
         ))
