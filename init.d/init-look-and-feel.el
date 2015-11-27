@@ -67,40 +67,97 @@
 
 ;; theme
 
-(defun gen-theme-form (theme &optional package)
-  (let ((PACKAGE (if package
-                     package
-                   (intern (format "%s-theme" theme)))))
-    (list PACKAGE
-          theme
-          (append (list 'req-package PACKAGE)
-                  (list :require 'smart-mode-line)
-                  (list :config (list 'load-theme (list 'quote theme) t))))))
+(defvar my-random-themes nil)
 
-(defconst my-favourite-themes (vector
-                               (gen-theme-form 'soothe)
-                               (gen-theme-form 'gotham)
-                               (gen-theme-form 'gruvbox)
-                               (gen-theme-form 'firebelly)
-                               (gen-theme-form 'darktooth)
-                               (gen-theme-form 'hc-zenburn)
-                               (gen-theme-form 'dracula)
-                               (gen-theme-form 'jazz)
-                               (gen-theme-form 'cyberpunk)
-                               (gen-theme-form 'mbo70s)
-                               (gen-theme-form 'hc-zenburn)
-                               (gen-theme-form 'spolsky 'sublime-themes)
-                               (gen-theme-form 'graham'sublime-themes)
-                               (gen-theme-form 'odersky 'sublime-themes)
-                               (gen-theme-form 'junio 'sublime-themes)
-                               (gen-theme-form 'wilson 'sublime-themes)
-                               (gen-theme-form 'plan9)))
+(req-package soothe-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'soothe))
 
-(let* ((theme-form (elt my-favourite-themes (random (length my-favourite-themes))))
-       (package (symbol-name (car theme-form)))
-       (theme (symbol-name (car (cdr theme-form)))))
-  (print (format "selected theme: %s %s" package theme))
-  (eval (car (cdr (cdr theme-form)))))
+(req-package gotham-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'gotham))
+
+(req-package gruvbox-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'gruvbox))
+
+(req-package firebelly-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'firebelly))
+
+(req-package darktooth-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'darktooth))
+
+(req-package hc-zenburn-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'hc-zenburn))
+
+(req-package dracula-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'dracula))
+
+(req-package jazz-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'jazz))
+
+(req-package cyberpunk-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'cyberpunk))
+
+(req-package mbo70s-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'mbo70s))
+
+(req-package hc-zenburn-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'hc-zenburn))
+
+(req-package plan9-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'plan9))
+
+(req-package sublime-themes
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'spolsky)
+  (add-to-list 'my-random-themes 'graha)
+  (add-to-list 'my-random-themes 'odersky)
+  (add-to-list 'my-random-themes 'junio)
+  (add-to-list 'my-random-themes 'wilson))
+
+(defun select-theme ()
+  (interactive)
+    (let* ((themes-vec (vconcat my-random-themes))
+           (len        (length themes-vec))
+           (selection  (aref themes-vec (random len))))
+      (message "selected theme %s" selection)
+      (load-theme selection t)))
 
 ;; anzu
 

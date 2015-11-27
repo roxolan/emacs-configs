@@ -47,13 +47,9 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require-package 'el-get)
 (use-package el-get
-  :functions
-  el-get
-  :defines
-  el-get-recipe-path
   :config
-  (progn (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-         (el-get 'sync)))
+  (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
+  (el-get 'sync))
 
 ;; req-package
 
@@ -64,8 +60,10 @@
 
 (req-package-force load-dir
   :defer 1
-  :init (progn (setq force-load-messages nil)
-               (setq load-dir-debug nil)
-               (setq load-dir-recursive t))
-  :config (progn (load-dir-one my-init-dir)
-                 (req-package-finish)))
+  :init
+  (setq force-load-messages nil)
+  (setq load-dir-debug nil)
+  (setq load-dir-recursive t)
+  :config
+  (load-dir-one my-init-dir)
+  (req-package-finish))
