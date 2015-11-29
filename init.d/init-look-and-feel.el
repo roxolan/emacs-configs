@@ -187,11 +187,6 @@
   :config
   (scroll-bar-mode -1))
 
-;; turn off sctartup screen
-
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-message t)
-
 ;; miscaleous tweeks
 
 (setq make-pointer-invisible nil)
