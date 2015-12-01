@@ -219,7 +219,7 @@
 
 (req-package ace-jump-mode
   :bind (("M-/" . ace-jump-word-mode)
-         ("s-c" . ace-jump-char-mode)
+         ("M-'" . ace-jump-char-mode)
          ("M-g M-g" . ace-jump-line-mode)))
 
 ;; quickly jump to links

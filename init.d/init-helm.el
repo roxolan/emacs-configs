@@ -78,9 +78,7 @@
 
 (req-package helm-make
   :commands helm-make
-  :require makefile-runner
-  :init (global-set-key (kbd "s-B")
-                        (lambda () (interactive) (helm-make (makefile-runner--find-makefile)))))
+  :require makefile-runner)
 
 ;; helm wgrep
 
