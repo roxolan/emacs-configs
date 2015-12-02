@@ -67,7 +67,9 @@
   :config (clojure-snippets-initialize))
 
 (req-package align-cljlet
-  :require clojure-mode)
+  :require clojure-mode
+  :config
+  (define-key clojure-mode-map (kbd "C-M-<tab>") 'align-cljlet))
 
 (req-package cljsbuild-mode
   :commands cljsbuild-start)
