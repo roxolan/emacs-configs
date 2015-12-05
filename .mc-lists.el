@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         ace-jump-word-mode
+        align-cljlet
         beginning-of-buffer
         c-electric-brace
         c-electric-colon
@@ -41,15 +42,18 @@
         nameless-insert-name
         org-beginning-of-line
         org-end-of-line
+        org-indent-region
         org-insert-todo-heading
         org-kill-line
         org-meta-return
         org-metaleft
         org-metaright
+        org-priority
         org-self-insert-command
         org-set-tags-command
         org-shiftleft
         org-shiftright
+        org-yank
         sgml-slash
         smex
         sp--self-insert-command
