@@ -15,6 +15,12 @@
 (req-package multifiles
   :bind ("C-!" . mf/mirror-region-in-multifile))
 
+;; proced
+
+(req-package proced
+  :commands proced
+  :config (setq-default proced-filter 'all))
+
 ;; zoom frame
 
 (req-package zoom-frm
