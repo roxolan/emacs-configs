@@ -63,6 +63,10 @@
          (add-to-list 'sml/hidden-modes " FIC")
          (add-to-list 'sml/hidden-modes " Abbrev")
          (add-to-list 'sml/hidden-modes " ARev")
+         (add-to-list 'sml/hidden-modes " SliNav")
+         (add-to-list 'sml/hidden-modes " ElDoc")
+         (add-to-list 'sml/hidden-modes " company")
+         (add-to-list 'sml/hidden-modes " overseer")
          (sml/setup)))
 
 ;; theme
