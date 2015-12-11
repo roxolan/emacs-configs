@@ -72,6 +72,16 @@
 ;; theme
 
 (defvar my-random-themes nil)
+(defvar my-theme-customizations (make-hash-table :test 'equal))
+
+(defun add-theme (theme &optional custom-fn)
+  (add-to-list 'my-random-themes 'wilson)
+  (when custom-fn
+    (puthash theme custom-fn my-theme-customizations)))
+
+(defun normalize-faces (faces)
+  (dolist (face faces)
+    (set-face-attribute face nil :height 1)))
 
 (req-package soothe-theme
   :require smart-mode-line
@@ -125,7 +135,14 @@
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'cyberpunk))
+  (add-theme 'cyberpunk
+             (lambda ()
+               (add-hook 'org-mode-hook
+                         (lambda ()
+                           (normalize-faces '(org-level-1
+                                              org-level-2
+                                              org-level-3
+                                              org-document-title)))))))
 
 (req-package mbo70s-theme
   :require smart-mode-line
@@ -164,6 +181,13 @@
         (disable-theme theme))
       (message "selected theme %s" selection)
       (load-theme selection t)))
+
+(defun load-theme-advice (theme &optional no-confirm no-enable)
+  (let* ((f (gethash theme my-theme-customizations)))
+    (when f
+      (funcall f))))
+
+(advice-add 'load-theme :after #'load-theme-advice)
 
 ;; anzu
 
