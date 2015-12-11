@@ -5,6 +5,7 @@
       '(
         ace-jump-word-mode
         align-cljlet
+        async-shell-command
         beginning-of-buffer
         c-electric-brace
         c-electric-colon
@@ -23,6 +24,7 @@
         comint-previous-input
         comment-dwim
         complete-symbol
+        count-words-region
         downcase-region
         duplicate-thing
         electric-newline-and-maybe-indent
@@ -40,6 +42,9 @@
         move-text-down
         move-text-up
         nameless-insert-name
+        org-agenda-next-line
+        org-agenda-previous-line
+        org-agenda-schedule
         org-beginning-of-line
         org-end-of-line
         org-indent-region
@@ -49,6 +54,7 @@
         org-metaleft
         org-metaright
         org-priority
+        org-save-all-org-buffers
         org-self-insert-command
         org-set-tags-command
         org-shiftleft
@@ -67,6 +73,7 @@
         wdired-finish-edit
         yaml-electric-backspace
         yas-expand
+        zygospore-toggle-delete-other-windows
         ))
 
 (setq mc/cmds-to-run-once
