@@ -7,6 +7,7 @@
 (setq custom-file my-custom-file)
 (setq package-enable-at-startup nil)
 (load my-custom-file t)
+(setq auto-save-default nil)
 (setq make-backup-files nil)
 (put 'erase-buffer 'disabled nil)
 
