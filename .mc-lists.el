@@ -45,6 +45,8 @@
         nameless-insert-name
         org-agenda-next-line
         org-agenda-previous-line
+        org-agenda-priority-up
+        org-agenda-priority-down
         org-agenda-schedule
         org-beginning-of-line
         org-end-of-line
@@ -56,6 +58,7 @@
         org-metaright
         org-priority
         org-save-all-org-buffers
+        org-schedule
         org-self-insert-command
         org-set-tags-command
         org-shiftleft
