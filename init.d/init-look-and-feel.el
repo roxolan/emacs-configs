@@ -160,7 +160,20 @@
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'plan9))
+  (add-theme 'plan9
+             (lambda ()
+               (add-hook 'org-mode-hook
+                         (lambda ()
+                           (set-face-attribute 'org-level-1 nil :family "menlo")
+                           (set-face-attribute 'org-level-1 nil :underline nil)
+                           (set-face-attribute 'org-level-2 nil :family "menlo")
+                           (set-face-attribute 'org-level-2 nil :underline nil)
+                           (set-face-attribute 'org-level-3 nil :family "menlo")
+                           (set-face-attribute 'org-level-3 nil :underline nil)
+                           (normalize-faces '(org-level-1
+                                              org-level-2
+                                              org-level-3
+                                              org-document-title)))))))
 
 (req-package sublime-themes
   :require smart-mode-line
