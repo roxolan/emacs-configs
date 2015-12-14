@@ -37,4 +37,11 @@
 
 ;; (req-package web-mode :commands web-mode)
 
+(req-package scss-mode
+  :mode ("\\.scss\\'" . scss-mode))
+
+(req-package css-mode
+  :defer t
+  :config (setq css-indent-offset 2))
+
 (provide 'init-web)
