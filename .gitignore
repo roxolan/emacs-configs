@@ -45,3 +45,4 @@ saved-packages
 /.trello
 thumbs/
 /*/flycheck_*.el
+*.eld

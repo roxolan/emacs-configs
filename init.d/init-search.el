@@ -19,40 +19,14 @@
 		NEWACC
 	  (find-upper-vcs-root UPPER NEWACC))))
 
-(defun find-file-in-vcs-directory ()
-  (interactive)
-  (with-temp-buffer
-	(progn (setq default-directory (find-upper-vcs-root default-directory default-directory))
-		   (fiplr-find-file))))
-
-(defun find-directory-in-vcs-directory ()
-  (interactive)
-  (with-temp-buffer
-	(progn (setq default-directory (find-upper-vcs-root default-directory default-directory))
-		   (fiplr-find-directory))))
-
-(req-package fiplr
+(req-package projectile
   :require key-chord
-  :config (progn (setq fiplr-ignored-globs
-                       (let* ((GLOBS fiplr-ignored-globs)
-                              (ADDITIONAL-DIRS '(".zbuild"
-                                                 ".cljs_rhino_repl"
-                                                 ".cask"
-                                                 ".repl"
-                                                 "target"
-                                                 "out"
-                                                 "compiled"))
-                              (ADDITIONAL-FILES '("*.DS_Store" "*.d" "*.elc" "*.dat" "*.raw" "*.wav" "*.class" "*.cache" "*.o"))
-                              (CURRENT-DIRS (if GLOBS (cadar GLOBS) nil))
-                              (CURRENT-FILES (if GLOBS (cadadr GLOBS) nil))
-                              (NEW-DIRS (append CURRENT-DIRS ADDITIONAL-DIRS))
-                              (NEW-FILES (append CURRENT-FILES ADDITIONAL-FILES)))
-                         (list (cons 'directories (list NEW-DIRS))
-                               (cons 'files (list NEW-FILES))))))
-  :bind (("C-x f" . find-file-in-vcs-directory)
-         ("C-x d" . find-directory-in-vcs-directory))
-  :init (progn (key-chord-define-global "xf" 'find-file-in-vcs-directory)
-			   (key-chord-define-global "xd" 'find-directory-in-vcs-directory)))
+  :bind (("C-x f" . projectile-find-file)
+         ("C-x d" . projectile-find-dir))
+  :config
+  (key-chord-define-global "xf" 'projectile-find-file)
+  (key-chord-define-global "xd" 'projectile-find-dir)
+  (projectile-global-mode))
 
 ;; visual regexp
 
