@@ -3,8 +3,19 @@
 ;; haskell mode
 
 (req-package haskell-mode
-  :mode "\\.hs$"
-  :config (progn (req-package-hooks-add-execute 'haskell-mode 'turn-on-haskell-doc-mode)
-                 (req-package-hooks-add-execute 'haskell-mode 'turn-on-haskell-indent)))
+  :mode (("\\.hs$" . haskell-mode)
+         (".xmobarrc$" . haskell-mode))
+  :config
+  (req-package-hooks-add-execute 'haskell-mode 'turn-on-haskell-doc-mode)
+  (req-package-hooks-add-execute 'haskell-mode 'turn-on-haskell-indentation))
+
+(req-package cabal-mode
+  :mode ("\\.cabal$" . cabal-mode))
+
+(req-package company-ghc
+  :require haskell-mode company
+  :config
+  ;; (req-package-hooks-add-execute 'haskell-mode (lambda () (ghc-init)))
+  (add-to-list 'company-backends 'company-ghc))
 
 (provide 'init-haskell)
