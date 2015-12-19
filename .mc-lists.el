@@ -38,6 +38,7 @@
         insert-register
         keyboard-quit
         kill-region
+        magit-stage
         markdown-exdent-or-delete
         move-text-down
         move-text-up
