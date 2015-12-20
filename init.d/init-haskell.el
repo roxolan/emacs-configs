@@ -23,4 +23,7 @@
   :commands hindent-mode
   :init (req-package-hooks-add-execute 'haskell-mode 'hindent-mode))
 
+(req-package haskell-snippets
+  :require haskell-mode yasnippet)
+
 (provide 'init-haskell)
