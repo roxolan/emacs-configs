@@ -15,7 +15,7 @@
 (req-package company-ghc
   :require haskell-mode company
   :config
-  ;; (req-package-hooks-add-execute 'haskell-mode (lambda () (ghc-init)))
+  (req-package-hooks-add-execute 'haskell-mode (lambda () (ghc-init)))
   (add-to-list 'company-backends 'company-ghc))
 
 (provide 'init-haskell)
