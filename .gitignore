@@ -46,3 +46,4 @@ saved-packages
 thumbs/
 /*/flycheck_*.el
 *.eld
+*.cache
