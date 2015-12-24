@@ -44,4 +44,7 @@
   :defer t
   :config (setq css-indent-offset 2))
 
+(req-package django-mode
+  :mode ("\\.djhtml\\'" . django-html-mode))
+
 (provide 'init-web)
