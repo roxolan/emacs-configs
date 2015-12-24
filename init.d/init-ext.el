@@ -292,7 +292,7 @@
 (req-package expand-region
   :require key-chord
   :init (key-chord-define-global "xx" 'er/expand-region)
-  :bind ("C-=" . er/expand-region))
+  :bind ("M-=" . er/expand-region))
 
 ;; desc unbound keys
 
