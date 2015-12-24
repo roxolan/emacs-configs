@@ -304,4 +304,9 @@
   :config
   (global-set-key (kbd "s-P") 'rotate-layout))
 
+;; rectangles
+
+(req-package rectangle-utils
+  :commands extend-rectangle-to-end)
+
 (provide 'init-ext)
