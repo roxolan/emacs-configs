@@ -307,6 +307,6 @@
 ;; rectangles
 
 (req-package rectangle-utils
-  :commands extend-rectangle-to-end)
+  :bind ("C-x r e" . extend-rectangle-to-end))
 
 (provide 'init-ext)
