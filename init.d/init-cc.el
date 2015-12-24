@@ -12,13 +12,13 @@
     (c-offsets-alist . ((innamespace . [0])))))
 
 (req-package cc-mode
-  :require key-chord
   :mode (("\\.cpp\\'" . c++-mode)
          ("\\.hpp\\'" . c++-mode)
          ("\\.h\\'" . c++-mode))
-  :config (progn (c-add-style "cc-style" cc-style)
-                 (setq-default c-basic-offset 4)
-                 (setq-default c-default-style "cc-style")))
+  :config
+  (c-add-style "cc-style" cc-style)
+  (setq-default c-basic-offset 4)
+  (setq-default c-default-style "cc-style"))
 
 ;; detect mode for .h file
 
@@ -36,10 +36,9 @@
 ;; gdb
 
 (req-package gdb-mi
-  :require
-  cc-mode
+  :require cc-mode
   :config
-  (progn (setq gdb-many-windows t)
-         (setq gdb-show-main t)))
+  (setq gdb-many-windows t)
+  (setq gdb-show-main t))
 
 (provide 'init-cc)
