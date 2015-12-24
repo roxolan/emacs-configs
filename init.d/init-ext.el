@@ -291,8 +291,8 @@
 
 (req-package expand-region
   :require key-chord
-  :init (key-chord-define-global "xx" 'er/expand-region)
-  :bind ("M-=" . er/expand-region))
+  :bind ("M-=" . er/expand-region)
+  :init (eval-after-load 'dired '(define-key dired-mode-map (kbd "M-=") 'er/expand-region)))
 
 ;; desc unbound keys
 
