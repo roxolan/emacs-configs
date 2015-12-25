@@ -58,6 +58,7 @@
 
 ;; init.d
 
+(random t)
 (req-package-force load-dir
   :defer 1
   :init
