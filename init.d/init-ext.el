@@ -291,8 +291,8 @@
 
 (req-package expand-region
   :require key-chord
-  :init (key-chord-define-global "xx" 'er/expand-region)
-  :bind ("C-=" . er/expand-region))
+  :bind ("M-=" . er/expand-region)
+  :init (eval-after-load 'dired '(define-key dired-mode-map (kbd "M-=") 'er/expand-region)))
 
 ;; desc unbound keys
 
@@ -303,5 +303,10 @@
 (req-package rotate
   :config
   (global-set-key (kbd "s-P") 'rotate-layout))
+
+;; rectangles
+
+(req-package rectangle-utils
+  :bind ("C-x r e" . extend-rectangle-to-end))
 
 (provide 'init-ext)

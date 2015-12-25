@@ -14,7 +14,6 @@
 
 (req-package shell-pop
   :require key-chord
-  :bind ("C-`" . shell-pop)
-  :init (key-chord-define-global "``" 'shell-pop))
+  :bind ("M-\"" . shell-pop))
 
 (provide 'init-bash)
