@@ -125,6 +125,12 @@
   :init
   (add-to-list 'my-random-themes 'dracula))
 
+(req-package reykjavik-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'reykjavik))
+
 (req-package jazz-theme
   :require smart-mode-line
   :defer t
