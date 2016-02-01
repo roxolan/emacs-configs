@@ -35,7 +35,9 @@
 (req-package clj-refactor
   :require cider
   :commands clj-refactor-mode
-  :init (req-package-hooks-add-execute 'cider-mode #'clj-refactor-mode))
+  :init
+  (req-package-hooks-add-execute 'cider-mode #'clj-refactor-mode)
+  (setq cljr-warn-on-eval nil))
 
 (req-package cljr-helm
   :require clj-refactor
