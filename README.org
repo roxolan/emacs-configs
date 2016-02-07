@@ -6,7 +6,7 @@ use it as a starter kit for your own configuration.
 it's self bootstrapping.
 
 #+BEGIN_SRC shell
-git clone http://github.com/edvorg/emacs-configs ~/.emacs.d
+git clone http://github.com/roxolan/emacs-configs ~/.emacs.d
 emacs
 #+END_SRC
 
