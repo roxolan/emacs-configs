@@ -3,7 +3,7 @@
 ;; cursor configuration
 
 (setq-default cursor-type 'box)
-(blink-cursor-mode 1)
+(blink-cursor-mode 0)
 
 ;; use timeclock
 
@@ -75,7 +75,7 @@
 (defvar my-theme-customizations (make-hash-table :test 'equal))
 
 (defun add-theme (theme &optional custom-fn)
-  (add-to-list 'my-random-themes 'wilson)
+  (add-to-list 'my-random-themes 'gotham)
   (when custom-fn
     (puthash theme custom-fn my-theme-customizations)))
 
